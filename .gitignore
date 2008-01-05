@@ -34,10 +34,6 @@ missing
 m4
 null.d
 .vscode
-
-#automake: Makefile.am: required file ./NEWS
-#automake: Makefile.am: required file ./README
-#automake: Makefile.am: installing ./COPYING
-#automake: Makefile.am: required file ./AUTHORS
-
+src/Search.code-search
+build/rx.core
 

@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
     //bool file_flag = false;
     bool verbose_flag = false;
     //bool help_flag = false;
-    while ((opt = getopt(argc, argv, "hvn:")) != -1) 
+    while ((opt = getopt(argc, argv, "hv")) != -1) 
     {
         switch (opt) 
         {

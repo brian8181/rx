@@ -8,7 +8,7 @@ LDFLAGS =
 # Makefile settings - Can be customized.
 APPNAME = rx
 # EXT = .cpp
-# SRCDIR = .
+SRCDIR = ./
 # OBJDIR = .
 
 # clean & build & debug
@@ -28,12 +28,10 @@ all: $(APPNAME)
 	
 # compile only
 $(APPNAME): compile
-	 $(CXX) $(CXXFLAGS) *.o -o $(APPNAME)
+	 $(CXX) $(CXXFLAGS) *.o -o $(SRCDIR)$(APPNAME)
 
 compile:
-	$(CXX) $(CXXFLAGS) -c *.cpp
-
-# all: $(APPNAME)
+	$(CXX) $(CXXFLAGS) -c $(SRCDIR)*.cpp
 
 # # Builds the app
 # $(APPNAME): $(OBJ)
@@ -41,7 +39,7 @@ compile:
 
 .PHONY: install
 install: $(APPNAME)
-	cp $(APPNAME) /usr/local/bin/$(APPNAME)
+	cp $(SRCDIR)$(APPNAME) /usr/local/bin/$(APPNAME)
 
 .PHONY: uninstall
 uninstall: 
@@ -50,7 +48,7 @@ uninstall:
 # delete object files & app executable
 .PHONY: clean
 clean:
-	rm -f *.o $(APPNAME)
+	rm -f *.o $(SRCDIR)$(APPNAME)
 
 archive: all
-	git archive master | gzip > $(APPNAME).latest.tgz
+	git archive master | gzip > $(SRCDIR)$(APPNAME).latest.tgz

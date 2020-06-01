@@ -40,7 +40,7 @@ compile:
 # 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 .PHONY: install
-install: scanpf
+install: $(APPNAME)
 	cp $(APPNAME) /usr/local/bin/$(APPNAME)
 
 .PHONY: uninstall
@@ -50,7 +50,7 @@ uninstall:
 # delete object files & app executable
 .PHONY: clean
 clean:
-	rm *.o $(APPNAME)
+	rm -f *.o $(APPNAME)
 
 archive: all
 	git archive master | gzip > $(APPNAME).latest.tgz

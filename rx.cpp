@@ -36,12 +36,12 @@ int main(int argc, char* argv[])
         }
     }
 
-    if (optind >= argc) 
+    if ((!verbose_flag && argc != 3) || (verbose_flag && argc != 4)) 
     {
         fprintf(stderr, "Expected argument after options, -h for help\n");
         exit(EXIT_FAILURE);
     }
-
+   
     if(verbose_flag)
     {
         print_help();

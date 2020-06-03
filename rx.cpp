@@ -18,9 +18,10 @@ int main(int argc, char* argv[])
 {
     int opt;
     //bool file_flag = false;
-    bool verbose_flag = false;
+    int verbose_flag = 0;
     //bool help_flag = false;
-    while ((opt = getopt(argc, argv, "hv")) != -1) 
+    int single_flag = 0;
+    while ((opt = getopt(argc, argv, "hvs")) != -1) 
     {
         switch (opt) 
         {
@@ -28,7 +29,10 @@ int main(int argc, char* argv[])
             print_help();
             return 0;
         case 'v':
-            verbose_flag = true;
+            verbose_flag = 1;
+            break;
+        case 's':
+            single_flag = 1;
             break;
         default: /* '?' */
             fprintf(stderr, "Unexpected arguments check, -h for help\n");
@@ -36,20 +40,30 @@ int main(int argc, char* argv[])
         }
     }
 
-    if ((!verbose_flag && argc != 3) || (verbose_flag && argc != 4)) 
+    if(optind != argc-2)
     {
         fprintf(stderr, "Expected argument after options, -h for help\n");
         exit(EXIT_FAILURE);
     }
-   
+
+    string exp(argv[optind]);
+    string src(argv[optind+1]);
+    
     if(verbose_flag)
     {
         print_help();
     }
 
-    string exp(argv[optind]);
-    string src(argv[optind+1]);
+    // if(single_flag)
+    // {
+    //     regex e(exp);
+    //     smatch sm;    // same as std::match_results<string::const_iterator> sm;
+    //     regex_match (src,sm,e);
 
+    //     if(sm.size() > 0)
+    //         cout << sm.str(0) << endl;
+    //     return 0;
+    // }
     
     cout << "pattern: " << "\"" << exp << "\"" << " -> " 
          << "input: " << "\"" << src << "\"" << "\n\n";
@@ -116,7 +130,7 @@ void print_help()
 # STRANGE BOTH MATCH
 ./regx 'a"b' 'a"b'
 ./regx 'a\"b' 'a"b'
-
+0000057: Create Single Match Option
 #NO MATCH
 #./regx "a\\!b" "a!b"
 # ./regx "a`b" "a`b"

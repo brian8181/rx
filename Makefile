@@ -1,15 +1,15 @@
-# MAKE TEMPLATE 5-12-2020
+# MAKE TEMPLATE 6-02-2020
 
 # Compiler settings - Can be customized.
 CXX = g++
 CXXFLAGS = -std=c++11 -Wall
-LDFLAGS = 
+#LDFLAGS = 
 
 # Makefile settings - Can be customized.
 APPNAME = rx
-# EXT = .cpp
+EXT = .cpp
 SRCDIR = ./
-# OBJDIR = .
+OBJDIR = ./
 
 # clean & build & debug
 # .PHONY: debuggdb_clean
@@ -28,11 +28,13 @@ all: $(APPNAME)
 	
 # compile only
 $(APPNAME): compile
-	 $(CXX) $(CXXFLAGS) *.o -o $(SRCDIR)$(APPNAME)
+	 #$(CXX) $(CXXFLAGS) $(OBJDIR)*.o -o $(SRCDIR)$(APPNAME)
+	 $(CXX) $(CXXFLAGS) $(OBJDIR)*.o -o $(SRCDIR)$@
 
 compile:
-	$(CXX) $(CXXFLAGS) -c $(SRCDIR)*.cpp
-
+	#$(CXX) $(CXXFLAGS) -c $(SRCDIR)*.cpp
+	$(CXX) $(CXXFLAGS) -c $(SRCDIR)*$(EXT)
+	
 # # Builds the app
 # $(APPNAME): $(OBJ)
 # 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
@@ -48,7 +50,10 @@ uninstall:
 # delete object files & app executable
 .PHONY: clean
 clean:
-	rm -f *.o $(SRCDIR)$(APPNAME)
+	rm -f $(OBJDIR)*.o $(SRCDIR)$(APPNAME)
+
+.PHONY: distclean
+distclean: clean # clean $ distclean are the same
 
 archive: all
 	git archive master | gzip > $(SRCDIR)$(APPNAME).latest.tgz

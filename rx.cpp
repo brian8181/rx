@@ -17,10 +17,9 @@ void print_help();
 int main(int argc, char* argv[]) 
 {
     int opt;
-    //bool file_flag = false;
-    int verbose_flag = 0;
-    //bool help_flag = false;
-    int single_flag = 0;
+    bool verbose_flag = 0;
+    bool single_flag = 0;
+    
     while ((opt = getopt(argc, argv, "hvs")) != -1) 
     {
         switch (opt) 
@@ -54,17 +53,6 @@ int main(int argc, char* argv[])
         print_help();
     }
 
-    // if(single_flag)
-    // {
-    //     regex e(exp);
-    //     smatch sm;    // same as std::match_results<string::const_iterator> sm;
-    //     regex_match (src,sm,e);
-
-    //     if(sm.size() > 0)
-    //         cout << sm.str(0) << endl;
-    //     return 0;
-    // }
-    
     cout << "pattern: " << "\"" << exp << "\"" << " -> " 
          << "input: " << "\"" << src << "\"" << "\n\n";
 

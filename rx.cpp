@@ -6,22 +6,21 @@
 using namespace std;
 
 // shell color constants
-const string FMT_FG_GREEN  = "\e[32m"; 
+const string FMT_FG_GREEN = "\e[32m";
 const string FMT_UNDERLINE = "\e[4m";
-const string FMT_BOLD      = "\e[1m";
-const string FMT_RESET     = "\e[0m";
+const string FMT_BOLD = "\e[1m";
+const string FMT_RESET = "\e[0m";
 const string CURRENT_FG_COLOR = FMT_FG_GREEN + FMT_UNDERLINE;
 
 void print_help();
 
 static struct option long_options[] =
-{
-    {"verbose", no_argument, 0, 'v'},
-    {"help", no_argument, 0, 'h'},
-    {"single", no_argument, 0, 's'}
-};
+    {
+        {"verbose", no_argument, 0, 'v'},
+        {"help", no_argument, 0, 'h'},
+        {"single", no_argument, 0, 's'}};
 
-int main(int argc, char* argv[]) 
+int main(int argc, char *argv[])
 {
     int opt = 0;
     int option_index = 0;
@@ -32,7 +31,7 @@ int main(int argc, char* argv[])
     {
         opt = getopt_long(argc, argv, "hsv", long_options, &option_index);
 
-        switch (opt) 
+        switch (opt)
         {
         case 'h':
             print_help();
@@ -43,42 +42,46 @@ int main(int argc, char* argv[])
         case 's':
             break;
         default: // unknown option before args
-            if(optind < argc-2) 
+            if (optind < argc - 2)
             {
                 fprintf(stderr, "Unexpected option, -h for help\n");
                 return EXIT_FAILURE;
             }
         }
 
-    } while(opt != -1);
-     
-    if(optind != argc-2) // too many args after options (aka > 2)
+    } while (opt != -1);
+
+    if (optind != argc - 2) // too many args after options (aka > 2)
     {
         fprintf(stderr, "Expected argument after options, -h for help\n");
         exit(EXIT_FAILURE);
     }
 
     string exp(argv[optind]);
-    string src(argv[optind+1]);
-    
-    if(verbose_flag)
+    string src(argv[optind + 1]);
+
+    if (verbose_flag)
     {
         print_help();
     }
 
-    cout << "pattern: " << "\"" << exp << "\"" << " -> " 
-         << "input: " << "\"" << src << "\"" << "\n\n";
+    cout << "pattern: "
+         << "\"" << exp << "\""
+         << " -> "
+         << "input: "
+         << "\"" << src << "\""
+         << "\n\n";
 
     int idx = 0;
     string bash_str = src;
     regex src_epx(exp);
     auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
     auto end = sregex_iterator();
-    
+
     for (sregex_iterator i = begin; i != end; ++i)
     {
         smatch match = *i;
-                
+
         int pos = match.position() + (idx * (CURRENT_FG_COLOR.length() + FMT_RESET.length()));
         int len = match.length();
 
@@ -89,8 +92,8 @@ int main(int argc, char* argv[])
         pos = pos + CURRENT_FG_COLOR.length() + len;
         bash_str.insert(pos, FMT_RESET);
 
-        cout << idx << ": " << src.substr(match.position(), match.length()) << endl; 
-       
+        cout << idx << ": " << src.substr(match.position(), match.length()) << endl;
+
         ++idx;
     }
 
@@ -100,9 +103,10 @@ int main(int argc, char* argv[])
 
 void print_help()
 {
-    cout << "\n" << FMT_BOLD << "regx" << FMT_RESET << " " 
-         << FMT_UNDERLINE << "PATTERN" << FMT_RESET << " " 
-         << FMT_UNDERLINE << "INPUT"   << FMT_RESET << "\n\n";
+    cout << "\n"
+         << FMT_BOLD << "regx" << FMT_RESET << " "
+         << FMT_UNDERLINE << "PATTERN" << FMT_RESET << " "
+         << FMT_UNDERLINE << "INPUT" << FMT_RESET << "\n\n";
 }
 
 /*

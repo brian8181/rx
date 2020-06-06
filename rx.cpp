@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <regex>
-#include <unistd.h>
+#include <getopt.h>
 
 using namespace std;
 
@@ -14,32 +14,45 @@ const string CURRENT_FG_COLOR = FMT_FG_GREEN + FMT_UNDERLINE;
 
 void print_help();
 
+static struct option long_options[] =
+{
+    {"verbose", no_argument, 0, 'v'},
+    {"help", no_argument, 0, 'h'},
+    {"single", no_argument, 0, 's'}
+};
+
 int main(int argc, char* argv[]) 
 {
-    int opt;
-    bool verbose_flag = 0;
-    bool single_flag = 0;
-    
-    while ((opt = getopt(argc, argv, "hvs")) != -1) 
+    int opt = 0;
+    int option_index = 0;
+    bool verbose_flag = false;
+
+    optind = 0;
+    do
     {
+        opt = getopt_long(argc, argv, "hsv", long_options, &option_index);
+
         switch (opt) 
         {
         case 'h':
             print_help();
             return 0;
         case 'v':
-            verbose_flag = 1;
+            verbose_flag = true;
             break;
         case 's':
-            single_flag = 1;
             break;
-        default: /* '?' */
-            fprintf(stderr, "Unexpected arguments check, -h for help\n");
-            return EXIT_FAILURE;
+        default: // unknown option before args
+            if(optind < argc-2) 
+            {
+                fprintf(stderr, "Unexpected option, -h for help\n");
+                return EXIT_FAILURE;
+            }
         }
-    }
 
-    if(optind != argc-2)
+    } while(opt != -1);
+     
+    if(optind != argc-2) // too many args after options (aka > 2)
     {
         fprintf(stderr, "Expected argument after options, -h for help\n");
         exit(EXIT_FAILURE);
@@ -98,7 +111,7 @@ void print_help()
 ./regx "a\\\\b" "a\\b"
 ./regx "a\\*b" "a*b"
 ./regx "a\\=b" "a=b"
-./regx "a\\+b" "a+b"
+./regx "a\\+b" "a+b
 ./regx "a~b" "a~b"
 ./regx "a~b" "a~b"
 ./regx 'a`b' 'a`b'
@@ -107,7 +120,7 @@ void print_help()
 ./regx "a#b" "a#b"
 ./regx "a@b" "a@b"
 ./regx "a\\$" "a$"
-./regx "a&b" "a&b"
+./regx "a&b" "a&b"  
 ./regx "a\\&b" "a&b"
 ./regx "a\\(b" "a(b"
 ./regx "a\\)b" "a)b"

@@ -111,7 +111,7 @@
             "miDebuggerPath": "/usr/bin/gdb"
         },
         {
-            "name": "g++ - Test5",
+            "name": "g++ - Test5: Invalid Opt",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",

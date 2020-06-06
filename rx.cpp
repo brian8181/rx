@@ -15,21 +15,23 @@ const string CURRENT_FG_COLOR = FMT_FG_GREEN + FMT_UNDERLINE;
 void print_help();
 
 static struct option long_options[] =
-    {
-        {"verbose", no_argument, 0, 'v'},
-        {"help", no_argument, 0, 'h'},
-        {"single", no_argument, 0, 's'}};
+{
+    {"verbose", no_argument, 0, 'v'},
+    {"help", no_argument, 0, 'h'},
+    {"single", no_argument, 0, 's'}
+};
 
 int main(int argc, char *argv[])
 {
     int opt = 0;
     int option_index = 0;
     bool verbose_flag = false;
+    bool single_flag = false;
 
     optind = 0;
     do
     {
-        opt = getopt_long(argc, argv, "hsv", long_options, &option_index);
+        opt = getopt_long(argc, argv, "hvs", long_options, &option_index);
 
         switch (opt)
         {
@@ -40,6 +42,7 @@ int main(int argc, char *argv[])
             verbose_flag = true;
             break;
         case 's':
+            single_flag = true;
             break;
         default: // unknown option before args
             if (optind < argc - 2)
@@ -59,6 +62,11 @@ int main(int argc, char *argv[])
 
     string exp(argv[optind]);
     string src(argv[optind + 1]);
+
+    if(single_flag)
+    {
+        cout << "Single Match Mode" << endl;
+    }
 
     if (verbose_flag)
     {
@@ -81,7 +89,6 @@ int main(int argc, char *argv[])
     for (sregex_iterator i = begin; i != end; ++i)
     {
         smatch match = *i;
-
         int pos = match.position() + (idx * (CURRENT_FG_COLOR.length() + FMT_RESET.length()));
         int len = match.length();
 
@@ -93,7 +100,6 @@ int main(int argc, char *argv[])
         bash_str.insert(pos, FMT_RESET);
 
         cout << idx << ": " << src.substr(match.position(), match.length()) << endl;
-
         ++idx;
     }
 
@@ -104,7 +110,7 @@ int main(int argc, char *argv[])
 void print_help()
 {
     cout << "\n"
-         << FMT_BOLD << "regx" << FMT_RESET << " "
+         << FMT_BOLD << "rx" << FMT_RESET << " "
          << FMT_UNDERLINE << "PATTERN" << FMT_RESET << " "
          << FMT_UNDERLINE << "INPUT" << FMT_RESET << "\n\n";
 }
@@ -135,7 +141,6 @@ void print_help()
 # STRANGE BOTH MATCH
 ./regx 'a"b' 'a"b'
 ./regx 'a\"b' 'a"b'
-0000057: Create Single Match Option
 #NO MATCH
 #./regx "a\\!b" "a!b"
 # ./regx "a`b" "a`b"

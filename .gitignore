@@ -32,3 +32,5 @@
 *.app
 rx
 rx.latest.tgz
+autoscan.log
+configure.scan

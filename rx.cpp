@@ -29,10 +29,8 @@ int main(int argc, char *argv[])
     bool single_flag = false;
 
     optind = 0;
-    do
+    while((opt = getopt_long(argc, argv, "hvs", long_options, &option_index)) != -1)
     {
-        opt = getopt_long(argc, argv, "hvs", long_options, &option_index);
-
         switch (opt)
         {
         case 'h':
@@ -45,14 +43,10 @@ int main(int argc, char *argv[])
             single_flag = true;
             break;
         default: // unknown option before args
-            if (optind < argc - 2)
-            {
-                fprintf(stderr, "Unexpected option, -h for help\n");
-                return EXIT_FAILURE;
-            }
+            fprintf(stderr, "Unexpected option, -h for help\n");
+            return EXIT_FAILURE;
         }
-
-    } while (opt != -1);
+    }
 
     if (optind != argc - 2) // not correct number of args
     {

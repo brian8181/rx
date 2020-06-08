@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 
     } while (opt != -1);
 
-    if (optind != argc - 2) // too many args after options (aka > 2)
+    if (optind != argc - 2) // not correct number of args
     {
         fprintf(stderr, "Expected argument after options, -h for help\n");
         exit(EXIT_FAILURE);
@@ -63,6 +63,7 @@ int main(int argc, char *argv[])
     string exp(argv[optind]);
     string src(argv[optind + 1]);
 
+    // single mode: mockup
     if(single_flag)
     {
         cout << "Single Match Mode" << endl;

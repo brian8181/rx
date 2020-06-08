@@ -39,12 +39,25 @@ compile:
 # $(APPNAME): $(OBJ)
 # 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
+# install man pages
+.PHONY: man
+man: 
+	cp ./man/rx.1 /usr/local/share/man/man1
+	gzip /usr/local/share/man/man1/rx.1
+	mandb
+	
+# uninstall man pages
+.PHONY: unman
+unman:
+	rm /usr/local/share/man/man1/rx.1.gz
+	mandb
+
 .PHONY: install
-install: $(APPNAME)
+install: man $(APPNAME)
 	cp $(SRCDIR)$(APPNAME) /usr/local/bin/$(APPNAME)
 
 .PHONY: uninstall
-uninstall: 
+uninstall: unman
 	rm /usr/local/bin/$(APPNAME)
 
 # delete object files & app executable

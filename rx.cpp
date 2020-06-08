@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    if (optind != argc - DEFAULT_ARGC) // not correct number of args
+    if (optind != (argc - DEFAULT_ARGC)) // not correct number of args
     {
         fprintf(stderr, "Expected argument after options, -h for help\n");
         exit(EXIT_FAILURE);

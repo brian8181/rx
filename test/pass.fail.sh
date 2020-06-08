@@ -1,9 +1,13 @@
-#fail
+#### FAIL ####
 ./rx -s "*ab*c{2}" "abccxxxabcc"
 
 ./rx -vs "a*b*c{2}" "abccxxxabcc"
 
-#pass
+# invalid long option
+./rx --babe abc abc
+
+
+#### PASS ####
 ../rx "(abc)*" abcXXabc
 ../rx \(abc\)* abcabc
 ../rx "(abc)*" abcabcabc

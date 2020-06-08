@@ -21,7 +21,7 @@ static struct option long_options[] =
     {"single", no_argument, 0, 's'}
 };
 
-const unsigned int DEFAULT_ARGC = 2;
+const int DEFAULT_ARGC = 2;
 
 int main(int argc, char *argv[])
 {

@@ -1,5 +1,9 @@
 # MAKE TEMPLATE 6-02-2020
 
+prefix = /usr/local
+mandir = $(prefix)/share/man/
+man1dir = $(mandir)/man1
+
 # Compiler settings - Can be customized.
 CXX = g++
 CXXFLAGS = -std=c++11 -Wall
@@ -34,31 +38,28 @@ $(APPNAME): compile
 compile:
 	#$(CXX) $(CXXFLAGS) -c $(SRCDIR)*.cpp
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)*$(EXT)
-	
-# # Builds the app
-# $(APPNAME): $(OBJ)
-# 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+	#$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 # install man pages
 .PHONY: man
 man: 
-	cp ./man/rx.1 /usr/local/share/man/man1
-	gzip /usr/local/share/man/man1/rx.1
+	cp ./man/rx.1 $(man1dir)
+	gzip $(man1dir)/rx.1
 	mandb
 	
 # uninstall man pages
 .PHONY: unman
 unman:
-	rm /usr/local/share/man/man1/rx.1.gz
+	rm $(man1dir)/rx.1.gz
 	mandb
 
 .PHONY: install
-install: man $(APPNAME)
-	cp $(SRCDIR)$(APPNAME) /usr/local/bin/$(APPNAME)
+install: man
+	cp $(SRCDIR)$(APPNAME) $(prefix)/bin/$(APPNAME)
 
 .PHONY: uninstall
 uninstall: unman
-	rm /usr/local/bin/$(APPNAME)
+	rm $(prefix)/bin/$(APPNAME)
 
 # delete object files & app executable
 .PHONY: clean

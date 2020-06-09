@@ -34,7 +34,7 @@ all: $(APPNAME)
 $(APPNAME): compile
 	 #$(CXX) $(CXXFLAGS) $(OBJDIR)*.o -o $(SRCDIR)$(APPNAME)
 	 $(CXX) $(CXXFLAGS) $(OBJDIR)*.o -o $(SRCDIR)$@
-
+	 
 compile:
 	#$(CXX) $(CXXFLAGS) -c $(SRCDIR)*.cpp
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)*$(EXT)
@@ -69,5 +69,5 @@ clean:
 .PHONY: distclean
 distclean: clean # clean $ distclean are the same
 
-archive: all
-	git archive master | gzip > $(SRCDIR)$(APPNAME).latest.tgz
+dist: all
+	git archive master | gzip > $(SRCDIR)$(APPNAME).latest.tar.gz

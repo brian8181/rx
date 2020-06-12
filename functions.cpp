@@ -1,3 +1,4 @@
+#include "functions.h"
 #include <iostream>
 #include <string>
 #include <regex>
@@ -13,7 +14,6 @@ const string FMT_RESET = "\e[0m";
 const string CURRENT_FG_COLOR = FMT_FG_GREEN + FMT_UNDERLINE;
 
 void print_help();
-int parse_options(int argc, char *argv[]);
 
 static struct option long_options[] =
 {
@@ -24,12 +24,8 @@ static struct option long_options[] =
 
 const int DEFAULT_ARGC = 2;
 
-int main(int argc, char *argv[])
-{
-    return parse_options(argc, argv);
-}
 
-int parse_options(int argc, char *argv[])
+int parse_opt(int argc, char* argv[])
 {
     int opt = 0;
     int option_index = 0;
@@ -108,8 +104,6 @@ int parse_options(int argc, char *argv[])
 
     cout << "\nFound " << std::distance(begin, end) << " matches:\n";
     cout << bash_str << "\n\n";
-
-    return EXIT_SUCCESS;
 }
 
 void print_help()
@@ -119,50 +113,3 @@ void print_help()
          << FMT_UNDERLINE << "PATTERN" << FMT_RESET << " "
          << FMT_UNDERLINE << "INPUT" << FMT_RESET << "\n\n";
 }
-
-/*
-
-#MATCH
-./regx "a\\\\b" "a\\b"
-./regx "a\\*b" "a*b"
-./regx "a\\=b" "a=b"
-./regx "a\\+b" "a+b
-./regx "a~b" "a~b"
-./regx "a~b" "a~b"
-./regx 'a`b' 'a`b'
-./regx 'a-b' 'a-b'
-./regx "a-b" "a-b"
-./regx "a#b" "a#b"
-./regx "a@b" "a@b"
-./regx "a\\$" "a$"
-./regx "a&b" "a&b"  
-./regx "a\\&b" "a&b"
-./regx "a\\(b" "a(b"
-./regx "a\\)b" "a)b"
-./regx "a\(b\)c" "a(b)c"
-./regx "a\[b\]c" "a[b]c"
-./regx "a\{b\}c" "a{b}c"
-
-# STRANGE BOTH MATCH
-./regx 'a"b' 'a"b'
-./regx 'a\"b' 'a"b'
-#NO MATCH
-#./regx "a\\!b" "a!b"
-# ./regx "a`b" "a`b"
-# ./regx "a\\$b" "a$b"
-
-# GREEDY TESTING
-./regx "a.*?b" "axbb" // MATCH = axb
-
-# TAGS
-## OK
-./regx "\\<([A-z]+[A-z0-9]*)\\>" "<tag1> <tag2>"
-./regx "\\<([A-z]+[A-z0-9]*)\\>" "<tag1> <tag2><tag3>"
-
-# FUNNY
-./regx "\\<([A-z]+[A-z0-9\\<\\>]*?)+\\>" "<tag1<tag4>> <tag2><tag3>"
-
-# WORKS WITH WORD BOUNDRAY \b
-./regx "\\<\b([A-z]+[A-z0-9\\<\\>]*?)+\b\\>" "<tag1>. <tag2><tag3>*<tag5>&<tag6>^<tag7>|<tag8>"
-
-*/

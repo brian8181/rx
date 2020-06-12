@@ -1,4 +1,5 @@
 # MAKE TEMPLATE 6-02-2020
+BUILD_VERSION = 1.0.0
 
 prefix = /usr/local
 mandir = $(prefix)/share/man/
@@ -8,6 +9,9 @@ man1dir = $(mandir)/man1
 CXX = g++
 CXXFLAGS = -std=c++11 -Wall
 #LDFLAGS = 
+INCLUDES= -I/usr/local/include/cppunit/
+LINKFLAGS= -lcppunit
+
 
 # Makefile settings - Can be customized.
 APPNAME = rx
@@ -20,25 +24,34 @@ OBJDIR = ./
 # debuggdb_clean: clean debuggdb 
 
 # complie & link for debug
-debug: CXXFLAGS += -DDEBUG -g
+debug: CXXFLAGS += -DDEBUG -g 
 debug: all
 
-# complie & link for debug GDB
+# complie & link for debug GDBversion variable
 debuggdb: CXXFLAGS += -DDEBUG -ggdb
 debuggdb: all
 
 # complie & link
-all: $(APPNAME)
+all: $(APPNAME) testing rx_test
 	
 # compile only
 $(APPNAME): compile
 	 #$(CXX) $(CXXFLAGS) $(OBJDIR)*.o -o $(SRCDIR)$(APPNAME)
-	 $(CXX) $(CXXFLAGS) $(OBJDIR)*.o -o $(SRCDIR)$@
+	 $(CXX) $(CXXFLAGS) rx.o -o $(SRCDIR)$@
 
 compile:
 	#$(CXX) $(CXXFLAGS) -c $(SRCDIR)*.cpp
-	$(CXX) $(CXXFLAGS) -c $(SRCDIR)*$(EXT)
+	#$(CXX) $(CXXFLAGS) -c $(SRCDIR)*$(EXT)
 	#$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) -c rx$(EXT)
+
+testing: 
+	g++ -c CBasicMath.cpp TestBasicMath.cpp -I/usr/local/include/cppunit/ -lcppunit -L/usr/local/lib/
+	g++ --static CBasicMath.o TestBasicMath.o -I/usr/local/include/cppunit/ -lcppunit -L/usr/local/lib/ -o TestBasicMath
+	
+rx_test: 
+	g++ -c rx_test.cpp -I/usr/local/include/cppunit/ -lcppunit -L/usr/local/lib/
+	g++ --static rx_test.o -I/usr/local/include/cppunit/ -lcppunit -L/usr/local/lib/ -o rx_test
 
 # install man pages
 .PHONY: man
@@ -48,7 +61,7 @@ man:
 	mandb
 	
 # uninstall man pages
-.PHONY: unman
+.PHONY: unmanversion variable
 unman:
 	rm $(man1dir)/rx.1.gz
 	mandb
@@ -64,12 +77,12 @@ uninstall: unman
 # delete object files & app executable
 .PHONY: clean
 clean:
-	rm -f $(OBJDIR)*.o $(SRCDIR)$(APPNAME)
+	rm -f $(OBJDIR)*.o $(SRCDIR)$(APPNAME) rx_test
 
 .PHONY: distclean
 distclean: clean # clean $ distclean are the same
 
 dist: all
-	git archive master | gzip > $(SRCDIR)$(APPNAME).latest.tar.gz
+	git archive master | gzip > $(SRCDIR)$(APPNAME).$(BUILD_VERSION).tar.gz
 
 dist-gz: all dist

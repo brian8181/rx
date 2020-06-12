@@ -34,3 +34,7 @@ rx
 rx.latest.tgz
 autoscan.log
 configure.scan
+*.xml
+*.gz
+rx_test
+TestBasicMath

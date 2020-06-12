@@ -73,7 +73,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": ["-v", "-s", "a{2}b{3}c{4}", "aabbbcccc"],
+            "args": ["--verbose", "--single", "a{2}b{3}c{4}", "aabbbcccc"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

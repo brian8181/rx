@@ -6,7 +6,7 @@
             "label": "shell: g++ build active file",
             "command": "/usr/bin/g++",
             "args": [
-                "-g",
+                "-g", "-I/usr/local/include/cppunit/", "-lcppunit",
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"

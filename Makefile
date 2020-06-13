@@ -1,5 +1,5 @@
 # MAKE TEMPLATE 6-02-2020
-BUILD_VERSION = 1.0.0
+BUILD_VERSION = 0.1.0
 
 prefix = /usr/local
 mandir = $(prefix)/share/man

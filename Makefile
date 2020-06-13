@@ -10,7 +10,7 @@ CXX = g++
 CXXFLAGS = -std=c++11 -Wall
 #LDFLAGS = 
 INCLUDES= -I/usr/local/include/cppunit/
-LINKFLAGS= -lcppunit
+LINKFLAGS= -lcppunit -L/usr/local/lib/
 
 
 # Makefile settings - Can be customized.
@@ -32,7 +32,7 @@ debuggdb: CXXFLAGS += -DDEBUG -ggdb
 debuggdb: all
 
 # complie & link
-all: $(APPNAME) testing rx_test
+all: $(APPNAME) rx_test
 	
 # compile only
 $(APPNAME): compile
@@ -45,17 +45,13 @@ compile:
 	#$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 	$(CXX) $(CXXFLAGS) -c rx$(EXT)
 
-testing: 
-	g++ -c CBasicMath.cpp TestBasicMath.cpp -I/usr/local/include/cppunit/ -lcppunit -L/usr/local/lib/
-	g++ --static CBasicMath.o TestBasicMath.o -I/usr/local/include/cppunit/ -lcppunit -L/usr/local/lib/ -o TestBasicMath
-	
 rx_test: 
-	g++ -c rx_test.cpp -I/usr/local/include/cppunit/ -lcppunit -L/usr/local/lib/
-	g++ --static rx_test.o -I/usr/local/include/cppunit/ -lcppunit -L/usr/local/lib/ -o rx_test
+	$(CXX) $(CXXFLAGS) -c rx_test.cpp -I/usr/local/include/cppunit/ 
+	$(CXX) $(CXXFLAGS) -static rx_test.o -lcppunit -L/usr/local/lib/ -o rx_test
 
 # install man pages
 .PHONY: man
-man: 
+man: GNU dialect
 	cp ./man/rx.1 $(man1dir)
 	gzip $(man1dir)/rx.1
 	mandb
@@ -77,7 +73,7 @@ uninstall: unman
 # delete object files & app executable
 .PHONY: clean
 clean:
-	rm -f $(OBJDIR)*.o $(SRCDIR)$(APPNAME) rx_test
+	rm -f $(OBJDIR)*.o $(SRCDIR)*.xml $(SRCDIR)$(APPNAME) $(SRCDIR)$(APPNAME).$(BUILD_VERSION).tar.gz rx_test
 
 .PHONY: distclean
 distclean: clean # clean $ distclean are the same

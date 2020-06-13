@@ -10,6 +10,7 @@ class RxTest : public CppUnit::TestFixture
     CPPUNIT_TEST_SUITE(RxTest);
     CPPUNIT_TEST(testAddition);
     CPPUNIT_TEST(testMultiply);
+    CPPUNIT_TEST(testParseOptionHelp);
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -19,10 +20,12 @@ public:
 protected:
     void testAddition(void);
     void testMultiply(void);
+    void testParseOptionHelp(void);
 
 private:
 
     //CBasicMath *mTestObj;
+    
 };
 
 

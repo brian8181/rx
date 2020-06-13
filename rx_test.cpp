@@ -13,23 +13,11 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
 #include <netinet/in.h>
-#include "rx_test.h"
+#include "rx_test.hpp"
 
 
 using namespace CppUnit;
 using namespace std;
-
-void
-RxTest::testAddition(void)
-{
-    CPPUNIT_ASSERT(1);
-}
-
-void
-RxTest::testMultiply(void)
-{
-    CPPUNIT_ASSERT(1);
-}
 
 void RxTest::setUp(void)
 {
@@ -40,6 +28,26 @@ void RxTest::tearDown(void)
 {
     //delete mTestObj;
 }
+
+void RxTest::testAddition(void)
+{
+    CPPUNIT_ASSERT(1);
+    CPPUNIT_ASSERT(1);
+    CPPUNIT_ASSERT(1);
+    CPPUNIT_ASSERT(1);
+}
+
+void RxTest::testMultiply(void)
+{
+    CPPUNIT_ASSERT(1);
+}
+
+void RxTest::testParseOptionHelp(void)
+{
+     CPPUNIT_ASSERT(1);
+}
+
+
 
 CPPUNIT_TEST_SUITE_REGISTRATION( RxTest );
 

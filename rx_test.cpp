@@ -22,24 +22,7 @@ using namespace std;
 
 void RxTest::setUp(void)
 {
-    m_argc = 3;
-    m_argv[0] = "/src/rx";
-    m_argv[1] = "a{3}b{2}c"; 
-    m_argv[2] = "aaabbc";
-
-//     char*
-//     params[] = {
-//       "Zara Ali",
-//       "Hina Ali",
-//       "Nuha Ali",
-//       "Sara Ali"
-//    }; 
-
-   //m_argv[0] = params[0];
-
-    //mTestObj = new CBasicMath();
-    //char* m_argv = new char[3];
-
+   
 }
 
 void RxTest::tearDown(void)
@@ -65,7 +48,26 @@ void RxTest::testParseOptionHelp(void)
 {
     //parse_options(3, m_argv);
     CPPUNIT_ASSERT(add(5, 2) == 7);
-    CPPUNIT_ASSERT(parse_options(3, m_argv) == 0);
+
+    m_argc = 2;
+    m_argv[0] = const_cast<char*>("src/rx");
+    m_argv[1] = const_cast<char*>("-q");
+
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) != 0);
+   
+
+    m_argc = 2;
+    m_argv[0] = const_cast<char*>("src/rx");
+    m_argv[1] = const_cast<char*>("-h");
+
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+   
+    m_argc = 3;
+    m_argv[0] = const_cast<char*>("src/rx");
+    m_argv[1] = const_cast<char*>("a{3}b{2}c"); 
+    m_argv[2] = const_cast<char*>("aaabbc");
+
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
 

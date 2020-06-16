@@ -26,7 +26,7 @@ private:
 
     //CBasicMath *mTestObj;
     int m_argc;
-    char* m_argv[3];
+    char* m_argv[10];
     
 };
 

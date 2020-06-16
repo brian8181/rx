@@ -81,7 +81,7 @@ void RxTest::testArguments(void)
 
 void RxTest::testParseOptionHelp(void)
 {
-    //parse_options(3, m_argv);
+    // test add
     CPPUNIT_ASSERT(add(5, 2) == 7);
 
     m_argc = 2;

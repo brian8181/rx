@@ -14,14 +14,32 @@
 #include <cppunit/XmlOutputter.h>
 #include <netinet/in.h>
 #include "rx_test.hpp"
-
+#include "rx.hpp"
 
 using namespace CppUnit;
 using namespace std;
 
+
 void RxTest::setUp(void)
 {
+    m_argc = 3;
+    m_argv[0] = "/src/rx";
+    m_argv[1] = "a{3}b{2}c"; 
+    m_argv[2] = "aaabbc";
+
+//     char*
+//     params[] = {
+//       "Zara Ali",
+//       "Hina Ali",
+//       "Nuha Ali",
+//       "Sara Ali"
+//    }; 
+
+   //m_argv[0] = params[0];
+
     //mTestObj = new CBasicMath();
+    //char* m_argv = new char[3];
+
 }
 
 void RxTest::tearDown(void)
@@ -35,6 +53,7 @@ void RxTest::testAddition(void)
     CPPUNIT_ASSERT(1);
     CPPUNIT_ASSERT(1);
     CPPUNIT_ASSERT(1);
+    CPPUNIT_ASSERT(2);
 }
 
 void RxTest::testMultiply(void)
@@ -44,9 +63,10 @@ void RxTest::testMultiply(void)
 
 void RxTest::testParseOptionHelp(void)
 {
-     CPPUNIT_ASSERT(1);
+    //parse_options(3, m_argv);
+    CPPUNIT_ASSERT(add(5, 2) == 7);
+    CPPUNIT_ASSERT(parse_options(3, m_argv) == 0);
 }
-
 
 
 CPPUNIT_TEST_SUITE_REGISTRATION( RxTest );

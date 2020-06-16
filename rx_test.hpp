@@ -3,8 +3,6 @@
 
 #include <cppunit/Test.h>
 
-//-----------------------------------------------------------------------------
-
 class RxTest : public CppUnit::TestFixture
 {
     CPPUNIT_TEST_SUITE(RxTest);
@@ -25,8 +23,9 @@ protected:
 private:
 
     //CBasicMath *mTestObj;
+    int m_argc;
+    char* m_argv[3];
     
 };
-
 
 #endif

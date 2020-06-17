@@ -27,24 +27,10 @@ void RxTest::setUp(void)
 
 void RxTest::tearDown(void)
 {
-    //delete mTestObj;
+
 }
 
-void RxTest::testAddition(void)
-{
-    CPPUNIT_ASSERT(1);
-    CPPUNIT_ASSERT(1);
-    CPPUNIT_ASSERT(1);
-    CPPUNIT_ASSERT(1);
-    CPPUNIT_ASSERT(2);
-}
-
-void RxTest::testMultiply(void)
-{
-    CPPUNIT_ASSERT(1);
-}
-
-void RxTest::testArguments(void)
+void RxTest::testNoOptions(void)
 {
     m_argc = 3;
     m_argv[0] = const_cast<char*>("src/rx");
@@ -79,28 +65,42 @@ void RxTest::testArguments(void)
     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
-void RxTest::testParseOptionHelp(void)
+void RxTest::testOptionHelp(void)
 {
-    // test add
-    CPPUNIT_ASSERT(add(5, 2) == 7);
-
-    m_argc = 2;
-    m_argv[0] = const_cast<char*>("src/rx");
-    m_argv[1] = const_cast<char*>("-q");
-
-    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) != 0);
-   
-
     m_argc = 2;
     m_argv[0] = const_cast<char*>("src/rx");
     m_argv[1] = const_cast<char*>("-h");
 
     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
-   
-    m_argc = 3;
+}
+
+void RxTest::testOptionHelpLong(void)
+{
+    m_argc = 2;
     m_argv[0] = const_cast<char*>("src/rx");
-    m_argv[1] = const_cast<char*>("a{3}b{2}c"); 
-    m_argv[2] = const_cast<char*>("aaabbc");
+    m_argv[1] = const_cast<char*>("--help");
+
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+}
+
+void RxTest::testOptionVerbose()
+{
+    m_argc = 4;
+    m_argv[0] = const_cast<char*>("src/rx");
+    m_argv[1] = const_cast<char*>("-v"); 
+    m_argv[2] = const_cast<char*>("abc"); 
+    m_argv[3] = const_cast<char*>("abc");
+
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+}
+
+void RxTest::testOptionVerboseLong()
+{
+    m_argc = 4;
+    m_argv[0] = const_cast<char*>("src/rx");
+    m_argv[1] = const_cast<char*>("--verbose"); 
+    m_argv[2] = const_cast<char*>("abc"); 
+    m_argv[3] = const_cast<char*>("abc");
 
     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }

@@ -6,10 +6,11 @@
 class RxTest : public CppUnit::TestFixture
 {
     CPPUNIT_TEST_SUITE(RxTest);
-    CPPUNIT_TEST(testAddition);
-    CPPUNIT_TEST(testMultiply);
-    CPPUNIT_TEST(testArguments);
-    CPPUNIT_TEST(testParseOptionHelp);
+    CPPUNIT_TEST(testNoOptions);
+    CPPUNIT_TEST(testOptionHelp);
+    CPPUNIT_TEST(testOptionHelpLong);
+    CPPUNIT_TEST(testOptionVerbose);
+    CPPUNIT_TEST(testOptionVerboseLong);
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -17,14 +18,15 @@ public:
     void tearDown(void);
 
 protected:
-    void testAddition(void);
-    void testMultiply(void);
-    void testArguments(void);
-    void testParseOptionHelp(void);
+    void testNoOptions(void);
+    void testOptionHelp(void);
+    void testOptionHelpLong(void);
+    void testOptionVerbose(void);
+    void testOptionVerboseLong(void);
+       
    
 private:
 
-    //CBasicMath *mTestObj;
     int m_argc;
     char* m_argv[10];
     

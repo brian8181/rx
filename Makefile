@@ -7,7 +7,7 @@ man1dir = $(mandir)/man1
 
 # Compiler settings - Can be customized.
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall
+CXXFLAGS = -std=c++11 
 # LDFLAGS = -lcppunit -L/usr/local/lib/
 # INCLUDES= -I/usr/local/include/cppunit/
 # LINKFLAGS= --static
@@ -31,18 +31,22 @@ all: $(APPNAME) rx_test
 	
 # compile only
 $(APPNAME): compile
-	 #$(CXX) $(CXXFLAGS) $(OBJDIR)*.o -o $(SRCDIR)/$(APPNAME)
-	 $(CXX) $(CXXFLAGS) rx.o -o $(SRCDIR)/$@
+	 $(CXX) $(CXXFLAGS) $(OBJDIR)/rx.o $(OBJDIR)/main.o -o $(SRCDIR)/$(APPNAME)
+	 #$(CXX) $(CXXFLAGS) rx.o main.o -o $(SRCDIR)/$@
 
 compile:
 	#$(CXX) $(CXXFLAGS) -c $(SRCDIR)/*.cpp
 	#$(CXX) $(CXXFLAGS) -c $(SRCDIR)/*.$(EXT)
 	#$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
-	$(CXX) $(CXXFLAGS) -c rx.$(EXT)
+	$(CXX) $(CXXFLAGS) -c rx.$(EXT) main.$(EXT)
 
 rx_test: 
-	$(CXX) $(CXXFLAGS) -c rx_test.cpp -I/usr/local/include/cppunit/ 
-	$(CXX) $(CXXFLAGS) -static rx_test.o -lcppunit -L/usr/local/lib/ -o rx_test
+	$(CXX) $(CXXFLAGS) -c rx_test.cpp rx.cpp -I/usr/local/include/cppunit/ 
+	$(CXX) $(CXXFLAGS) -static rx_test.o rx.o -lcppunit -L/usr/local/lib/ -o rx_test
+
+.PHONY: check
+check:
+	echo "Checking ..."
 
 # install man pages
 .PHONY: man
@@ -68,7 +72,7 @@ uninstall: unman
 # delete object files & app executable
 .PHONY: clean
 clean:
-	rm -f $(OBJDIR)*.o $(SRCDIR)/*.xml $(SRCDIR)/$(APPNAME) $(SRCDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz rx_test
+	rm -f $(OBJDIR)/*.o $(SRCDIR)/*.xml $(SRCDIR)/$(APPNAME) $(SRCDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz rx_test
 
 .PHONY: distclean
 distclean: clean # clean $ distclean are the same

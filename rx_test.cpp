@@ -14,39 +14,96 @@
 #include <cppunit/XmlOutputter.h>
 #include <netinet/in.h>
 #include "rx_test.hpp"
-
+#include "rx.hpp"
 
 using namespace CppUnit;
 using namespace std;
 
+
 void RxTest::setUp(void)
 {
-    //mTestObj = new CBasicMath();
+   
 }
 
 void RxTest::tearDown(void)
 {
-    //delete mTestObj;
+
 }
 
-void RxTest::testAddition(void)
+void RxTest::testNoOptions(void)
 {
-    CPPUNIT_ASSERT(1);
-    CPPUNIT_ASSERT(1);
-    CPPUNIT_ASSERT(1);
-    CPPUNIT_ASSERT(1);
+    m_argc = 3;
+    m_argv[0] = const_cast<char*>("src/rx");
+    m_argv[1] = const_cast<char*>("a{3}b{2}c"); 
+    m_argv[2] = const_cast<char*>("aaabbc");
+
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+
+    m_argv[1] = const_cast<char*>("a\\\\b"); 
+    m_argv[2] = const_cast<char*>("a\\b");
+
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+
+    m_argv[1] = const_cast<char*>("a\\*b"); 
+    m_argv[2] = const_cast<char*>("a*b");
+
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+
+    m_argv[1] = const_cast<char*>("a\\=b"); 
+    m_argv[2] = const_cast<char*>("a=b");
+
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+
+    m_argv[1] = const_cast<char*>("a\\+b"); 
+    m_argv[2] = const_cast<char*>("a+b");
+
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+
+    m_argv[1] = const_cast<char*>("a~b"); 
+    m_argv[2] = const_cast<char*>("a~b");
+
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
-void RxTest::testMultiply(void)
+void RxTest::testOptionHelp(void)
 {
-    CPPUNIT_ASSERT(1);
+    m_argc = 2;
+    m_argv[0] = const_cast<char*>("src/rx");
+    m_argv[1] = const_cast<char*>("-h");
+
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
-void RxTest::testParseOptionHelp(void)
+void RxTest::testOptionHelpLong(void)
 {
-     CPPUNIT_ASSERT(1);
+    m_argc = 2;
+    m_argv[0] = const_cast<char*>("src/rx");
+    m_argv[1] = const_cast<char*>("--help");
+
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
+void RxTest::testOptionVerbose()
+{
+    m_argc = 4;
+    m_argv[0] = const_cast<char*>("src/rx");
+    m_argv[1] = const_cast<char*>("-v"); 
+    m_argv[2] = const_cast<char*>("abc"); 
+    m_argv[3] = const_cast<char*>("abc");
+
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+}
+
+void RxTest::testOptionVerboseLong()
+{
+    m_argc = 4;
+    m_argv[0] = const_cast<char*>("src/rx");
+    m_argv[1] = const_cast<char*>("--verbose"); 
+    m_argv[2] = const_cast<char*>("abc"); 
+    m_argv[3] = const_cast<char*>("abc");
+
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+}
 
 
 CPPUNIT_TEST_SUITE_REGISTRATION( RxTest );

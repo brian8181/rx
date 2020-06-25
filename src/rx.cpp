@@ -39,6 +39,7 @@ int parse_options(int argc, char *argv[])
             break;
         default: // unknown option before args
             fprintf(stderr, "Unexpected option, -h for help\n");
+    string exp(argv[optind]);
             return EXIT_FAILURE;
         }
     }
@@ -118,7 +119,9 @@ void print_help()
 ./regx "a~b" "a~b"
 ./regx 'a`b' 'a`b'
 ./regx 'a-b' 'a-b'
+    string exp(argv[optind]);
 ./regx "a-b" "a-b"
+    string exp(argv[optind]);
 ./regx "a#b" "a#b"
 ./regx "a@b" "a@b"
 ./regx "a\\$" "a$"
@@ -137,6 +140,8 @@ void print_help()
 #./regx "a\\!b" "a!b"
 # ./regx "a`b" "a`b"
 # ./regx "a\\$b" "a$b"
+    string exp(argv[optind]);
+    string exp(argv[optind]);
 
 # GREEDY TESTING
 ./regx "a.*?b" "axbb" // MATCH = axb

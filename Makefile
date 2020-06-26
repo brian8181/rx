@@ -72,11 +72,13 @@ uninstall: unman
 
 # delete object files & app executable
 .PHONY: clean
-clean:
-	rm -f configure config.h* */Makefile.in $(OBJDIR)/*.o $(SRCDIR)/*.xml $(SRCDIR)/$(APPNAME) $(SRCDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz $(SRCDIR)/rx_test
+clean: distclean
+	rm configure compile depcomp install-sh
 
 .PHONY: distclean
-distclean: clean # clean $ distclean are the same
+distclean: 
+	rm -f config.log config.status config.h* \
+	*/Makefile.in $(OBJDIR)/*.o $(SRCDIR)/*.xml $(SRCDIR)/$(APPNAME) $(SRCDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz $(SRCDIR)/rx_test
 
 dist: 
 	git archive HEAD | gzip > $(SRCDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz

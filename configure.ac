@@ -1,15 +1,25 @@
 # Process this file with autoconf to produce a configure script.
 
-AC_INIT([helloWorld], [1.0], [brian@gmail.com])
-AC_PREREQ([0.1.0])
-AM_INIT_AUTOMAKE
+AC_INIT([rx], [1.0], [brian8181@gmail.com])
+AC_PREREQ([2.68])
+
+# Enable "automake" to simplify creating makefiles:
+AM_INIT_AUTOMAKE([1.11 -Wall -Werror])
+
 AC_CONFIG_SRCDIR([src/main.cpp])
+
+
+# Put configuration results here, so we can easily #include them:
 AC_CONFIG_HEADERS([config.h])
-AC_CONFIG_MACRO_DIRS([m4])
+# Put autotools auxiliary files in a subdir, so they don't clutter top dir:
+AC_CONFIG_AUX_DIR([build-aux])
+
+#AC_CONFIG_MACRO_DIRS([m4])
+
 
 # Checks for programs.
 AC_PROG_CXX
-AC_PROG_CC
+#AC_PROG_CC
 
 # Checks for libraries.
 # LT_INIT

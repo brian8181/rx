@@ -32,10 +32,15 @@
 *.app
 rx
 rx.latest.tgz
-autoscan.log
-configure.scan
 *.xml
 *.gz
 rx_test
 TestBasicMath
+
+# Autotools
+autoscan.log
+configure.scan
 aclocal.m4
+autom4te.cache/*
+config.log
+config.status

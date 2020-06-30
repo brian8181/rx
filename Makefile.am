@@ -1,4 +1,5 @@
-AUTOMAKE_OPTIONS = foreign
-ACLOCAL_AMFLAGS = -I m4
-AM_CXXFLAGS = -fpic -Wall -Wextra
-SUBDIRS = src man
+bin_PROGRAMS = rx
+#bin_PROGRAMS = rx_test
+rx_SOURCES = src/main.cpp src/rx.cpp src/rx.hpp
+#rx_test_SOURCES = src/rx_test.cpp src/rx_test.hpp
+

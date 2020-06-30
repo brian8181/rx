@@ -1,37 +1,25 @@
-# Process this file with autoconf to produce a configure script.
+# Autoconf requirements
+# Initialize, but use more options.  Note parameters brackets and whitespace.
+AC_INIT([hello], [0.01], [dwheeler@dwheeler.com], [hello], [http://www.dwheeler.com/])
 
-AC_INIT([rx], [1.0], [brian8181@gmail.com])
+# Force autoconf to be at least this version number:
 AC_PREREQ([2.68])
-
-# Enable "automake" to simplify creating makefiles:
-AM_INIT_AUTOMAKE([1.11 -Wall -Werror])
-
+# Safety check - list a source file that wouldn't be in other directories:
 AC_CONFIG_SRCDIR([src/main.cpp])
-
-
 # Put configuration results here, so we can easily #include them:
 AC_CONFIG_HEADERS([config.h])
 # Put autotools auxiliary files in a subdir, so they don't clutter top dir:
 AC_CONFIG_AUX_DIR([build-aux])
 
-#AC_CONFIG_MACRO_DIRS([m4])
+# Enable "automake" to simplify creating makefiles:
+AM_INIT_AUTOMAKE([subdir-objects -Wall -Werror])
+AC_CONFIG_FILES([Makefile])
 
-
-# Checks for programs.
+# Look for a CPP compiler:
 AC_PROG_CXX
-#AC_PROG_CC
 
-# Checks for libraries.
-# LT_INIT
-# AC_ENABLE_SHARED
-# AC_DISABLE_STATIC
-# AC_PROG_LIBTOOL(libtool)
+# Perhaps check for: (more) programs, libraries, header files, types,
+# structures, compiler characteristics, library functions, system services.
 
-# Checks for typedefs, structures, and compiler characteristics.
-# AC_HEADER_STDBOOL
-# AC_C_INLINE
-# AC_TYPE_SIZE_T
-
-# Output Makefile files.
-AC_CONFIG_FILES([Makefile src/Makefile])
+# Do final output.
 AC_OUTPUT

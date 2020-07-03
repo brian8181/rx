@@ -23,7 +23,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "MAKE DEBUGGDB",
+            "preLaunchTask": "Build RX",
             "miDebuggerPath": "/usr/bin/gdb"
         },
         {

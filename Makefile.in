@@ -87,6 +87,7 @@ NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
 bin_PROGRAMS = rx$(EXEEXT)
+EXTRA_PROGRAMS = rx_test$(EXEEXT)
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -106,6 +107,9 @@ am__dirstamp = $(am__leading_dot)dirstamp
 am_rx_OBJECTS = src/main.$(OBJEXT) src/rx.$(OBJEXT)
 rx_OBJECTS = $(am_rx_OBJECTS)
 rx_LDADD = $(LDADD)
+am_rx_test_OBJECTS = src/rx_test.$(OBJEXT)
+rx_test_OBJECTS = $(am_rx_test_OBJECTS)
+rx_test_LDADD = $(LDADD)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -147,8 +151,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(rx_SOURCES)
-DIST_SOURCES = $(rx_SOURCES)
+SOURCES = $(rx_SOURCES) $(rx_test_SOURCES)
+DIST_SOURCES = $(rx_SOURCES) $(rx_test_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -181,7 +185,7 @@ am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in \
 	$(top_srcdir)/build-aux/install-sh \
 	$(top_srcdir)/build-aux/missing AUTHORS COPYING ChangeLog \
 	INSTALL NEWS README build-aux/depcomp build-aux/install-sh \
-	build-aux/missing missing
+	build-aux/ltmain.sh build-aux/missing missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -284,8 +288,8 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-#bin_PROGRAMS = rx_test
 rx_SOURCES = src/main.cpp src/rx.cpp src/rx.hpp
+rx_test_SOURCES = src/rx_test.cpp src/rx_test.hpp
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -393,6 +397,12 @@ src/rx.$(OBJEXT): src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 rx$(EXEEXT): $(rx_OBJECTS) $(rx_DEPENDENCIES) $(EXTRA_rx_DEPENDENCIES) 
 	@rm -f rx$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(rx_OBJECTS) $(rx_LDADD) $(LIBS)
+src/rx_test.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+
+rx_test$(EXEEXT): $(rx_test_OBJECTS) $(rx_test_DEPENDENCIES) $(EXTRA_rx_test_DEPENDENCIES) 
+	@rm -f rx_test$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(rx_test_OBJECTS) $(rx_test_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -403,6 +413,7 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/main.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/rx.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/rx_test.Po@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
@@ -774,7 +785,9 @@ uninstall-am: uninstall-binPROGRAMS
 
 .PRECIOUS: Makefile
 
-#rx_test_SOURCES = src/rx_test.cpp src/rx_test.hpp
+
+#check_PROGRAMS = rx_test
+#rx_test_program_SOURCES = src/rx_test.cpp src/rx_test.hpp
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

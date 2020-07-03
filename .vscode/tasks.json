@@ -3,13 +3,13 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "shell: g++ build active file",
+            "label": "Build RX",
             "command": "/usr/bin/g++",
             "args": [
                 "-g",
                 "-I/usr/local/include/cppunit/",
                 "-lcppunit",
-                "${file}",
+                "${fileDirname}/main.cpp", "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
@@ -19,17 +19,10 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "group": "build"
-        },
-        {
-            "label": "MAKE DEBUGGDB",
-            "type": "shell",
-            "command": "make debuggdb",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": []
         }
     ]
 }

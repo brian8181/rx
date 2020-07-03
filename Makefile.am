@@ -1,5 +1,10 @@
 bin_PROGRAMS = rx
-#bin_PROGRAMS = rx_test
+EXTRA_PROGRAMS = rx_test
 rx_SOURCES = src/main.cpp src/rx.cpp src/rx.hpp
-#rx_test_SOURCES = src/rx_test.cpp src/rx_test.hpp
+rx_test_SOURCES = src/rx_test.cpp src/rx_test.hpp
+
+#check_PROGRAMS = rx_test
+#rx_test_program_SOURCES = src/rx_test.cpp src/rx_test.hpp
+
+
 

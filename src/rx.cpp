@@ -54,7 +54,7 @@ int parse_options(int argc, char *argv[])
     }
 
     char buffer[BUFFERSIZE];
-    scanf("%s", buffer);
+    int ret = scanf("%s", buffer);
     cout << buffer << endl;
 
     string exp(argv[optind]);

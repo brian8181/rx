@@ -44,3 +44,13 @@ aclocal.m4
 autom4te.cache/*
 config.log
 config.status
+build-aux/depcomp
+build-aux/install-sh
+build-aux/ltmain.sh
+build-aux/missing
+src/.deps/.dirstamp
+src/.deps/main.Po
+src/.deps/rx_test.Po
+src/.deps/rx.Po
+src/.dirstamp
+stamp-h1

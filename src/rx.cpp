@@ -5,8 +5,6 @@
 #include "rx.hpp"
 #include <stdio.h>
 
-#define BUFFERSIZE 100
-
 static struct option long_options[] =
 {
     {"verbose", no_argument, 0, 'v'},
@@ -14,10 +12,10 @@ static struct option long_options[] =
     {"single", no_argument, 0, 's'}
 };
 
-int add(int a, int b)
-{
-    return a + b;
-}
+// int add(int a, int b)
+// {
+//     return a + b;
+// }
 
 int parse_options(int argc, char *argv[])
 {
@@ -52,10 +50,6 @@ int parse_options(int argc, char *argv[])
         fprintf(stderr, "Expected argument after options, -h for help\n");
         exit(EXIT_FAILURE);
     }
-
-    char buffer[BUFFERSIZE];
-    int ret = scanf("%s", buffer);
-    cout << buffer << endl;
 
     string exp(argv[optind]);
     string src(argv[optind + 1]);

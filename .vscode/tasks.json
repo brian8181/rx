@@ -9,9 +9,10 @@
                 "-g",
                 "-I/usr/local/include/cppunit/",
                 "-lcppunit",
-                "${fileDirname}/main.cpp", "${file}",
+                "${fileDirname}/main.cpp", 
+                "${fileDirname}/rx.cpp",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/rx"
             ],
             "options": {
                 "cwd": "/usr/bin"

@@ -15,7 +15,7 @@ const string CURRENT_FG_COLOR = FMT_FG_GREEN + FMT_UNDERLINE;
 
 void print_help();
 int parse_options(int argc, char *argv[]);
-int add(int a, int b);
+//int add(int a, int b);
 
 const int DEFAULT_ARGC = 2;
 

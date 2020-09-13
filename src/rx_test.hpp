@@ -22,9 +22,8 @@ protected:
     void testOptionHelp(void);
     void testOptionHelpLong(void);
     void testOptionVerbose(void);
-    void testOptionVerboseLong(void);
-       
-   
+    void testOptionVerboseLong(void);  
+      
 private:
 
     int m_argc;

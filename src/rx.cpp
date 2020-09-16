@@ -3,7 +3,7 @@
 #include <regex>
 #include <getopt.h>
 #include "rx.hpp"
-#include <stdio.h>
+//#include <stdio.h>
 
 static struct option long_options[] =
 {
@@ -40,8 +40,8 @@ int parse_options(int argc, char *argv[])
             break;
         default: // unknown option before args
             fprintf(stderr, "Unexpected option, -h for help\n");
-    string exp(argv[optind]);
-            return EXIT_FAILURE;
+            break;   
+        return EXIT_FAILURE;
         }
     }
 

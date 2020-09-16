@@ -19,15 +19,12 @@
 using namespace CppUnit;
 using namespace std;
 
-
 void RxTest::setUp(void)
 {
-   
 }
 
 void RxTest::tearDown(void)
 {
-
 }
 
 void RxTest::testNoOptions(void)

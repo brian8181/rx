@@ -29,19 +29,20 @@ int parse_options(int argc, char *argv[])
     {
         switch (opt)
         {
-        case 'h':
-            print_help();
-            return 0;
-        case 'v':
-            verbose_flag = true;
-            break;
-        case 's':
-            single_flag = true;
-            break;
-        default: // unknown option before args
-            fprintf(stderr, "Unexpected option, -h for help\n");
-            break;   
-        return EXIT_FAILURE;
+            case 'h':
+                print_help();
+                return 0;
+            case 'v':
+                verbose_flag = true;
+                break;
+            case 's':
+                single_flag = true;
+                break;
+            default: // unknown option before args
+            {
+                fprintf(stderr, "Unexpected option, -h for help\n");
+                return EXIT_FAILURE;
+            }
         }
     }
 

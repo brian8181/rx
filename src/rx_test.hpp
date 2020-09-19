@@ -5,6 +5,8 @@
 
 class RxTest : public CppUnit::TestFixture
 {
+  
+private:
     CPPUNIT_TEST_SUITE(RxTest);
     CPPUNIT_TEST(testNoOptions);
     CPPUNIT_TEST(testOptionHelp);
@@ -15,7 +17,7 @@ class RxTest : public CppUnit::TestFixture
 
 public:
     void setUp(void);
-    void tearDown(void);
+    void tearDown(void);    
 
 protected:
     void testNoOptions(void);
@@ -25,7 +27,6 @@ protected:
     void testOptionVerboseLong(void);  
       
 private:
-
     int m_argc;
     char* m_argv[10];
     

@@ -6,12 +6,11 @@ mandir = $(prefix)/share/man
 man1dir = $(mandir)/man1
 
 # Compiler settings - Can be customized.
-CXX = g++
-#CXXFLAGS = -std=c++11 
-CXXFLAGS = -std=c++20
+CXX=g++
+CXXFLAGS = -std=c++11
+#CXXFLAGS=-std=c++20
 LDFLAGS = -static -lcppunit -L/usr/local/lib/
 #INCLUDES = -I/usr/local/include/cppunit/
-#LINKFLAGS= --static
 
 # Makefile settings - Can be customized.
 APPNAME = rx
@@ -33,7 +32,6 @@ all: $(APPNAME) rx_test
 # compile only
 $(APPNAME): rx.o main.o
 	 $(CXX) $(CXXFLAGS) $(OBJDIR)/rx.o $(OBJDIR)/main.o -o $(SRCDIR)/$(APPNAME)
-	 #$(CXX) $(CXXFLAGS) rx.o main.o -o $(SRCDIR)/$@
 
 rx.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/rx.$(EXT) -o $(SRCDIR)/rx.o

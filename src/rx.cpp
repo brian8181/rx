@@ -12,11 +12,6 @@ static struct option long_options[] =
     {"single", no_argument, 0, 's'}
 };
 
-// int add(int a, int b)
-// {
-//     return a + b;
-// }
-
 int parse_options(int argc, char *argv[])
 {
     int opt = 0;

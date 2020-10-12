@@ -7,7 +7,7 @@ man1dir = $(mandir)/man1
 
 # Compiler settings - Can be customized.
 CXX=g++
-CXXFLAGS = -std=c++11
+CXXFLAGS = -pedantic -std=c++11
 #CXXFLAGS=-std=c++20
 LDFLAGS = -static -lcppunit -L/usr/local/lib/
 #INCLUDES = -I/usr/local/include/cppunit/

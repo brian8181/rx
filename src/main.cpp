@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[])
 {
-    char buffer[BUFFERSIZE];
+    // char buffer[BUFFERSIZE];
     // int ret = scanf("%s", buffer);
     // cout << buffer << endl;
    

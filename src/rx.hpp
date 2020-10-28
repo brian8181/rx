@@ -7,10 +7,10 @@
 using namespace std;
 
 // shell color constants
-const string FMT_FG_GREEN = "\e[32m";
-const string FMT_UNDERLINE = "\e[4m";
-const string FMT_BOLD = "\e[1m";
-const string FMT_RESET = "\e[0m";
+const string FMT_FG_GREEN = "\033[32m";
+const string FMT_UNDERLINE = "\033[4m";
+const string FMT_BOLD = "\033[1m";
+const string FMT_RESET = "\033[0m";
 const string CURRENT_FG_COLOR = FMT_FG_GREEN + FMT_UNDERLINE;
 
 // functions

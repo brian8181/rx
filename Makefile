@@ -6,8 +6,8 @@ mandir = $(prefix)/share/man
 man1dir = $(mandir)/man1
 
 # Compiler settings - Can be customized.
-CXX=g++
-CXXFLAGS = -pedantic -std=c++11
+CXX = g++
+CXXFLAGS = -pedantic -std=c++11 -Wall
 #CXXFLAGS=-std=c++20
 LDFLAGS = -static -lcppunit -L/usr/local/lib/
 #INCLUDES = -I/usr/local/include/cppunit/

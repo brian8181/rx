@@ -11,14 +11,21 @@ AC_CONFIG_HEADERS([config.h])
 # Put autotools auxiliary files in a subdir, so they don't clutter top dir:
 AC_CONFIG_AUX_DIR([build-aux])
 
-AC_CONFIG_MACRO_DIRS([m4])
+# ======================================
+# Check for various headers and settings
+# ======================================
+AC_CHECK_HEADERS([netinet/in.h])
+
+#AC_CONFIG_MACRO_DIRS([m4])
 # AC_CHECK_FUNCS([memset])
 # AC_CHECK_HEADERS([netinet/in.h])
-# AC_CHECK_HEADER_STDBOOL
+AC_CHECK_HEADER_STDBOOL
+AC_PROG_INSTALL
+#AC_CONFIG_MACRO_DIRS
 
 
 # Enable "automake" to simplify creating makefiles:
-AM_INIT_AUTOMAKE([subdir-objects -Wall -Werror])
+# AM_INIT_AUTOMAKE([subdir-objects -Wall -Werror])
 AC_CONFIG_FILES([Makefile])
 
 # Look for a CPP compiler:

@@ -20,7 +20,8 @@ main(int argc, char** argv)
     }
     else
     {
-        fprintf(stderr, "no pipe found \n");
+        //fprintf(stderr, "no pipe found \n");
+        return parse_options(argc, argv);
     }
 
     for(int i = 0; i < argc; ++i)

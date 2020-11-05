@@ -3,7 +3,10 @@
 #include <regex>
 #include <getopt.h>
 #include "rx.hpp"
-//#include <stdio.h>
+
+#include <stdio.h>
+#include <unistd.h>
+#include <termios.h>
 
 static struct option long_options[] =
 {

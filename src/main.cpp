@@ -35,6 +35,8 @@ main(int argc, char** argv)
 
 // 11052020 
 
+// output 1
+
 // [brian@monster-island src]$ echo "t1" | ./rx
 // Read: t1
 // arg[0]: ./rx
@@ -42,3 +44,23 @@ main(int argc, char** argv)
 // Read: t1
 // arg[0]: ./rx
 // arg[1]: abc
+
+// ouput 2
+
+// [brian@monster-island src]$ ./rx a{2}b{3}c{5} aabbbccccc
+// pattern: "a{2}b{3}c{5}" -> input: "aabbbccccc"
+
+// 0: aabbbccccc
+
+// Found 1 matches:
+// aabbbccccc
+
+// [brian@monster-island src]$ echo "test" | ./rx a{2}b{3}c{5} aabbbccccc
+// Read: test
+// arg[0]: ./rx
+// arg[1]: a{2}b{3}c{5}
+// arg[2]: aabbbccccc
+// [brian@monster-island src]$ echo "test" | ./rx a{2}b{3}c{5}
+// Read: test
+// arg[0]: ./rx
+// arg[1]: a{2}b{3}c{5}

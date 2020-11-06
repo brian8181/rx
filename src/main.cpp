@@ -11,12 +11,22 @@
 int
 main(int argc, char** argv)
 {
-    char buffer[10];
+    char buffer[255];
     struct termios t;
     if (tcgetattr(STDIN_FILENO, &t) < 0)
     {   
         scanf("%s", (char*)&buffer);
         fprintf(stderr, "Read: %s\n", (char*)&buffer);
+
+        char* argv_tmp[argc + 1];
+        for(int i =0; i < argc; ++i)
+        {
+            argv_tmp[i] = argv[i];
+        }
+        argv_tmp[argc] = buffer;
+
+        argc++;
+        return parse_options(argc, argv_tmp);
     }
     else
     {

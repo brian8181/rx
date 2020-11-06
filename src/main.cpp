@@ -1,6 +1,7 @@
 #include "rx.hpp"
 #include "../config.h"
 #include <iostream>
+#include <cstring>
 
 #include <unistd.h>
 #include <termios.h>
@@ -13,19 +14,13 @@ main(int argc, char* argv[])
     termios t;
     if (tcgetattr(STDIN_FILENO, &t) < 0)
     { 
+        // get input from pipe
         char buffer[BUFFER_LEN]; // buffer for pipe  
         std::cin >> buffer;
 
+        // add piped buffer to end of args
         char* argv_tmp[BUFFER_LEN];
-        
-        // can't I just assing the beg address?
-        //argv_tmp = argv;
-		//argv_tmp[0] = argv[0];
-
-        for(int i =0; i < argc; ++i)
-        {
-            argv_tmp[i] = argv[i];
-        }
+        std::memcpy(argv_tmp, argv, sizeof(char*) * argc);
         argv_tmp[argc] = buffer;
 
         //argv = &argv_tmp;

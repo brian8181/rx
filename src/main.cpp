@@ -2,11 +2,10 @@
 #include "../config.h"
 #include <iostream>
 
-#include <stdio.h>
 #include <unistd.h>
 #include <termios.h>
 
-#define BUFFERSIZE 100
+const int BUFFER_LEN = 0xFF;
 
 int
 main(int argc, char* argv[])
@@ -14,10 +13,10 @@ main(int argc, char* argv[])
     termios t;
     if (tcgetattr(STDIN_FILENO, &t) < 0)
     { 
-        char buffer[255]; // buffer for pipe  
-        scanf("%s", (char*)&buffer);
+        char buffer[BUFFER_LEN]; // buffer for pipe  
+        std::cin >> buffer;
 
-        char* argv_tmp[255];
+        char* argv_tmp[BUFFER_LEN];
         
         // can't I just assing the beg address?
         //argv_tmp = argv;

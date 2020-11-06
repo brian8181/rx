@@ -16,31 +16,25 @@ main(int argc, char** argv)
     if (tcgetattr(STDIN_FILENO, &t) < 0)
     {   
         scanf("%s", (char*)&buffer);
-        fprintf(stderr, "Read: %s\n", (char*)&buffer);
+        //fprintf(stderr, "Read: %s\n", (char*)&buffer);
 
-        char* argv_tmp[argc + 1];
+        char* argv_tmp[255];
+        //argv_tmp = argv;
+		//argv_tmp[0] = argv[0];
+
         for(int i =0; i < argc; ++i)
         {
             argv_tmp[i] = argv[i];
         }
+
         argv_tmp[argc] = buffer;
 
         argc++;
+        //argv[0] = argv_tmp[0];
         return parse_options(argc, argv_tmp);
     }
-    else
-    {
-        //fprintf(stderr, "no pipe found \n");
-        return parse_options(argc, argv);
-    }
-
-    for(int i = 0; i < argc; ++i)
-    {
-        printf("arg[%d]: %s\n", i, argv[i]);
-    }
-      
-    return 0; 
-    //return parse_options(argc, argv);
+     
+    return parse_options(argc, argv);
 }
 
 // 11052020 

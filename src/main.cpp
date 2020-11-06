@@ -35,12 +35,12 @@ main(int argc, char* argv[])
     return parse_options(argc, argv);
 }
 
-// 11052020 
+// output
+// $ echo abc | ./rx abc
+// pattern: "abc" -> input: "abc"
 
-// [brian@monster-island src]$ echo "t1" | ./rx
-// Read: t1
-// arg[0]: ./rx
-// [brian@monster-island src]$ echo "t1" | ./rx abc
-// Read: t1
-// arg[0]: ./rx
-// arg[1]: abc
+// 0: abc
+
+// Found 1 matches:
+// abc
+

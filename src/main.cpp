@@ -9,16 +9,17 @@
 #define BUFFERSIZE 100
 
 int
-main(int argc, char** argv)
+main(int argc, char* argv[])
 {
-    char buffer[255];
-    struct termios t;
+    termios t;
     if (tcgetattr(STDIN_FILENO, &t) < 0)
-    {   
+    { 
+        char buffer[255]; // buffer for pipe  
         scanf("%s", (char*)&buffer);
-        //fprintf(stderr, "Read: %s\n", (char*)&buffer);
 
         char* argv_tmp[255];
+        
+        // can't I just assing the beg address?
         //argv_tmp = argv;
 		//argv_tmp[0] = argv[0];
 
@@ -26,12 +27,10 @@ main(int argc, char** argv)
         {
             argv_tmp[i] = argv[i];
         }
-
         argv_tmp[argc] = buffer;
 
-        argc++;
-        //argv[0] = argv_tmp[0];
-        return parse_options(argc, argv_tmp);
+        //argv = &argv_tmp;
+        return parse_options(++argc, argv_tmp);
     }
      
     return parse_options(argc, argv);

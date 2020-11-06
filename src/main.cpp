@@ -1,12 +1,9 @@
-#include "rx.hpp"
-#include "../config.h"
 #include <iostream>
 #include <cstring>
-
 #include <unistd.h>
 #include <termios.h>
-
-const int BUFFER_LEN = 0xFF;
+#include "rx.hpp"
+#include "../config.h"
 
 int
 main(int argc, char* argv[])
@@ -16,17 +13,16 @@ main(int argc, char* argv[])
     { 
         // get input from pipe
         char buffer[BUFFER_LEN]; // buffer for pipe  
-        std::cin >> buffer;
+        cin >> buffer;
 
         // add piped buffer to end of args
         char* argv_tmp[BUFFER_LEN];
-        std::memcpy(argv_tmp, argv, sizeof(char*) * argc);
+        memcpy(argv_tmp, argv, sizeof(char*) * argc);
         argv_tmp[argc] = buffer;
 
         //argv = &argv_tmp;
         return parse_options(++argc, argv_tmp);
     }
-     
     return parse_options(argc, argv);
 }
 

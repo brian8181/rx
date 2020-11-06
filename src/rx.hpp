@@ -1,5 +1,5 @@
-#ifndef _RX_H
-#define _RX_H
+#ifndef _RX_HPP
+#define _RX_HPP
 
 #include <string>
 #include <getopt.h>
@@ -18,6 +18,7 @@ void print_help();
 int parse_options(int argc, char *argv[]);
 
 // constants
+const int BUFFER_LEN = 0xFF;
 const int DEFAULT_ARGC = 2;
 
 #endif

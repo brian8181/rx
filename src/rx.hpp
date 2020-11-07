@@ -1,5 +1,5 @@
-#ifndef _RX_H
-#define _RX_H
+#ifndef _RX_HPP
+#define _RX_HPP
 
 #include <string>
 #include <getopt.h>
@@ -14,10 +14,11 @@ const string FMT_RESET = "\033[0m";
 const string CURRENT_FG_COLOR = FMT_FG_GREEN + FMT_UNDERLINE;
 
 // functions
-void print_help();
 int parse_options(int argc, char *argv[]);
+void print_help();
 
 // constants
+const int BUFFER_LEN = 0xFF;
 const int DEFAULT_ARGC = 2;
 
 #endif

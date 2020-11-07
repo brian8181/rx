@@ -14,8 +14,8 @@ const string FMT_RESET = "\033[0m";
 const string CURRENT_FG_COLOR = FMT_FG_GREEN + FMT_UNDERLINE;
 
 // functions
-void print_help();
 int parse_options(int argc, char *argv[]);
+void print_help();
 
 // constants
 const int BUFFER_LEN = 0xFF;

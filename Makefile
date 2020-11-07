@@ -53,8 +53,8 @@ check:
 # install man pages
 .PHONY: man
 man: 
-	cp ./man/rx.1 $(man1dir)
-	gzip $(man1dir)/rx.1
+	cp ./man/rx.1 /usr/local/share/man/
+	gzip /usr/local/share/man/rx.1
 	mandb
 	
 # uninstall man pages

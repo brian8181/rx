@@ -48,3 +48,47 @@
 ./regx "\\<\b([A-z]+[A-z0-9\\<\\>]*?)+\b\\>" "<tag1>. <tag2><tag3>*<tag5>&<tag6>^<tag7>|<tag8>"
 
 */
+
+/* greedy vs non matches
+
+brian@island:~/src/clone/rx/src$ ./rx a.*b ammmmmbmllllb
+pattern: "a.*b" -> input: "ammmmmbmllllb"
+
+0: ammmmmbmllllb
+
+Found 1 matches:
+ammmmmbmllllb
+
+brian@island:~/src/clone/rx/src$ ./rx a.*?b ammmmmbmllllb
+pattern: "a.*?b" -> input: "ammmmmbmllllb"
+
+0: ammmmmb
+
+Found 1 matches:
+ammmmmbmllllb
+
+*/
+
+/*
+
+brian@island:~/src/clone/rx/src$ ./rx a\\b " a "
+pattern: "a\b" -> input: " a "
+
+0: a
+
+ a
+
+Found 1 matches:brian@island:~/src/clone/rx/src$ ./rx "q(?=u)" "qu"
+pattern: "q(?=u)" -> input: "qu"
+
+0: q
+
+Found 1 matches:
+qu
+
+*/
+
+ 
+
+
+

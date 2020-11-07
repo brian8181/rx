@@ -22,7 +22,8 @@ print_help()
 }
         
 
-int parse_options(int argc, char *argv[])
+int 
+parse_options(int argc, char *argv[])
 {
     int opt = 0;
     int option_index = 0;
@@ -51,10 +52,10 @@ int parse_options(int argc, char *argv[])
 	    }
     }
 
-    if (optind <= (argc - DEFAULT_ARGC)) // not correct number of args
+    if (argc <= 2) // not correct number of args
     {
-        fprintf(stderr, "Expected argument after options, -h for help\n");
-        exit(EXIT_FAILURE);
+         fprintf(stderr, "Expected argument after options, -h for help\n");
+         exit(EXIT_FAILURE);
     }
 
     // single mode: mockup

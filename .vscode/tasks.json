@@ -22,6 +22,18 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "MAKE DEBUGGDB",
+            "type": "shell",
+            "command": "make debuggdb",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

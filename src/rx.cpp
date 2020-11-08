@@ -3,7 +3,6 @@
 #include <regex>
 #include <getopt.h>
 #include "rx.hpp"
-#include <stdio.h>
 
 static struct option long_options[] =
     {
@@ -20,7 +19,6 @@ print_help()
          << FMT_UNDERLINE << "PATTERN" << FMT_RESET << " "
          << FMT_UNDERLINE << "INPUT" << FMT_RESET << "\n\n";
 }
-        
 
 int 
 parse_options(int argc, char *argv[])
@@ -37,7 +35,7 @@ parse_options(int argc, char *argv[])
         {
         case 'h':
             print_help();
-            return 0;
+            return EXIT_SUCCESS;
         case 'v':
             verbose_flag = true;
             break;
@@ -46,7 +44,8 @@ parse_options(int argc, char *argv[])
             break;
         default: // unknown option before args
     	    {
-        	    fprintf(stderr, "Unexpected option, -h for help\n");
+                cerr << "Unexpected option, -h for help\n";
+        	    //fprintf(stderr, "Unexpected option, -h for help\n");
             	return EXIT_FAILURE;
         	}
 	    }
@@ -54,11 +53,12 @@ parse_options(int argc, char *argv[])
 
     if (argc <= 2) // not correct number of args
     {
-         fprintf(stderr, "Expected argument after options, -h for help\n");
-         exit(EXIT_FAILURE);
+        cerr << "Expected argument after options, -h for help\n";
+        //fprintf(stderr, "Expected argument after options, -h for help\n");
+        exit(EXIT_FAILURE);
     }
 
-    // single mode: mockup
+    // single mode: mockup I need to shit or get off the pot aready
     if (single_flag)
     {
         cout << "Single Match Mode" << endl;
@@ -90,21 +90,31 @@ parse_options(int argc, char *argv[])
         auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
         auto end = sregex_iterator();
 
+        if(src_epx.mark_count() != 0)
+        {
+            cout << 0;
+            ++idx;
+        }
+        
         for (sregex_iterator i = begin; i != end; ++i)
         {
             smatch match = *i;
             int pos = match.position() + (idx * (CURRENT_FG_COLOR.length() + FMT_RESET.length()));
             int len = match.length();
 
-            // set bash green start postion
-            bash_str.insert(pos, CURRENT_FG_COLOR);
+            if(single_flag && ( match.position() != 0 || src.length() != (size_t)match.length() ))
+            {
+                // set bash green start postion
+                bash_str.insert(pos, CURRENT_FG_COLOR);
 
-            // reset bash color position
-            pos = pos + CURRENT_FG_COLOR.length() + len;
-            bash_str.insert(pos, FMT_RESET);
+                // reset bash color position
+                pos = pos + CURRENT_FG_COLOR.length() + len;
+                bash_str.insert(pos, FMT_RESET);
 
-            cout << idx << ": " << src.substr(match.position(), match.length()) << endl;
-            ++idx;
+                cout << idx << ": " << src.substr(match.position(), match.length()) << endl;
+                ++idx;
+            }
+           
         }
         cout << "\nFound " << std::distance(begin, end) << " matches:\n";
         cout << bash_str << "\n\n";

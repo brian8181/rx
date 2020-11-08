@@ -25,7 +25,7 @@ AC_PROG_INSTALL
 
 
 # Enable "automake" to simplify creating makefiles:
-# AM_INIT_AUTOMAKE([subdir-objects -Wall -Werror])
+AM_INIT_AUTOMAKE([])
 AC_CONFIG_FILES([Makefile])
 
 # Look for a CPP compiler:

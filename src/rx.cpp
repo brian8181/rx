@@ -46,7 +46,7 @@ parse_options(int argc, char *argv[])
     	    {
                 cerr << "Unexpected option, -h for help\n";
         	    //fprintf(stderr, "Unexpected option, -h for help\n");
-            	return EXIT_FAILURE;
+            	exit(EXIT_FAILURE);
         	}
 	    }
     }

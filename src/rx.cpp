@@ -45,8 +45,7 @@ parse_options(int argc, char *argv[])
         default: // unknown option before args
     	    {
                 cerr << "Unexpected option, -h for help\n";
-        	    //fprintf(stderr, "Unexpected option, -h for help\n");
-            	exit(EXIT_FAILURE);
+                exit(EXIT_FAILURE);
         	}
 	    }
     }
@@ -54,14 +53,7 @@ parse_options(int argc, char *argv[])
     if (argc <= 2) // not correct number of args
     {
         cerr << "Expected argument after options, -h for help\n";
-        //fprintf(stderr, "Expected argument after options, -h for help\n");
         exit(EXIT_FAILURE);
-    }
-
-    // single mode: mockup I need to shit or get off the pot aready
-    if (single_flag)
-    {
-        cout << "Single Match Mode" << endl;
     }
 
     if (verbose_flag)

@@ -20,7 +20,6 @@ print_help()
          << FMT_UNDERLINE << "PATTERN" << FMT_RESET << " "
          << FMT_UNDERLINE << "INPUT" << FMT_RESET << "\n\n";
 }
-        
 
 int 
 parse_options(int argc, char *argv[])
@@ -55,7 +54,7 @@ parse_options(int argc, char *argv[])
     if (argc <= 2) // not correct number of args
     {
          fprintf(stderr, "Expected argument after options, -h for help\n");
-         exit(EXIT_FAILURE);
+         return EXIT_FAILURE;
     }
 
     // single mode: mockup

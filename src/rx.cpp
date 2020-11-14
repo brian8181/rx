@@ -45,7 +45,7 @@ parse_options(int argc, char *argv[])
         default: // unknown option before args
     	    {
                 cerr << "Unexpected option, -h for help\n";
-                exit(EXIT_FAILURE);
+                return EXIT_FAILURE;
         	}
 	    }
     }
@@ -53,7 +53,7 @@ parse_options(int argc, char *argv[])
     if (argc <= 2) // not correct number of args
     {
         cerr << "Expected argument after options, -h for help\n";
-        exit(EXIT_FAILURE);
+        return EXIT_FAILURE;
     }
 
     if (verbose_flag)
@@ -70,10 +70,11 @@ parse_options(int argc, char *argv[])
         src = argv[i];
 
         cout << "pattern: "
-             << "\"" << exp << "\""
-             << " -> "
-             << "input: "
-             << "\"" << src << "\""
+             << "\"" << exp << "\""if(src_epx.mark_count() != 0)
+        {
+            cout << 0;
+            ++idx;
+        }
              << "\n\n";
 
         int idx = 0;
@@ -82,12 +83,6 @@ parse_options(int argc, char *argv[])
         auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
         auto end = sregex_iterator();
 
-        if(src_epx.mark_count() != 0)
-        {
-            cout << 0;
-            ++idx;
-        }
-        
         for (sregex_iterator i = begin; i != end; ++i)
         {
             smatch match = *i;

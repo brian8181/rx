@@ -56,11 +56,11 @@ parse_options(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
-    // single mode: mockup, do I need THIS!
-    if (single_flag)
-    {
-        cout << "Single Match Mode" << endl;
-    }
+    // // single mode: mockup, do I need THIS!
+    // if (single_flag)
+    // {
+    //     cout << "Single Match Mode" << endl;
+    // }
 
     if (verbose_flag)
     {
@@ -94,7 +94,7 @@ parse_options(int argc, char *argv[])
             int pos = match.position() + (idx * (CURRENT_FG_COLOR.length() + FMT_RESET.length()));
             int len = match.length();
 
-            if(single_flag && ( match.position() != 0 || src.length() != (size_t)match.length() ))
+            //if(single_flag && ( match.position() != 0 || src.length() != (size_t)match.length() ))
             {
                 // set bash green start postion
                 bash_str.insert(pos, CURRENT_FG_COLOR);

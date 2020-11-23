@@ -75,11 +75,11 @@ parse_options(int argc, char *argv[])
     {
         src = argv[i];
 
-        cout << "pattern: "
-            << "\"" << exp << "\""
+        cout << FMT_FG_RED << "pattern: " << FMT_RESET
+            << "\"" << FMT_FG_YELLOW << exp << FMT_RESET << "\""
             << " -> "
-            << "input: "
-            << "\"" << src << "\""
+            << FMT_FG_RED << "input: " << FMT_RESET
+            << "\"" << FMT_FG_YELLOW << src << FMT_RESET <<"\""
             << "\n\n";
 
         int idx = 0;

@@ -8,6 +8,8 @@ using namespace std;
 
 // shell color constants
 const string FMT_FG_GREEN = "\033[32m";
+const string FMT_FG_RED = "\033[31m";
+const string FMT_FG_YELLOW = "\033[33m";
 const string FMT_UNDERLINE = "\033[4m";
 const string FMT_BOLD = "\033[1m";
 const string FMT_RESET = "\033[0m";

@@ -36,9 +36,9 @@ $(APPNAME): rx.o main.o
 	 #$(CXX) $(CXXFLAGS) $(OBJDIR)/rx.o $(OBJDIR)/main.o -o $(SRCDIR)/$@
 
 rx.o main.o:
-	#$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/rx.$(EXT) -o $(SRCDIR)/rx.o
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/main.$(EXT) -o $(SRCDIR)/main.o
+	#$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 rx_test: rx_test.o
 	$(CXX) $(CXXFLAGS) $(SRCDIR)/rx_test.o $(SRCDIR)/rx.o $(LDFLAGS) -o $(SRCDIR)/rx_test
@@ -65,12 +65,12 @@ unman:
 
 .PHONY: install
 install: man
-	cp $(SRCDIR)/$(APPNAME) $(prefix)/bin/$(APPNAME)
+	cp $(SRCDIR)/$(APPNAME) $(prefix)/bin/$(APPNAME)#$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 .PHONY: uninstall
 uninstall: unman
 	rm $(prefix)/bin/$(APPNAME)
-
+#$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 # delete object files & app executable
 .PHONY: clean
 clean:

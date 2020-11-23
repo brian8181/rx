@@ -1,5 +1,4 @@
-main.o: src/main.cpp /usr/include/stdc-predef.h \
- /usr/include/c++/10/iostream \
+rx.o: src/rx.cpp /usr/include/stdc-predef.h /usr/include/c++/10/iostream \
  /usr/include/c++/10/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
  /usr/include/c++/10/x86_64-redhat-linux/bits/os_defines.h \
@@ -118,19 +117,62 @@ main.o: src/main.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/10/bits/locale_facets.tcc \
  /usr/include/c++/10/bits/basic_ios.tcc \
  /usr/include/c++/10/bits/ostream.tcc /usr/include/c++/10/istream \
- /usr/include/c++/10/bits/istream.tcc /usr/include/c++/10/cstring \
- /usr/include/string.h /usr/include/strings.h /usr/include/unistd.h \
- /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
- /usr/include/bits/confname.h /usr/include/bits/getopt_posix.h \
- /usr/include/bits/getopt_core.h /usr/include/bits/unistd_ext.h \
- /usr/include/termios.h /usr/include/bits/termios.h \
- /usr/include/bits/termios-struct.h /usr/include/bits/termios-c_cc.h \
- /usr/include/bits/termios-c_iflag.h /usr/include/bits/termios-c_oflag.h \
- /usr/include/bits/termios-baud.h /usr/include/bits/termios-c_cflag.h \
- /usr/include/bits/termios-c_lflag.h /usr/include/bits/termios-tcflow.h \
- /usr/include/bits/termios-misc.h /usr/include/sys/ttydefaults.h \
- src/rx.hpp /usr/include/getopt.h /usr/include/bits/getopt_ext.h \
- src/../config.h
+ /usr/include/c++/10/bits/istream.tcc /usr/include/c++/10/regex \
+ /usr/include/c++/10/algorithm /usr/include/c++/10/utility \
+ /usr/include/c++/10/bits/stl_relops.h \
+ /usr/include/c++/10/bits/stl_algo.h \
+ /usr/include/c++/10/bits/algorithmfwd.h \
+ /usr/include/c++/10/bits/stl_heap.h \
+ /usr/include/c++/10/bits/stl_tempbuf.h \
+ /usr/include/c++/10/bits/uniform_int_dist.h /usr/include/c++/10/limits \
+ /usr/include/c++/10/bitset /usr/include/c++/10/iterator \
+ /usr/include/c++/10/bits/stream_iterator.h /usr/include/c++/10/locale \
+ /usr/include/c++/10/bits/locale_facets_nonio.h /usr/include/c++/10/ctime \
+ /usr/include/c++/10/x86_64-redhat-linux/bits/time_members.h \
+ /usr/include/c++/10/x86_64-redhat-linux/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/10/bits/codecvt.h \
+ /usr/include/c++/10/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/10/bits/locale_conv.h \
+ /usr/include/c++/10/bits/unique_ptr.h /usr/include/c++/10/tuple \
+ /usr/include/c++/10/array /usr/include/c++/10/bits/uses_allocator.h \
+ /usr/include/c++/10/bits/invoke.h /usr/include/c++/10/memory \
+ /usr/include/c++/10/bits/stl_uninitialized.h \
+ /usr/include/c++/10/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/10/bits/ranges_uninitialized.h \
+ /usr/include/c++/10/ext/concurrence.h \
+ /usr/include/c++/10/bits/shared_ptr.h \
+ /usr/include/c++/10/bits/shared_ptr_base.h \
+ /usr/include/c++/10/bits/allocated_ptr.h \
+ /usr/include/c++/10/bits/refwrap.h \
+ /usr/include/c++/10/ext/aligned_buffer.h \
+ /usr/include/c++/10/bits/shared_ptr_atomic.h \
+ /usr/include/c++/10/bits/atomic_base.h \
+ /usr/include/c++/10/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/10/backward/auto_ptr.h /usr/include/c++/10/sstream \
+ /usr/include/c++/10/bits/sstream.tcc /usr/include/c++/10/stack \
+ /usr/include/c++/10/deque /usr/include/c++/10/bits/stl_deque.h \
+ /usr/include/c++/10/bits/deque.tcc /usr/include/c++/10/bits/stl_stack.h \
+ /usr/include/c++/10/vector /usr/include/c++/10/bits/stl_vector.h \
+ /usr/include/c++/10/bits/stl_bvector.h \
+ /usr/include/c++/10/bits/vector.tcc /usr/include/c++/10/map \
+ /usr/include/c++/10/bits/stl_tree.h /usr/include/c++/10/bits/stl_map.h \
+ /usr/include/c++/10/bits/stl_multimap.h \
+ /usr/include/c++/10/bits/erase_if.h /usr/include/c++/10/cstring \
+ /usr/include/string.h /usr/include/strings.h \
+ /usr/include/c++/10/bits/std_function.h \
+ /usr/include/c++/10/bits/regex_constants.h \
+ /usr/include/c++/10/bits/regex_error.h \
+ /usr/include/c++/10/bits/regex_automaton.h \
+ /usr/include/c++/10/bits/regex_automaton.tcc \
+ /usr/include/c++/10/bits/regex_scanner.h \
+ /usr/include/c++/10/bits/regex_scanner.tcc \
+ /usr/include/c++/10/bits/regex_compiler.h \
+ /usr/include/c++/10/bits/regex_compiler.tcc \
+ /usr/include/c++/10/bits/regex.h /usr/include/c++/10/bits/regex.tcc \
+ /usr/include/c++/10/bits/regex_executor.h \
+ /usr/include/c++/10/bits/regex_executor.tcc /usr/include/getopt.h \
+ /usr/include/bits/getopt_core.h /usr/include/bits/getopt_ext.h \
+ src/rx.hpp
 /usr/include/stdc-predef.h:
 /usr/include/c++/10/iostream:
 /usr/include/c++/10/x86_64-redhat-linux/bits/c++config.h:
@@ -308,29 +350,80 @@ main.o: src/main.cpp /usr/include/stdc-predef.h \
 /usr/include/c++/10/bits/ostream.tcc:
 /usr/include/c++/10/istream:
 /usr/include/c++/10/bits/istream.tcc:
+/usr/include/c++/10/regex:
+/usr/include/c++/10/algorithm:
+/usr/include/c++/10/utility:
+/usr/include/c++/10/bits/stl_relops.h:
+/usr/include/c++/10/bits/stl_algo.h:
+/usr/include/c++/10/bits/algorithmfwd.h:
+/usr/include/c++/10/bits/stl_heap.h:
+/usr/include/c++/10/bits/stl_tempbuf.h:
+/usr/include/c++/10/bits/uniform_int_dist.h:
+/usr/include/c++/10/limits:
+/usr/include/c++/10/bitset:
+/usr/include/c++/10/iterator:
+/usr/include/c++/10/bits/stream_iterator.h:
+/usr/include/c++/10/locale:
+/usr/include/c++/10/bits/locale_facets_nonio.h:
+/usr/include/c++/10/ctime:
+/usr/include/c++/10/x86_64-redhat-linux/bits/time_members.h:
+/usr/include/c++/10/x86_64-redhat-linux/bits/messages_members.h:
+/usr/include/libintl.h:
+/usr/include/c++/10/bits/codecvt.h:
+/usr/include/c++/10/bits/locale_facets_nonio.tcc:
+/usr/include/c++/10/bits/locale_conv.h:
+/usr/include/c++/10/bits/unique_ptr.h:
+/usr/include/c++/10/tuple:
+/usr/include/c++/10/array:
+/usr/include/c++/10/bits/uses_allocator.h:
+/usr/include/c++/10/bits/invoke.h:
+/usr/include/c++/10/memory:
+/usr/include/c++/10/bits/stl_uninitialized.h:
+/usr/include/c++/10/bits/stl_raw_storage_iter.h:
+/usr/include/c++/10/bits/ranges_uninitialized.h:
+/usr/include/c++/10/ext/concurrence.h:
+/usr/include/c++/10/bits/shared_ptr.h:
+/usr/include/c++/10/bits/shared_ptr_base.h:
+/usr/include/c++/10/bits/allocated_ptr.h:
+/usr/include/c++/10/bits/refwrap.h:
+/usr/include/c++/10/ext/aligned_buffer.h:
+/usr/include/c++/10/bits/shared_ptr_atomic.h:
+/usr/include/c++/10/bits/atomic_base.h:
+/usr/include/c++/10/bits/atomic_lockfree_defines.h:
+/usr/include/c++/10/backward/auto_ptr.h:
+/usr/include/c++/10/sstream:
+/usr/include/c++/10/bits/sstream.tcc:
+/usr/include/c++/10/stack:
+/usr/include/c++/10/deque:
+/usr/include/c++/10/bits/stl_deque.h:
+/usr/include/c++/10/bits/deque.tcc:
+/usr/include/c++/10/bits/stl_stack.h:
+/usr/include/c++/10/vector:
+/usr/include/c++/10/bits/stl_vector.h:
+/usr/include/c++/10/bits/stl_bvector.h:
+/usr/include/c++/10/bits/vector.tcc:
+/usr/include/c++/10/map:
+/usr/include/c++/10/bits/stl_tree.h:
+/usr/include/c++/10/bits/stl_map.h:
+/usr/include/c++/10/bits/stl_multimap.h:
+/usr/include/c++/10/bits/erase_if.h:
 /usr/include/c++/10/cstring:
 /usr/include/string.h:
 /usr/include/strings.h:
-/usr/include/unistd.h:
-/usr/include/bits/posix_opt.h:
-/usr/include/bits/environments.h:
-/usr/include/bits/confname.h:
-/usr/include/bits/getopt_posix.h:
-/usr/include/bits/getopt_core.h:
-/usr/include/bits/unistd_ext.h:
-/usr/include/termios.h:
-/usr/include/bits/termios.h:
-/usr/include/bits/termios-struct.h:
-/usr/include/bits/termios-c_cc.h:
-/usr/include/bits/termios-c_iflag.h:
-/usr/include/bits/termios-c_oflag.h:
-/usr/include/bits/termios-baud.h:
-/usr/include/bits/termios-c_cflag.h:
-/usr/include/bits/termios-c_lflag.h:
-/usr/include/bits/termios-tcflow.h:
-/usr/include/bits/termios-misc.h:
-/usr/include/sys/ttydefaults.h:
-src/rx.hpp:
+/usr/include/c++/10/bits/std_function.h:
+/usr/include/c++/10/bits/regex_constants.h:
+/usr/include/c++/10/bits/regex_error.h:
+/usr/include/c++/10/bits/regex_automaton.h:
+/usr/include/c++/10/bits/regex_automaton.tcc:
+/usr/include/c++/10/bits/regex_scanner.h:
+/usr/include/c++/10/bits/regex_scanner.tcc:
+/usr/include/c++/10/bits/regex_compiler.h:
+/usr/include/c++/10/bits/regex_compiler.tcc:
+/usr/include/c++/10/bits/regex.h:
+/usr/include/c++/10/bits/regex.tcc:
+/usr/include/c++/10/bits/regex_executor.h:
+/usr/include/c++/10/bits/regex_executor.tcc:
 /usr/include/getopt.h:
+/usr/include/bits/getopt_core.h:
 /usr/include/bits/getopt_ext.h:
-src/../config.h:
+src/rx.hpp:

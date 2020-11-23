@@ -9,7 +9,7 @@ AC_CONFIG_SRCDIR([src/main.cpp])
 # Put configuration results here, so we can easily #include them:
 AC_CONFIG_HEADERS([config.h])
 # Put autotools auxiliary files in a subdir, so they don't clutter top dir:
-AC_CONFIG_AUX_DIR([build-aux])
+#AC_CONFIG_AUX_DIR([build-aux])
 
 # ======================================
 # Check for various headers and settings

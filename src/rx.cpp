@@ -7,8 +7,8 @@
 static struct option long_options[] =
 {
     {"verbose", no_argument, 0, 'v'},
-    {"help", no_argument, 0, 'h'},
-    {"single", no_argument, 0, 's'}
+    {"help", no_argument, 0, 'h'}//,
+    //{"single", no_argument, 0, 's'}
 };
 
 void 
@@ -26,7 +26,7 @@ parse_options(int argc, char *argv[])
     int opt = 0;
     int option_index = 0;
     bool verbose_flag = false;
-    bool single_flag = false;
+    //bool single_flag = false;
 
     optind = 0;
     while ((opt = getopt_long(argc, argv, "hvs", long_options, &option_index)) != -1)
@@ -39,9 +39,9 @@ parse_options(int argc, char *argv[])
         case 'v':
             verbose_flag = true;
             break;
-        case 's':
-            single_flag = true;
-            break;
+        // case 's':
+        //     single_flag = true;
+        //     break;
         default: // unknown option before args
     	    {
                 cerr << "Unexpected option, -h for help\n";

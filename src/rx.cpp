@@ -5,11 +5,11 @@
 #include "rx.hpp"
 
 static struct option long_options[] =
-    {
-        {"verbose", no_argument, 0, 'v'},
-        {"help", no_argument, 0, 'h'},
-        {"single", no_argument, 0, 's'}
-    };
+{
+    {"verbose", no_argument, 0, 'v'},
+    {"help", no_argument, 0, 'h'},
+    {"single", no_argument, 0, 's'}
+};
 
 void 
 print_help()
@@ -56,6 +56,12 @@ parse_options(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
+    // single mode: mockup, do I need THIS!
+    if (single_flag)
+    {
+        cout << "Single Match Mode" << endl;
+    }
+
     if (verbose_flag)
     {
         print_help();
@@ -70,12 +76,11 @@ parse_options(int argc, char *argv[])
         src = argv[i];
 
         cout << "pattern: "
-             << "\"" << exp << "\""if(src_epx.mark_count() != 0)
-        {
-            cout << 0;
-            ++idx;
-        }
-             << "\n\n";
+            << "\"" << exp << "\""
+            << " -> "
+            << "input: "
+            << "\"" << src << "\""
+            << "\n\n";
 
         int idx = 0;
         string bash_str = src;

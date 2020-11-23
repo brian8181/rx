@@ -24,7 +24,8 @@ debug: all
 
 # complie & link for debug GDBversion variable
 debuggdb: CXXFLAGS += -DDEBUG -ggdb
-debuggdb: all
+#debuggdb: all
+debuggdb: rx
   
 # complie & link
 all: $(APPNAME) rx_test
@@ -32,7 +33,7 @@ all: $(APPNAME) rx_test
 # compile only
 $(APPNAME): rx.o main.o
 	 $(CXX) $(CXXFLAGS) $(OBJDIR)/rx.o $(OBJDIR)/main.o -o $(SRCDIR)/$(APPNAME)
-	 #$(CXX) $(CXXFLAGS) rx.o main.o -o $(SRCDIR)/$@
+	 #$(CXX) $(CXXFLAGS) $(OBJDIR)/rx.o $(OBJDIR)/main.o -o $(SRCDIR)/$@
 
 rx.o main.o:
 	#$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)

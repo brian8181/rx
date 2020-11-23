@@ -20,6 +20,17 @@ print_help()
          << FMT_UNDERLINE << "INPUT" << FMT_RESET << "\n\n";
 }
 
+void 
+print_match_header(const string& pattern, const string& src)
+{
+    cout << FMT_FG_RED << "pattern: " << FMT_RESET
+        << "\"" << FMT_FG_YELLOW << pattern << FMT_RESET << "\""
+        << " -> "
+        << FMT_FG_RED << "input: " << FMT_RESET
+        << "\"" << FMT_FG_YELLOW << src << FMT_RESET <<"\""
+        << "\n\n";
+}
+
 int 
 parse_options(int argc, char *argv[])
 {
@@ -75,12 +86,14 @@ parse_options(int argc, char *argv[])
     {
         src = argv[i];
 
-        cout << FMT_FG_RED << "pattern: " << FMT_RESET
-            << "\"" << FMT_FG_YELLOW << exp << FMT_RESET << "\""
-            << " -> "
-            << FMT_FG_RED << "input: " << FMT_RESET
-            << "\"" << FMT_FG_YELLOW << src << FMT_RESET <<"\""
-            << "\n\n";
+        // cout << FMT_FG_RED << "pattern: " << FMT_RESET
+        //     << "\"" << FMT_FG_YELLOW << exp << FMT_RESET << "\""
+        //     << " -> "
+        //     << FMT_FG_RED << "input: " << FMT_RESET
+        //     << "\"" << FMT_FG_YELLOW << src << FMT_RESET <<"\""
+        //     << "\n\n";
+
+        print_match_header(exp, src);
 
         int idx = 0;
         string bash_str = src;

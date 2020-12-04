@@ -16,6 +16,8 @@ main(int argc, char* argv[])
         cin >> buffer;
 
         // add piped buffer to end of args
+        // note: create array of char*, number of char* is argc
+        // char* argv_tmp[] = new char* [argc];
         char* argv_tmp[BUFFER_LEN];
         memcpy(argv_tmp, argv, sizeof(char*) * argc);
         argv_tmp[argc] = buffer;

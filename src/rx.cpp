@@ -14,7 +14,7 @@ static struct option long_options[] =
 void
 print_help()
 {
-	std::cout << "\n"
+	cout << "\n"
 		<< FMT_BOLD << "rx" << FMT_RESET << " "
 		<< FMT_UNDERLINE << "PATTERN" << FMT_RESET << " "
 		<< FMT_UNDERLINE << "INPUT" << FMT_RESET << "\n\n";

@@ -53,8 +53,8 @@ check:
 # install man pages
 .PHONY: man
 man: 
-	cp ./man/rx.1 $(man1dir)
-	gzip $(man1dir)/rx.1
+	cp $(man1dir)/../rx.1 $(man1dir)
+	gzip $(man1dir)/../rx.1
 	mandb
 	
 # uninstall man pages
@@ -64,13 +64,13 @@ unman:
 	mandb
 
 .PHONY: install
-install: man
-	cp $(SRCDIR)/$(APPNAME) $(prefix)/bin/$(APPNAME)#$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+install: #man
+	cp $(SRCDIR)/$(APPNAME) $(prefix)/bin/$(APPNAME)
 
 .PHONY: uninstall
 uninstall: unman
 	rm $(prefix)/bin/$(APPNAME)
-#$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+	
 # delete object files & app executable
 .PHONY: clean
 clean:

@@ -3,8 +3,8 @@
 AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = $(ACLOCAL_FLAGS)
 
-bin_PROGRAMS = src/rx
-rx_SOURCES = main.cpp rx.cpp
+#bin_PROGRAMS = src/rx
+#rx_SOURCES = main.cpp rx.cpp
 
 #rx_LDADD = libHelloWorld.la
 

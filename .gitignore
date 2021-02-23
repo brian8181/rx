@@ -54,3 +54,6 @@ src/.deps/rx_test.Po
 src/.deps/rx.Po
 src/.dirstamp
 stamp-h1
+configure
+Makefile
+Makefile.in

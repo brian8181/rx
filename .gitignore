@@ -56,4 +56,4 @@ src/.dirstamp
 stamp-h1
 configure
 Makefile
-Makefile.in
+Makefile.i.h

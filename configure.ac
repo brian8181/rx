@@ -1,6 +1,6 @@
 # Autoconf requirements
 # Initialize, but use more options.  Note parameters brackets and whitespace.
-AC_INIT([rx], [0.01], [brian8181@gmail.com.com], [rx], [http://brian8181.com])
+AC_INIT([rx], [0.01], [brian8181@gmail.com], [rx], [http://brian8181.com])
 
 # Force autoconf to be at least this version number:
 AC_PREREQ([2.68])
@@ -16,12 +16,13 @@ AC_CONFIG_HEADERS([config.h])
 # ======================================
 AC_CHECK_HEADERS([netinet/in.h])
 
-#AC_CONFIG_MACRO_DIRS([m4])
+AC_CONFIG_MACRO_DIRS([m4])
 # AC_CHECK_FUNCS([memset])
 # AC_CHECK_HEADERS([netinet/in.h])
 AC_CHECK_HEADER_STDBOOL
 AC_PROG_INSTALL
 #AC_CONFIG_MACRO_DIRS
+
 
 
 # Enable "automake" to simplify creating makefiles:

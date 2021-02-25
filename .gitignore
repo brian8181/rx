@@ -57,3 +57,6 @@ stamp-h1
 configure
 Makefile
 Makefile.i.h
+config.h
+config.h.in~
+.gitignore

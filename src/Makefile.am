@@ -3,6 +3,8 @@
 AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = $(ACLOCAL_FLAGS)
 
+rx_LDFLAGS = -static -lcppunit -L/usr/local/lib/
+
 #bin_PROGRAMS = src/rx
 #aclocalrx_SOURCES = main.cpp rx.cpp
 

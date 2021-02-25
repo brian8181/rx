@@ -27,9 +27,7 @@ AC_PROG_INSTALL
 
 # Enable "automake" to simplify creating makefiles:
 AM_INIT_AUTOMAKE([])
-AC_CONFIG_FILES([Makefile])
-
-# Look for a CPP compiler:
+AC_CONFIG_FILES([Makefile])CPPUNIT_TEST(
 AC_PROG_CXX
 # AC_PROG_CPP
 

@@ -5,34 +5,34 @@
 #include "rx.hpp"
 
 static struct option long_options[] =
-{
-	{"verbose", no_argument, 0, 'v'},
-	{"help", no_argument, 0, 'h'}//,
-	//{"single", no_argument, 0, 's'}
+	{
+		{"verbose", no_argument, 0, 'v'},
+		{"help", no_argument, 0, 'h'} //,
+		//{"single", no_argument, 0, 's'}
 };
 
-void
+void 
 print_help()
 {
 	cout << "\n"
-		<< FMT_BOLD << "rx" << FMT_RESET << " "
-		<< FMT_UNDERLINE << "PATTERN" << FMT_RESET << " "
-		<< FMT_UNDERLINE << "INPUT" << FMT_RESET << "\n\n";
+		 << FMT_BOLD << "rx" << FMT_RESET << " "
+		 << FMT_UNDERLINE << "PATTERN" << FMT_RESET << " "
+		 << FMT_UNDERLINE << "INPUT" << FMT_RESET << "\n\n";
 }
 
-void
-print_match_header(const string& pattern, const string& src)
+void 
+print_match_header(const string &pattern, const string &src)
 {
 	cout << FMT_FG_RED << "pattern: " << FMT_RESET
-		<< "\"" << FMT_FG_YELLOW << pattern << FMT_RESET << "\""
-		<< " -> "
-		<< FMT_FG_RED << "input: " << FMT_RESET
-		<< "\"" << FMT_FG_YELLOW << src << FMT_RESET << "\""
-		<< "\n\n";
+		 << "\"" << FMT_FG_YELLOW << pattern << FMT_RESET << "\""
+		 << " -> "
+		 << FMT_FG_RED << "input: " << FMT_RESET
+		 << "\"" << FMT_FG_YELLOW << src << FMT_RESET << "\""
+		 << "\n\n";
 }
 
-int
-parse_options(int argc, char* argv[])
+int 
+parse_options(int argc, char *argv[])
 {
 	int opt = 0;
 	int option_index = 0;
@@ -51,13 +51,13 @@ parse_options(int argc, char* argv[])
 			verbose_flag = true;
 			break;
 			// case 's':
-			//     single_flag = true;
-			//     break;
+			// single_flag = true;
+			// break;
 		default: // unknown option before args
-		{
-			cerr << "Unexpected option, -h for help\n";
-			return EXIT_FAILURE;
-		}
+			{
+				cerr << "Unexpected option, -h for help\n";
+				return EXIT_FAILURE;
+			}
 		}
 	}
 
@@ -113,11 +113,9 @@ parse_options(int argc, char* argv[])
 				cout << idx << ": " << src.substr(match.position(), match.length()) << endl;
 				++idx;
 			}
-
 		}
 		cout << "\nFound " << std::distance(begin, end) << " matches:\n";
 		cout << bash_str << "\n\n";
 	}
 	return EXIT_SUCCESS;
 }
-

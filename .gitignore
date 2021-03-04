@@ -1,62 +1,31 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-rx
-rx.latest.tgz
-*.xml
-*.gz
-rx_test
-TestBasicMath
-
-# Autotools
-autoscan.log
-configure.scan
 aclocal.m4
-autom4te.cache/*
+AUTHORS
+/autom4te.cache
+/build-aux
+ChangeLog
+compile
+config.h
+config.h.in
+config.h.in~
 config.log
 config.status
-build-aux/depcomp
-build-aux/install-sh
-build-aux/ltmain.sh
-build-aux/missing
-src/.deps/.dirstamp
-src/.deps/main.Po
-src/.deps/rx_test.Po
-src/.deps/rx.Po
-src/.dirstamp
-stamp-h1
 configure
-Makefile
-Makefile.i.h
-config.h
-config.h.in~
-.gitignore
+depcomp
+/.deps
+/.github
+/m4
+Makefile.in
+missing
+NEWS
+README
+README.md
+stamp-h1
+
+src/.deps/
+src/.dirstamp
+src/main.o
+src/rx
+src/rx.o
+src/rx_test
+src/rx_test.o
+

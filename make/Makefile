@@ -15,8 +15,8 @@ LDFLAGS = -static -lcppunit -L/usr/local/lib/
 # Makefile settings - Can be customized.
 APPNAME = rx
 EXT = cpp
-SRCDIR = ./src
-OBJDIR = ./src
+SRCDIR = ../src
+OBJDIR = ../src
 
 # complie & link for debug
 debug: CXXFLAGS += -DDEBUG -g

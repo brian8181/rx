@@ -1,9 +1,10 @@
 AUTOMAKE_OPTIONS = subdir-objects
 
 bin_PROGRAMS = rx
-EXTRA_PROGRAMS = rx_test
+#EXTRA_PROGRAMS = rx_test
 
-rx_SOURCES = src/main.cpp src/rx.cpp src/rx.hpp src/rx_test.cpp src/rx_test.hpp
+#rx_SOURCES = src/main.cpp src/rx.cpp src/rx.hpp src/rx_test.cpp src/rx_test.hpp
+rx_SOURCES = src/main.cpp src/rx.cpp src/rx.hpp
 
 rx_LDADD = $(LDADD) $(DEPS_LIBS) $(ICONV_LIB) $(DL_LIBS)
 

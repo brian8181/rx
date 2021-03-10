@@ -5,7 +5,7 @@
 #include "rx.hpp"
 
 static struct option long_options[] =
-	{
+{
 		{"verbose", no_argument, 0, 'v'},
 		{"help", no_argument, 0, 'h'} //,
 		//{"single", no_argument, 0, 's'}

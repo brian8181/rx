@@ -7,10 +7,9 @@ man1dir = $(mandir)/man1
 
 # Compiler settings - Can be customized.
 CXX = g++
-CXXFLAGS = -pedantic -std=c++11 
+CXXFLAGS = -Wall -std=c++11 -std=c++17 --std=c++2a
 LDFLAGS = -static -lcppunit -L/usr/local/lib/
-# INCLUDES= -I/usr/local/include/cppunit/
-# LINKFLAGS= --static
+INCLUDES= -I/usr/local/include/cppunit/
 
 # Makefile settings - Can be customized.
 APPNAME = rx
@@ -24,8 +23,7 @@ debug: all
 
 # complie & link for debug GDBversion variable
 debuggdb: CXXFLAGS += -DDEBUG -ggdb
-#debuggdb: all
-debuggdb: rx
+debuggdb: all
   
 # complie & link
 all: $(APPNAME) rx_test
@@ -33,15 +31,13 @@ all: $(APPNAME) rx_test
 # compile only
 $(APPNAME): rx.o main.o
 	 $(CXX) $(CXXFLAGS) $(OBJDIR)/rx.o $(OBJDIR)/main.o -o $(SRCDIR)/$(APPNAME)
-	 #$(CXX) $(CXXFLAGS) $(OBJDIR)/rx.o $(OBJDIR)/main.o -o $(SRCDIR)/$@
 
 rx.o main.o:
-	#$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/rx.$(EXT) -o $(SRCDIR)/rx.o
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/main.$(EXT) -o $(SRCDIR)/main.o
 
 rx_test: rx_test.o
-	$(CXX) $(CXXFLAGS) $(SRCDIR)/rx_test.o $(SRCDIR)/rx.o $(LDFLAGS) -o $(SRCDIR)/rx_test
+	$(CXX) $(CXXFLAGS) $(INCLUDES) $(SRCDIR)/rx_test.o $(SRCDIR)/rx.o $(LDFLAGS) -o $(SRCDIR)/rx_test
 
 rx_test.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/rx_test.cpp -o $(SRCDIR)/rx_test.o
@@ -81,6 +77,5 @@ distclean: clean # clean $ distclean are the same
 
 dist: 
 	git archive HEAD | gzip > $(SRCDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz
-	#git archive --output=./$(SRCDIR)$(APPNAME).$(BUILD_VERSION).tar.gz --format=tar HEAD 
 
 dist-gz: dist

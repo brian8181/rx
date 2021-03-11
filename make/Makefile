@@ -1,4 +1,6 @@
 # MAKE TEMPLATE 6-02-2020
+# RUN BEFORE autoreconf -ivfm
+
 BUILD_VERSION = 0.1.0
 
 prefix = /usr/local
@@ -42,6 +44,11 @@ rx_test: rx_test.o
 rx_test.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/rx_test.cpp -o $(SRCDIR)/rx_test.o
 
+autotools_reconf:
+	cd ../
+	autoreconf -ivfm
+	cd ./make
+
 .PHONY: check
 check:
 	echo "Checking ..."
@@ -74,6 +81,7 @@ clean:
 
 .PHONY: distclean
 distclean: clean # clean $ distclean are the same
+	rm ../rx ../config.* ../Makefile ../Makefile.in ../INSTALL ../configure ../stamp-h1 ../aclocal.m4
 
 dist: 
 	git archive HEAD | gzip > $(SRCDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz

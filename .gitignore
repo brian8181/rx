@@ -11,22 +11,21 @@ config.log
 config.status
 configure
 depcomp
-/.deps
-/.github
-/m4
+/.deps/**
+/.github/**
+/m4/**
 Makefile.in
 missing
 NEWS
 README
 README.md
 stamp-h1
+/src/**
 
-src/.deps/
-src/.dirstamp
-src/main.o
-src/rx
-src/rx.o
-src/rx_test
-src/rx_test.o
 
-ChangeLog
+
+
+
+
+
+

@@ -1,1 +1,11 @@
 rx : regular expression match / tester
+
+building
+
+$:autoconf
+$:automake
+$:autoreconf -vimf
+$:./configure
+$:autoreconf -vimf
+$:make
+

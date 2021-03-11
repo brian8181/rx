@@ -21,8 +21,9 @@ README
 README.md
 stamp-h1
 /src/**
-
-
+INSTALL
+Makefile
+rx:w
 
 
 

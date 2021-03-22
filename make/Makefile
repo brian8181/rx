@@ -14,7 +14,7 @@ CXXFLAGS = -Wall -std=c++11 -std=c++17 --std=c++2a
 
 # lib settings
 LDFLAGS = -static -lcppunit -L/usr/local/lib/
-INCLUDES= -I/usr/local/include/cppunit/
+INCLUDES = -I/usr/local/include/cppunit/
 # add addtional libs here
 
 # Makefile settings - Can be customized.

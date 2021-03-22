@@ -12,7 +12,7 @@ static struct option long_options[] =
 		{"single", no_argument, 0, 's'}
 };
 
-void 
+void
 print_help()
 {
 	cout << "\n"
@@ -21,7 +21,7 @@ print_help()
 		 << FMT_UNDERLINE << "INPUT" << FMT_RESET << "\n\n";
 }
 
-void 
+void
 print_match_header(const string &pattern, const string &src)
 {
 	cout << FMT_FG_RED << "pattern: " << FMT_RESET
@@ -32,7 +32,7 @@ print_match_header(const string &pattern, const string &src)
 		 << "\n\n";
 }
 
-int 
+int
 parse_options(int argc, char *argv[])
 {
 	int opt = 0;
@@ -85,12 +85,18 @@ parse_options(int argc, char *argv[])
 
 	int current_idx = optind + 1;
 	string src;
-	string exp(argv[optind]);
+	string exp(argv[optind]);	if (single_flag)
+	{
+	    cout << "Single Match Mode" << endl;
+	}
 
+	if (verbose_flag)
+	{
+		print_help();
+	}
 	for (int i = current_idx; i < argc; ++i)
 	{
 		src = argv[i];
-
 		// print command inputs
 		print_match_header(exp, src);
 

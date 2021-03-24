@@ -8,6 +8,10 @@ rx_SOURCES = src/main.cpp src/rx.cpp src/rx.hpp
 
 rx_LDADD = $(LDADD) $(DEPS_LIBS) $(ICONV_LIB) $(DL_LIBS)
 
+LIBTOOL_DEPS = @LIBTOOL_DEPS@
+libtool: $(LIBTOOL_DEPS)
+        $(SHELL) ./config.status libtool
+
 
 #distdir = $(PACKAGE)-$(VERSION)
 

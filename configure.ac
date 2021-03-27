@@ -2,10 +2,9 @@
 # Initialize, but use more options.  Note parameters brackets and whitespace.
 AC_INIT([rx], [0.01], [brian8181@gmail.com], [rx], [http://brian8181.com])
 
-LT_PREREQ([2.4.6])
-LT_INIT([disable-shared])
-AC_SUBST([LIBTOOL_DEPS])
-
+#LT_PREREQ([2.4.6])
+#LT_INIT([disable-shared])
+#AC_SUBST([LIBTOOL_DEPS])
 
 # Force autoconf to be at least this version number
 AC_PREREQ([2.68])
@@ -19,28 +18,21 @@ AC_CONFIG_AUX_DIR([build-aux])
 # ======================================
 # Check for various headers and settings
 # ======================================
-AC_CHECK_HEADERS([netinet/in.h])
+#AC_CHECK_HEADERS([termios.h unistd.h getopt.h])
 
-
-AC_CONFIG_MACRO_DIRS([m4])
-# AC_CHECK_FUNCS([memset])
-# AC_CHECK_HEADERS([netinet/in.h])
-AC_CHECK_HEADER_STDBOOL
-AC_PROG_INSTALL
+#AC_CONFIG_MACRO_DIRS([m4])
+#AC_CHECK_FUNCS([memset])
+#AC_CHECK_HEADERS([netinet/in.h])
+#AC_CHECK_HEADER_STDBOOL
+#AC_PROG_INSTALL
 #AC_CONFIG_MACRO_DIRS
-
-
 
 # Enable "automake" to simplify creating makefiles:
 AM_INIT_AUTOMAKE([])
-AC_CONFIG_HEADERS([src/config.h])
-
 AC_CONFIG_FILES([Makefile])
+
 AC_PROG_CXX
 AC_PROG_CPP
-
-# Perhaps check for: (more) programs, libraries, header files, types,
-# structures, compiler characteristics, library functions, system services.
 
 # Do final output.
 AC_OUTPUT

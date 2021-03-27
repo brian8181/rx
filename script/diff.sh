@@ -1,17 +1,18 @@
-#! /usr/bin/bash
+ROOT=/home/brian/src/rx
+FULL_NAME=$ROOT/$NAME
+NAME=$1
+LIDX=$2
+RIDX=$3
+#EXEC=~/script/git/generic_diff.sh
+EXEC_PARAMS="diff -y"
 
-FULL_NAME=$1
-LHASH=$2
-RHASH=$3
-SIDE_BY_SIDE=$4
+#echo "Debug: ROOT:$ROOT NAME:${FULL_NAME##/*/} FULL_NAME:$FULL_NAME LIDX:$LIDX RIDX:$RIDX"
 
-echo "Debug: FULL_NAME:$FULL_NAME LHASH:$LHASH RHASH:$RHASH"
+#LHASH=$(~/script/git_hist.sh $FULL_NAME | egrep "^\s{4,5}$LIDX\s" | cut -d'|' -f2)
+#RHASH=$(~/script/git_hist.sh $FULL_NAME | egrep "^\s{4,5}$RIDX\s" | cut -d'|' -f2)
 
-# clean up
-#  d0c8a1a7c57559fca3f93f9458011e65ce65cbfb.tmp   
-#  4774cf3632d9047af8d0c1b77cd503d677e4eb3e.tmp
-#MASK=[0-9a-f]??????????????????????????????????????[0-9a-f].tmp
-#rm $MASK
+#echo "Debug: EXEC:$EXEC LHASH:$LHASH RHASH:$RHASH"
 
-~/script/git_diff.sh $FULL_NAME $LHASH $RHASH $SIDE_BY_SIDE
+#$EXEC $FULL_NAME $LHASH $RHASH "$EXEC_PARAMS"
 
+./generic_diff.sh $NAME $LIDX $RIDX "$EXEC_PARAMS"

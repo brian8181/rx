@@ -1,4 +1,0 @@
-autoscan: warning: missing AC_CHECK_HEADERS([termios.h]) wanted by: 
-	src/main.cpp:4
-autoscan: warning: missing AC_TYPE_SIZE_T wanted by: 
-	src/rx.cpp:117

@@ -25,6 +25,7 @@ INSTALL
 Makefile
 rx:w
 /script/.data/**
+script/?
 
 
 

@@ -1,38 +1,37 @@
-# Autoconf requirements
-# Initialize, but use more options.  Note parameters brackets and whitespace.
-AC_INIT([rx], [0.01], [brian8181@gmail.com], [rx], [http://brian8181.com])
 
-#LT_PREREQ([2.4.6])
-#LT_INIT([disable-shared])
-#AC_SUBST([LIBTOOL_DEPS])
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
 
-# Force autoconf to be at least this version number
-AC_PREREQ([2.68])
-# Safety check - list a source file that wouldn't be in other directories:
-AC_CONFIG_SRCDIR([src/main.cpp])
-# Put configuration results here, so we can easily #include them:
+AC_PREREQ([2.69])
+AC_INIT([FULL-PACKAGE-NAME],[VERSION],[BUG-REPORT-ADDRESS])
+AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADERS([config.h])
-# Put autotools auxiliary files in a subdir, so they don't clutter top dir:
-AC_CONFIG_AUX_DIR([build-aux])
 
-# ======================================
-# Check for various headers and settings
-# ======================================
-#AC_CHECK_HEADERS([termios.h unistd.h getopt.h])
-
-#AC_CONFIG_MACRO_DIRS([m4])
-#AC_CHECK_FUNCS([memset])
-#AC_CHECK_HEADERS([netinet/in.h])
-#AC_CHECK_HEADER_STDBOOL
-#AC_PROG_INSTALL
-#AC_CONFIG_MACRO_DIRS
-
-# Enable "automake" to simplify creating makefiles:
-AM_INIT_AUTOMAKE([])
-AC_CONFIG_FILES([Makefile])
-
+# Checks for programs.
 AC_PROG_CXX
+AC_PROG_AWK
+AC_PROG_CC
 AC_PROG_CPP
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_PROG_MAKE_SET
+AC_PROG_RANLIB
 
-# Do final output.
+# Checks for libraries.
+# FIXME: Replace `main' with a function in `-lcppunit':
+AC_CHECK_LIB([CPPUNIT_TEST], [main])
+
+# Checks for header files.
+AC_CHECK_HEADERS([netinet/in.h termios.h unistd.h])
+
+# Checks for typedefs, structures, and compiler characteristics.
+AC_CHECK_HEADER_STDBOOL
+AC_TYPE_SIZE_T
+
+
+AM_INIT_AUTOMAKE
+# Checks for library functions.
+
+AC_CONFIG_FILES([Makefile
+                  src/Makefile])
 AC_OUTPUT

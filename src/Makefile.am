@@ -1,16 +1,4 @@
 ## Process this file with automake to produce Makefile.in 
-
-AUTOMAKE_OPTIONS = subdir-objects
-ACLOCAL_AMFLAGS = $(ACLOCAL_FLAGS)
-
-rx_LDFLAGS = -static -lcppunit -L/usr/local/lib/
-rx_LDADD = $(LDADD) $(DEPS_LIBS) $(ICONV_LIB) $(DL_LIBS)
-
-#bin_PROGRAMS = src/rx
-#aclocalrx_SOURCES = main.cpp rx.cpp
-
-#rx_LDADD = libHelloWorld.la
-
-#lib_LTLIBRARIES = libHelloWorld.la
-libHelloWorld_la_LDFLAGS = -version-info 0:0:0
-#libHelloWorld_la_SOURCES = helloWorld.cpp helloWorld.h
+bin_PROGRAMS = rx
+rx_SOURCES = main.cpp rx.cpp
+#rx_LDFLAGS = -static -lcppunit -L/usr/local/lib/

@@ -1,3 +1,4 @@
+
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
@@ -18,7 +19,7 @@ AC_PROG_RANLIB
 
 # Checks for libraries.
 # FIXME: Replace `main' with a function in `-lcppunit':
-AC_CHECK_LIB([cppunit], [main])
+AC_CHECK_LIB([CPPUNIT_TEST], [main])
 
 # Checks for header files.
 AC_CHECK_HEADERS([netinet/in.h termios.h unistd.h])
@@ -27,6 +28,8 @@ AC_CHECK_HEADERS([netinet/in.h termios.h unistd.h])
 AC_CHECK_HEADER_STDBOOL
 AC_TYPE_SIZE_T
 
+
+AM_INIT_AUTOMAKE
 # Checks for library functions.
 
 AC_CONFIG_FILES([Makefile

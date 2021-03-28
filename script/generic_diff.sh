@@ -8,9 +8,10 @@ EXEC_PARAMS="$4"
 
 echo "Debug: ROOT:$ROOT NAME:${FULL_NAME##/*/} FULL_NAME:$FULL_NAME LIDX:$LIDX RIDX:$RIDX"
 
-LHASH=$(~/script/git_hist.sh $FULL_NAME | egrep "^\s{4,5}$LIDX\s" | cut -d'|' -f2)
-RHASH=$(~/script/git_hist.sh $FULL_NAME | egrep "^\s{4,5}$RIDX\s" | cut -d'|' -f2)
+LHASH=$(~/script/git/git_hist.sh $FULL_NAME | egrep "^\s{4,5}$LIDX\s" | cut -d'|' -f'2 13' | sed s/\|/~/)
+RHASH=$(~/script/git/git_hist.sh $FULL_NAME | egrep "^\s{4,5}$RIDX\s" | cut -d'|' -f'2 13' | sed s/\|/~/)
 
-echo "Debug: EXEC:"$EXEC" LHASH:$LHASH RHASH:$RHASH"
+
+echo "Debug: EXEC:"$EXEC" $NAME-LHASH:$LHASH $NAME-RHASH:$RHASH"
 
 $EXEC $FULL_NAME $LHASH $RHASH "$EXEC_PARAMS"

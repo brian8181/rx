@@ -1,3 +1,5 @@
+#! /usr/bin/bash
+
 ROOT=/home/brian/src/rx
 FULL_NAME=$ROOT/src/$1
 NAME=src/$1

@@ -13,12 +13,12 @@ DEBUG=1
 FMT_FG_RED='\e[31m'
 FMT_RESET='\e[0m'
 
-echo ${VERBOSE:+"File - $FILE"}
-echo ${VERBOSE:+"Version - $VERSION"}
-echo ${VERBOSE:+"Date - $FILE_DATE"}
-echo ${VERBOSE:+"Author - $AUTHOR"}
-echo ${VERBOSE:+"Email - $EMAIL"}
-echo ${VERBOSE:+"GITHUB - $GITHUB"}
+echo ${VERBOSE:+"File - $FILE"}.
+echo ${VERBOSE:+"Version - $VERSION"}.
+echo ${VERBOSE:+"Date - $FILE_DATE"}.
+echo ${VERBOSE:+"Author - $AUTHOR"}.
+echo ${VERBOSE:+"Email - $EMAIL"}.
+echo ${VERBOSE:+"GITHUB - $GITHUB"}.
 
 DATE=$(date "+%H:%M:%S:%s")
 ROOT=/home/brian/src/rx
@@ -32,10 +32,8 @@ echo -e "${DEBUG:+${FMT_FG_RED}DEBUG${FMT_RESET} - LIDX=\"$LIDX\"  RIDX=\"$RIDX\
 
 # lanch diff in meld
 EXEC_PARAMS="meld"
+echo -e "${DEBUG:+${FMT_FG_RED}DEBUG${FMT_RESET} - $FILE -> Running... @ $DATE}".
 
-echo -e "${DEBUG:+${FMT_FG_RED}DEBUG${FMT_RESET} - $FILE -> Running... @ $DATE}"
-
-# YOUR CODE GOES HERE
 /home/brian/src/rx/script/generic_diff.sh "$NAME" "$LIDX" $RIDX "$EXEC_PARAMS" -verbose=1
 
-echo -e "${DEBUG:+${FMT_FG_RED}DEBUG${FMT_RESET} - $FILE -> Exiting. @ $DATE}"
+echo -e "${DEBUG:+${FMT_FG_RED}DEBUG${FMT_RESET} - $FILE -> Exiting. @ $DATE}".

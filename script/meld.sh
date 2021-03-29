@@ -1,39 +1,44 @@
 #!/usr/bin/bash
 
 FILE='meld.sh'
-VERSION='0.1'
-FILE_DATE='03-28-2012'
+VERSION='version 0.1'
+FILE_DATE='03-29-2021'
 
-AUTHOR='Brian Preston'
-EMAIL='brian8181@gmail.com'
-GITHUB='https://github.com/brian8181'
+AUTHOR='<AUTHOR>'
+EMAIL='<EMAIL>'
+WWW='<WWW>'
 
-VERBOSE=1
-DEBUG=1
 FMT_FG_RED='\e[31m'
 FMT_RESET='\e[0m'
+PRINT_RED_DEBUG=${FMT_FG_RED}DEBUG${FMT_RESET}
+DATE=$(date "+%H:%M:%S:%s")
+
+# USER SETTING
+DEBUG_MSG="$PRINT_RED_DEBUG: "
+VERBOSE=1
+DEBUG=1
+# END
 
 echo ${VERBOSE:+"File - $FILE"}.
 echo ${VERBOSE:+"Version - $VERSION"}.
 echo ${VERBOSE:+"Date - $FILE_DATE"}.
 echo ${VERBOSE:+"Author - $AUTHOR"}.
 echo ${VERBOSE:+"Email - $EMAIL"}.
-echo ${VERBOSE:+"GITHUB - $GITHUB"}.
+echo ${VERBOSE:+"WWW - $WWW"}.
 
-DATE=$(date "+%H:%M:%S:%s")
-ROOT=/home/brian/src/rx
-FULL_NAME=$ROOT/$NAME
-NAME=$1
-LIDX=$2
-RIDX=$3
+function PRINT_DEBUG
+{
+    MSG=${DEBUG_MSG}$1
+    echo -e ${DEBUG:+"$MSG"}
+}
+PRINT_DEBUG "$FILE -> Running... @ $DATE"
 
-echo -e "${DEBUG:+${FMT_FG_RED}DEBUG${FMT_RESET} - Root=\"$ROOT\" FULL_NAME=\"$FULL_NAME\" NAME=\"$NAME\"}"
-echo -e "${DEBUG:+${FMT_FG_RED}DEBUG${FMT_RESET} - LIDX=\"$LIDX\"  RIDX=\"$RIDX\"}"
+# YOUR CODE
+LIDX=$1
+RIDX=$2
+NAME=/home/brian/src/rx/src/$3
+EXEC=meld
 
-# lanch diff in meld
-EXEC_PARAMS="meld"
-echo -e "${DEBUG:+${FMT_FG_RED}DEBUG${FMT_RESET} - $FILE -> Running... @ $DATE}".
+/home/brian/src/script/git/git_diff.sh "$NAME" "$LIDX" "$RIDX" meld
 
-/home/brian/src/rx/script/generic_diff.sh "$NAME" "$LIDX" $RIDX "$EXEC_PARAMS" -verbose=1
-
-echo -e "${DEBUG:+${FMT_FG_RED}DEBUG${FMT_RESET} - $FILE -> Exiting. @ $DATE}".
+PRINT_DEBUG "$FILE -> Exiting. @ $DATE"

@@ -44,4 +44,7 @@ src/Makefile
 
 script/?
 script/.data/**
-rx
+
+src/cppRxTestResults.xml
+src/rx_test
+src/rx

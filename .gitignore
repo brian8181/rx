@@ -21,6 +21,7 @@
 
 # bkp
 /aclocal.m4
+src/autom4te.cache
 /autom4te.cache
 /config.guess
 /config.h

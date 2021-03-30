@@ -41,4 +41,4 @@ EXEC=meld
 
 /home/brian/src/script/git/git_diff.sh "$NAME" "$LIDX" "$RIDX" meld
 
-PRINT_DEBUG "$FILE -> Exiting. @ $DATE"
+PRINT_DEBUG "$FILE -> Exiting.   @ $DATE"

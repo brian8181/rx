@@ -1,4 +1,3 @@
-Makefile
 .deps
 *.jpg
 *.la
@@ -9,32 +8,39 @@ Makefile
 *.swp
 *~
 .libs
+
+# not sure
+#/config.log
+#/config.mk
+#/depcomp
+#/install-sh
+#/libtool
+#/ltmain.sh
+#/missing
+#/stamp-h1
+
+# bkp
 /aclocal.m4
 /autom4te.cache
 /config.guess
 /config.h
-/config.h.in
-/config.log
-/config.mk
-/config.status
-/config.sub
-/configure
-/depcomp
-/install-sh
-/libtool
-/ltmain.sh
-/missing
-/stamp-h1
-Makefile
-Makefile.in
-
-# bkp
+# /config.h.in
+# src/config.h.in
 config.h.in
-stamp-h2
-build-aux/
-compile
-m4/
-INSTALL
-# 
-script/**
+/config.sub
+/config.status
+/configure
+/Makefile.in
+src/Makefile.in
+/Makefile
+src/Makefile
+
+# bkp not sure
+#build-aux/
+#compile
+#m4/
+#INSTALL
+
+script/?
+script/.data/**
 rx

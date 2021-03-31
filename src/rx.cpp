@@ -42,7 +42,7 @@ parse_options(int argc, char *argv[])
 	bool single_flag = false;
 
 	optind = 0;
-	while ((opt = getopt_long(argc, argv, "hvis", long_options, &option_index)) != -1)
+	while ((opt = getopt_long(argc, argv, "hvs", long_options, &option_index)) != -1)
 	{
 		switch (opt)
 		{
@@ -85,11 +85,8 @@ parse_options(int argc, char *argv[])
 
 	int current_idx = optind + 1;
 	string src;
-	string exp(argv[optind]);	if (single_flag)
-	{
-	    cout << "Single Match Mode" << endl;
-	}
-
+	string exp(argv[optind]);
+	
 	if (verbose_flag)
 	{
 		print_help();
@@ -100,7 +97,7 @@ parse_options(int argc, char *argv[])
 		// print command inputs
 		print_match_header(exp, src);
 
-		int idx = 0;
+		volatile int idx = 0;
 		string bash_str = src;
 		std::regex::flag_type regex_opt = std::regex::ECMAScript|std::regex::grep|std::regex::extended;
 		regex_opt = ignore_case_flag ? regex_opt|std::regex::icase : regex_opt;
@@ -108,13 +105,14 @@ parse_options(int argc, char *argv[])
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
 		auto end = sregex_iterator();
 
+
 		for (sregex_iterator i = begin; i != end; ++i)
 		{
 			smatch match = *i;
 			int pos = match.position() + (idx * (CURRENT_FG_COLOR.length() + FMT_RESET.length()));
 			int len = match.length();
 
-			if(single_flag && ( match.position() != 0 || src.length() != (size_t)match.length() ))
+			if(!single_flag || (single_flag && i == begin && match.position() == 0 && src.length() == (size_t)match.length() ))
 			{
 				// set bash green start postion
 				bash_str.insert(pos, CURRENT_FG_COLOR);
@@ -126,7 +124,13 @@ parse_options(int argc, char *argv[])
 				cout << idx << ": " << src.substr(match.position(), match.length()) << endl;
 				++idx;
 			}
+			else if(single_flag)
+			{
+				begin = end;
+				break;
+			}
 		}
+
 		cout << "\nFound " << std::distance(begin, end) << " matches:\n";
 		cout << bash_str << "\n\n";
 	}

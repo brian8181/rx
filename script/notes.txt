@@ -1,0 +1,2 @@
+ git_diff.sh /home/brian/src/rx/src/rx.cpp 1 2 kdiff3
+ git_diff.sh /home/brian/src/rx/src/rx.cpp 1 2 meld

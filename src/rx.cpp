@@ -42,7 +42,7 @@ parse_options(int argc, char *argv[])
 	bool single_flag = false;
 
 	optind = 0;
-	while ((opt = getopt_long(argc, argv, "hvs", long_options, &option_index)) != -1)
+	while ((opt = getopt_long(argc, argv, "hvis", long_options, &option_index)) != -1)
 	{
 		switch (opt)
 		{
@@ -112,23 +112,21 @@ parse_options(int argc, char *argv[])
 			int pos = match.position() + (idx * (CURRENT_FG_COLOR.length() + FMT_RESET.length()));
 			int len = match.length();
 
-			if(!single_flag || (single_flag && i == begin && match.position() == 0 && src.length() == (size_t)match.length() ))
-			{
-				// set bash green start postion
-				bash_str.insert(pos, CURRENT_FG_COLOR);
-
-				// reset bash color position
-				pos = pos + CURRENT_FG_COLOR.length() + len;
-				bash_str.insert(pos, FMT_RESET);
-
-				cout << idx << ": " << src.substr(match.position(), match.length()) << endl;
-				++idx;
-			}
-			else if(single_flag)
+			if ( single_flag && (i != begin || match.position() != 0 || src.length() != (size_t)match.length()) )
 			{
 				begin = end;
 				break;
 			}
+		
+			// set bash green start postion
+			bash_str.insert(pos, CURRENT_FG_COLOR);
+
+			// reset bash color position
+			pos = pos + CURRENT_FG_COLOR.length() + len;
+			bash_str.insert(pos, FMT_RESET);
+
+			cout << idx << ": " << src.substr(match.position(), match.length()) << endl;
+			++idx;
 		}
 
 		cout << "\nFound " << std::distance(begin, end) << " matches:\n";

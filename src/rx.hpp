@@ -13,7 +13,7 @@ using namespace std;
 
 #include "bash_color.h"
 
-const string CURRENT_FG_COLOR = FMT_FG_GREEN + FMT_UNDERLINE;
+//string CURRENT_FG_COLOR = FMT_FG_GREEN + FMT_UNDERLINE;
 
 // functions
 int parse_options(int argc, char *argv[]);

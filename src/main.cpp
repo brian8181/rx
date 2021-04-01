@@ -27,12 +27,3 @@ main(int argc, char* argv[])
     }
     return parse_options(argc, argv);
 }
-
-// output
-// $ echo abc | ./rx abc
-// pattern: "abc" -> input: "abc"
-
-// 0: abc
-
-// Found 1 matches:
-// abc

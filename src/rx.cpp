@@ -105,14 +105,14 @@ parse_options(int argc, char *argv[])
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
 		auto end = sregex_iterator();
 
-		for (sregex_iterator i = begin; i != end; ++i)
+		for (sregex_iterator iter = begin; iter != end; ++iter)
 		{
 			string CURRENT_FG_COLOR( idx % 2 ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
-			smatch match = *i;
+			smatch match = *iter;
 			int pos = match.position() + (idx * (CURRENT_FG_COLOR.length() + FMT_RESET.length()));
 			int len = match.length();
 
-			if ( single_flag && (i != begin || pos != 0 || src.length() != (size_t)len) )
+			if ( single_flag && (iter != begin || pos != 0 || src.length() != (size_t)len) )
 			{
 				begin = end;
 				break;

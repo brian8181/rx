@@ -20,8 +20,9 @@ INCLUDES= -I/usr/local/include/cppunit/
 # Makefile settings - Can be customized.
 APPNAME = rx
 EXT = cpp
-SRCDIR = ../src
-OBJDIR = ../src
+BUILDDIR = ./build
+SRCDIR = ./src
+OBJDIR = ./src
 
 # complie & link for debug
 debug: CXXFLAGS += -DDEBUG -g
@@ -30,23 +31,23 @@ debug: all
 # complie & link for debug GDBversion variable
 debuggdb: CXXFLAGS += -DDEBUG -ggdb
 debuggdb: all
-  
+
 # complie & link
 all: $(APPNAME) $(APPNAME)_test
-	
+
 # compile only
 $(APPNAME): $(APPNAME).o 
-	 $(CXX) $(CXXFLAGS) $(OBJDIR)/$(APPNAME).o $(OBJDIR)/main.o -o $(SRCDIR)/$(APPNAME)
+	 $(CXX) $(CXXFLAGS) $(BUILDDIR)/$(APPNAME).o $(BUILDDIR)/main.o -o $(BUILDDIR)/$(APPNAME)
 
 $(APPNAME).o:
-	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME).$(EXT) -o $(SRCDIR)/$(APPNAME).o
-	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/main.$(EXT) -o $(SRCDIR)/main.o
+	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME).$(EXT) -o $(BUILDDIR)/$(APPNAME).o
+	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/main.$(EXT) -o $(BUILDDIR)/main.o
 
 $(APPNAME)_test: $(APPNAME)_test.o
-	$(CXX) $(CXXFLAGS) $(INCLUDES) $(SRCDIR)/$(APPNAME)_test.o $(SRCDIR)/$(APPNAME).o $(LDFLAGS) -o $(SRCDIR)/$(APPNAME)_test
+	$(CXX) $(CXXFLAGS) $(INCLUDES) $(SRCDIR)/$(APPNAME)_test.o $(SRCDIR)/$(APPNAME).o $(LDFLAGS) -o $(BUILDDIR)/$(APPNAME)_test
 
 $(APPNAME)_test.o:
-	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME)_test.cpp -o $(SRCDIR)/$(APPNAME)_test.o
+	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME)_test.cpp -o $(BUILDDIR)/$(APPNAME)_test.o
 
 autotools_reconf:
 	cd ../
@@ -55,7 +56,7 @@ autotools_reconf:
 
 .PHONY: check
 check:
-	echo "Checking ..."
+	echo "Checking ...
 
 # install man pages
 .PHONY: man
@@ -67,12 +68,13 @@ man:
 # uninstall man pages
 .PHONY: unmanversion variable
 unman:
+unman:
 	rm $(man1dir)/$(APPNAME).1.gz
 	mandb
 
 .PHONY: install
 install: man
-	cp $(SRCDIR)/$(APPNAME) $(prefix)/bin/$(APPNAME)
+	cp $(BUILDDIR)/$(APPNAME) $(prefix)/bin/$(APPNAME)
 
 .PHONY: uninstall
 uninstall: unman
@@ -81,13 +83,13 @@ uninstall: unman
 # delete object files & app executable
 .PHONY: clean
 clean:
-	rm -f $(OBJDIR)/*.o $(SRCDIR)/*.xml $(SRCDIR)/$(APPNAME) $(SRCDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz $(SRCDIR)/$(APPNAME)_test
+	rm -f $(BUILDDIR)/*.o $(BUILDDIR)/*.xml $(BUILDDIR)/$(APPNAME) $(BUILDDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz $(BUILDDIR)/$(APPNAME)_test
 
 .PHONY: distclean
 distclean: clean # clean $ distclean are the same
 	rm ../$(APPNAME) ../config.* ../Makefile ../Makefile.in ../INSTALL ../configure ../stamp-h1 ../aclocal.m4
 
 dist: 
-	git archive HEAD | gzip > $(SRCDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz
+	git archive HEAD | gzip > $(BUILDDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz
 
 dist-gz: dist

@@ -18,12 +18,12 @@ main(int argc, char* argv[])
         // add piped buffer to end of args
         // note: create array of char*, number of char* is argc
         // char* argv_tmp[] = new char* [argc];
-        char* argv_tmp[BUFFER_LEN];
+        char* argv_tmp[sizeof(char*) * argc+1];
         memcpy(argv_tmp, argv, sizeof(char*) * argc);
         argv_tmp[argc] = buffer;
 
-        //argv = &argv_tmp;
-        return parse_options(++argc, argv_tmp);
+        argv = argv_tmp;
+        return parse_options(++argc, argv);
     }
     return parse_options(argc, argv);
 }

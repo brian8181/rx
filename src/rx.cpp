@@ -6,14 +6,14 @@
 
 static struct option long_options[] =
 {
-		{"verbose", no_argument, 0, 'v'},
+		{"verbose", no_argument, 0, 'v'},		case 's':
+
 		{"help", no_argument, 0, 'h'},
 		{"ignore_case", no_argument, 0, 'i'},
 		{"single", no_argument, 0, 's'}
 };
 
-void
-print_help()
+void print_help()
 {
 	cout << "\n"
 		 << FMT_BOLD << "rx" << FMT_RESET << " "
@@ -21,8 +21,7 @@ print_help()
 		 << FMT_UNDERLINE << "INPUT" << FMT_RESET << "\n\n";
 }
 
-void
-print_match_header(const string &pattern, const string &src)
+void print_match_header(const string &pattern, const string &src)
 {
 	cout << FMT_FG_RED << "pattern: " << FMT_RESET
 		 << "\"" << FMT_FG_YELLOW << pattern << FMT_RESET << "\""
@@ -32,8 +31,7 @@ print_match_header(const string &pattern, const string &src)
 		 << "\n\n";
 }
 
-int
-parse_options(int argc, char *argv[])
+int parse_options(int argc, char *argv[])
 {
 	int opt = 0;
 	int option_index = 0;
@@ -72,7 +70,6 @@ parse_options(int argc, char *argv[])
 		return EXIT_FAILURE;
 	}
 	
-	//single mode: mockup, do I need THIS!
 	if (single_flag)
 	{
 	    cout << "Single Match Mode" << endl;
@@ -91,6 +88,7 @@ parse_options(int argc, char *argv[])
 	{
 		print_help();
 	}
+	
 	for (int i = current_idx; i < argc; ++i)
 	{
 		src = argv[i];

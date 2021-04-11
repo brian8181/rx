@@ -6,8 +6,7 @@
 
 static struct option long_options[] =
 {
-		{"verbose", no_argument, 0, 'v'},		case 's':
-
+		{"verbose", no_argument, 0, 'v'},
 		{"help", no_argument, 0, 'h'},
 		{"ignore_case", no_argument, 0, 'i'},
 		{"single", no_argument, 0, 's'}
@@ -70,11 +69,6 @@ int parse_options(int argc, char *argv[])
 		return EXIT_FAILURE;
 	}
 	
-	if (single_flag)
-	{
-	    cout << "Single Match Mode" << endl;
-	}
-
 	if (verbose_flag)
 	{
 		print_help();
@@ -130,5 +124,12 @@ int parse_options(int argc, char *argv[])
 		cout << "\nFound " << std::distance(begin, end) << " matches:\n";
 		cout << bash_str << "\n\n";
 	}
+	
+	// print single match message
+	if (single_flag)
+	{
+	    cout << FMT_FG_YELLOW << "Single Match Mode" << FMT_RESET << endl;
+	}
+
 	return EXIT_SUCCESS;
 }

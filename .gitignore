@@ -49,7 +49,4 @@ cppRxTestResults.xml
 src/rx_test
 src/rx
 build/**
-build/*
-build/rx
-build/rx_test
 

@@ -4,6 +4,8 @@
 #include <getopt.h>
 #include "rx.hpp"
 
+using namespace std;
+
 static struct option long_options[] =
 {
 		{"verbose", no_argument, 0, 'v'},
@@ -91,8 +93,8 @@ int parse_options(int argc, char *argv[])
 
 		volatile int idx = 0;
 		string bash_str = src;
-		std::regex::flag_type regex_opt = std::regex::ECMAScript|std::regex::grep|std::regex::extended;
-		regex_opt = ignore_case_flag ? regex_opt|std::regex::icase : regex_opt;
+		regex::flag_type regex_opt = regex::ECMAScript|regex::grep|regex::extended;
+		regex_opt = ignore_case_flag ? regex_opt|regex::icase : regex_opt;
 		regex src_epx(exp, regex_opt);
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
 		auto end = sregex_iterator();

@@ -80,11 +80,6 @@ int parse_options(int argc, char *argv[])
 	string src;
 	string exp(argv[optind]);
 	
-	if (verbose_flag)
-	{
-		print_help();
-	}
-	
 	for (int i = current_idx; i < argc; ++i)
 	{
 		src = argv[i];
@@ -128,7 +123,7 @@ int parse_options(int argc, char *argv[])
 	}
 	
 	// print single match message
-	if (single_flag)
+	if (single_flag && verbose_flag)
 	{
 	    cout << FMT_FG_YELLOW << "Single Match Mode" << FMT_RESET << endl;
 	}

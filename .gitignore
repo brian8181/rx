@@ -33,7 +33,7 @@ config.h.in
 /configure
 /Makefile.in
 src/Makefile.in
-/Makefile
+Makefile
 src/Makefile
 
 # bkp not sure
@@ -48,5 +48,9 @@ script/.data/**
 cppRxTestResults.xml
 src/rx_test
 src/rx
-build/**
+build/rx
+build/rx_test
+
+
+
 

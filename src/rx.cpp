@@ -74,6 +74,11 @@ int parse_options(int argc, char *argv[])
 	if (verbose_flag)
 	{
 		print_help();
+		// print single match message
+		if (single_flag)
+		{
+			cout << FMT_FG_LIGHT_CYAN << "single match: " << FMT_RESET << endl;
+		}
 	}
 
 	int current_idx = optind + 1;
@@ -111,22 +116,14 @@ int parse_options(int argc, char *argv[])
 			bash_str.insert(pos, CURRENT_FG_COLOR);
 
 			// reset bash color position
-			pos = pos + CURRENT_FG_COLOR.length() + len;
+			pos += CURRENT_FG_COLOR.length() + len;
 			bash_str.insert(pos, FMT_RESET);
 
 			cout << idx << ": " << src.substr(match.position(), match.length()) << endl;
 			++idx;
 		}
-
 		cout << "\nFound " << std::distance(begin, end) << " matches:\n";
 		cout << bash_str << "\n\n";
 	}
-	
-	// print single match message
-	if (single_flag && verbose_flag)
-	{
-	    cout << FMT_FG_YELLOW << "Single Match Mode" << FMT_RESET << endl;
-	}
-
 	return EXIT_SUCCESS;
 }

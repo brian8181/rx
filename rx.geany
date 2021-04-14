@@ -29,9 +29,9 @@ long_line_column=72
 
 [files]
 current_page=0
-FILE_NAME_0=2985;C++;0;EUTF-8;1;1;0;%2Fhome%2Fbrian%2Fsrc%2Frx%2Fsrc%2Frx.cpp;0;4
+FILE_NAME_0=1836;C++;0;EUTF-8;1;1;0;%2Fhome%2Fbrian%2Fsrc%2Frx%2Fsrc%2Frx.cpp;0;4
 FILE_NAME_1=624;C++;0;EUTF-8;1;1;0;%2Fhome%2Fbrian%2Fsrc%2Frx%2Fsrc%2Fmain.cpp;0;4
-FILE_NAME_2=653;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbrian%2Fsrc%2Frx%2Fsrc%2Fbash_color.h;0;4
+FILE_NAME_2=1052;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbrian%2Fsrc%2Frx%2Fsrc%2Fbash_color.h;0;4
 FILE_NAME_3=675;Make;0;EUTF-8;1;1;0;%2Fhome%2Fbrian%2Fsrc%2Frx%2Fbuild%2FMakefile;0;4
 FILE_NAME_4=0;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbrian%2Fsrc%2Frx%2Fconfigure.ac;0;4
 FILE_NAME_5=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fbrian%2Fsrc%2Frx%2FCOPYING;0;4
@@ -41,4 +41,4 @@ FILE_NAME_8=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fbrian%2Fsrc%2Frx%2FNEWS;0;4
 FILE_NAME_9=4100;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbrian%2Fsrc%2Frx%2Fmissing;0;4
 
 [VTE]
-last_dir=/home/brian/src/rx/src
+last_dir=/home/brian/src/rx

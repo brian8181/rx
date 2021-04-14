@@ -8,10 +8,10 @@ using namespace std;
 
 static struct option long_options[] =
 {
-		{"verbose", no_argument, 0, 'v'},
-		{"help", no_argument, 0, 'h'},
-		{"ignore_case", no_argument, 0, 'i'},
-		{"single", no_argument, 0, 's'}
+	{"verbose", no_argument, 0, 'v'},
+	{"help", no_argument, 0, 'h'},
+	{"ignore_case", no_argument, 0, 'i'},
+	{"single", no_argument, 0, 's'}
 };
 
 void print_help()
@@ -90,7 +90,6 @@ int parse_options(int argc, char *argv[])
 		src = argv[i];
 		// print command inputs
 		print_match_header(exp, src);
-
 		volatile int idx = 0;
 		string bash_str = src;
 		regex::flag_type regex_opt = regex::ECMAScript|regex::grep|regex::extended;
@@ -114,11 +113,9 @@ int parse_options(int argc, char *argv[])
 		
 			// set bash green start postion
 			bash_str.insert(pos, CURRENT_FG_COLOR);
-
 			// reset bash color position
 			pos += CURRENT_FG_COLOR.length() + len;
 			bash_str.insert(pos, FMT_RESET);
-
 			cout << idx << ": " << src.substr(match.position(), match.length()) << endl;
 			++idx;
 		}

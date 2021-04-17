@@ -4,7 +4,13 @@
 #include <getopt.h>
 #include "rx.hpp"
 
+//todo remove
 using namespace std;
+
+//using std::string;
+//using std::cout;
+//using std::endl;
+//using std::match;
 
 static struct option long_options[] =
 {

@@ -4,7 +4,7 @@
 #include <string>
 #include <getopt.h>
 
-using namespace std;
+//using namespace std;
 // todo
 // using std::string;
 // using std::cout;

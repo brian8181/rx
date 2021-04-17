@@ -5,6 +5,8 @@
 #include "rx.hpp"
 #include "../config.h"
 
+using std::cin;
+
 int main(int argc, char* argv[])
 {
     termios t;

@@ -20,9 +20,9 @@ INCLUDES= -I/usr/local/include/cppunit/
 # Makefile settings - Can be customized.
 APPNAME = rx
 EXT = cpp
-BUILDDIR = /home/brian/src/rx/build
-SRCDIR = /home/brian/src/rx/src
-OBJDIR = /home/brian/src/rx/build
+BUILDDIR = ~/src/rx/build
+SRCDIR = ~/src/rx/src
+OBJDIR = ~/src/rx/build
 
 # complie & link for debug
 debug: CXXFLAGS += -DDEBUG -g
@@ -44,7 +44,7 @@ $(APPNAME).o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/main.$(EXT) -o $(BUILDDIR)/main.o
 
 $(APPNAME)_test: $(APPNAME)_test.o
-	$(CXX) $(CXXFLAGS) $(INCLUDES) $(SRCDIR)/$(APPNAME)_test.o $(SRCDIR)/$(APPNAME).o $(LDFLAGS) -o $(BUILDDIR)/$(APPNAME)_test
+	$(CXX) $(CXXFLAGS) $(INCLUDES) $(BUILDDIR)/$(APPNAME)_test.o $(BUILDDIR)/$(APPNAME).o $(LDFLAGS) -o $(BUILDDIR)/$(APPNAME)_test
 
 $(APPNAME)_test.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME)_test.cpp -o $(BUILDDIR)/$(APPNAME)_test.o

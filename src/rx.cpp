@@ -30,10 +30,11 @@ void print_help()
 
 void print_match_header(const string &pattern, const string &src)
 {
-	cout << FMT_FG_RED << "pattern: " << FMT_RESET
+	cout << endl 
+		 << FMT_FG_RED << "Pattern: " << FMT_RESET
 		 << "\"" << FMT_FG_YELLOW << pattern << FMT_RESET << "\""
 		 << " -> "
-		 << FMT_FG_RED << "input: " << FMT_RESET
+		 << FMT_FG_RED << "Input: " << FMT_RESET
 		 << "\"" << FMT_FG_YELLOW << src << FMT_RESET << "\""
 		 << "\n\n";
 }
@@ -118,11 +119,12 @@ int parse_options(int argc, char *argv[])
 			}
 		
 			// set bash green start postion
+			//string spos = itoa(pos);
 			bash_str.insert(pos, CURRENT_FG_COLOR);
 			// reset bash color position
 			pos += CURRENT_FG_COLOR.length() + len;
 			bash_str.insert(pos, FMT_RESET);
-			cout << idx << ": " << src.substr(match.position(), match.length()) << endl;
+			cout << (idx+1) << ": " << src.substr(match.position(), match.length()) << endl;
 			++idx;
 		}
 		cout << "\nFound " << std::distance(begin, end) << " matches:\n";

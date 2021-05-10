@@ -51,3 +51,5 @@ src/rx
 build/rx
 build/rx_test
 
+Libtool
+config.log

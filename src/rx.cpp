@@ -4,13 +4,7 @@
 #include <getopt.h>
 #include "rx.hpp"
 
-//todo remove
 using namespace std;
-
-//using std::string;
-//using std::cout;
-//using std::endl;
-//using std::match;
 
 static struct option long_options[] =
 {
@@ -22,10 +16,10 @@ static struct option long_options[] =
 
 void print_help()
 {
-	cout << "\n"
-		 << FMT_BOLD << "rx" << FMT_RESET << " "
-		 << FMT_UNDERLINE << "PATTERN" << FMT_RESET << " "
-		 << FMT_UNDERLINE << "INPUT" << FMT_RESET << "\n\n";
+	cout << endl
+		<< FMT_BOLD << "rx" << FMT_RESET << " "
+		<< FMT_UNDERLINE << "PATTERN" << FMT_RESET << " "
+		<< FMT_UNDERLINE << "INPUT" << FMT_RESET << "\n\n";
 }
 
 void print_match_header(const string &pattern, const string &src)
@@ -36,7 +30,7 @@ void print_match_header(const string &pattern, const string &src)
 		 << " -> "
 		 << FMT_FG_RED << "Input: " << FMT_RESET
 		 << "\"" << FMT_FG_YELLOW << src << FMT_RESET << "\""
-		 << "\n\n";
+		 << endl;
 }
 
 int parse_options(int argc, char *argv[])
@@ -48,13 +42,14 @@ int parse_options(int argc, char *argv[])
 	bool single_flag = false;
 
 	optind = 0;
-	while ((opt = getopt_long(argc, argv, "hvis", long_options, &option_index)) != -1)
+	opt = getopt_long(argc, argv, "hvis", long_options, &option_index);
+	while (opt != -1)
 	{
 		switch (opt)
 		{
 		case 'h':
 			print_help();
-			return EXIT_SUCCESS;
+			return 0;
 		case 'v':
 			verbose_flag = true;
 			break;
@@ -65,23 +60,22 @@ int parse_options(int argc, char *argv[])
 			single_flag = true;
 			break;
 		default: // unknown option before args
-			{
-				cerr << "Unexpected option, -h for help\n";
-				return EXIT_FAILURE;
-			}
+			cerr << "Unexpected option, -h for help\n";
+			return -1;
 		}
+		opt = getopt_long(argc, argv, "hvis", long_options, &option_index);
 	}
 
-	if (argc <= 2) // not correct number of args
+	if (argc <= DEFAULT_ARGC) // not correct number of args
 	{
 		cerr << "Expected argument after options, -h for help\n";
-		return EXIT_FAILURE;
+		return 0;
 	}
 	
 	if (verbose_flag)
 	{
 		print_help();
-		// print single match message
+
 		if (single_flag)
 		{
 			cout << FMT_FG_LIGHT_CYAN << "single match: " << FMT_RESET << endl;
@@ -92,14 +86,14 @@ int parse_options(int argc, char *argv[])
 	string src;
 	string exp(argv[optind]);
 	
-	for (int i = current_idx; i < argc; ++i)
-	{
-		src = argv[i];
+	//for (int i = current_idx; i < argc; ++i)
+	//{
+		src = argv[current_idx];
 		// print command inputs
 		print_match_header(exp, src);
 		volatile int idx = 0;
 		string bash_str = src;
-		regex::flag_type regex_opt = regex::ECMAScript|regex::grep|regex::extended;
+		regex::flag_type regex_opt = regex::ECMAScript|regex::extended;
 		regex_opt = ignore_case_flag ? regex_opt|regex::icase : regex_opt;
 		regex src_epx(exp, regex_opt);
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
@@ -118,8 +112,9 @@ int parse_options(int argc, char *argv[])
 				break;
 			}
 		
+			//cout << (idx+1) << ": " << src.substr(pos, len) << endl;
+
 			// set bash green start postion
-			//string spos = itoa(pos);
 			bash_str.insert(pos, CURRENT_FG_COLOR);
 			// reset bash color position
 			pos += CURRENT_FG_COLOR.length() + len;
@@ -129,6 +124,6 @@ int parse_options(int argc, char *argv[])
 		}
 		cout << "\nFound " << std::distance(begin, end) << " matches:\n";
 		cout << bash_str << "\n\n";
-	}
-	return EXIT_SUCCESS;
+	//}
+	return 0;
 }

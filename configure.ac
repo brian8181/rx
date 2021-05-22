@@ -9,13 +9,8 @@ AC_CONFIG_HEADERS([config.h])
 
 # Checks for programs.
 AC_PROG_CXX
-AC_PROG_AWK
 AC_PROG_CC
 AC_PROG_CPP
-AC_PROG_INSTALL
-AC_PROG_LN_S
-AC_PROG_MAKE_SET
-AC_PROG_RANLIB
 
 # Initialize libtool
 LT_PREREQ([2.2])
@@ -32,10 +27,8 @@ AC_CHECK_HEADERS([netinet/in.h termios.h unistd.h])
 AC_CHECK_HEADER_STDBOOL
 AC_TYPE_SIZE_T
 
-
 AM_INIT_AUTOMAKE
 # Checks for library functions.
-
 AC_CONFIG_FILES([Makefile
                   src/Makefile])
 AC_OUTPUT

@@ -1,6 +1,7 @@
 # MAKE TEMPLATE 06-02-2020 1
 # MAKE TEMPLATE 03-11-2021 1.1
-MAKE_TEMPLATE = 1.1;
+# MAKE TEMPLATE 05-22-2021 1.2
+MAKE_TEMPLATE = 1.2;
 # RUN BEFORE autoreconf -ivfm
 BUILD_VERSION = 0.1.0
 
@@ -10,11 +11,11 @@ man1dir = $(mandir)/man1
 
 # Compiler settings - Can be customized.
 CXX = g++
-CXXFLAGS = -Wall -std=c++11 
+CXXFLAGS = -Wall -std=c++11
 
 # lib settings
 LDFLAGS = -static -lcppunit -L/usr/local/lib/
-INCLUDES= -I/usr/local/include/cppunit/
+INCLUDES = -I/usr/local/include/cppunit/
 # add addtional libs here
 
 # Makefile settings - Can be customized.
@@ -35,47 +36,42 @@ debuggdb: all
 # complie & link
 all: $(APPNAME) $(APPNAME)_test
 
-# compile only
+# complie & link
 $(APPNAME): $(APPNAME).o 
 	 $(CXX) $(CXXFLAGS) $(BUILDDIR)/$(APPNAME).o $(BUILDDIR)/main.o -o $(BUILDDIR)/$(APPNAME)
 
+# complie only
 $(APPNAME).o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME).$(EXT) -o $(BUILDDIR)/$(APPNAME).o
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/main.$(EXT) -o $(BUILDDIR)/main.o
-
+	
+# complie & link
 $(APPNAME)_test: $(APPNAME)_test.o
 	$(CXX) $(CXXFLAGS) $(INCLUDES) $(BUILDDIR)/$(APPNAME)_test.o $(BUILDDIR)/$(APPNAME).o $(LDFLAGS) -o $(BUILDDIR)/$(APPNAME)_test
 
+# complie only
 $(APPNAME)_test.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME)_test.cpp -o $(BUILDDIR)/$(APPNAME)_test.o
 
-autotools_reconf:
-	cd ../
-	autoreconf -ivfm
-	cd ./make
-
-.PHONY: check
-check:
-	echo "Checking ...
-
 # install man pages
 .PHONY: man
-man: 
+man:
 	cp ./man/$(APPNAME).1 $(man1dir)
 	gzip $(man1dir)/$(APPNAME).1
 	mandb
 	
 # uninstall man pages
-.PHONY: unmanversion variable
-unman:
+.PHONY: unman
 unman:
 	rm $(man1dir)/$(APPNAME).1.gz
 	mandb
 
+# install 
 .PHONY: install
 install: man
 	cp $(BUILDDIR)/$(APPNAME) $(prefix)/bin/$(APPNAME)
 
+# uninstall
 .PHONY: uninstall
 uninstall: unman
 	rm $(prefix)/bin/$(APPNAME)
@@ -83,11 +79,12 @@ uninstall: unman
 # delete object files & app executable
 .PHONY: clean
 clean:
-	rm -f $(BUILDDIR)/*.o $(BUILDDIR)/*.xml $(BUILDDIR)/$(APPNAME) $(BUILDDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz $(BUILDDIR)/$(APPNAME)_test
+	rm -f $(BUILDDIR)/$(APPNAME) $(BUILDDIR)/*.o $(BUILDDIR)/*.xml $(BUILDDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz $(BUILDDIR)/$(APPNAME)_test
 
+# delete all auto generated files
 .PHONY: distclean
-distclean: clean # clean $ distclean are the same
-	rm ../$(APPNAME) ../config.* ../Makefile ../Makefile.in ../INSTALL ../configure ../stamp-h1 ../aclocal.m4
+distclean: clean
+	rm ../config.* ../Makefile ../Makefile.in ../INSTALL ../configure ../stamp-h1 ../aclocal.m4
 
 dist: 
 	git archive HEAD | gzip > $(BUILDDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz

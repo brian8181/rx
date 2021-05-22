@@ -1,0 +1,64 @@
+#### autotools sequence
+
+# aclocal -I .
+    - aclocal.m4
+    - /autom4te.cache
+
+# autoheader
+    - config.h.in
+
+# autoconf - configure.ac
+    - configure
+
+# autoreconf --install
+    - config.guess
+    - config.sub
+    - Makefile.in
+    - src/Makefile.in
+    
+# configure Makefile.in src/Makefile.in
+    - Makefile
+    - src/Makefile
+    - config.status
+    - config.h
+
+    # cleanup dist
+        - rm Makefile src/Makefile config.status config.h
+
+
+ # make - Makefile src/Makefile
+     - rx.o main.o rx
+     # cleanup
+        - rm rx.o rx
+
+#### configure: error: cannot run /bin/bash ./config.sub
+
+
+# mv ../gcc-svn/config.sub ../gcc-svn/config.sub.bak
+cp /usr/share/libtool/config/config.sub ../gcc-svn/config.sub 
+
+mv ../gcc-svn/config.guess ../gcc-svn/config.guess.bak
+cp /usr/share/libtool/config/config.guess ../gcc-svn/config.guess
+
+# my steps is:
+
+aclocal -I .; autoheader; autoconf; automake --add-missing -c
+./configure
+make
+
+
+# libtooliz
+
+# autoreconf -i
+    stdout:
+        libtoolize: Consider adding 'AC_CONFIG_MACRO_DIRS([m4])' to configure.ac,
+        libtoolize: and rerunning libtoolize and aclocal.
+        libtoolize: Consider adding '-I m4' to ACLOCAL_AMFLAGS in Makefile.am.
+        libtoolize: 'AC_PROG_RANLIB' is rendered obsolete by 'LT_INIT'
+        configure.ac:22: installing './config.guess'
+        configure.ac:22: installing './config.sub'
+
+    
+
+
+

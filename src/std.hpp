@@ -1,5 +1,5 @@
-#ifndef _RX_HPP
-#define _RX_HPP
+#ifndef _STD_HPP
+#define _STD_HPP
 
 #include <string>
 #include <getopt.h>

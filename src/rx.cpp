@@ -20,17 +20,17 @@ void print_help()
 		<< FMT_BOLD << "rx" << FMT_RESET << " "
 		<< FMT_UNDERLINE << "PATTERN" << FMT_RESET << " "
 		<< FMT_UNDERLINE << "INPUT" << FMT_RESET << "\n\n";
-}
+	}
 
 void print_match_header(const string &pattern, const string &src)
 {
 	cout << endl 
-		 << FMT_FG_RED << "Pattern: " << FMT_RESET
-		 << "\"" << FMT_FG_YELLOW << pattern << FMT_RESET << "\""
-		 << " -> "
-		 << FMT_FG_RED << "Input: " << FMT_RESET
-		 << "\"" << FMT_FG_YELLOW << src << FMT_RESET << "\""
-		 << endl;
+		<< FMT_FG_RED << "Pattern: " << FMT_RESET
+		<< "\"" << FMT_FG_YELLOW << pattern << FMT_RESET << "\""
+		<< " -> "
+		<< FMT_FG_RED << "Input: " << FMT_RESET
+		<< "\"" << FMT_FG_YELLOW << src << FMT_RESET << "\""
+		<< endl;
 }
 
 int parse_options(int argc, char *argv[])

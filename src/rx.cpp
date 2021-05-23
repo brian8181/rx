@@ -22,10 +22,12 @@ void print_help()
 		<< FMT_UNDERLINE << "INPUT" << FMT_RESET << "\n\n";
 	}
 
-void print_match_header(const string &pattern, const string &src)
+void print_match_header(const string &pattern, const string &src, const bool single_flag)
 {
+	string header = single_flag ? "Single Match Pattern: " : "Pattern: ";
+
 	cout << endl 
-		<< FMT_FG_RED << "Pattern: " << FMT_RESET
+		<< FMT_FG_RED << header << FMT_RESET
 		<< "\"" << FMT_FG_YELLOW << pattern << FMT_RESET << "\""
 		<< " -> "
 		<< FMT_FG_RED << "Input: " << FMT_RESET
@@ -75,11 +77,6 @@ int parse_options(int argc, char *argv[])
 	if (verbose_flag)
 	{
 		print_help();
-
-		if (single_flag)
-		{
-			cout << FMT_FG_LIGHT_CYAN << "single match: " << FMT_RESET << endl;
-		}
 	}
 
 	int current_idx = optind + 1;
@@ -90,7 +87,7 @@ int parse_options(int argc, char *argv[])
 	//{
 		src = argv[current_idx];
 		// print command inputs
-		print_match_header(exp, src);
+		print_match_header(exp, src, single_flag);
 		volatile int idx = 0;
 		string bash_str = src;
 		regex::flag_type regex_opt = regex::ECMAScript|regex::extended;

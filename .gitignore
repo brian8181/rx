@@ -20,21 +20,15 @@
 #/stamp-h1
 
 # bkp
-/aclocal.m4
-src/autom4te.cache
-/autom4te.cache
-/config.guess
-/config.h
+#/aclocal.m4
+#src/autom4te.cache
+#/autom4te.cache
+#/config.guess
+#/config.h
 # /config.h.in
 # src/config.h.in
-config.h.in
-/config.sub
-/config.status
-/configure
-/Makefile.in
-src/Makefile.in
-Makefile
-src/Makefile
+#/configure
+#Makefile
 
 # bkp not sure
 #build-aux/
@@ -42,14 +36,11 @@ src/Makefile
 #m4/
 #INSTALL
 
-script/?
-script/.data/**
+#script/?
+#script/.data/**
 
-cppRxTestResults.xml
 src/rx_test
 src/rx
 build/rx
 build/rx_test
 
-Libtool
-config.log

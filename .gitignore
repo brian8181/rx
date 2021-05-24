@@ -43,4 +43,5 @@ src/rx_test
 src/rx
 build/rx
 build/rx_test
+build/cppRxTestResults.xml
 

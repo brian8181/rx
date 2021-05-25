@@ -7,32 +7,47 @@
 using namespace std;
 
 static struct option long_options[] =
-{
-	{"verbose", no_argument, 0, 'v'},
-	{"help", no_argument, 0, 'h'},
-	{"ignore_case", no_argument, 0, 'i'},
-	{"single", no_argument, 0, 's'},
-	{"pretty", no_argument, 0, 'p'}
-};
+	{
+		{"verbose", no_argument, 0, 'v'},
+		{"help", no_argument, 0, 'h'},
+		{"ignore_case", no_argument, 0, 'i'},
+		{"single", no_argument, 0, 's'},
+		{"pretty", no_argument, 0, 'p'}
+	};
 
 void print_help()
 {
 	cout << endl
 		<< FMT_BOLD << "rx" << FMT_RESET << " "
+		<< FMT_BOLD << "[OPTIONS...]"
 		<< FMT_UNDERLINE << "PATTERN" << FMT_RESET << " "
 		<< FMT_UNDERLINE << "INPUT" << FMT_RESET << "\n\n";
 }
 
 void print_match_header(const string &pattern, const string &src, const bool single_flag, const bool pretty_flag)
 {
-	//string header = (single_flag ? ("FMT_FG_LIGHT_CYAN" << "Single Match" << "FMT_RESET" + "Pattern: ") : "Pattern: ");
-	cout << endl 
-		<< FMT_FG_RED << (single_flag ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
-		<< "\"" << FMT_FG_YELLOW << pattern << FMT_RESET << "\""
-		<< " -> "
-		<< FMT_FG_RED << "Input: " << FMT_RESET
-		<< "\"" << FMT_FG_YELLOW << src << FMT_RESET << "\""
-		<< endl;
+	if(pretty_flag)
+	{
+		//string header = (single_flag ? ("FMT_FG_LIGHT_CYAN" << "Single Match" << "FMT_RESET" + "Pattern: ") : "Pattern: ");
+		cout << endl 
+			<< FMT_FG_RED << (single_flag ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
+			<< "\"" << FMT_FG_YELLOW << pattern << FMT_RESET << "\""
+			<< " -> "
+			<< FMT_FG_RED << "Input: " << FMT_RESET
+			<< "\"" << FMT_FG_YELLOW << src << FMT_RESET << "\""
+			<< endl;
+	}
+	else
+	{
+		//string header = (single_flag ? ("FMT_FG_LIGHT_CYAN" << "Single Match" << "FMT_RESET" + "Pattern: ") : "Pattern: ");
+		cout << endl 
+			<< FMT_FG_RED << (single_flag ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
+			<< "\"" << FMT_FG_YELLOW << pattern << FMT_RESET << "\""
+			<< " -> "
+			<< FMT_FG_RED << "Input: " << FMT_RESET
+			<< "\"" << FMT_FG_YELLOW << src << FMT_RESET << "\""
+			<< endl;
+	}
 }
 
 int parse_options(int argc, char *argv[])
@@ -112,7 +127,6 @@ int parse_options(int argc, char *argv[])
 				begin = end;
 				break;
 			}
-		
 			//cout << (idx+1) << ": " << src.substr(pos, len) << endl;
 
 			// set bash green start postion

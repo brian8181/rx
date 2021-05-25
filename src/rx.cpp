@@ -11,7 +11,8 @@ static struct option long_options[] =
 	{"verbose", no_argument, 0, 'v'},
 	{"help", no_argument, 0, 'h'},
 	{"ignore_case", no_argument, 0, 'i'},
-	{"single", no_argument, 0, 's'}
+	{"single", no_argument, 0, 's'},
+	{"pretty", no_argument, 0, 'p'}
 };
 
 void print_help()
@@ -22,10 +23,9 @@ void print_help()
 		<< FMT_UNDERLINE << "INPUT" << FMT_RESET << "\n\n";
 }
 
-void print_match_header(const string &pattern, const string &src, const bool single_flag)
+void print_match_header(const string &pattern, const string &src, const bool single_flag, const bool pretty_flag)
 {
 	//string header = (single_flag ? ("FMT_FG_LIGHT_CYAN" << "Single Match" << "FMT_RESET" + "Pattern: ") : "Pattern: ");
-	//string header = single_flag ? "Single Match Pattern: " : "Pattern: ";
 	cout << endl 
 		<< FMT_FG_RED << (single_flag ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
 		<< "\"" << FMT_FG_YELLOW << pattern << FMT_RESET << "\""
@@ -42,9 +42,10 @@ int parse_options(int argc, char *argv[])
 	bool verbose_flag = false;
 	bool ignore_case_flag = false;
 	bool single_flag = false;
+	bool pretty_flag = false;
 
 	optind = 0;
-	opt = getopt_long(argc, argv, "hvis", long_options, &option_index);
+	opt = getopt_long(argc, argv, "hvisp", long_options, &option_index);
 	while (opt != -1)
 	{
 		switch (opt)
@@ -60,6 +61,9 @@ int parse_options(int argc, char *argv[])
 			break;
 		case 's':
 			single_flag = true;
+			break;
+		case 'p':
+			pretty_flag = true;
 			break;
 		default: // unknown option before args
 			cerr << "Unexpected option, -h for help\n";
@@ -87,7 +91,7 @@ int parse_options(int argc, char *argv[])
 	{
 		src = argv[current_idx];
 		// print command inputs
-		print_match_header(exp, src, single_flag);
+		print_match_header(exp, src, single_flag, pretty_flag);
 		int idx = 0;
 		string bash_str = src;
 		regex::flag_type regex_opt = regex::ECMAScript|regex::extended;

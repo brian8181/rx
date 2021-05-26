@@ -6,8 +6,9 @@
 #include "bash_color.h"
 
 // functions
-int parse_options(int argc, char *argv[]);
 void print_help();
+void print_match_header(const string &pattern, const string &src, const bool single_flag, const bool pretty_flag);
+int parse_options(int argc, char *argv[]);
 // constants
 const int BUFFER_LEN = 0xFF;
 const int DEFAULT_ARGC = 2;

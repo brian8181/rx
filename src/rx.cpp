@@ -39,13 +39,11 @@ void print_match_header(const string &pattern, const string &src, const bool sin
 	}
 	else
 	{
-		//string header = (single_flag ? ("FMT_FG_LIGHT_CYAN" << "Single Match" << "FMT_RESET" + "Pattern: ") : "Pattern: ");
-		cout << endl 
-			<< FMT_FG_RED << (single_flag ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
-			<< "\"" << FMT_FG_YELLOW << pattern << FMT_RESET << "\""
+		cout << (single_flag ? "Single Match Pattern: " : "Match Pattern: ") 
+			<< "\"" << pattern  << "\""
 			<< " -> "
-			<< FMT_FG_RED << "Input: " << FMT_RESET
-			<< "\"" << FMT_FG_YELLOW << src << FMT_RESET << "\""
+			<< "Input: " 
+			<< "\"" << src << "\""
 			<< endl;
 	}
 }
@@ -128,17 +126,27 @@ int parse_options(int argc, char *argv[])
 				break;
 			}
 			//cout << (idx+1) << ": " << src.substr(pos, len) << endl;
-
-			// set bash green start postion
-			bash_str.insert(pos, CURRENT_FG_COLOR);
-			// reset bash color position
-			pos += CURRENT_FG_COLOR.length() + len;
-			bash_str.insert(pos, FMT_RESET);
-			cout << (idx+1) << ": " << src.substr(match.position(), match.length()) << endl;
+			
+			if(pretty_flag)
+			{
+				// set bash green start postion
+				bash_str.insert(pos, CURRENT_FG_COLOR);
+				// reset bash color position
+				pos += CURRENT_FG_COLOR.length() + len;
+				bash_str.insert(pos, FMT_RESET);
+				cout << (idx+1) << ": " << src.substr(match.position(), match.length()) << endl;
+			}
+			else
+			{
+				cout << (idx+1) << ": " << src.substr(match.position(), match.length()) << endl;
+			}
 			++idx;
 		}
-		cout << "\nFound " << std::distance(begin, end) << " matches:\n";
-		cout << bash_str << "\n\n";
+		if(pretty_flag)
+		{
+			cout << "\nFound " << std::distance(begin, end) << " matches:\n";
+			cout << bash_str << "\n\n";
+		}
 	}
 	return 0;
 }

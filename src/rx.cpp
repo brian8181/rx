@@ -17,11 +17,11 @@ static struct option long_options[] =
 
 void print_help()
 {
-	cout << endl
+	cout << "Usage: "  
 		<< FMT_BOLD << "rx" << FMT_RESET << " "
-		<< FMT_BOLD << "[OPTIONS...]"
+		<< FMT_UNDERLINE << "[OPTION]..." << FMT_RESET << " "
 		<< FMT_UNDERLINE << "PATTERN" << FMT_RESET << " "
-		<< FMT_UNDERLINE << "INPUT" << FMT_RESET << "\n\n";
+		<< FMT_UNDERLINE << "[INPUT]..." << FMT_RESET << endl;
 }
 
 void print_match_header(const string &pattern, const string &src, const bool single_flag, const bool pretty_flag)

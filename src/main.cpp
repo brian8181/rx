@@ -3,7 +3,7 @@
 #include <string>
 #include <unistd.h>
 #include <termios.h>
-#include "rx.hpp"
+#include "main.hpp"
 
 using std::cin;
 using std::string;

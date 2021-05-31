@@ -15,6 +15,7 @@
 #include <netinet/in.h>
 #include "rx_test.hpp"
 #include "rx.hpp"
+#include "main.hpp"
 
 using namespace CppUnit;
 using namespace std;

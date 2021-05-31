@@ -3,6 +3,7 @@
 #include <regex>
 #include <getopt.h>
 #include "main.hpp"
+#include "rx.hpp"
 
 using namespace std;
 
@@ -111,10 +112,11 @@ int parse_options(int argc, char *argv[])
 		regex_opt = ignore_case_flag ? regex_opt|regex::icase : regex_opt;
 		regex src_epx(exp, regex_opt);
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
-		auto end = sregex_iterator();
+		auto end = sregex_iterator(); 
+		
 		for (sregex_iterator iter = begin; iter != end; ++iter)
 		{
-			string CURRENT_FG_COLOR( idx % 2 ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
+			string CURRENT_FG_COLOR( idx % EVENS_ONLY ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
 			smatch match = *iter;
 			int pos = match.position() + (idx * (CURRENT_FG_COLOR.length() + FMT_RESET.length()));
 			int len = match.length();

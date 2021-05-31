@@ -100,33 +100,30 @@ int parse_options(int argc, char *argv[])
 	string src;
 	string exp(argv[optind]);
 	
-	//for (int i = current_idx; i < argc; ++i)
+	for (int i = current_idx; i < argc; ++i)
 	{
-		src = argv[current_idx];
+		src = argv[i];
 		// print command inputs
 		print_match_header(exp, src, single_flag, pretty_flag);
 		int idx = 0;
 		string bash_str = src;
-		regex::flag_type regex_opt = regex::ECMAScript|regex::extended;
+		regex::flag_type regex_opt = regex::ECMAScript|regex::grep|regex::extended;
 		regex_opt = ignore_case_flag ? regex_opt|regex::icase : regex_opt;
 		regex src_epx(exp, regex_opt);
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
 		auto end = sregex_iterator();
-
 		for (sregex_iterator iter = begin; iter != end; ++iter)
 		{
 			string CURRENT_FG_COLOR( idx % 2 ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
 			smatch match = *iter;
 			int pos = match.position() + (idx * (CURRENT_FG_COLOR.length() + FMT_RESET.length()));
 			int len = match.length();
-
 			if ( single_flag && (iter != begin || pos != 0 || src.length() != (size_t)len) )
 			{
 				begin = end;
 				break;
 			}
-			//cout << (idx+1) << ": " << src.substr(pos, len) << endl;
-			
+
 			if(pretty_flag)
 			{
 				// set bash green start postion

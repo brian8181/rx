@@ -131,11 +131,11 @@ int parse_options(int argc, char *argv[])
 				// reset bash color position
 				pos += CURRENT_FG_COLOR.length() + len;
 				bash_str.insert(pos, FMT_RESET);
-				cout << (i+1) << ": " << src.substr(match.position(), match.length()) << endl;
+				cout << (i-(argc-2)) << ": " << src.substr(match.position(), match.length()) << endl;
 			}
 			else
 			{
-				cout << (i+1) << ": " << src.substr(match.position(), match.length()) << endl;
+				cout << (i-(argc-2)) << ": " << src.substr(match.position(), match.length()) << endl;
 			}
 		}
 		if(pretty_flag)

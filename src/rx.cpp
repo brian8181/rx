@@ -32,19 +32,19 @@ void print_match_header(const string &pattern, const string &src, const bool sin
 		//string header = (single_flag ? ("FMT_FG_LIGHT_CYAN" << "Single Match" << "FMT_RESET" + "Pattern: ") : "Pattern: ");
 		cout << endl 
 			<< FMT_FG_RED << (single_flag ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
-			<< "\"" << FMT_FG_YELLOW << pattern << FMT_RESET << "\""
+			<< "'" << FMT_FG_YELLOW << pattern << FMT_RESET << "'"
 			<< " -> "
 			<< FMT_FG_RED << "Input: " << FMT_RESET
-			<< "\"" << FMT_FG_YELLOW << src << FMT_RESET << "\""
+			<< "'" << FMT_FG_YELLOW << src << FMT_RESET << "'"
 			<< endl;
 	}
 	else
 	{
 		cout << (single_flag ? "Single Match Pattern: " : "Match Pattern: ") 
-			<< "\"" << pattern  << "\""
+			<< "'" << pattern  << "'"
 			<< " -> "
 			<< "Input: " 
-			<< "\"" << src << "\""
+			<< "'" << src << "'"
 			<< endl;
 	}
 }
@@ -141,17 +141,8 @@ int parse_options(int argc, char *argv[])
 			}
 		}
 
-		if(pretty_flag)
-		{
-			cout << "\nFound " << std::distance(begin, end) << " matches:\n";
-			cout << bash_str << "\n\n";
-		}
-		else
-		{
-
-			cout << "\nFound " << std::distance(begin, end) << " matches:\n";
-			cout << bash_str << "\n";
-		}
+		cout << "\nFound " << std::distance(begin, end) << " matches:\n";
+		cout << bash_str << "\n\n";
 		
 	}
 	return 0;

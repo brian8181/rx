@@ -13,6 +13,8 @@ private:
     CPPUNIT_TEST(testOptionVerbose);
     CPPUNIT_TEST(testOptionVerboseLong);
     CPPUNIT_TEST(testFileOption);
+    CPPUNIT_TEST(testPrettyOption);
+    CPPUNIT_TEST(testSingleOption);
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -26,7 +28,9 @@ protected:
     void testOptionVerbose(void);
     void testOptionVerboseLong(void);  
     void testFileOption(void);
-      
+    void testPrettyOption(void);
+    void testSingleOption(void);
+
 private:
     int m_argc;
     char* m_argv[10];

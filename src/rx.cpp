@@ -83,7 +83,7 @@ int parse_options(int argc, char *argv[])
 			cerr << "Unexpected option, -h for help\n";
 			return -1;
 		}
-		opt = getopt_long(argc, argv, "hvis", long_options, &option_index);
+		opt = getopt_long(argc, argv, "hvisp", long_options, &option_index);
 	}
 
 	if (argc <= DEFAULT_ARGC) // not correct number of args
@@ -113,7 +113,7 @@ int parse_options(int argc, char *argv[])
 		regex src_epx(exp, regex_opt);
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
 		auto end = sregex_iterator(); 
-		
+
 		for (sregex_iterator iter = begin; iter != end; ++iter)
 		{
 			string CURRENT_FG_COLOR( idx % EVENS_ONLY ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
@@ -140,11 +140,19 @@ int parse_options(int argc, char *argv[])
 				cout << (i-(argc-2)) << ": " << src.substr(match.position(), match.length()) << endl;
 			}
 		}
+
 		if(pretty_flag)
 		{
 			cout << "\nFound " << std::distance(begin, end) << " matches:\n";
 			cout << bash_str << "\n\n";
 		}
+		else
+		{
+
+			cout << "\nFound " << std::distance(begin, end) << " matches:\n";
+			cout << bash_str << "\n";
+		}
+		
 	}
 	return 0;
 }

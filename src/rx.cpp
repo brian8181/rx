@@ -97,16 +97,17 @@ int parse_options(int argc, char *argv[])
 		print_help();
 	}
 
-	int current_idx = optind + 1;
+	argc -= (optind + 1);
+	argv += (optind + 1);
+
 	string src;
-	string exp(argv[optind]);
+	string exp(argv[0]);
 	
-	for (int i = current_idx; i < argc; ++i)
+	for (int i = 0; i < argc; ++i)
 	{
 		src = argv[i];
 		// print command inputs
 		print_match_header(exp, src, single_flag, pretty_flag);
-		int idx = 0;
 		string bash_str = src;
 		regex::flag_type regex_opt = regex::ECMAScript|regex::grep|regex::extended;
 		regex_opt = ignore_case_flag ? regex_opt|regex::icase : regex_opt;
@@ -116,9 +117,10 @@ int parse_options(int argc, char *argv[])
 
 		for (sregex_iterator iter = begin; iter != end; ++iter)
 		{
-			string CURRENT_FG_COLOR( idx % EVENS_ONLY ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
+			int iter_offset = std::distance(begin, iter);
+			string CURRENT_FG_COLOR( iter_offset % EVENS_ONLY ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
 			smatch match = *iter;
-			int pos = match.position() + (idx * (CURRENT_FG_COLOR.length() + FMT_RESET.length()));
+			int pos = match.position() + iter_offset * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
 			int len = match.length();
 			if ( single_flag && (iter != begin || pos != 0 || src.length() != (size_t)len) )
 			{
@@ -133,11 +135,11 @@ int parse_options(int argc, char *argv[])
 				// reset bash color position
 				pos += CURRENT_FG_COLOR.length() + len;
 				bash_str.insert(pos, FMT_RESET);
-				cout << ((i+2)-argc) << ": " << src.substr(match.position(), match.length()) << endl;
+				cout << (iter_offset+1) << ": " << src.substr(match.position(), match.length()) << endl;
 			}
 			else
 			{
-				cout << ((i+2)-argc) << ": " << src.substr(match.position(), match.length()) << endl;
+				cout << (iter_offset+1) << ": " << src.substr(match.position(), match.length()) << endl;
 			}
 		}
 

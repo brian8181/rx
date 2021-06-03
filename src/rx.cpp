@@ -22,7 +22,7 @@ void print_help()
 		<< FMT_BOLD << "rx" << FMT_RESET << " "
 		<< FMT_UNDERLINE << "[OPTION]..." << FMT_RESET << " "
 		<< FMT_UNDERLINE << "PATTERN" << FMT_RESET << " "
-		<< FMT_UNDERLINE << "[INPUT]..." << FMT_RESET << endl;
+		<< FMT_UNDERLINE << "INPUT..." << FMT_RESET << endl;
 }
 
 void print_match_header(const string &pattern, const string &src, const bool single_flag, const bool pretty_flag)
@@ -133,11 +133,11 @@ int parse_options(int argc, char *argv[])
 				// reset bash color position
 				pos += CURRENT_FG_COLOR.length() + len;
 				bash_str.insert(pos, FMT_RESET);
-				cout << (i-(argc-2)) << ": " << src.substr(match.position(), match.length()) << endl;
+				cout << ((i+2)-argc) << ": " << src.substr(match.position(), match.length()) << endl;
 			}
 			else
 			{
-				cout << (i-(argc-2)) << ": " << src.substr(match.position(), match.length()) << endl;
+				cout << ((i+2)-argc) << ": " << src.substr(match.position(), match.length()) << endl;
 			}
 		}
 

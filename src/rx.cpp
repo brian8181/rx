@@ -55,7 +55,7 @@ int regx_match(int count, char* args[], const unsigned char& options)
 	string src;
 	string exp(args[0]);
 	
-	for (int i = 0; i < count; ++i)
+	for (int i = 1; i < count; ++i)
 	{
 		src = args[i];
 		// print command inputs
@@ -67,12 +67,16 @@ int regx_match(int count, char* args[], const unsigned char& options)
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
 		auto end = sregex_iterator(); 
 
+		int idx = 0;
 		for (sregex_iterator iter = begin; iter != end; ++iter)
 		{
-			int iter_offset = std::distance(begin, iter);
-			string CURRENT_FG_COLOR( iter_offset % EVENS_ONLY ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
+			//int idx = 0;
+			//int iter_offset = std::distance(begin, iter);
+			//string CURRENT_FG_COLOR( iter_offset % EVENS_ONLY ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
+			string CURRENT_FG_COLOR( idx % EVENS_ONLY ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
 			smatch match = *iter;
-			int pos = match.position() + iter_offset * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
+			//int pos = match.position() + iter_offset * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
+			int pos = match.position() + idx * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
 			int len = match.length();
 			if ( (options & SINGLE_MATCH) && (iter != begin || pos != 0 || src.length() != (size_t)len) )
 			{
@@ -87,12 +91,16 @@ int regx_match(int count, char* args[], const unsigned char& options)
 				// reset bash color position
 				pos += CURRENT_FG_COLOR.length() + len;
 				bash_str.insert(pos, FMT_RESET);
-				cout << (iter_offset+1) << ": " << src.substr(match.position(), match.length()) << endl;
+				//cout << (iter_offset+1) << ": " << src.substr(match.position(), match.length()) << endl;
+				cout << (idx+1) << ": " << src.substr(match.position(), match.length()) << endl;
 			}
 			else
 			{
-				cout << (iter_offset+1) << ": " << src.substr(match.position(), match.length()) << endl;
+				//cout << (iter_offset+1) << ": " << src.substr(match.position(), match.length()) << endl;
+				cout << (idx+1) << ": " << src.substr(match.position(), match.length()) << endl;
 			}
+
+			++idx;
 		}
 
 		cout << "\nFound " << std::distance(begin, end) << " matches:\n";
@@ -148,8 +156,8 @@ int parse_options(int argc, char* argv[])
 		print_help();
 	}
 
-	argc -= (optind + 1);
-	argv += (optind + 1);
+	argc -= optind;
+	argv += optind;
 
 	return regx_match(argc, argv, option_flags);
 }

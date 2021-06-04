@@ -13,7 +13,8 @@ static struct option long_options[] =
 		{"help", no_argument, 0, 'h'},
 		{"ignore_case", no_argument, 0, 'i'},
 		{"single", no_argument, 0, 's'},
-		{"pretty", no_argument, 0, 'p'}
+		{"pretty", no_argument, 0, 'P'},     //default
+		{"no-pretty", no_argument, 0, 'p'}
 	};
 
 void print_help()
@@ -25,13 +26,13 @@ void print_help()
 		<< FMT_UNDERLINE << "INPUT..." << FMT_RESET << endl;
 }
 
-void print_match_header(const string &pattern, const string &src, const bool single_flag, const bool pretty_flag)
+void print_match_header(const string &pattern, const string &src)
 {
-	if(pretty_flag)
+	if(option_flags & PRETTY_PRINT)
 	{
 		//string header = (single_flag ? ("FMT_FG_LIGHT_CYAN" << "Single Match" << "FMT_RESET" + "Pattern: ") : "Pattern: ");
 		cout << endl 
-			<< FMT_FG_RED << (single_flag ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
+			<< FMT_FG_RED << ((option_flags & SINGLE_MATCH) ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
 			<< "'" << FMT_FG_YELLOW << pattern << FMT_RESET << "'"
 			<< " -> "
 			<< FMT_FG_RED << "Input: " << FMT_RESET
@@ -40,7 +41,7 @@ void print_match_header(const string &pattern, const string &src, const bool sin
 	}
 	else
 	{
-		cout << (single_flag ? "Single Match Pattern: " : "Match Pattern: ") 
+		cout << ((option_flags & SINGLE_MATCH) ? "Single Match Pattern: " : "Match Pattern: ") 
 			<< "'" << pattern  << "'"
 			<< " -> "
 			<< "Input: " 
@@ -49,68 +50,19 @@ void print_match_header(const string &pattern, const string &src, const bool sin
 	}
 }
 
-int parse_options(int argc, char *argv[])
+int regx_match(int count, char* args[], const unsigned char& options)
 {
-	int opt = 0;
-	int option_index = 0;
-	bool verbose_flag = false;
-	bool ignore_case_flag = false;
-	bool single_flag = false;
-	bool pretty_flag = false;
-
-	optind = 0;
-	opt = getopt_long(argc, argv, "hvisp", long_options, &option_index);
-	while (opt != -1)
-	{
-		switch (opt)
-		{
-		case 'h':
-			print_help();
-			return 0;
-		case 'v':
-			verbose_flag = true;
-			break;
-		case 'i':
-			ignore_case_flag = true;
-			break;
-		case 's':
-			single_flag = true;
-			break;
-		case 'p':
-			pretty_flag = true;
-			break;
-		default: // unknown option before args
-			cerr << "Unexpected option, -h for help\n";
-			return -1;
-		}
-		opt = getopt_long(argc, argv, "hvisp", long_options, &option_index);
-	}
-
-	if (argc <= DEFAULT_ARGC) // not correct number of args
-	{
-		cerr << "Expected argument after options, -h for help\n";
-		return 0;
-	}
-	
-	if (verbose_flag)
-	{
-		print_help();
-	}
-
-	argc -= (optind + 1);
-	argv += (optind + 1);
-
 	string src;
-	string exp(argv[0]);
+	string exp(args[0]);
 	
-	for (int i = 0; i < argc; ++i)
+	for (int i = 0; i < count; ++i)
 	{
-		src = argv[i];
+		src = args[i];
 		// print command inputs
-		print_match_header(exp, src, single_flag, pretty_flag);
+		print_match_header(exp, src);
 		string bash_str = src;
 		regex::flag_type regex_opt = regex::ECMAScript|regex::grep|regex::extended;
-		regex_opt = ignore_case_flag ? regex_opt|regex::icase : regex_opt;
+		regex_opt = (options & IGNORE_CASE) != 0 ? regex_opt|regex::icase : regex_opt;
 		regex src_epx(exp, regex_opt);
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
 		auto end = sregex_iterator(); 
@@ -122,13 +74,13 @@ int parse_options(int argc, char *argv[])
 			smatch match = *iter;
 			int pos = match.position() + iter_offset * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
 			int len = match.length();
-			if ( single_flag && (iter != begin || pos != 0 || src.length() != (size_t)len) )
+			if ( (options & SINGLE_MATCH) && (iter != begin || pos != 0 || src.length() != (size_t)len) )
 			{
 				begin = end;
 				break;
 			}
 
-			if(pretty_flag)
+			if(options & PRETTY_PRINT)
 			{
 				// set bash green start postion
 				bash_str.insert(pos, CURRENT_FG_COLOR);
@@ -145,7 +97,59 @@ int parse_options(int argc, char *argv[])
 
 		cout << "\nFound " << std::distance(begin, end) << " matches:\n";
 		cout << bash_str << "\n\n";
-		
 	}
 	return 0;
+}
+
+int parse_options(int argc, char* argv[])
+{
+	int opt = 0;
+	int option_index = 0;
+	
+	optind = 0;
+	opt = getopt_long(argc, argv, "hvispP", long_options, &option_index);
+	while (opt != -1)
+	{
+		switch (opt)
+		{
+		case 'h':
+			print_help();
+			return 0;
+		case 'v':
+			option_flags |= VERBOSE;
+			break;
+		case 'i':
+			option_flags |= IGNORE_CASE;
+			break;
+		case 's':
+			option_flags |= SINGLE_MATCH;
+			break;
+		case 'p':
+			option_flags |= PRETTY_PRINT;
+			break;
+		case 'P':
+			option_flags &= ~PRETTY_PRINT;
+			break;
+		default: // unknown option before args
+			cerr << "Unexpected option, -h for help\n";
+			return -1;
+		}
+		opt = getopt_long(argc, argv, "hvispP", long_options, &option_index);
+	}
+
+	if (argc <= DEFAULT_ARGC) // not correct number of args
+	{
+		cerr << "Expected argument after options, -h for help\n";
+		return 0;
+	}
+	
+	if (option_flags & VERBOSE)
+	{
+		print_help();
+	}
+
+	argc -= (optind + 1);
+	argv += (optind + 1);
+
+	return regx_match(argc, argv, option_flags);
 }

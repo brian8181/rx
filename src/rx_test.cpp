@@ -14,8 +14,8 @@
 #include <cppunit/XmlOutputter.h>
 #include <netinet/in.h>
 #include "rx_test.hpp"
-#include "rx.hpp"
 #include "main.hpp"
+//#include "rx.hpp"
 
 using namespace CppUnit;
 using namespace std;

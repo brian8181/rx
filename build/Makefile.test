@@ -1,5 +1,0 @@
-SRC="../src"
-
-
-all:
-	g++ $(SRC)/main.cpp $(SRC)/rx.cpp -o rx

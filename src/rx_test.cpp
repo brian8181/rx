@@ -20,22 +20,20 @@
 using namespace CppUnit;
 using namespace std;
 
-void RxTest::setUp(void)
+void RxTest::setUp()
 {
 }
 
-void RxTest::tearDown(void)
+void RxTest::tearDown()
 {
 }
 
-void RxTest::testNoOptions(void)
+void RxTest::testNoOptions()
 {
     m_argc = 3;
-    // m_argv[0] = const_cast<char*>("src/rx");
-    // m_argv[1] = const_cast<char*>("a{3}b{2}c"); 
-    // m_argv[2] = const_cast<char*>("aaabbc");
-
-    // CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+    m_argv[0] = const_cast<char*>("src/rx");
+    m_argv[1] = const_cast<char*>("a{3}b{2}c"); 
+    m_argv[2] = const_cast<char*>("aaabbc");
 
     // m_argv[1] = const_cast<char*>("a\\\\b"); 
     // m_argv[2] = const_cast<char*>("a\\b");
@@ -63,7 +61,7 @@ void RxTest::testNoOptions(void)
     // CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
-void RxTest::testOptionHelp(void)
+void RxTest::testOptionHelp()
 {
     m_argc = 2;
     m_argv[0] = const_cast<char*>("src/rx");
@@ -71,9 +69,8 @@ void RxTest::testOptionHelp(void)
 
     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
-    void testOptionHelpLong(void);
 
-void RxTest::testOptionHelpLong(void)
+void RxTest::testOptionHelpLong()
 {
     m_argc = 2;
     m_argv[0] = const_cast<char*>("src/rx");
@@ -95,7 +92,7 @@ void RxTest::testOptionVerbose()
 
 void RxTest::testOptionVerboseLong()
 {
-    void testOptionHelpLong(void);
+    void testOptionHelpLong();
     m_argc = 4;
     m_argv[0] = const_cast<char*>("src/rx");
     m_argv[1] = const_cast<char*>("--verbose"); 
@@ -105,35 +102,35 @@ void RxTest::testOptionVerboseLong()
     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
-void RxTest::testFileOption()
-{
-    m_argc = 4;
-    m_argv[0] = const_cast<char*>("src/rx");
-    m_argv[1] = const_cast<char*>("-f"); 
-    m_argv[2] = const_cast<char*>("abc"); 
-    m_argv[3] = const_cast<char*>("abc");
+// void RxTest::testFileOption()
+// {
+//     m_argc = 4;
+//     m_argv[0] = const_cast<char*>("src/rx");
+//     m_argv[1] = const_cast<char*>("-f"); 
+//     m_argv[2] = const_cast<char*>("abc"); 
+//     m_argv[3] = const_cast<char*>("abc");
 
-    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
-}
+//     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+// }
 
 void RxTest::testPrettyOption()
 {
-    m_argc = 4;
-    m_argv[0] = const_cast<char*>("src/rx");
-    m_argv[1] = const_cast<char*>("-f"); 
-    m_argv[2] = const_cast<char*>("abc"); 
-    m_argv[3] = const_cast<char*>("abc");
+    int i = 0;
+    m_argv[i++] = const_cast<char*>("src/rx");
+    m_argv[i++] = const_cast<char*>("abc"); 
+    m_argv[i++] = const_cast<char*>("abc");
+    m_argc = i;
 
     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
 void RxTest::testSingleOption()
 {
-    m_argc = 4;
-    m_argv[0] = const_cast<char*>("src/rx");
-    m_argv[1] = const_cast<char*>("-f"); 
-    m_argv[2] = const_cast<char*>("abc"); 
-    m_argv[3] = const_cast<char*>("abc");
+    int i = 0;
+    m_argv[i++] = const_cast<char*>("src/rx");
+    m_argv[i++] = const_cast<char*>("abc"); 
+    m_argv[i++] = const_cast<char*>("abc");
+    m_argc = i;
 
     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }

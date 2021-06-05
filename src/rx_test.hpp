@@ -12,24 +12,22 @@ private:
     CPPUNIT_TEST(testOptionHelpLong);
     CPPUNIT_TEST(testOptionVerbose);
     CPPUNIT_TEST(testOptionVerboseLong);
-    CPPUNIT_TEST(testFileOption);
     CPPUNIT_TEST(testPrettyOption);
     CPPUNIT_TEST(testSingleOption);
     CPPUNIT_TEST_SUITE_END();
 
 public:
-    void setUp(void);
-    void tearDown(void);    
+    void setUp();
+    void tearDown();    
 
 protected:
-    void testNoOptions(void);
-    void testOptionHelp(void);
-    void testOptionHelpLong(void);
-    void testOptionVerbose(void);
-    void testOptionVerboseLong(void);  
-    void testFileOption(void);
-    void testPrettyOption(void);
-    void testSingleOption(void);
+    void testNoOptions();
+    void testOptionHelp();
+    void testOptionHelpLong();
+    void testOptionVerbose();
+    void testOptionVerboseLong();  
+    void testPrettyOption();
+    void testSingleOption();
 
 private:
     int m_argc;

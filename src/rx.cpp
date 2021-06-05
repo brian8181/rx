@@ -13,7 +13,7 @@ static struct option long_options[] =
 		{"help", no_argument, 0, 'h'},
 		{"ignore_case", no_argument, 0, 'i'},
 		{"single", no_argument, 0, 's'},
-		{"pretty", no_argument, 0, 'P'},     //default
+		{"pretty", no_argument, 0, 'P'},//default
 		{"no-pretty", no_argument, 0, 'p'}
 	};
 
@@ -30,7 +30,6 @@ void print_match_header(const string &pattern, const string &src)
 {
 	if(option_flags & PRETTY_PRINT)
 	{
-		//string header = (single_flag ? ("FMT_FG_LIGHT_CYAN" << "Single Match" << "FMT_RESET" + "Pattern: ") : "Pattern: ");
 		cout << endl 
 			<< FMT_FG_RED << ((option_flags & SINGLE_MATCH) ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
 			<< "'" << FMT_FG_YELLOW << pattern << FMT_RESET << "'"
@@ -55,29 +54,27 @@ int regx_match(int count, char* args[], const unsigned char& options)
 	string src;
 	string exp(args[0]);
 	
-	for (int i = 1; i < count; ++i)
+	// for each input
+	for (int input_i = 1; input_i < count; ++input_i)
 	{
-		src = args[i];
-		// print command inputs
+		src = args[input_i];
 		print_match_header(exp, src);
-		string bash_str = src;
+		string bash_stdio = src;
 		regex::flag_type regex_opt = regex::ECMAScript|regex::grep|regex::extended;
 		regex_opt = (options & IGNORE_CASE) != 0 ? regex_opt|regex::icase : regex_opt;
 		regex src_epx(exp, regex_opt);
+		
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
 		auto end = sregex_iterator(); 
-
-		int idx = 0;
-		//int iter_offset = 0;
-		for (sregex_iterator iter = begin; iter != end; ++iter)
+		int match_i = 0;
+		// for each match
+		for (sregex_iterator iter = begin; iter != end; ++iter, ++match_i)
 		{
-			//iter_offset = std::distance(begin, iter);
-			//string CURRENT_FG_COLOR( iter_offset % EVENS_ONLY ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
-			string CURRENT_FG_COLOR( idx % EVENS_ONLY ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
+			string CURRENT_FG_COLOR( match_i % EVENS_ONLY ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
 			smatch match = *iter;
-			//int pos = match.position() + iter_offset * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
-			int pos = match.position() + idx * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
+			int pos = match.position() + match_i * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
 			int len = match.length();
+			
 			if ( (options & SINGLE_MATCH) && (iter != begin || pos != 0 || src.length() != (size_t)len) )
 			{
 				begin = end;
@@ -86,26 +83,22 @@ int regx_match(int count, char* args[], const unsigned char& options)
 
 			if(options & PRETTY_PRINT)
 			{
-				// set bash green start postion
-				bash_str.insert(pos, CURRENT_FG_COLOR);
+				// set bash green start postion￼
+				bash_stdio.insert(pos, CURRENT_FG_COLOR);
 				// reset bash color position
 				pos += CURRENT_FG_COLOR.length() + len;
-				bash_str.insert(pos, FMT_RESET);
-				//cout << (iter_offset+1) << ": " << src.substr(match.position(), match.length()) << endl;
-				cout << (idx+1) << ": " << src.substr(match.position(), match.length()) << endl;
+				bash_stdio.insert(pos, FMT_RESET);
+				cout << (match_i+1) << ": " << src.substr(match.position(), match.length()) << endl;
 			}
 			else
 			{
-				//cout << (iter_offset+1) << ": " << src.substr(match.position(), match.length()) << endl;
-				cout << (idx+1) << "\t" << src.substr(match.position(), match.length()) 
+				cout << (match_i+1) << "\t" << src.substr(match.position(), match.length()) 
 					<< '\t' << match.position() << '\t' << match.length() << endl;
 			}
-			//iter_offset = std::distance(begin, iter);
-			++idx;
 		}
 
 		cout << "\nFound " << std::distance(begin, end) << " matches:\n";
-		cout << bash_str << "\n\n";
+		cout << bash_stdio << "\n\n";
 	}
 	return 0;
 }

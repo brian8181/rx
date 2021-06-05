@@ -15,7 +15,6 @@
 #include <netinet/in.h>
 #include "rx_test.hpp"
 #include "main.hpp"
-//#include "rx.hpp"
 
 using namespace CppUnit;
 using namespace std;
@@ -101,17 +100,6 @@ void RxTest::testOptionVerboseLong()
 
     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
-
-// void RxTest::testFileOption()
-// {
-//     m_argc = 4;
-//     m_argv[0] = const_cast<char*>("src/rx");
-//     m_argv[1] = const_cast<char*>("-f"); 
-//     m_argv[2] = const_cast<char*>("abc"); 
-//     m_argv[3] = const_cast<char*>("abc");
-
-//     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
-// }
 
 void RxTest::testPrettyOption()
 {

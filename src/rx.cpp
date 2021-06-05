@@ -68,10 +68,10 @@ int regx_match(int count, char* args[], const unsigned char& options)
 		auto end = sregex_iterator(); 
 
 		int idx = 0;
+		//int iter_offset = 0;
 		for (sregex_iterator iter = begin; iter != end; ++iter)
 		{
-			//int idx = 0;
-			//int iter_offset = std::distance(begin, iter);
+			//iter_offset = std::distance(begin, iter);
 			//string CURRENT_FG_COLOR( iter_offset % EVENS_ONLY ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
 			string CURRENT_FG_COLOR( idx % EVENS_ONLY ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
 			smatch match = *iter;
@@ -97,9 +97,10 @@ int regx_match(int count, char* args[], const unsigned char& options)
 			else
 			{
 				//cout << (iter_offset+1) << ": " << src.substr(match.position(), match.length()) << endl;
-				cout << (idx+1) << ": " << src.substr(match.position(), match.length()) << endl;
+				cout << (idx+1) << "\t" << src.substr(match.position(), match.length()) 
+					<< '\t' << match.position() << '\t' << match.length() << endl;
 			}
-
+			//iter_offset = std::distance(begin, iter);
 			++idx;
 		}
 
@@ -132,10 +133,10 @@ int parse_options(int argc, char* argv[])
 		case 's':
 			option_flags |= SINGLE_MATCH;
 			break;
-		case 'p':
+		case 'P':
 			option_flags |= PRETTY_PRINT;
 			break;
-		case 'P':
+		case 'p':
 			option_flags &= ~PRETTY_PRINT;
 			break;
 		default: // unknown option before args

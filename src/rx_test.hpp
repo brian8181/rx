@@ -20,6 +20,10 @@ public:
     void setUp();
     void tearDown();    
 
+    // agregate test functions
+    void execute();
+    void execute(int argc, char* argv[]);
+
 protected:
     void testNoOptions();
     void testOptionHelp();

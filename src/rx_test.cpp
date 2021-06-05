@@ -15,6 +15,7 @@
 #include <netinet/in.h>
 #include "rx_test.hpp"
 #include "main.hpp"
+#include <string.h>
 
 using namespace CppUnit;
 using namespace std;
@@ -34,30 +35,28 @@ void RxTest::testNoOptions()
     m_argv[1] = const_cast<char*>("a{3}b{2}c"); 
     m_argv[2] = const_cast<char*>("aaabbc");
 
-    // m_argv[1] = const_cast<char*>("a\\\\b"); 
-    // m_argv[2] = const_cast<char*>("a\\b");
+    m_argv[1] = const_cast<char*>("a\\\\b"); 
+    m_argv[2] = const_cast<char*>("a\\b");
 
-    // CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+    m_argv[1] = const_cast<char*>("a\\*b"); 
+    m_argv[2] = const_cast<char*>("a*b");
 
-    // m_argv[1] = const_cast<char*>("a\\*b"); 
-    // m_argv[2] = const_cast<char*>("a*b");
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 
-    // CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+    m_argv[1] = const_cast<char*>("a\\=b"); 
+    m_argv[2] = const_cast<char*>("a=b");
 
-    // m_argv[1] = const_cast<char*>("a\\=b"); 
-    // m_argv[2] = const_cast<char*>("a=b");
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 
-    // CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+    m_argv[1] = const_cast<char*>("a\\+b"); 
+    m_argv[2] = const_cast<char*>("a+b");
 
-    // m_argv[1] = const_cast<char*>("a\\+b"); 
-    // m_argv[2] = const_cast<char*>("a+b");
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 
-    // CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+    m_argv[1] = const_cast<char*>("a~b"); 
+    m_argv[2] = const_cast<char*>("a~b");
 
-    // m_argv[1] = const_cast<char*>("a~b"); 
-    // m_argv[2] = const_cast<char*>("a~b");
-
-    // CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
 void RxTest::testOptionHelp()
@@ -80,24 +79,23 @@ void RxTest::testOptionHelpLong()
 
 void RxTest::testOptionVerbose()
 {
-    m_argc = 4;
-    m_argv[0] = const_cast<char*>("src/rx");
-    m_argv[1] = const_cast<char*>("-v"); 
-    m_argv[2] = const_cast<char*>("abc"); 
-    m_argv[3] = const_cast<char*>("abc");
+    int i = 0;
+    m_argv[i++] = const_cast<char*>("src/rx");
+    m_argv[i++] = const_cast<char*>("-v"); 
+    m_argv[i++] = const_cast<char*>("abc"); 
+    m_argv[i++] = const_cast<char*>("abc");
 
     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
 void RxTest::testOptionVerboseLong()
 {
-    void testOptionHelpLong();
-    m_argc = 4;
-    m_argv[0] = const_cast<char*>("src/rx");
-    m_argv[1] = const_cast<char*>("--verbose"); 
-    m_argv[2] = const_cast<char*>("abc"); 
-    m_argv[3] = const_cast<char*>("abc");
-
+    int i = 0;
+    m_argv[i++] = const_cast<char*>("src/rx");
+    m_argv[i++] = const_cast<char*>("--verbose"); 
+    m_argv[i++] = const_cast<char*>("abc"); 
+    m_argv[i++] = const_cast<char*>("abc");
+    m_argc = i;
     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
@@ -123,6 +121,22 @@ void RxTest::testSingleOption()
     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
+void RxTest::execute()
+{
+    char** argv = new char*[1];
+    char* pexe = new char[5];
+    pexe = "test";
+    argv[0] = pexe;
+
+    execute(1, argv);
+}
+   
+void RxTest::execute(int argc, char* argv[])
+{
+
+}
+
+
 CPPUNIT_TEST_SUITE_REGISTRATION( RxTest );
 
 int main(int argc, char* argv[])
@@ -138,7 +152,7 @@ int main(int argc, char* argv[])
     CPPUNIT_NS::BriefTestProgressListener progress;
     testresult.addListener (&progress);
 
-    // insert test-suite at test-runner by registry
+    // insert test-suite at test-runner by registry#include <stdio.h>
     CPPUNIT_NS::TestRunner testrunner;
     testrunner.addTest (CPPUNIT_NS::TestFactoryRegistry::getRegistry().makeTest ());
     testrunner.run(testresult);

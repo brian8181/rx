@@ -20,15 +20,19 @@ indent_mode=2
 [project]
 name=rx
 base_path=/home/brian/src/rx/
+description=
 
 [long line marker]
 long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=1
+current_page=4
 FILE_NAME_0=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fbrian%2Fsrc%2Frx%2FAUTHORS;0;4
 FILE_NAME_1=2467;C++;0;EUTF-8;1;1;0;%2Fhome%2Fbrian%2Fsrc%2Frx%2Fsrc%2Frx.cpp;0;4
+FILE_NAME_2=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fbrian%2Fsrc%2Fbkgraph%2Fsrc%2Fmain.cpp;0;4
+FILE_NAME_3=114;C++;0;EUTF-8;1;1;0;%2Fhome%2Fbrian%2Fsrc%2Fbkgraph%2Fsrc%2Frx.cpp;0;4
+FILE_NAME_4=388;C++;0;EUTF-8;1;1;0;%2Fhome%2Fbrian%2Fsrc%2Fbkgraph%2Fsrc%2Frx.hpp;0;4
 
 [VTE]
 last_dir=/home/brian

@@ -30,8 +30,6 @@ void RxTest::tearDown()
 
 void RxTest::testNoOptions()
 {
-    m_argc = 3;
-    m_argv[0] = const_cast<char*>("src/rx");
     m_argv[1] = const_cast<char*>("a{3}b{2}c"); 
     m_argv[2] = const_cast<char*>("aaabbc");
 
@@ -45,9 +43,6 @@ void RxTest::testNoOptions()
 
     m_argv[1] = const_cast<char*>("a\\=b"); 
     m_argv[2] = const_cast<char*>("a=b");
-
-    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
-
     m_argv[1] = const_cast<char*>("a\\+b"); 
     m_argv[2] = const_cast<char*>("a+b");
 
@@ -89,7 +84,7 @@ void RxTest::testOptionVerbose()
 }
 
 void RxTest::testOptionVerboseLong()
-{
+{ 
     int i = 0;
     m_argv[i++] = const_cast<char*>("src/rx");
     m_argv[i++] = const_cast<char*>("--verbose"); 
@@ -123,10 +118,9 @@ void RxTest::testSingleOption()
 
 void RxTest::execute()
 {
-    char** argv = new char*[1];
-    char* pexe = new char[5];
-    pexe = "test";
-    argv[0] = pexe;
+    char* str = "test"; // WARN on stack, not on heap!
+    char** argv = new char*[1] {str};
+    argv[0] = str;
 
     execute(1, argv);
 }
@@ -136,7 +130,7 @@ void RxTest::execute(int argc, char* argv[])
 
 }
 
-
+ 
 CPPUNIT_TEST_SUITE_REGISTRATION( RxTest );
 
 int main(int argc, char* argv[])

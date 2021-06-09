@@ -38,15 +38,6 @@ void print_match_header(const string &pattern, const string &src)
 			<< "'" << FMT_FG_YELLOW << src << FMT_RESET << "'"
 			<< endl;
 	}
-	else
-	{
-		cout << ((option_flags & SINGLE_MATCH) ? "Single Match Pattern: " : "Match Pattern: ") 
-			<< "'" << pattern  << "'"
-			<< " -> "
-			<< "Input: " 
-			<< "'" << src << "'"
-			<< endl;
-	}
 }
 
 int regx_match(int count, char* args[], const unsigned char& options)
@@ -97,8 +88,11 @@ int regx_match(int count, char* args[], const unsigned char& options)
 			}
 		}
 
-		cout << "\nFound " << std::distance(begin, end) << " matches:\n";
-		cout << bash_stdio << "\n\n";
+		if(option_flags & PRETTY_PRINT)
+		{
+			cout << "\nFound " << std::distance(begin, end) << " matches:\n";
+			cout << bash_stdio << "\n\n";
+		}
 	}
 	return 0;
 }

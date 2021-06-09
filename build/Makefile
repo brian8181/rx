@@ -84,7 +84,11 @@ clean:
 # delete all auto generated files
 .PHONY: distclean
 distclean: clean
-	rm ../config.* ../Makefile ../Makefile.in ../INSTALL ../configure ../stamp-h1 ../aclocal.m4
+	rm ../config.* ../Makefile ../Makefile.in ../INSTALL ../configure 
+	rm ../stamp-h1 ../aclocal.m4 ../compile ../install-sh ../libtool ../ltmain.sh ../stamp-h1 ../missing ../depcomp
+	rm ../src/Makefile ../src/Makefile.in
+	rm -rf ../autom4te.cache ../src/.deps ../src/.libs
+	rm ../src/.o
 
 dist: 
 	git archive HEAD | gzip > $(BUILDDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz

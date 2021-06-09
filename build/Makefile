@@ -56,8 +56,8 @@ $(APPNAME)_test.o:
 # install man pages
 .PHONY: man
 man:
-	cp ./man/$(APPNAME).1 $(man1dir)
-	gzip $(man1dir)/$(APPNAME).1
+	cp ../man/$(APPNAME).1 $(man1dir)
+	# gzip $(man1dir)/$(APPNAME).1
 	mandb
 	
 # uninstall man pages

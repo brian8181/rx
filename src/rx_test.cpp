@@ -118,11 +118,22 @@ void RxTest::testSingleOption()
 
 void RxTest::execute()
 {
-    char* str = "test"; // WARN on stack, not on heap!
-    char** argv = new char*[1] {str};
-    argv[0] = str;
+    // on head   
+    char** pstr = new char*;
+    *pstr = "test";    // on the heap
+
+    char** argv = new char*[1] {*pstr};
+    //argv[0] = *pstr;
 
     execute(1, argv);
+
+    delete pstr;
+    delete [] argv;
+
+    // on stack
+
+    char* argv_[3] {"./rx", "abc", "abc"};
+
 }
    
 void RxTest::execute(int argc, char* argv[])
@@ -151,7 +162,7 @@ int main(int argc, char* argv[])
     testrunner.addTest (CPPUNIT_NS::TestFactoryRegistry::getRegistry().makeTest ());
     testrunner.run(testresult);
 
-    // output results in compiler-format
+    // output resint* pn = new int;ults in compiler-format
     CPPUNIT_NS::CompilerOutputter compileroutputter(&collectedresults, std::cerr);
     compileroutputter.write ();
 

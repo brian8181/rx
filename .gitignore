@@ -1,13 +1,13 @@
-.deps
-*.jpg
-*.la
-*.lo
-*.o
-*.pc
-*.so
-*.swp
-*~
-.libs
+# .deps
+# *.jpg
+# *.la
+# *.lo
+# *.o
+# *.pc
+# *.so
+# *.swp
+# *~
+# .libs
 
 # not sure
 #/config.log
@@ -44,4 +44,30 @@ src/rx
 build/rx
 build/rx_test
 build/cppRxTestResults.xml
+
+// autotool auto gerenerated files
+INSTALL
+Makefile
+Makefile.in
+aclocal.m4
+autom4te.cache/*
+compile
+config.guess
+config.h
+config.h.in
+config.log
+config.status
+config.sub
+configure
+depcomp
+install-sh
+libtool
+ltmain.sh
+src/Makefile
+src/Makefile.in
+stamp-h1
+missing
+
+
+
 

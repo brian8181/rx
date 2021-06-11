@@ -25,6 +25,23 @@ const string FMT_FG_WHITE          = "\033[97m";
 const string FMT_UNDERLINE         = "\033[4m";
 const string FMT_BOLD              = "\033[1m";
 const string FMT_RESET             = "\033[0m";
+const string FMT_BG_DEFUALT        = "\033[49m";
+const string FMT_BG_BLACK          = "\033[40m";
+const string FMT_BG_RED            = "\033[41m";
+const string FMT_BG_GREEN          = "\033[42m";
+const string FMT_BG_YELLOW         = "\033[43m";
+const string FMT_BG_BLUE           = "\033[44m";
+const string FMT_BG_MAGENTA        = "\033[45m";
+const string FMT_BG_CYAN           = "\033[46m";
+const string FMT_BG_DARK_GREY      = "\033[100m";
+const string FMT_BG_LIGHT_RED      = "\033[101m";
+const string FMT_BG_LIGHT_GREEN    = "\033[102m";
+const string FMT_BG_LIGHT_YELLOW   = "\033[103m";
+const string FMT_BG_LIGHT_BLUE     = "\033[104m";
+const string FMT_BG_LIGHT_MAGENTA  = "\033[105m";
+const string FMT_BG_LIGHT_CYAN     = "\033[106m";
+const string FMT_BG_WHITE          = "\033[107m";
+
 
 #endif
 

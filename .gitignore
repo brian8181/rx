@@ -1,6 +1,7 @@
 #script/?
 #script/.data/**
 
+*.o
 src/rx_test
 src/rx
 build/rx

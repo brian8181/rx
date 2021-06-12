@@ -6,7 +6,20 @@
 using std::string;
 
 // shell color constants
-const string FMT_FG_DEFUALT        = "\033[39m";
+const string FMT_RESET             = "\033[0m";
+const string FMT_RESET_BOLD        = "\033[21m";
+const string FMT_RESET_DIM         = "\033[22m";
+const string FMT_RESET_UNDERLINE   = "\033[24m";
+const string FMT_RESET_BLINK       = "\033[25m"; 
+const string FMT_RESET_REVERSE     = "\033[27m";
+const string FMT_RESET_HIDDEN      = "\033[28m";
+const string FMT_BOLD              = "\033[1m";
+const string FMT_DIM               = "\033[2m";
+const string FMT_UNDERLINE         = "\033[4m";
+const string FMT_BLINK             = "\033[5m";
+const string FMT_REVERSE           = "\033[7m";
+const string FMT_HIDDEN            = "\033[8m";
+const string FMT_FG_DEFUALT        = "\033[39m";        
 const string FMT_FG_RED            = "\033[31m";
 const string FMT_FG_GREEN          = "\033[32m";
 const string FMT_FG_YELLOW         = "\033[33m";
@@ -22,9 +35,6 @@ const string FMT_FG_LIGHT_BLUE     = "\033[94m";
 const string FMT_FG_LIGHT_MAGENTA  = "\033[95m";
 const string FMT_FG_LIGHT_CYAN     = "\033[96m";
 const string FMT_FG_WHITE          = "\033[97m";
-const string FMT_UNDERLINE         = "\033[4m";
-const string FMT_BOLD              = "\033[1m";
-const string FMT_RESET             = "\033[0m";
 const string FMT_BG_DEFUALT        = "\033[49m";
 const string FMT_BG_BLACK          = "\033[40m";
 const string FMT_BG_RED            = "\033[41m";

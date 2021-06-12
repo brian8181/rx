@@ -34,7 +34,7 @@ debuggdb: CXXFLAGS += -DDEBUG -ggdb
 debuggdb: all
 
 # complie & link
-all: $(APPNAME) $(APPNAME)_test
+all: $(APPNAME) $(APPNAME)_test bash_color_test
 
 # complie & link
 $(APPNAME): $(APPNAME).o 
@@ -52,6 +52,15 @@ $(APPNAME)_test: $(APPNAME)_test.o
 # complie only
 $(APPNAME)_test.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME)_test.cpp -o $(BUILDDIR)/$(APPNAME)_test.o
+
+bash_color_test:
+	$(CXX) $(CXXFLAGS) $(SRCDIR)/bash_color_test.cpp -o $(BUILDDIR)/bash_color_test
+
+# bash_color_test: bash_color_test.o
+# 	$(CXX) $(CXXFLAGS) $(BUILDDIR)/bash_color_test.o -o $(BUILDDIR)/bash_color_test
+
+# bash_color_test.o:
+# 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/bash_color_test.cpp -o $(BUILDDIR)/bash_color_test.o
 
 # install man pages
 .PHONY: man
@@ -79,7 +88,7 @@ uninstall: unman
 # delete object files & app executable
 .PHONY: clean
 clean:
-	rm -f $(BUILDDIR)/$(APPNAME) $(BUILDDIR)/*.o $(BUILDDIR)/*.xml $(BUILDDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz $(BUILDDIR)/$(APPNAME)_test
+	rm -f $(BUILDDIR)/$(APPNAME) $(BUILDDIR)/*.o $(BUILDDIR)/*.xml $(BUILDDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz $(BUILDDIR)/$(APPNAME)_test $(BUILDDIR)/bash_color_test
 
 # delete all auto generated files
 .PHONY: distclean

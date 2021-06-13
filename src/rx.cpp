@@ -14,7 +14,8 @@ static struct option long_options[] =
 		{"ignore_case", no_argument, 0, 'i'},
 		{"single", no_argument, 0, 's'},
 		{"pretty", no_argument, 0, 'P'},//default
-		{"no-pretty", no_argument, 0, 'p'}
+		{"no-pretty", no_argument, 0, 'p'},
+		{"version", no_argument, 0, 'r'}
 	};
 
 void print_help()
@@ -38,6 +39,11 @@ void print_match_header(const string &pattern, const string &src)
 			<< "'" << FMT_FG_YELLOW << src << FMT_RESET << "'"
 			<< endl;
 	}
+}
+
+void print_version()
+{
+	cout << "rx version .01" << endl;
 }
 
 int regx_match(int count, char* args[], const unsigned char& options)
@@ -103,7 +109,7 @@ int parse_options(int argc, char* argv[])
 	int option_index = 0;
 	
 	optind = 0;
-	opt = getopt_long(argc, argv, "hvispP", long_options, &option_index);
+	opt = getopt_long(argc, argv, "hvispPr", long_options, &option_index);
 	while (opt != -1)
 	{
 		switch (opt)
@@ -126,11 +132,14 @@ int parse_options(int argc, char* argv[])
 		case 'p':
 			option_flags &= ~PRETTY_PRINT;
 			break;
+		case 'r':
+			print_version();
+			return 0;
 		default: // unknown option before args
 			cerr << "Unexpected option, -h for help\n";
 			return -1;
 		}
-		opt = getopt_long(argc, argv, "hvispP", long_options, &option_index);
+		opt = getopt_long(argc, argv, "hvispPr", long_options, &option_index);
 	}
 
 	if (argc <= DEFAULT_ARGC) // not correct number of args

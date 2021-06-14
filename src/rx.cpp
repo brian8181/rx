@@ -43,7 +43,22 @@ void print_match_header(const string &pattern, const string &src)
 
 void print_version()
 {
-	cout << "rx version .01" << endl;
+	// // Create a text string, which is used to output the text file
+	// string myText;
+
+	// // Read from the text file
+	// ifstream MyReadFile("filename.txt");
+
+	// // Use a while loop together with the getline() function to read the file line by line
+	// while (getline (MyReadFile, myText)) {
+	// // Output the text from the file
+	// cout << myText;
+	// }
+
+	// // Close the file
+	// MyReadFile.close();
+
+	cout << "rx version 0.01" << endl;
 }
 
 int regx_match(int count, char* args[], const unsigned char& options)

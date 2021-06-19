@@ -120,7 +120,7 @@ void RxTest::execute()
 {
     // on head   
     char** pstr = new char*;
-    *pstr = "test";    // on the heap
+    *pstr = (char*)"test";    // on the heap
 
     char** argv = new char*[1] {*pstr};
     //argv[0] = *pstr;
@@ -131,9 +131,7 @@ void RxTest::execute()
     delete [] argv;
 
     // on stack
-
-    char* argv_[3] {"./rx", "abc", "abc"};
-
+    //char* argv_[3] {(char*)"./rx", (char*)"abc", (char*)"abc"};
 }
    
 void RxTest::execute(int argc, char* argv[])

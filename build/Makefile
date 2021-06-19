@@ -34,7 +34,7 @@ debuggdb: CXXFLAGS += -DDEBUG -ggdb
 debuggdb: all
 
 # complie & link
-all: $(APPNAME) $(APPNAME)_test bash_color_test
+all: $(APPNAME) $(APPNAME)_test bash_color_test_ # bash_color_test
 
 # complie & link
 $(APPNAME): $(APPNAME).o 
@@ -53,11 +53,11 @@ $(APPNAME)_test: $(APPNAME)_test.o
 $(APPNAME)_test.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME)_test.cpp -o $(BUILDDIR)/$(APPNAME)_test.o
 
-bash_color_test:
-	$(CXX) $(CXXFLAGS) $(SRCDIR)/bash_color_test.cpp -o $(BUILDDIR)/bash_color_test
+bash_color_test_:
+	$(CXX) $(CXXFLAGS) $(SRCDIR)/bash_color_test.cpp -o $(BUILDDIR)/bash_color_test_
 
 # bash_color_test: bash_color_test.o
-# 	$(CXX) $(CXXFLAGS) $(BUILDDIR)/bash_color_test.o -o $(BUILDDIR)/bash_color_test
+# # 	$(CXX) $(CXXFLAGS) $(BUILDDIR)/bash_color_test.o -o $(BUILDDIR)/bash_color_test
 
 # bash_color_test.o:
 # 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/bash_color_test.cpp -o $(BUILDDIR)/bash_color_test.o

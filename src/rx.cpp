@@ -44,19 +44,20 @@ void print_match_header(const string &pattern, const string &src)
 void print_version()
 {
 	// // Create a text string, which is used to output the text file
-	// string myText;
+	// string version_str;
 
 	// // Read from the text file
-	// ifstream MyReadFile("filename.txt");
+	// ifstream version_file("rx_BUILD.txt");
 
 	// // Use a while loop together with the getline() function to read the file line by line
-	// while (getline (MyReadFile, myText)) {
+	// while (getline (version_file, version_str)) 
+	// {
 	// // Output the text from the file
-	// cout << myText;
+			// cout << version_str;
 	// }
 
 	// // Close the file
-	// MyReadFile.close();
+	// version_file.close();
 
 	cout << "rx version 0.01" << endl;
 }
@@ -86,7 +87,6 @@ int regx_match(int count, char* args[], const unsigned char& options)
 			smatch match = *iter;
 			int pos = match.position() + match_i * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
 			int len = match.length();
-			
 			if ( (options & SINGLE_MATCH) && (iter != begin || pos != 0 || src.length() != (size_t)len) )
 			{
 				begin = end;

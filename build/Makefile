@@ -54,13 +54,13 @@ $(APPNAME)_test.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME)_test.cpp -o $(BUILDDIR)/$(APPNAME)_test.o
 
 bash_color_test_:
-	$(CXX) $(CXXFLAGS) $(SRCDIR)/bash_color_test.cpp -o $(BUILDDIR)/bash_color_test_
+	$(CXX) $(CXXFLAGS) $(SRCDIR)/bash_color_test.cpp -o $(BUILDDIR)/bash_color_test
 
 # bash_color_test: bash_color_test.o
 # # 	$(CXX) $(CXXFLAGS) $(BUILDDIR)/bash_color_test.o -o $(BUILDDIR)/bash_color_test
 
-# bash_color_test.o:
-# 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/bash_color_test.cpp -o $(BUILDDIR)/bash_color_test.o
+bash_color_test.o:
+	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/bash_color_test.cpp -o $(BUILDDIR)/bash_color_test.o
 
 # install man pages
 .PHONY: man
@@ -88,16 +88,17 @@ uninstall: unman
 # delete object files & app executable
 .PHONY: clean
 clean:
-	rm -f $(BUILDDIR)/$(APPNAME) $(BUILDDIR)/*.o $(BUILDDIR)/*.xml $(BUILDDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz $(BUILDDIR)/$(APPNAME)_test $(BUILDDIR)/bash_color_test
+	rm -f $(BUILDDIR)/$(APPNAME) $(BUILDDIR)/*.o $(BUILDDIR)/$(APPNAME)_test $(BUILDDIR)/bash_color_test
+	rm -f $(BUILDDIR)/*.xml $(BUILDDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz
 
 # delete all auto generated files
 .PHONY: distclean
 distclean: clean
-	rm ../config.* ../Makefile ../Makefile.in ../INSTALL ../configure 
-	rm ../stamp-h1 ../aclocal.m4 ../compile ../install-sh ../libtool ../ltmain.sh ../stamp-h1 ../missing ../depcomp
-	rm ../src/Makefile ../src/Makefile.in
-	rm -rf ../autom4te.cache ../src/.deps ../src/.libs
-	rm ../src/.o
+	rm -f $(SRCDIR)/config.* $(SRCDIR)/Makefile $(SRCDIR)/Makefile.in $(SRCDIR)/INSTALL $(SRCDIR)/configure 
+	# rm ../stamp-h1 ../aclocal.m4 ../compile ../install-sh ../libtool ../ltmain.sh ../stamp-h1 ../missing ../depcomp
+	# rm ../src/Makefile ../src/Makefile.in
+	# rm -rf ../autom4te.cache ../src/.deps ../src/.libs
+	# rm ../src/.o
 
 dist: 
 	git archive HEAD | gzip > $(BUILDDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz

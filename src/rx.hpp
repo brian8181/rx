@@ -6,6 +6,9 @@ const int BUFFER_LEN = 0xFF;
 const int DEFAULT_ARGC = 2;
 const int EVENS_ONLY = 2;
 
+// Version string
+const string& VERSION_STRING = "rx 0.0.1";
+
 // Options Flags
 const unsigned char VERBOSE = 0x1;
 const unsigned char IGNORE_CASE = 0x2;

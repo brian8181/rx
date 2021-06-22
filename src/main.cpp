@@ -11,9 +11,6 @@ using std::string;
 int main(int argc, char* argv[])
 {
 	termios t;
-	// test, experimental 
-	// int n = tcgetattr(STDIN_FILENO, &t);
-	// std::cout << n << std::endl;
 	if (tcgetattr(STDIN_FILENO, &t) < 0)
 	{
 		string buffer;

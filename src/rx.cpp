@@ -27,7 +27,7 @@ void print_help()
 		<< FMT_UNDERLINE << "INPUT..." << FMT_RESET << endl;
 }
 
-void print_match_header(const string &pattern, const string &src)
+void print_match_header(const string& pattern, const string& src)
 {
 	if(option_flags & PRETTY_PRINT)
 	{

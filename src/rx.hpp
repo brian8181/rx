@@ -1,15 +1,17 @@
 #ifndef _RX_HPP
 #define _RX_HPP
 
+#include <string>
+
 // constants
 const int BUFFER_LEN = 0xFF;
 const int DEFAULT_ARGC = 2;
 const int EVENS_ONLY = 2;
 
-// Version string
+// version string
 const string& VERSION_STRING = "rx 0.0.1";
 
-// Options Flags
+// options flags
 const unsigned char VERBOSE = 0x1;
 const unsigned char IGNORE_CASE = 0x2;
 const unsigned char SINGLE_MATCH = 0x4;

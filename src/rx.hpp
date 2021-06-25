@@ -9,7 +9,7 @@ const int DEFAULT_ARGC = 2;
 const int EVENS_ONLY = 2;
 
 // version string
-const string& VERSION_STRING = "rx 0.0.1";
+const string VERSION_STRING = "rx 0.0.1";
 
 // options flags
 const unsigned char VERBOSE = 0x1;

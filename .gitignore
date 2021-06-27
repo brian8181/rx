@@ -13,27 +13,27 @@ src/Makefile.in
 missing
 
 # autotool auto gerenerated files
-# INSTALL
+INSTALL
 # Makefile
-# Makefile.in
-# aclocal.m4
-# autom4te.cache/*
-# compile
-# config.guess
+Makefile.in
+aclocal.m4
+autom4te.cache/*
+compile
+config.guess
 # config.h
-# config.h.in
+config.h.in
 # config.log
 # config.status
-# config.sub
-# configure
-# depcomp
-# install-sh
+config.sub
+configure
+depcomp
+install-sh
 # libtool
-# ltmain.sh
+ltmain.sh
 # src/Makefile
 # src/Makefile.in
 # stamp-h1
-# missing
+missing
 
 
 

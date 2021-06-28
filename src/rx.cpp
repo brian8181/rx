@@ -48,7 +48,7 @@ void print_version()
 	cout << VERSION_STRING << endl;
 }
 
-int regx_match(int count, char* args[], const unsigned char& options)
+int regx_match(int count, char* args[])
 {
 	string src;
 	string exp(args[0]);
@@ -60,7 +60,7 @@ int regx_match(int count, char* args[], const unsigned char& options)
 		print_match_header(exp, src);
 		string bash_stdio = src;
 		regex::flag_type regex_opt = regex::ECMAScript|regex::grep|regex::extended;
-		regex_opt = (options & IGNORE_CASE) != 0 ? regex_opt|regex::icase : regex_opt;
+		regex_opt = (option_flags & IGNORE_CASE) != 0 ? regex_opt|regex::icase : regex_opt;
 		regex src_epx(exp, regex_opt);
 
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
@@ -73,13 +73,13 @@ int regx_match(int count, char* args[], const unsigned char& options)
 			smatch match = *iter;
 			int pos = match.position() + match_i * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
 			int len = match.length();
-			if ( (options & SINGLE_MATCH) && (iter != begin || pos != 0 || src.length() != (size_t)len) )
+			if ( (option_flags & SINGLE_MATCH) && (iter != begin || pos != 0 || src.length() != (size_t)len) )
 			{
 				begin = end;
 				break;
 			}
 
-			if(options & PRETTY_PRINT)
+			if(option_flags & PRETTY_PRINT)
 			{
 				// set bash green start postion￼
 				bash_stdio.insert(pos, CURRENT_FG_COLOR);
@@ -134,10 +134,10 @@ int parse_options(int argc, char* argv[])
 			option_flags &= ~PRETTY_PRINT;
 			break;
 		case 'E':
-			option_flags &= EXTENDED_REGX;
+			option_flags |= EXTENDED_REGX;
 			break;
 		case 'e':
-			option_flags |= ~EXTENDED_REGX;
+			option_flags &= ~EXTENDED_REGX;
 			break;
 		case 'r':
 			print_version();
@@ -163,5 +163,5 @@ int parse_options(int argc, char* argv[])
 	argc -= optind;
 	argv += optind;
 
-	return regx_match(argc, argv, option_flags);
+	return regx_match(argc, argv);
 }

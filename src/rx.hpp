@@ -2,6 +2,7 @@
 #define _RX_HPP
 
 #include <string>
+//std::regex_constants;
 
 // constants
 const int BUFFER_LEN   = 0xFF;
@@ -21,6 +22,6 @@ const unsigned char EXTENDED_REGX = 0x10;
 const unsigned char DEFAULTS = PRETTY_PRINT | EXTENDED_REGX;
 unsigned char option_flags = DEFAULTS; 
 
-int regx_match(int count, char* args[], const unsigned char& options);
+int regx_match(int count, char* args[]);
 
 #endif

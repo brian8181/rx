@@ -34,16 +34,21 @@ debuggdb: CXXFLAGS += -DDEBUG -ggdb
 debuggdb: all
 
 # complie & link
-all: $(APPNAME) $(APPNAME)_test bash_color_test_ # bash_color_test
+all: $(APPNAME) $(APPNAME)_test bash_color_test
 
 # complie & link
-$(APPNAME): $(APPNAME).o 
-	 $(CXX) $(CXXFLAGS) $(BUILDDIR)/$(APPNAME).o $(BUILDDIR)/main.o -o $(BUILDDIR)/$(APPNAME)
+$(APPNAME): $(APPNAME).o main.o OptionParser.o
+	 $(CXX) $(CXXFLAGS) $(BUILDDIR)/$(APPNAME).o $(BUILDDIR)/main.o $(BUILDDIR)/OptionParser.o -o $(BUILDDIR)/$(APPNAME)
 
 # complie only
 $(APPNAME).o:
-	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME).$(EXT) -o $(BUILDDIR)/$(APPNAME).o
+	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME).$(EXT)  -o $(BUILDDIR)/$(APPNAME).o
+	
+main.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/main.$(EXT) -o $(BUILDDIR)/main.o
+
+OptionParser.o:
+	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/OptionParser.$(EXT) -o $(BUILDDIR)/OptionParser.o
 	
 # complie & link
 $(APPNAME)_test: $(APPNAME)_test.o
@@ -53,11 +58,8 @@ $(APPNAME)_test: $(APPNAME)_test.o
 $(APPNAME)_test.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME)_test.cpp -o $(BUILDDIR)/$(APPNAME)_test.o
 
-bash_color_test_:
-	$(CXX) $(CXXFLAGS) $(SRCDIR)/bash_color_test.cpp -o $(BUILDDIR)/bash_color_test
-
-# bash_color_test: bash_color_test.o
-# # 	$(CXX) $(CXXFLAGS) $(BUILDDIR)/bash_color_test.o -o $(BUILDDIR)/bash_color_test
+bash_color_test: bash_color_test.o
+	$(CXX) $(CXXFLAGS) $(BUILDDIR)/bash_color_test.o -o $(BUILDDIR)/bash_color_test
 
 bash_color_test.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/bash_color_test.cpp -o $(BUILDDIR)/bash_color_test.o

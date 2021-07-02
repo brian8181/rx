@@ -13,9 +13,11 @@ static struct option long_options[] =
 		{"help", no_argument, 0, 'h'},
 		{"ignore_case", no_argument, 0, 'i'},
 		{"single", no_argument, 0, 's'},
-		{"pretty", no_argument, 0, 'P'},//default
+		{"pretty", no_argument, 0, 'P'}, //default
 		{"no-pretty", no_argument, 0, 'p'},
-		{"version", no_argument, 0, 'r'}
+		{"version", no_argument, 0, 'r'},
+		{"not_extended", no_argument, 0, 'e'}, 
+		{"extended", no_argument, 0, 'E'} //default
 	};
 
 void print_help()
@@ -46,7 +48,7 @@ void print_version()
 	cout << VERSION_STRING << endl;
 }
 
-int regx_match(int count, char* args[], const unsigned char& options)
+int regx_match(int count, char* args[])
 {
 	string src;
 	string exp(args[0]);
@@ -58,9 +60,9 @@ int regx_match(int count, char* args[], const unsigned char& options)
 		print_match_header(exp, src);
 		string bash_stdio = src;
 		regex::flag_type regex_opt = regex::ECMAScript|regex::grep|regex::extended;
-		regex_opt = (options & IGNORE_CASE) != 0 ? regex_opt|regex::icase : regex_opt;
+		regex_opt = (option_flags & IGNORE_CASE) != 0 ? regex_opt|regex::icase : regex_opt;
 		regex src_epx(exp, regex_opt);
-		
+
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
 		auto end = sregex_iterator(); 
 		int match_i = 0;
@@ -71,13 +73,13 @@ int regx_match(int count, char* args[], const unsigned char& options)
 			smatch match = *iter;
 			int pos = match.position() + match_i * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
 			int len = match.length();
-			if ( (options & SINGLE_MATCH) && (iter != begin || pos != 0 || src.length() != (size_t)len) )
+			if ( (option_flags & SINGLE_MATCH) && (iter != begin || pos != 0 || src.length() != (size_t)len) )
 			{
 				begin = end;
 				break;
 			}
 
-			if(options & PRETTY_PRINT)
+			if(option_flags & PRETTY_PRINT)
 			{
 				// set bash green start postion￼
 				bash_stdio.insert(pos, CURRENT_FG_COLOR);
@@ -108,7 +110,7 @@ int parse_options(int argc, char* argv[])
 	int option_index = 0;
 	
 	optind = 0;
-	opt = getopt_long(argc, argv, "hvispPr", long_options, &option_index);
+	opt = getopt_long(argc, argv, "hvispPreE", long_options, &option_index);
 	while (opt != -1)
 	{
 		switch (opt)
@@ -130,6 +132,12 @@ int parse_options(int argc, char* argv[])
 			break;
 		case 'p':
 			option_flags &= ~PRETTY_PRINT;
+			break;
+		case 'E':
+			option_flags |= EXTENDED_REGX;
+			break;
+		case 'e':
+			option_flags &= ~EXTENDED_REGX;
 			break;
 		case 'r':
 			print_version();
@@ -155,5 +163,5 @@ int parse_options(int argc, char* argv[])
 	argc -= optind;
 	argv += optind;
 
-	return regx_match(argc, argv, option_flags);
+	return regx_match(argc, argv);
 }

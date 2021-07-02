@@ -10,7 +10,6 @@ build/bash_color_test
 build/cppRxTestResults.xml
 src/Makefile
 src/Makefile.in
-missing
 
 # autotool auto gerenerated files
 INSTALL

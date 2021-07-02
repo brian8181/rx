@@ -4,19 +4,13 @@
 #include <string>
 #include <getopt.h>
 #include "bash_color.h"
-#include "rx.hpp"
 
 class OptionParser 
 {
 
-private:
-
 public: 
 
-    OptionParser() : options(0)
-    {
-        
-    }
+    OptionParser();
     // functions
     void print_help();
     void print_match_header(const string& pattern, const string& src, const bool single_flag, const bool pretty_flag);

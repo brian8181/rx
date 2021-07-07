@@ -29,6 +29,7 @@ depcomp
 install-sh
 # libtool
 ltmain.sh
+src/.deps/*
 # src/Makefile
 # src/Makefile.in
 # stamp-h1

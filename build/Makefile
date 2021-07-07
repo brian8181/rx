@@ -1,8 +1,12 @@
 # MAKE TEMPLATE 06-02-2020 1
 # MAKE TEMPLATE 03-11-2021 1.1
 # MAKE TEMPLATE 05-22-2021 1.2
-MAKE_TEMPLATE = 1.2;
+# MAKE TEMPLATE 07-07-2021 1.3
+
 # RUN BEFORE autoreconf -ivfm
+# RUN BEFORE autoreconf -i
+
+MAKE_TEMPLATE = 1.3;
 BUILD_VERSION = 0.1.0
 
 prefix = /usr/local
@@ -21,26 +25,27 @@ INCLUDES = -I/usr/local/include/cppunit/
 # Makefile settings - Can be customized.
 APPNAME = rx
 EXT = cpp
+ROOTDIR  = ~/src/rx
 BUILDDIR = ~/src/rx/build
 SRCDIR = ~/src/rx/src
 OBJDIR = ~/src/rx/build
 
-# complie & link for debug
+# compile & link for debug
 debug: CXXFLAGS += -DDEBUG -g
 debug: all
 
-# complie & link for debug GDBversion variable
+# compile & link for debug GDBversion variable
 debuggdb: CXXFLAGS += -DDEBUG -ggdb
 debuggdb: all
 
-# complie & link
+# compile & link
 all: $(APPNAME) $(APPNAME)_test bash_color_test
 
-# complie & link
+# link
 $(APPNAME): $(APPNAME).o main.o OptionParser.o
 	 $(CXX) $(CXXFLAGS) $(BUILDDIR)/$(APPNAME).o $(BUILDDIR)/main.o $(BUILDDIR)/OptionParser.o -o $(BUILDDIR)/$(APPNAME)
 
-# complie only
+# compile only
 $(APPNAME).o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME).$(EXT)  -o $(BUILDDIR)/$(APPNAME).o
 	
@@ -50,11 +55,11 @@ main.o:
 OptionParser.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/OptionParser.$(EXT) -o $(BUILDDIR)/OptionParser.o
 	
-# complie & link
+# link
 $(APPNAME)_test: $(APPNAME)_test.o
 	$(CXX) $(CXXFLAGS) $(INCLUDES) $(BUILDDIR)/$(APPNAME)_test.o $(BUILDDIR)/$(APPNAME).o $(LDFLAGS) -o $(BUILDDIR)/$(APPNAME)_test
 
-# complie only
+# compile only
 $(APPNAME)_test.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME)_test.cpp -o $(BUILDDIR)/$(APPNAME)_test.o
 

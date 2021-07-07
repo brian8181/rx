@@ -6,6 +6,10 @@
 # invalid long option
 ./rx --babe abc abc
 
+echo "abc!abc@abc$abc%abc^abc&abc*abc(abc)abc" | ./rx abc
+
+
+
 
 #### PASS ####
 ../rx "(abc)*" abcXXabc

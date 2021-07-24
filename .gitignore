@@ -35,6 +35,9 @@ src/.deps/*
 stamp-h1
 missing
 
-
+#automake: Makefile.am: required file ./NEWS
+#automake: Makefile.am: required file ./README
+#automake: Makefile.am: installing ./COPYING
+#automake: Makefile.am: required file ./AUTHORS
 
 

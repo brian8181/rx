@@ -82,8 +82,6 @@ unman:
 	rm $(man1dir)/$(APPNAME).1.gz
 	mandb
 
-# install 
-.PHONY: install
 install: man
 	cp $(BUILDDIR)/$(APPNAME) $(prefix)/bin/$(APPNAME)
 

@@ -6,29 +6,29 @@ build/rx_test
 build/bash_color_test
 build/cppRxTestResults.xml
 src/Makefile
-src/Makefile.ingit diff
+src/Makefile.in
 
 # autotool auto gerenerated files
-./INSTALL
-./Makefile
-./Makefile.in
-./aclocal.m4
-./autom4te.cache/*
-./compile
-./config.guess
-./config.h
-./config.h.in
-./config.log
-./config.status
-./config.sub
-./configure
-./depcomp
-./install-sh
-./libtool
-./ltmain.sh
+INSTALL
+Makefile
+Makefile.in
+aclocal.m4
+autom4te.cache/*
+compile
+config.guess
+config.h
+config.h.in
+config.log
+config.status
+config.sub
+configure
+depcomp
+install-sh
+libtool
+ltmain.sh
 src/.deps/*
-./stamp-h1
-./missing
+stamp-h1
+missing
 
 #automake: Makefile.am: required file ./NEWS
 #automake: Makefile.am: required file ./README

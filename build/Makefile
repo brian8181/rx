@@ -42,8 +42,8 @@ debuggdb: all
 all: $(APPNAME) $(APPNAME)_test bash_color_test
 
 # link
-$(APPNAME): $(APPNAME).o main.o OptionParser.o
-	 $(CXX) $(CXXFLAGS) $(BUILDDIR)/$(APPNAME).o $(BUILDDIR)/main.o $(BUILDDIR)/OptionParser.o -o $(BUILDDIR)/$(APPNAME)
+$(APPNAME): $(APPNAME).o main.o
+	$(CXX) $(CXXFLAGS) $(BUILDDIR)/$(APPNAME).o $(BUILDDIR)/main.o -o $(BUILDDIR)/$(APPNAME)
 
 # compile only
 $(APPNAME).o:
@@ -52,9 +52,6 @@ $(APPNAME).o:
 main.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/main.$(EXT) -o $(BUILDDIR)/main.o
 
-OptionParser.o:
-	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/OptionParser.$(EXT) -o $(BUILDDIR)/OptionParser.o
-	
 # link
 $(APPNAME)_test: $(APPNAME)_test.o
 	$(CXX) $(CXXFLAGS) $(INCLUDES) $(BUILDDIR)/$(APPNAME)_test.o $(BUILDDIR)/$(APPNAME).o $(LDFLAGS) -o $(BUILDDIR)/$(APPNAME)_test

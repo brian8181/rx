@@ -1,7 +1,7 @@
 # rx
 ## regular expression match / tester
 
-Command line testing application for "c++ standard" regex implemnetation, aka "#include \<regex\>".
+Command line testing application for "c++ standard regex implemnetation", aka "#include \<regex\>".
   
 ### Regular Expressions
   

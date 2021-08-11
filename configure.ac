@@ -6,6 +6,7 @@ AC_PREREQ([2.69])
 AC_INIT([rx], [0.01], [brian8181@gmail.com], [rx], [https://github.com/brian8181])
 AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_MACRO_DIRS([m4])
 
 # Checks for programs.
 AC_PROG_CXX

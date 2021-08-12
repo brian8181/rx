@@ -17,7 +17,8 @@ static struct option long_options[] =
 		{"no-pretty", no_argument, 0, 'p'},
 		{"version", no_argument, 0, 'r'},
 		{"not_extended", no_argument, 0, 'e'}, 
-		{"extended", no_argument, 0, 'E'} //default
+		{"extended", no_argument, 0, 'E'}, //default
+		{"options", no_argument, 0, 'o'} //default
 	};
 
 void print_help()
@@ -109,7 +110,7 @@ int parse_options(int argc, char* argv[])
 	int option_index = 0;
 	
 	optind = 0;
-	opt = getopt_long(argc, argv, "hvispPreE", long_options, &option_index);
+	opt = getopt_long(argc, argv, "hvispPreEo", long_options, &option_index);
 	while (opt != -1)
 	{
 		switch (opt)
@@ -141,11 +142,13 @@ int parse_options(int argc, char* argv[])
 		case 'r':
 			print_version();
 			return 0;
+		case 'o':
+			break;
 		default: // unknown option before args
 			cerr << "Unexpected option, -h for help\n";
 			return -1;
 		}
-		opt = getopt_long(argc, argv, "hvispPr", long_options, &option_index);
+		opt = getopt_long(argc, argv, "hvispPreEo", long_options, &option_index);
 	}
 
 	if (argc <= DEFAULT_ARGC) // not correct number of args

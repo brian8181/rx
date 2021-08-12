@@ -143,6 +143,7 @@ int parse_options(int argc, char* argv[])
 			print_version();
 			return 0;
 		case 'o':
+			option_flags |= REGEX_OPTIONS;
 			break;
 		default: // unknown option before args
 			cerr << "Unexpected option, -h for help\n";

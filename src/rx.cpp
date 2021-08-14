@@ -54,7 +54,7 @@ int regx_match(int count, char* args[])
 	string exp(args[0]);
 	
 	// for each input
-	for (int input_i = 1; input_i < count; ++input_i)
+	for (int input_i = 0; input_i < count-1; ++input_i)
 	{
 		src = args[input_i];
 		print_match_header(exp, src);
@@ -86,11 +86,11 @@ int regx_match(int count, char* args[])
 				// reset bash color position
 				pos += CURRENT_FG_COLOR.length() + len;
 				bash_stdio.insert(pos, FMT_RESET);
-				cout << (input_i-1) << ": " << src.substr(match.position(), match.length());
+				cout << input_i << ": " << src.substr(match.position(), match.length());
 			}
 			else
 			{
-				cout << (input_i-1) << "\t" << src.substr(match.position(), match.length()) 
+				cout << input_i << "\t" << src.substr(match.position(), match.length()) 
 					<< '\t' << match.position() << '\t' << match.length() << endl;
 			}
 		}

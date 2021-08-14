@@ -26,9 +26,9 @@ INCLUDES = -I/usr/local/include/cppunit/
 APPNAME = rx
 EXT = cpp
 ROOTDIR  = ..
-BUILDDIR = .
+BUILDDIR = ./build
 SRCDIR = ../src
-OBJDIR = .
+OBJDIR = ./build
 
 # compile & link for debug
 debug: CXXFLAGS += -DDEBUG -g
@@ -43,11 +43,11 @@ all: $(APPNAME) $(APPNAME)_test bash_color_test
 
 # link
 $(APPNAME): $(APPNAME).o main.o
-	$(CXX) $(CXXFLAGS) $(APPNAME).o main.o -o $(BUILDDIR)/$(APPNAME)
+	$(CXX) $(CXXFLAGS) $(BUILDDIR)/$(APPNAME).o $(BUILDDIR)/main.o -o $(BUILDDIR)/$(APPNAME)
 
 # compile only
 $(APPNAME).o:
-	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME).$(EXT) -o $(BUILDDIR)/$(APPNAME).o
+	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME).$(EXT)  -o ./$(APPNAME).o
 	
 main.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/main.$(EXT) -o $(BUILDDIR)/main.o

@@ -1,0 +1,4 @@
+ROOT = $(PWD)
+
+all:
+    echo $(ROOT)

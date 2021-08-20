@@ -7,13 +7,13 @@ AC_INIT([rx], [0.01], [brian8181@gmail.com], [rx], [https://github.com/brian8181
 AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADERS([config.h])
 
-# Checks for programs.
+AC_CONFIG_MACRO_DIRS([m4])
 AC_PROG_CXX
 AC_PROG_CC
 AC_PROG_CPP
 
 # Initialize libtool
-LT_PREREQ([2.2])
+LT_PREREQ([2.2])))
 LT_INIT
 
 # Checks for libraries.

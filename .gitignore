@@ -29,6 +29,8 @@ ltmain.sh
 src/.deps/*
 stamp-h1
 missing
+m4
+null.d
 
 #automake: Makefile.am: required file ./NEWS
 #automake: Makefile.am: required file ./README

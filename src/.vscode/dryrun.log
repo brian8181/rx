@@ -1,7 +1,0 @@
-make: Entering directory '/home/brian/src/rx/src'
-cd .. && make  am--refresh
-make[1]: Entering directory '/home/brian/src/rx'
-CDPATH="${ZSH_VERSION+.}:" && cd . && /bin/bash /home/brian/src/rx/missing aclocal-1.16 
- 
- cd . && /bin/bash /home/brian/src/rx/missing automake-1.16 --gnu
- 

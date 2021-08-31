@@ -80,12 +80,13 @@ int regx_match(int count, char* args[])
 
 			if(option_flags & PRETTY_PRINT)
 			{
-				// set bash green start postion￼
+				// set bash green start postion
 				bash_stdio.insert(pos, CURRENT_FG_COLOR);
 				// reset bash color position
 				pos += CURRENT_FG_COLOR.length() + len;
 				bash_stdio.insert(pos, FMT_RESET);
 				cout << (input_i-1) << ": " << src.substr(match.position(), match.length());
+				
 			}
 			else
 			{
@@ -145,7 +146,7 @@ int parse_options(int argc, char* argv[])
 			cerr << "Unexpected option, -h for help\n";
 			return -1;
 		}
-		opt = getopt_long(argc, argv, "hvispPr", long_options, &option_index);
+		opt = getopt_long(argc, argv, "hvispPreE", long_options, &option_index);
 	}
 
 	if (argc <= DEFAULT_ARGC) // not correct number of args

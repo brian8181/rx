@@ -86,12 +86,7 @@ int regx_match(int count, char* args[])
 				// reset bash color position
 				pos += CURRENT_FG_COLOR.length() + len;
 				bash_stdio.insert(pos, FMT_RESET);
-<<<<<<< HEAD
-				cout << (input_i-1) << ": " << src.substr(match.position(), match.length());
-				
-=======
 				cout << input_i << ": " << src.substr(match.position(), match.length());
->>>>>>> 6c9b1f65056640b9c1fc3a286f9e7f9c4cf9087a
 			}
 			else
 			{
@@ -154,11 +149,7 @@ int parse_options(int argc, char* argv[])
 			cerr << "Unexpected option, -h for help\n";
 			return -1;
 		}
-<<<<<<< HEAD
-		opt = getopt_long(argc, argv, "hvispPreE", long_options, &option_index);
-=======
 		opt = getopt_long(argc, argv, "hvispPreEo", long_options, &option_index);
->>>>>>> 6c9b1f65056640b9c1fc3a286f9e7f9c4cf9087a
 	}
 
 	if (argc <= DEFAULT_ARGC) // not correct number of args

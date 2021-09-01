@@ -1,0 +1,14 @@
+## 2: abc2: abc
+
+[31mMatch Pattern: [0m'[33mabc[0m' -> [31mInput: [0m'[33mabca[0m'
+0: abc
+Found 1 matches:
+[32m[4mabc[0ma
+[31mMatch Pattern: [0m'[33mabc[0m' -> [31mInput: [0m'[33mabcb[0m'
+1: abc
+Found 1 matches:
+[32m[4mabc[0mb
+[31mMatch Pattern: [0m'[33mabc[0m' -> [31mInput: [0m'[33mabccabc[0m'
+2: abc2: abc
+Found 2 matches:
+[32m[4mabc[0mc[36m[4mabc[0m

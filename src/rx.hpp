@@ -18,6 +18,7 @@ const unsigned char IGNORE_CASE   = 0x02;
 const unsigned char SINGLE_MATCH  = 0x04;
 const unsigned char PRETTY_PRINT  = 0x08;
 const unsigned char EXTENDED_REGX = 0x10;
+const unsigned char REGEX_OPTIONS = 0x12;
 
 const unsigned char DEFAULTS = PRETTY_PRINT | EXTENDED_REGX;
 unsigned char option_flags = DEFAULTS; 

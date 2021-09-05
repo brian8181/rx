@@ -7,7 +7,6 @@
 #include <vector>
 #include <map>
 
-
 using namespace std;
 
 static struct option long_options[] =
@@ -35,9 +34,9 @@ void print_help()
 
 void print_match_header(const string& pattern, const string& src)
 {
-	if(option_flags & PRETTY_PRINT)
+	if(OPTION_FLAGS  & PRETTY_PRINT)
 	{
-		cout << FMT_FG_RED << ((option_flags & SINGLE_MATCH) ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
+		cout << FMT_FG_RED << ((OPTION_FLAGS  & SINGLE_MATCH) ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
 			<< "'" << FMT_FG_YELLOW << pattern << FMT_RESET << "'"
 			<< " -> "
 			<< FMT_FG_RED << "Input: " << FMT_RESET
@@ -62,7 +61,7 @@ int regx_match(int count, char* args[])
 		print_match_header(exp, src);
 		string bash_stdio = src;
 		regex::flag_type regex_opt = regex::ECMAScript|regex::grep|regex::extended;
-		regex_opt = (option_flags & IGNORE_CASE) != 0 ? regex_opt|regex::icase : regex_opt;
+		regex_opt = (OPTION_FLAGS & IGNORE_CASE) != 0 ? regex_opt|regex::icase : regex_opt;
 		regex src_epx(exp, regex_opt);
 
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
@@ -75,13 +74,13 @@ int regx_match(int count, char* args[])
 			smatch match = *iter;
 			int pos = match.position() + match_i * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
 			int len = match.length();
-			if ( (option_flags & SINGLE_MATCH) && (iter != begin || pos != 0 || src.length() != (size_t)len) )
+			if ( (OPTION_FLAGS & SINGLE_MATCH) && (iter != begin || pos != 0 || src.length() != (size_t)len) )
 			{
 				begin = end;
 				break;
 			}
 
-			if(option_flags & PRETTY_PRINT)
+			if(OPTION_FLAGS & PRETTY_PRINT)
 			{
 				// set bash green start postion￼
 				bash_stdio.insert(pos, CURRENT_FG_COLOR);
@@ -96,7 +95,7 @@ int regx_match(int count, char* args[])
 					<< '\t' << match.position() << '\t' << match.length() << endl;
 			}
         }
-		if(option_flags & PRETTY_PRINT)
+		if(OPTION_FLAGS & PRETTY_PRINT)
 		{
 			cout << "\nFound " << std::distance(begin, end) << " matches:\n";
 			cout << bash_stdio << "\n";
@@ -120,22 +119,22 @@ int parse_options(int argc, char* argv[])
 			print_help();
 			return 0;
 		case 'v':
-			option_flags |= VERBOSE;
+			OPTION_FLAGS |= VERBOSE;
 			break;
 		case 'i':
-			option_flags |= IGNORE_CASE;
+			OPTION_FLAGS |= IGNORE_CASE;
 			break;
 		case 's':
-			option_flags |= SINGLE_MATCH;
+			OPTION_FLAGS |= SINGLE_MATCH;
 			break;
-		case 'P'
-			option_flags |= PRETTY_PRINT;
+		case 'P':
+			OPTION_FLAGS |= PRETTY_PRINT;
 			break;
 		case 'p':
-			option_flags &= ~PRETTY_PRINT;
+			OPTION_FLAGS &= ~PRETTY_PRINT;
 			break;
 		case 'E':
-			option_flags |= EXTENDED_REGX;
+			OPTION_FLAGS |= EXTENDED_REGX;
 			break;
 		case 'e':
 			print_version();
@@ -145,7 +144,7 @@ int parse_options(int argc, char* argv[])
 			return 0;
 		case 'o':
 		{
-			//option_flags |= REGEX_OPTIONS;
+			//OPTION_FLAGS |= REGEX_OPTIONS;
 			//regex::flag_type regex_opt = *argv[optind];
 			// regx_match.
 			// cout << regex_opt;
@@ -165,7 +164,7 @@ int parse_options(int argc, char* argv[])
 			{
 				vector<string> options;
 				std::string key = arg.substr(0, s-1);
-				syntax_option_type id = (syntax_option_type)enum_map[key];
+				std::regex_constants::syntax_option_type id = (std::regex_constants::syntax_option_type)enum_map[key];
 				// switch(key)
 				// {
 
@@ -187,7 +186,7 @@ int parse_options(int argc, char* argv[])
 		return 0;
 	}
 	
-	if (option_flags & VERBOSE)
+	if (OPTION_FLAGS & VERBOSE)
 	{
 		print_help();
 	}

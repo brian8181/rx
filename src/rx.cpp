@@ -96,9 +96,11 @@ int regx_match(int count, char* args[])
 					<< '\t' << match.position() << '\t' << match.length() << endl;
 			}
         }
-		cout << "\nFound " << std::distance(begin, end) << " matches:\n";
-		cout << bash_stdio << "\n";
-	
+		if(option_flags & PRETTY_PRINT)
+		{
+			cout << "\nFound " << std::distance(begin, end) << " matches:\n";
+			cout << bash_stdio << "\n";
+		}
 	}
 	return 0;
 }
@@ -126,33 +128,30 @@ int parse_options(int argc, char* argv[])
 		case 's':
 			option_flags |= SINGLE_MATCH;
 			break;
-		case 'P':
+		case 'P'
 			option_flags |= PRETTY_PRINT;
 			break;
 		case 'p':
-					// case collate:
+			option_flags &= ~PRETTY_PRINT;
+			break;
+		case 'E':
 			option_flags |= EXTENDED_REGX;
 			break;
 		case 'e':
-			option_flags &= ~EXTENDED_REGX;
-			break;
+			print_version();
+			return 0;
 		case 'r':
 			print_version();
 			return 0;
 		case 'o':
 		{
 			//option_flags |= REGEX_OPTIONS;
-			
-			
 			//regex::flag_type regex_opt = *argv[optind];
-
 			// regx_match.
 			// cout << regex_opt;
-	//regex::flag_type regex_opt = *argv[optind];
-
+			//regex::flag_type regex_opt = *argv[optind];
 			// regx_match.
 			// cout << regex_opt;
-
 			// char* argv[sizeof(char*) * optind];
 			// memcpy(regex_opt, argv, sizeof(char));
 			// char* argv[sizeof(char*) * optind];

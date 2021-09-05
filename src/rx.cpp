@@ -4,6 +4,9 @@
 #include <getopt.h>
 #include "main.hpp"
 #include "rx.hpp"
+#include <vector>
+#include <map>
+
 
 using namespace std;
 
@@ -92,13 +95,10 @@ int regx_match(int count, char* args[])
 				cout << (match_i+1) << "\t" << src.substr(match.position(), match.length()) 
 					<< '\t' << match.position() << '\t' << match.length() << endl;
 			}
-		}
-
-		if(option_flags & PRETTY_PRINT)
-		{
-			cout << "\nFound " << std::distance(begin, end) << " matches:\n";
-			cout << bash_stdio << "\n";
-		}
+        }
+		cout << "\nFound " << std::distance(begin, end) << " matches:\n";
+		cout << bash_stdio << "\n";
+	
 	}
 	return 0;
 }
@@ -130,9 +130,7 @@ int parse_options(int argc, char* argv[])
 			option_flags |= PRETTY_PRINT;
 			break;
 		case 'p':
-			option_flags &= ~PRETTY_PRINT;
-			break;
-		case 'E':
+					// case collate:
 			option_flags |= EXTENDED_REGX;
 			break;
 		case 'e':
@@ -142,8 +140,41 @@ int parse_options(int argc, char* argv[])
 			print_version();
 			return 0;
 		case 'o':
-			option_flags |= REGEX_OPTIONS;
+		{
+			//option_flags |= REGEX_OPTIONS;
+			
+			
+			//regex::flag_type regex_opt = *argv[optind];
+
+			// regx_match.
+			// cout << regex_opt;
+	//regex::flag_type regex_opt = *argv[optind];
+
+			// regx_match.
+			// cout << regex_opt;
+
+			// char* argv[sizeof(char*) * optind];
+			// memcpy(regex_opt, argv, sizeof(char));
+			// char* argv[sizeof(char*) * optind];
+			// memcpy(regex_opt, argv, sizeof(char));
+
+			std::string arg = (string)argv[optind];
+			//cin >> (string)argv[optind] >> options_flags;
+			//unsigned int pos;
+			std::size_t s = arg.find('|', 0);
+			while(s != std::string::npos)
+			{
+				vector<string> options;
+				std::string key = arg.substr(0, s-1);
+				syntax_option_type id = (syntax_option_type)enum_map[key];
+				// switch(key)
+				// {
+
+				// };
+				s = arg.find('|', s);
+			}
 			break;
+		}
 		default: // unknown option before args
 			cerr << "Unexpected option, -h for help\n";
 			return -1;

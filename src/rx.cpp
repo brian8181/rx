@@ -54,7 +54,7 @@ int regx_match(int count, char* args[])
 	string exp(args[0]);
 	
 	// for each input
-	for (int input_i = 0; input_i < count-1; ++input_i)
+	for (int input_i = 1; input_i < count; ++input_i)
 	{
 		src = args[input_i];
 		print_match_header(exp, src);
@@ -81,16 +81,16 @@ int regx_match(int count, char* args[])
 
 			if(option_flags & PRETTY_PRINT)
 			{
-				// set bash green start postion
+				// set bash green start postion￼
 				bash_stdio.insert(pos, CURRENT_FG_COLOR);
 				// reset bash color position
 				pos += CURRENT_FG_COLOR.length() + len;
 				bash_stdio.insert(pos, FMT_RESET);
-				cout << input_i << ": " << src.substr(match.position(), match.length());
+				cout << (match_i+1) << ": " << src.substr(match.position(), match.length()) << endl;
 			}
 			else
 			{
-				cout << input_i << "\t" << src.substr(match.position(), match.length()) 
+				cout << (match_i+1) << "\t" << src.substr(match.position(), match.length()) 
 					<< '\t' << match.position() << '\t' << match.length() << endl;
 			}
 		}
@@ -98,7 +98,7 @@ int regx_match(int count, char* args[])
 		if(option_flags & PRETTY_PRINT)
 		{
 			cout << "\nFound " << std::distance(begin, end) << " matches:\n";
-			cout << bash_stdio << endl;
+			cout << bash_stdio << "\n\n";
 		}
 	}
 	return 0;

@@ -31,7 +31,7 @@ SRCDIR = ../src
 OBJDIR = .
 
 # compile & link for debug
-debug: CXXFLAGS += -DDEBUG -g
+#debug: CXXFLAGS += -DDEBUG -g
 debug: all
 
 # compile & link for debug GDBversion variable

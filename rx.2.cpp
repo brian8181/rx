@@ -4,8 +4,6 @@
 #include <getopt.h>
 #include "main.hpp"
 #include "rx.hpp"
-#include <vector>
-#include <map>
 
 using namespace std;
 
@@ -34,9 +32,9 @@ void print_help()
 
 void print_match_header(const string& pattern, const string& src)
 {
-	if(OPTION_FLAGS  & PRETTY_PRINT)
+	if(option_flags & PRETTY_PRINT)
 	{
-		cout << FMT_FG_RED << ((OPTION_FLAGS  & SINGLE_MATCH) ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
+		cout << FMT_FG_RED << ((option_flags & SINGLE_MATCH) ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
 			<< "'" << FMT_FG_YELLOW << pattern << FMT_RESET << "'"
 			<< " -> "
 			<< FMT_FG_RED << "Input: " << FMT_RESET
@@ -61,7 +59,7 @@ int regx_match(int count, char* args[])
 		print_match_header(exp, src);
 		string bash_stdio = src;
 		regex::flag_type regex_opt = regex::ECMAScript|regex::grep|regex::extended;
-		regex_opt = (OPTION_FLAGS & IGNORE_CASE) != 0 ? regex_opt|regex::icase : regex_opt;
+		regex_opt = (option_flags & IGNORE_CASE) != 0 ? regex_opt|regex::icase : regex_opt;
 		regex src_epx(exp, regex_opt);
 
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
@@ -74,13 +72,13 @@ int regx_match(int count, char* args[])
 			smatch match = *iter;
 			int pos = match.position() + match_i * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
 			int len = match.length();
-			if ( (OPTION_FLAGS & SINGLE_MATCH) && (iter != begin || pos != 0 || src.length() != (size_t)len) )
+			if ( (option_flags & SINGLE_MATCH) && (iter != begin || pos != 0 || src.length() != (size_t)len) )
 			{
 				begin = end;
 				break;
 			}
 
-			if(OPTION_FLAGS & PRETTY_PRINT)
+			if(option_flags & PRETTY_PRINT)
 			{
 				// set bash green start postion￼
 				bash_stdio.insert(pos, CURRENT_FG_COLOR);
@@ -94,8 +92,9 @@ int regx_match(int count, char* args[])
 				cout << (match_i+1) << "\t" << src.substr(match.position(), match.length()) 
 					<< '\t' << match.position() << '\t' << match.length() << endl;
 			}
-        }
-		if(OPTION_FLAGS & PRETTY_PRINT)
+		}
+
+		if(option_flags & PRETTY_PRINT)
 		{
 			cout << "\nFound " << std::distance(begin, end) << " matches:\n";
 			cout << bash_stdio << "\n";
@@ -119,76 +118,32 @@ int parse_options(int argc, char* argv[])
 			print_help();
 			return 0;
 		case 'v':
-			OPTION_FLAGS |= VERBOSE;
+			option_flags |= VERBOSE;
 			break;
 		case 'i':
-			OPTION_FLAGS |= IGNORE_CASE;
+			option_flags |= IGNORE_CASE;
 			break;
 		case 's':
-			OPTION_FLAGS |= PRETTY_PRINT;
+			option_flags |= SINGLE_MATCH;
+			break;
+		case 'P':
+			option_flags |= PRETTY_PRINT;
 			break;
 		case 'p':
-			OPTION_FLAGS &= ~PRETTY_PRINT;
+			option_flags &= ~PRETTY_PRINT;
 			break;
 		case 'E':
-			OPTION_FLAGS |= EXTENDED_REGX;
+			option_flags |= EXTENDED_REGX;
 			break;
 		case 'e':
-			print_version();
-			return 0;
+			option_flags &= ~EXTENDED_REGX;
+			break;
 		case 'r':
 			print_version();
 			return 0;
 		case 'o':
-		{
-			//OPTION_FLAGS |= REGEX_OPTIONS;
-			//regex::flag_type regex_opt = *argv[optind];
-			// cout << regex_opt;
-			// regx_match.
-			// memcpy(regex_opt, argv, sizeof(char));
-			// char* argv[sizeof(char*) * optind];
-
-			std::string arg = (string)argv[optind];
-			//cin >> (string)argv[optind] >> options_flags;
-			//unsigned int pos;
-			std::size_t s = arg.find('|', 0);
-			while(s != std::string::npos)
-			{
-				string opts; 
-				vector<string> str_options;
-				std::string skey = arg.substr(0, s-1);
-				unsigned int key = enum_map[skey];
-				//std::regex_constants::syntax_option_type id = (std::regex_constants::syntax_option_type)enum_map[key];
-				switch(key)
-				{
-				// 	case ECMAScript:
-				// 		str_options.push_front("ECMAScript");
-				// 		opts.insert("ECMAScript", enum_map[ECMAScript]);
-				// 		break;
-				// 	case basic: 
-				// 		//str_options.push_front("basic");
-				// 		opts.insert(basic);
-				// 		break;
-				// 	// case: extended:
-					// 	str_options.push_front("extendee"); 
-					// 	opts.insert("extended", enum_map[basic]);
-					// 	break;
-					// case: awk:        
-					// 	//str_options.insert(extended);   
-					// 	opts.insert("extended", enum_map[basic]);
-					// 	break;
-					// case: grep: 
-					// 	//str_options.insert(extended);   
-					// 	opts.insert("extended", enum_map[basic]);    
-					// 	break;
-					// case: egrep:      
-					// 	//str_options.push_front(extended);   
-					// 	opts.insert("extended", enum_map[basic]);
-				};
-				s = arg.find('|', s);
-			}
+			option_flags |= REGEX_OPTIONS;
 			break;
-		}
 		default: // unknown option before args
 			cerr << "Unexpected option, -h for help\n";
 			return -1;
@@ -202,7 +157,7 @@ int parse_options(int argc, char* argv[])
 		return 0;
 	}
 	
-	if (OPTION_FLAGS & VERBOSE)
+	if (option_flags & VERBOSE)
 	{
 		print_help();
 	}
@@ -212,3 +167,4 @@ int parse_options(int argc, char* argv[])
 
 	return regx_match(argc, argv);
 }
+

@@ -3,6 +3,7 @@
 
 #include <string>
 #include <map>
+#include <vector>
 //#include <regex>
 
 
@@ -31,16 +32,16 @@ const unsigned char DEFAULTS = PRETTY_PRINT | EXTENDED_REGX;
 int regx_match(int count, char* args[]);
 
 const unsigned int ECMAScript = 0x00000001;
-const unsigned int basic = 0x00000002;
-const unsigned int extended = 0x00000004;
-const unsigned int awk = 0x00000008;
-const unsigned int grep = 0x00000010;
-const unsigned int egrep = 0x00000020;
-const unsigned int gmask = 0x0000003F;
-const unsigned int icase = 0x00000100;
-const unsigned int nosubs = 0x00000200;
-const unsigned int optimize = 0x00000400;
-const unsigned int collate_ = 0x00000800;
+const unsigned int basic      = 0x00000002;
+const unsigned int extended   = 0x00000004;
+const unsigned int awk        = 0x00000008;
+const unsigned int grep       = 0x00000010;
+const unsigned int egrep      = 0x00000020;
+const unsigned int gmask      = 0x0000003F;
+const unsigned int icase      = 0x00000100;
+const unsigned int nosubs     = 0x00000200;
+const unsigned int optimize   = 0x00000400;
+const unsigned int collate_   = 0x00000800;
 
 unsigned char OPTION_FLAGS = DEFAULTS;
 

@@ -16,6 +16,7 @@ man1dir = $(mandir)/man1
 # Compiler settings - Can be customized.
 CXX = g++
 CXXFLAGS = -Wall -std=c++11 -std=gnu++17
+CXXFLAGS += -DDEBUG -g
 
 # lib settings
 LDFLAGS = -static -lcppunit -L/usr/local/lib/
@@ -31,7 +32,7 @@ SRCDIR = ../src
 OBJDIR = .
 
 # compile & link for debug
-debug: CXXFLAGS += -DDEBUG -g
+debug:
 debug: all
 
 # compile & link for debug GDBversion variable

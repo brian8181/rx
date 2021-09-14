@@ -17,8 +17,6 @@
 #include "main.hpp"
 #include <string.h>
 
-//helo
-
 using namespace CppUnit;
 using namespace std;
 

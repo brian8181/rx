@@ -87,7 +87,7 @@ int regx_match(int count, char* args[])
 				// reset bash color position
 				pos += CURRENT_FG_COLOR.length() + len;
 				bash_stdio.insert(pos, FMT_RESET);
-				cout << (match_i+1) << ": " << src.substr(match.position(), match.length());
+				cout << (match_i+1) << ": ";// << src.substr(match.position(), match.length());
 			}
 			else
 			{

@@ -91,7 +91,7 @@ int regx_match(int count, char* args[])
 			}
 			else
 			{
-				cout << (match_i+1) << "\t" << src.substr(match.position(), match.length()) 
+				cout << endl << (match_i+1) << "\t" << src.substr(match.position(), match.length()) 
 					<< '\t' << match.position() << '\t' << match.length() << endl;
 			}
         }

@@ -60,7 +60,7 @@ int regx_match(int count, char* args[])
 		src = args[input_i];
 		print_match_header(exp, src);
 		string bash_stdio = src;
-		regex::flag_type regex_opt = regex::ECMAScript|regex::grep|regex::extended;
+		regex::flag_type regex_opt = regex::extended;
 		regex_opt = (OPTION_FLAGS & IGNORE_CASE) != 0 ? regex_opt|regex::icase : regex_opt;
 		regex src_epx(exp, regex_opt);
 
@@ -87,7 +87,7 @@ int regx_match(int count, char* args[])
 				// reset bash color position
 				pos += CURRENT_FG_COLOR.length() + len;
 				bash_stdio.insert(pos, FMT_RESET);
-				cout << (match_i+1) << ": ";// << src.substr(match.position(), match.length());
+				//cout << (match_i+1) << ": x";// << src.substr(match.position(), match.length());
 			}
 			else
 			{

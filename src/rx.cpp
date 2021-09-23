@@ -32,10 +32,11 @@ void print_help()
 		<< FMT_UNDERLINE << "INPUT..." << FMT_RESET << endl;
 }
 
-void print_match_header(const string& pattern, const string& src)
+void print_match_header(const string& pattern, const string& src, int count)
 {
 	if(OPTION_FLAGS  & PRETTY_PRINT)
 	{
+		cout << count << ": ";
 		cout << FMT_FG_RED << ((OPTION_FLAGS  & SINGLE_MATCH) ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
 			<< "'" << FMT_FG_YELLOW << pattern << FMT_RESET << "'"
 			<< " -> "
@@ -58,7 +59,7 @@ int regx_match(int count, char* args[])
 	for (int input_i = 1; input_i < count; ++input_i)
 	{
 		src = args[input_i];
-		print_match_header(exp, src);
+		print_match_header(exp, src, input_i);
 		string bash_stdio = src;
 		regex::flag_type regex_opt = regex::extended;
 		regex_opt = (OPTION_FLAGS & IGNORE_CASE) != 0 ? regex_opt|regex::icase : regex_opt;
@@ -96,7 +97,7 @@ int regx_match(int count, char* args[])
         }
 		if(OPTION_FLAGS & PRETTY_PRINT)
 		{
-			//cout << (match_i+1) << ": x";// << src.substr(match.position(), match.length());
+			//cout << endl << (input_i) << ": ";
 			cout << "\nFound " << std::distance(begin, end) << " matches:\n";
 			cout << bash_stdio << "\n";
 		}

@@ -36,7 +36,7 @@ void print_match_header(const string& pattern, const string& src, int count)
 {
 	if(OPTION_FLAGS  & PRETTY_PRINT)
 	{
-		cout << count << ": ";
+		cout << count << ": "; // input number / count
 		cout << FMT_FG_RED << ((OPTION_FLAGS  & SINGLE_MATCH) ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
 			<< "'" << FMT_FG_YELLOW << pattern << FMT_RESET << "'"
 			<< " -> "

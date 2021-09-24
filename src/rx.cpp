@@ -167,7 +167,7 @@ int parse_options(int argc, char* argv[])
 				// 		opts.insert("ECMAScript", enum_map[ECMAScript]);
 				// 		break;
 				// 	case basic: 
-				// 		//str_options.push_front("basic");
+				// 		str_options.push_front("basic");
 				// 		opts.insert(basic);
 				// 		break;
 				// 	case: extended:
@@ -175,15 +175,15 @@ int parse_options(int argc, char* argv[])
 				// 		opts.insert("extended", enum_map[basic]);
 				// 		break;
 				// case: awk:        
-				// 		//str_options.insert(extended);   
+				// 		str_options.insert(extended);   
 				// 		opts.insert("extended", enum_map[basic]);
 				// 		break;
 				// case: grep: 
-				// 		//str_options.insert(extended);   
+				// 		str_options.insert(extended);   
 				// 		opts.insert("extended", enum_map[basic]);    
 				// 		break;
 				// case: egrep:      
-				// 		//str_options.push_front(extended);   
+				// 		str_options.push_front(extended);   
 				// 		opts.insert("extended", enum_map[basic]);
 				};
 				s = arg.find('|', s);

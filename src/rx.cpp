@@ -170,21 +170,21 @@ int parse_options(int argc, char* argv[])
 				// 		//str_options.push_front("basic");
 				// 		opts.insert(basic);
 				// 		break;
-				// 	// case: extended:
-					// 	str_options.push_front("extendee"); 
-					// 	opts.insert("extended", enum_map[basic]);
-					// 	break;
-					// case: awk:        
-					// 	//str_options.insert(extended);   
-					// 	opts.insert("extended", enum_map[basic]);
-					// 	break;
-					// case: grep: 
-					// 	//str_options.insert(extended);   
-					// 	opts.insert("extended", enum_map[basic]);    
-					// 	break;
-					// case: egrep:      
-					// 	//str_options.push_front(extended);   
-					// 	opts.insert("extended", enum_map[basic]);
+				// 	case: extended:
+				// 		str_options.push_front("extendee"); 
+				// 		opts.insert("extended", enum_map[basic]);
+				// 		break;
+				// case: awk:        
+				// 		//str_options.insert(extended);   
+				// 		opts.insert("extended", enum_map[basic]);
+				// 		break;
+				// case: grep: 
+				// 		//str_options.insert(extended);   
+				// 		opts.insert("extended", enum_map[basic]);    
+				// 		break;
+				// case: egrep:      
+				// 		//str_options.push_front(extended);   
+				// 		opts.insert("extended", enum_map[basic]);
 				};
 				s = arg.find('|', s);
 			}

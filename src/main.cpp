@@ -11,10 +11,14 @@ using std::string;
 int main(int argc, char* argv[])
 {
 	termios t;
-	if (tcgetattr(STDIN_FILENO, &t) < 0)
+	while (tcgetattr(STDIN_FILENO, &t) < 0)
 	{
 		string buffer;
 		cin >> buffer;
+		std::cout << "1: " << buffer;
+		
+		// string buffer2;
+		// std::cout << "2: " << buffer2;
 		// add piped buffer to end of argv
 		char* argvtmp[sizeof(char*) * argc+1];
 		memcpy(argvtmp, argv, sizeof(char*) * argc);

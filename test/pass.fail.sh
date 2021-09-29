@@ -1,20 +1,30 @@
 #### FAIL ####
-./rx -s "*ab*c{2}" "abccxxxabcc"
+../build/rx -s "*ab*c{2}" "abccxxxabcc"
 
-./rx -vs "a*b*c{2}" "abccxxxabcc"
+../build/rx -vs "a*b*c{2}" "abccxxxabcc"
 
 # invalid long option
-./rx --babe abc abc
+../build/rx --babe abc abc
 
-echo "abc!abc@abc$abc%abc^abc&abc*abc(abc)abc" | ./rx abc
+echo "abc!abc@abc$abc%abc^abc&abc*abc(abc)abc" | ../build/rx abc
 
 
 
 
 #### PASS ####
-../rx "(abc)*" abcXXabc
-../rx \(abc\)* abcabc
-../rx "(abc)*" abcabcabc
+../build/rx "(abc)*" abcXXabc
+../build/rx \(abc\)* abcabc
+../build/rx "(abc)*" abcabcabc
 
-./rx -v -s "a*b*c{2}" "abccxxxabcc"
+../build/rx -v -s "a*b*c{2}" "abccxxxabcc"
+
+
+echo "Standard test 1:"
+../build/rx abc abc abc abc
+echo "Standard test 2:"
+../build/rx abc abcxabc abcxabcyabc abcxabcabcyabcabczabc
+echo "standard test 3"
+echo abc | ../build/rx abc
+echo "standard test 2"
+echo 'abcxabc abcyabc' | ../build/rx abc
 

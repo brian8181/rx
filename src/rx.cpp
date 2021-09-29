@@ -142,9 +142,9 @@ int parse_options(int argc, char* argv[])
 			return 0;
 		case 'o':
 		{
-			//OPTION_FLAGS |= REGEX_OPTIONS;
+			OPTION_FLAGS |= REGEX_OPTIONS;
 			//regex::flag_type regex_opt = *argv[optind];
-			// cout << regex_opt;
+			//cout << regex_opt;
 			// regx_match.
 			// memcpy(regex_opt, argv, sizeof(char));
 			// char* argv[sizeof(char*) * optind];
@@ -171,7 +171,7 @@ int parse_options(int argc, char* argv[])
 				// 		opts.insert(basic);
 				// 		break;
 				// 	case: extended:
-				// 		str_options.push_front("extendee"); 
+				// 		str_options.push_front("extende"); 
 				// 		opts.insert("extended", enum_map[basic]);
 				// 		break;
 				// case: awk:        

@@ -26,10 +26,10 @@ INCLUDES = -I/usr/local/include/cppunit/
 # Makefile settings - Can be customized.
 APPNAME = rx
 EXT = cpp
-ROOTDIR  = ..
-BUILDDIR = .
-SRCDIR = ../src
-OBJDIR = .
+ROOTDIR  = .
+BUILDDIR = ./build
+SRCDIR = ./src
+OBJDIR = ./build
 
 # compile & link for debug
 #debug: CXXFLAGS += -DDEBUG -g
@@ -44,7 +44,7 @@ all: $(APPNAME) $(APPNAME)_test bash_color_test
 
 # link
 $(APPNAME): $(APPNAME).o main.o
-	$(CXX) $(CXXFLAGS) $(APPNAME).o main.o -o $(BUILDDIR)/$(APPNAME)
+	$(CXX) $(CXXFLAGS) $(OBJDIR)/$(APPNAME).o $(OBJDIR)/main.o -o $(BUILDDIR)/$(APPNAME)
 
 # compile only
 $(APPNAME).o:
@@ -55,17 +55,17 @@ main.o:
 
 # link
 $(APPNAME)_test: $(APPNAME)_test.o
-	$(CXX) $(CXXFLAGS) $(INCLUDES) $(BUILDDIR)/$(APPNAME)_test.o $(BUILDDIR)/$(APPNAME).o $(LDFLAGS) -o $(BUILDDIR)/$(APPNAME)_test
+	$(CXX) $(CXXFLAGS) $(INCLUDES) $(OBJDIR)/$(APPNAME)_test.o $(OBJDIR)/$(APPNAME).o $(LDFLAGS) -o $(BUILDDIR)/$(APPNAME)_test
 
 # compile only
 $(APPNAME)_test.o:
-	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME)_test.cpp -o $(BUILDDIR)/$(APPNAME)_test.o
+	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME)_test.cpp -o $(OBJDIR)/$(APPNAME)_test.o
 
-bash_color_test: bash_color_test.o
-	$(CXX) $(CXXFLAGS) $(BUILDDIR)/bash_color_test.o -o $(BUILDDIR)/bash_color_test
+bash_color_test: $(OBJDIR)/bash_color_test.o
+	$(CXX) $(CXXFLAGS) $(OBJDIR)/bash_color_test.o -o $(BUILDDIR)/bash_color_test
 
 bash_color_test.o:
-	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/bash_color_test.cpp -o $(BUILDDIR)/bash_color_test.o
+	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/bash_color_test.cpp -o $(OBJDIR)/bash_color_test.o
 
 # install man pages
 .PHONY: man
@@ -93,7 +93,7 @@ uninstall: unman
 clean:
 	rm -f $(BUILDDIR)/$(APPNAME) $(BUILDDIR)/*.o $(BUILDDIR)/$(APPNAME)_test $(BUILDDIR)/bash_color_test
 	rm -f $(BUILDDIR)/*.xml $(BUILDDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz
-	rm -f $(BUILDDIR)/rx.core
+	rm -f $(BUILDDIR)/rx.core # Why the fuck is this file appearing?
 
 # delete all auto generated files
 .PHONY: distclean

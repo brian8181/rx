@@ -15,7 +15,8 @@ man1dir = $(mandir)/man1
 
 # Compiler settings - Can be customized.
 CXX = g++
-CXXFLAGS = -Wall -std=c++11
+CXXFLAGS = -Wall -std=c++11 -std=gnu++17
+CXXFLAGS += -DDEBUG -g
 
 # lib settings
 LDFLAGS = -static -lcppunit -L/usr/local/lib/
@@ -26,16 +27,16 @@ INCLUDES = -I/usr/local/include/cppunit/
 APPNAME = rx
 EXT = cpp
 ROOTDIR  = ..
-BUILDDIR = ./build
+BUILDDIR = .
 SRCDIR = ../src
-OBJDIR = ./build
+OBJDIR = .
 
 # compile & link for debug
-debug: CXXFLAGS += -DDEBUG -g
+#debug: CXXFLAGS += -DDEBUG -g
 debug: all
 
 # compile & link for debug GDBversion variable
-debuggdb: CXXFLAGS += -DDEBUG -ggdb
+#debuggdb: CXXFLAGS += -DDEBUG -ggdb
 debuggdb: all
 
 # compile & link
@@ -43,11 +44,11 @@ all: $(APPNAME) $(APPNAME)_test bash_color_test
 
 # link
 $(APPNAME): $(APPNAME).o main.o
-	$(CXX) $(CXXFLAGS) $(BUILDDIR)/$(APPNAME).o $(BUILDDIR)/main.o -o $(BUILDDIR)/$(APPNAME)
+	$(CXX) $(CXXFLAGS) $(APPNAME).o main.o -o $(BUILDDIR)/$(APPNAME)
 
 # compile only
 $(APPNAME).o:
-	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME).$(EXT)  -o ./$(APPNAME).o
+	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME).$(EXT) -o $(BUILDDIR)/$(APPNAME).o
 	
 main.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/main.$(EXT) -o $(BUILDDIR)/main.o
@@ -92,15 +93,16 @@ uninstall: unman
 clean:
 	rm -f $(BUILDDIR)/$(APPNAME) $(BUILDDIR)/*.o $(BUILDDIR)/$(APPNAME)_test $(BUILDDIR)/bash_color_test
 	rm -f $(BUILDDIR)/*.xml $(BUILDDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz
+	rm -f $(BUILDDIR)/rx.core
 
 # delete all auto generated files
 .PHONY: distclean
 distclean: clean
 	rm -f $(SRCDIR)/config.* $(SRCDIR)/Makefile $(SRCDIR)/Makefile.in $(SRCDIR)/INSTALL $(SRCDIR)/configure 
-	# rm ../stamp-h1 ../aclocal.m4 ../compile ../install-sh ../libtool ../ltmain.sh ../stamp-h1 ../missing ../depcomp
-	# rm ../src/Makefile ../src/Makefile.in
-	# rm -rf ../autom4te.cache ../src/.deps ../src/.libs
-	# rm ../src/.o
+	rm ../stamp-h1 ../aclocal.m4 ../compile ../install-sh ../libtool ../ltmain.sh ../stamp-h1 ../missing ../depcomp
+	rm ../src/Makefile ../src/Makefile.in
+	rm -rf ../autom4te.cache ../src/.deps ../src/.libs
+	
 
 dist: 
 	git archive HEAD | gzip > $(BUILDDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz

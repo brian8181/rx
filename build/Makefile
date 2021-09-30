@@ -26,10 +26,10 @@ INCLUDES = -I/usr/local/include/cppunit/
 # Makefile settings - Can be customized.
 APPNAME = rx
 EXT = cpp
-ROOTDIR  = .
-BUILDDIR = ./build
-SRCDIR = ./src
-OBJDIR = ./build
+ROOTDIR  = ~/src/rx
+SRCDIR = $(ROOTDIR)/src
+BUILDDIR = $(ROOTDIR)/build
+OBJDIR = $(ROOTDIR)/build
 
 # compile & link for debug
 #debug: CXXFLAGS += -DDEBUG -g
@@ -48,10 +48,10 @@ $(APPNAME): $(APPNAME).o main.o
 
 # compile only
 $(APPNAME).o:
-	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME).$(EXT) -o $(BUILDDIR)/$(APPNAME).o
+	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME).$(EXT) -o $(OBJDIR)/$(APPNAME).o
 	
 main.o:
-	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/main.$(EXT) -o $(BUILDDIR)/main.o
+	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/main.$(EXT) -o $(OBJDIR)/main.o
 
 # link
 $(APPNAME)_test: $(APPNAME)_test.o
@@ -91,7 +91,7 @@ uninstall: unman
 # delete object files & app executable
 .PHONY: clean
 clean:
-	rm -f $(BUILDDIR)/$(APPNAME) $(BUILDDIR)/*.o $(BUILDDIR)/$(APPNAME)_test $(BUILDDIR)/bash_color_test
+	rm -f $(BUILDDIR)/$(APPNAME) $(OBJDIR)/*.o $(BUILDDIR)/$(APPNAME)_test $(BUILDDIR)/bash_color_test
 	rm -f $(BUILDDIR)/*.xml $(BUILDDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz
 	rm -f $(BUILDDIR)/rx.core # Why the fuck is this file appearing?
 

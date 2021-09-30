@@ -61,7 +61,7 @@ $(APPNAME)_test: $(APPNAME)_test.o
 $(APPNAME)_test.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME)_test.cpp -o $(OBJDIR)/$(APPNAME)_test.o
 
-bash_color_test: $(OBJDIR)/bash_color_test.o
+bash_color_test: bash_color_test.o
 	$(CXX) $(CXXFLAGS) $(OBJDIR)/bash_color_test.o -o $(BUILDDIR)/bash_color_test
 
 bash_color_test.o:

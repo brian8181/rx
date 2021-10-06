@@ -126,6 +126,9 @@ int parse_options(int argc, char* argv[])
 			OPTION_FLAGS |= IGNORE_CASE;
 			break;
 		case 's':
+			OPTION_FLAGS |= SINGLE_MATCH;
+			break;
+		case 'P':
 			OPTION_FLAGS |= PRETTY_PRINT;
 			break;
 		case 'p':
@@ -135,8 +138,8 @@ int parse_options(int argc, char* argv[])
 			OPTION_FLAGS |= EXTENDED_REGX;
 			break;
 		case 'e':
-			print_version();
-			return 0;
+			OPTION_FLAGS &= ~EXTENDED_REGX;
+			break;
 		case 'r':
 			print_version();
 			return 0;
@@ -145,9 +148,9 @@ int parse_options(int argc, char* argv[])
 			OPTION_FLAGS |= REGEX_OPTIONS;
 			//regex::flag_type regex_opt = *argv[optind];
 			//cout << regex_opt;
-			// regx_match.
-			// memcpy(regex_opt, argv, sizeof(char));
-			// char* argv[sizeof(char*) * optind];
+			//regx_match.
+			//memcpy(regex_opt, argv, sizeof(char));
+			//char* argv[sizeof(char*) * optind];
 
 			std::string arg = (string)argv[optind];
 			//cin >> (string)argv[optind] >> options_flags;

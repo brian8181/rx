@@ -42,7 +42,7 @@ const unsigned int icase      = 0x00000100;
 const unsigned int nosubs     = 0x00000200;
 const unsigned int optimize   = 0x00000400;
 const unsigned int collate_   = 0x00000800;
-
+unsigned char REGX_FLAGS = 0;
 unsigned char OPTION_FLAGS = DEFAULTS;
 
 std::map<std::string, unsigned int> enum_map = {

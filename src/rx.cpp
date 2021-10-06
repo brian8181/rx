@@ -147,59 +147,19 @@ int parse_options(int argc, char* argv[])
 			return 0;
 		case 'o':
 		{
+			// todo error checking
 			std::string sz_opt = argv[optind];
-			//std::string::size_type sz = sz_opt.find('|');
-			std::map<string, int> opt_map;
-			std::pair<string, int> p = std::make_pair(std::string("basic"),1);
-			opt_map.insert(p);
-			std::cout << sz_opt << std::endl;
-
-		
 			std::string::size_type sz_beg = 0;
 			std::string::size_type sz_end = 0;	
 			
 			while(sz_end != std::string::npos) 
 			{
-				
 				sz_end = sz_opt.find('|', sz_beg);	
 				std::string split = sz_opt.substr(sz_beg, sz_end-sz_beg);
 				sz_beg = sz_end+1;
-				//sz_opt.erase(sz);
-				
-				cout << "split:" << split << endl;
-			// 	// string opts; 
-			// 	// vector<string> str_options;
-			// 	std::string skey = sz_opt.substr(0,0);
-			// 	unsigned int key = enum_map[skey];
-			// 	//std::regex_constants::syntax_option_type id = (std::regex_constants::syntax_option_type)enum_map[key];
-			// 	switch(key)
-			// 	{
-			// 	// 	case ECMAScript:
-			// 	// 		str_options.push_front("ECMAScript");
-			// 	// 		opts.insert("ECMAScript", enum_map[ECMAScript]);
-			// 	// 		break;
-			// 	// 	case basic: 
-			// 	// 		str_options.push_front("basic");
-			// 	// 		opts.insert(basic);
-			// 	// 		break;
-			// 	// 	case: extended:
-			// 	// 		str_options.push_front("extende"); 
-			// 	// 		opts.insert("extended", enum_map[basic]);
-			// 	// 		break;
-			// 	// case: awk:        
-			// 	// 		str_options.insert(extended);   
-			// 	// 		opts.insert("extended", enum_map[basic]);
-			// 	// 		break;
-			// 	// case: grep: 
-			// 	// 		str_options.insert(extended);   
-			// 	// 		opts.insert("extended", enum_map[basic]);    
-			// 	// 		break;
-			// 	// case: egrep:      
-			// 	// 		str_options.push_front(extended);   
-			// 	// 		opts.insert("extended", enum_map[basic]);
-			// 	};
-			// 	//sz_opt = sz_opt.find('|', s);
-			} 
+				REGX_FLAGS |= enum_map[split];
+			}
+			++optind;
 			break;
 		}
 		default: // unknown option before args

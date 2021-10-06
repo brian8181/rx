@@ -93,7 +93,7 @@ uninstall: unman
 clean:
 	rm -f $(BUILDDIR)/$(APPNAME) $(OBJDIR)/*.o $(BUILDDIR)/$(APPNAME)_test $(BUILDDIR)/bash_color_test
 	rm -f $(BUILDDIR)/*.xml $(BUILDDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz
-	rm -f $(BUILDDIR)/rx.core # Why the fuck is this file appearing?
+	rm -f $(BUILDDIR)/rx.core # core dump!
 
 # delete all auto generated files
 .PHONY: distclean

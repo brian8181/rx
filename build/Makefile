@@ -26,10 +26,11 @@ INCLUDES = -I/usr/local/include/cppunit/
 # Makefile settings - Can be customized.
 APPNAME = rx
 EXT = cpp
-ROOTDIR  = ~/src/rx
-SRCDIR = $(ROOTDIR)/src
-BUILDDIR = $(ROOTDIR)/build
-OBJDIR = $(ROOTDIR)/build
+HOME = /home/brian
+ROOT  = $(HOME)/src/rx
+SRCS = $(ROOT)/src
+BUILD = $(ROOT)/build
+OBJS = $(ROOT)/build
 
 # compile & link for debug
 #debug: CXXFLAGS += -DDEBUG -g
@@ -44,28 +45,28 @@ all: $(APPNAME) $(APPNAME)_test bash_color_test
 
 # link
 $(APPNAME): $(APPNAME).o main.o
-	$(CXX) $(CXXFLAGS) $(OBJDIR)/$(APPNAME).o $(OBJDIR)/main.o -o $(BUILDDIR)/$(APPNAME)
+	$(CXX) $(CXXFLAGS) $(OBJS)/$(APPNAME).o $(OBJS)/main.o -o $(BUILD)/$(APPNAME)
 
 # compile only
 $(APPNAME).o:
-	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME).$(EXT) -o $(OBJDIR)/$(APPNAME).o
+	$(CXX) $(CXXFLAGS) -c $(SRCS)/$(APPNAME).$(EXT) -o $(OBJS)/$(APPNAME).o
 	
 main.o:
-	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/main.$(EXT) -o $(OBJDIR)/main.o
+	$(CXX) $(CXXFLAGS) -c $(SRCS)/main.$(EXT) -o $(OBJS)/main.o
 
 # link
 $(APPNAME)_test: $(APPNAME)_test.o
-	$(CXX) $(CXXFLAGS) $(INCLUDES) $(OBJDIR)/$(APPNAME)_test.o $(OBJDIR)/$(APPNAME).o $(LDFLAGS) -o $(BUILDDIR)/$(APPNAME)_test
+	$(CXX) $(CXXFLAGS) $(INCLUDES) $(OBJS)/$(APPNAME)_test.o $(OBJS)/$(APPNAME).o $(LDFLAGS) -o $(BUILD)/$(APPNAME)_test
 
 # compile only
 $(APPNAME)_test.o:
-	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$(APPNAME)_test.cpp -o $(OBJDIR)/$(APPNAME)_test.o
+	$(CXX) $(CXXFLAGS) -c $(SRCS)/$(APPNAME)_test.cpp -o $(OBJS)/$(APPNAME)_test.o
 
 bash_color_test: bash_color_test.o
-	$(CXX) $(CXXFLAGS) $(OBJDIR)/bash_color_test.o -o $(BUILDDIR)/bash_color_test
+	$(CXX) $(CXXFLAGS) $(OBJS)/bash_color_test.o -o $(BUILD)/bash_color_test
 
 bash_color_test.o:
-	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/bash_color_test.cpp -o $(OBJDIR)/bash_color_test.o
+	$(CXX) $(CXXFLAGS) -c $(SRCS)/bash_color_test.cpp -o $(OBJS)/bash_color_test.o
 
 # install man pages
 .PHONY: man
@@ -81,7 +82,7 @@ unman:
 	mandb
 
 install: man
-	cp $(BUILDDIR)/$(APPNAME) $(prefix)/bin/$(APPNAME)
+	cp $(BUILD)/$(APPNAME) $(prefix)/bin/$(APPNAME)
 
 # uninstall
 .PHONY: uninstall
@@ -91,20 +92,20 @@ uninstall: unman
 # delete object files & app executable
 .PHONY: clean
 clean:
-	rm -f $(BUILDDIR)/$(APPNAME) $(OBJDIR)/*.o $(BUILDDIR)/$(APPNAME)_test $(BUILDDIR)/bash_color_test
-	rm -f $(BUILDDIR)/*.xml $(BUILDDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz
-	rm -f $(BUILDDIR)/rx.core # core dump!
+	rm -f $(BUILD)/$(APPNAME) $(OBJS)/*.o $(BUILD)/$(APPNAME)_test $(BUILD)/bash_color_test
+	rm -f $(BUILD)/*.xml $(BUILD)/$(APPNAME).$(BUILD_VERSION).tar.gz
+	rm -f $(BUILD)/rx.core # core dump!
 
 # delete all auto generated files
 .PHONY: distclean
 distclean: clean
-	rm -f $(SRCDIR)/config.* $(SRCDIR)/Makefile $(SRCDIR)/Makefile.in $(SRCDIR)/INSTALL $(SRCDIR)/configure 
-	rm ../stamp-h1 ../aclocal.m4 ../compile ../install-sh ../libtool ../ltmain.sh ../stamp-h1 ../missing ../depcomp
-	rm ../src/Makefile ../src/Makefile.in
-	rm -rf ../autom4te.cache ../src/.deps ../src/.libs
+	rm -f $(ROOT)/config.* $(ROOT)/Makefile $(ROOT)/Makefile.in $(ROOT)/INSTALL $(ROOT)/configure 
+	rm $(ROOT)/stamp-h1 $(ROOT)/aclocal.m4 $(ROOT)/compile $(ROOT)/install-sh $(ROOT)/libtool $(ROOT)/ltmain.sh $(ROOT)/stamp-h1 $(ROOT)/missing $(ROOT)/depcomp
+	rm $(SRCS)/Makefile $(SRCS)/Makefile.in
+	rm -rf $(ROOT)/autom4te.cache $(SRCS)/.deps $(SRCS)/.libs
 	
 
 dist: 
-	git archive HEAD | gzip > $(BUILDDIR)/$(APPNAME).$(BUILD_VERSION).tar.gz
+	git archive HEAD | gzip > $(BUILD)/$(APPNAME).$(BUILD_VERSION).tar.gz
 
 dist-gz: dist

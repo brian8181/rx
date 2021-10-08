@@ -31,29 +31,29 @@ const unsigned char DEFAULTS = PRETTY_PRINT | EXTENDED_REGX;
 
 int regx_match(int count, char* args[]);
 
-const unsigned int ECMAScript = 0x00000001;
-const unsigned int basic      = 0x00000002;
-const unsigned int extended   = 0x00000004;
-const unsigned int awk        = 0x00000008;
-const unsigned int grep       = 0x00000010;
-const unsigned int egrep      = 0x00000020;
-const unsigned int gmask      = 0x0000003F;
-const unsigned int icase      = 0x00000100;
-const unsigned int nosubs     = 0x00000200;
-const unsigned int optimize   = 0x00000400;
-const unsigned int collate  = 0x00000800;
+// const unsigned int ECMAScript = 0x00000001;
+// const unsigned int basic      = 0x00000002;
+// const unsigned int extended   = 0x00000004;
+// const unsigned int awk        = 0x00000008;
+// const unsigned int grep       = 0x00000010;
+// const unsigned int egrep      = 0x00000020;
+// const unsigned int gmask      = 0x0000003F;
+// const unsigned int icase      = 0x00000100;
+// const unsigned int nosubs     = 0x00000200;
+// const unsigned int optimize   = 0x00000400;
+// const unsigned int collate  = 0x00000800;
 
-// const unsigned int RXOPT_ECMAScript = 0x00000001;
-// const unsigned int RXOPT_basic      = 0x00000002;
-// const unsigned int RXOPT_extended   = 0x00000004;
-// const unsigned int RXOPT_awk        = 0x00000008;
-// const unsigned int RXOPT_grep       = 0x00000010;
-// const unsigned int RXOPT_egrep      = 0x00000020;
-// const unsigned int RXOPT_gmask      = 0x0000003F;
-// const unsigned int RXOPT_icase      = 0x00000100;
-// const unsigned int RXOPT_nosubs     = 0x00000200;
-// const unsigned int RXOPT_optimize   = 0x00000400;
-// const unsigned int RXOPT_collate   = 0x00000800;
+const unsigned int REGX_OPTION_ECMAScript = 0x00000001;
+const unsigned int REGX_OPTION_basic      = 0x00000002;
+const unsigned int REGX_OPTION_extended   = 0x00000004;
+const unsigned int REGX_OPTION_awk        = 0x00000008;
+const unsigned int REGX_OPTION_grep       = 0x00000010;
+const unsigned int REGX_OPTION_egrep      = 0x00000020;
+const unsigned int REGX_OPTION_gmask      = 0x0000003F;
+const unsigned int REGX_OPTION_icase      = 0x00000100;
+const unsigned int REGX_OPTION_nosubs     = 0x00000200;
+const unsigned int REGX_OPTION_optimize   = 0x00000400;
+const unsigned int REGX_OPTION_collate   = 0x00000800;
 
 unsigned int REGX_FLAGS = 0;
 unsigned char OPTION_FLAGS = DEFAULTS;
@@ -74,24 +74,17 @@ unsigned char OPTION_FLAGS = DEFAULTS;
 // };
 
 std::map<std::string, int> enum_map = {
-    {"ECMAScript", ECMAScript}, 
-    {"basic ", basic },
-    {"extended", extended},
-    {"awk", awk},
-    {"grep", grep}, 
-    {"egrep", egrep},
-    {"icase", icase},
-    {"nosubs", nosubs},
-    {"optimize", optimize},
-    {"collate", collate}
+    {"ECMAScript", REGX_OPTION_ECMAScript}, 
+    {"basicREGX_OPTION_ ", REGX_OPTION_basic },
+    {"extended", REGX_OPTION_extended},
+    {"awk", REGX_OPTION_awk},
+    {"grep", REGX_OPTION_grep}, 
+    {"egrep", REGX_OPTION_egrep},
+    {"icase", REGX_OPTION_icase},
+    {"nosubs", REGX_OPTION_nosubs},
+    {"optimize", REGX_OPTION_optimize},
+    {"collate", REGX_OPTION_collate}
 };
 
-
-string strECMAScript = "ECMAScript";
-string strbasic = "basic";
-string strextended = "extended";
-string strawk = "awk";
-  
-  
 
 #endif

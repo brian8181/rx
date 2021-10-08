@@ -28,3 +28,6 @@ echo abc | ../build/rx abc
 echo "standard test 2"
 echo 'abcxabc abcyabc' | ../build/rx abc
 
+echo "TESTING INPUT-> ../build/rx -o 'basic|awk|grep|icase' abc abc" 
+../build/rx -o 'basic|awk|grep|icase' abc abc
+

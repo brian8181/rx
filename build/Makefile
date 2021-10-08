@@ -16,7 +16,8 @@ man1dir = $(mandir)/man1
 # Compiler settings - Can be customized.
 CXX = g++
 CXXFLAGS = -Wall -std=c++11 -std=gnu++17
-CXXFLAGS += -DDEBUG -g
+#CXXFLAGS += -DDEBUG -g
+CXXFLAGS += -DDEBUG -ggdb
 
 # lib settings
 LDFLAGS = -static -lcppunit -L/usr/local/lib/
@@ -26,8 +27,8 @@ INCLUDES = -I/usr/local/include/cppunit/
 # Makefile settings - Can be customized.
 APPNAME = rx
 EXT = cpp
-HOME = /home/brian
-ROOT  = $(HOME)/src/rx
+#HOME = /home/brian
+ROOT  = ~/src/rx
 SRCS = $(ROOT)/src
 BUILD = $(ROOT)/build
 OBJS = $(ROOT)/build
@@ -96,7 +97,7 @@ clean:
 	rm -f $(BUILD)/*.xml $(BUILD)/$(APPNAME).$(BUILD_VERSION).tar.gz
 	rm -f $(BUILD)/rx.core # core dump!
 
-# delete all auto generated files
+# delete object files, app, executables, & all automake/autoconf generated files
 .PHONY: distclean
 distclean: clean
 	rm -f $(ROOT)/config.* $(ROOT)/Makefile $(ROOT)/Makefile.in $(ROOT)/INSTALL $(ROOT)/configure 

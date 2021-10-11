@@ -8,6 +8,7 @@
 #include <map>
 #include <utility>
 #include "_utility.hpp"
+#include <stdexcept>
 
 using namespace std;
 
@@ -148,7 +149,6 @@ int parse_options(int argc, char* argv[])
 			return 0;
 		case 'o':
 		{
-			// todo error checking
 			std::string sz_opt = argv[optind];
 			std::string::size_type sz_beg = 0;
 			std::string::size_type sz_end = 0;	
@@ -158,7 +158,16 @@ int parse_options(int argc, char* argv[])
 				sz_end = sz_opt.find('|', sz_beg);	
 				std::string split = sz_opt.substr(sz_beg, sz_end-sz_beg);
 				sz_beg = sz_end+1;
-				REGX_FLAGS |= enum_map[split];
+
+				try
+				{
+					REGX_FLAGS |= enum_map[split];
+				}
+				catch(out_of_range)
+				{
+					cerr << "Unexpected option, -h for help\n";
+					return -1;
+				}
 			}
 			++optind;
 			break;

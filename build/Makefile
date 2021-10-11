@@ -2,6 +2,7 @@
 # MAKE TEMPLATE 03-11-2021 1.1
 # MAKE TEMPLATE 05-22-2021 1.2
 # MAKE TEMPLATE 07-07-2021 1.3
+# MAKE TEMPLATE 10-09-2021 1.4
 
 # RUN BEFORE autoreconf -ivfm
 # RUN BEFORE autoreconf -i
@@ -46,6 +47,7 @@ all: $(APPNAME) $(APPNAME)_test bash_color_test
 
 # link
 $(APPNAME): $(APPNAME).o main.o
+	#$(CXX) $(CXXFLAGS) $(BUILD)/$^ -o $(BUILD)/$@
 	$(CXX) $(CXXFLAGS) $(OBJS)/$(APPNAME).o $(OBJS)/main.o -o $(BUILD)/$(APPNAME)
 
 # compile only
@@ -82,6 +84,8 @@ unman:
 	rm $(man1dir)/$(APPNAME).1.gz
 	mandb
 
+# install 
+.PHONY: install
 install: man
 	cp $(BUILD)/$(APPNAME) $(prefix)/bin/$(APPNAME)
 
@@ -104,6 +108,13 @@ distclean: clean
 	rm $(ROOT)/stamp-h1 $(ROOT)/aclocal.m4 $(ROOT)/compile $(ROOT)/install-sh $(ROOT)/libtool $(ROOT)/ltmain.sh $(ROOT)/stamp-h1 $(ROOT)/missing $(ROOT)/depcomp
 	rm $(SRCS)/Makefile $(SRCS)/Makefile.in
 	rm -rf $(ROOT)/autom4te.cache $(SRCS)/.deps $(SRCS)/.libs
+
+clean-local:
+	rm config.status configure config.log
+	rm Makefile
+	rm -r autom4te.cache/
+	rm aclocal.m4
+	rm compile install-sh missing Makefile.in
 	
 
 dist: 

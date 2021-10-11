@@ -161,9 +161,9 @@ int parse_options(int argc, char* argv[])
 
 				try
 				{
-					REGX_FLAGS |= enum_map[split];
+					REGX_FLAGS |= enum_map.at(split);
 				}
-				catch(out_of_range)
+				catch(std::out_of_range const&)
 				{
 					cerr << "Unexpected option, -h for help\n";
 					return -1;

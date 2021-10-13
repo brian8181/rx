@@ -28,8 +28,8 @@ INCLUDES = -I/usr/local/include/cppunit/
 # Makefile settings - Can be customized.
 APPNAME = rx
 EXT = cpp
-#HOME = /home/brian
-ROOT  = ~/src/rx
+HOME = ~
+ROOT  = $(HOME)/src/$(APPNAME)
 SRCS = $(ROOT)/src
 BUILD = $(ROOT)/build
 OBJS = $(ROOT)/build
@@ -99,7 +99,7 @@ uninstall: unman
 clean:
 	rm -f $(BUILD)/$(APPNAME) $(OBJS)/*.o $(BUILD)/$(APPNAME)_test $(BUILD)/bash_color_test
 	rm -f $(BUILD)/*.xml $(BUILD)/$(APPNAME).$(BUILD_VERSION).tar.gz
-	rm -f $(BUILD)/rx.core # core dump!
+	rm -f $(BUILD)/$(APPNAME).core # core dump!
 
 # delete object files, app, executables, & all automake/autoconf generated files
 .PHONY: distclean

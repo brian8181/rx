@@ -17,7 +17,6 @@ man1dir = $(mandir)/man1
 # Compiler settings - Can be customized.
 CXX = g++
 CXXFLAGS = -Wall -std=c++11 -std=gnu++17
-#CXXFLAGS += -DDEBUG -g
 CXXFLAGS += -DDEBUG -ggdb
 
 # lib settings
@@ -39,7 +38,6 @@ OBJS = $(ROOT)/build
 debug: all
 
 # compile & link for debug GDBversion variable
-#debuggdb: CXXFLAGS += -DDEBUG -ggdb
 debuggdb: all
 
 # compile & link

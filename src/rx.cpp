@@ -66,7 +66,7 @@ int regx_match(int count, char* args[])
 		string bash_stdio = src;
 		regex::flag_type regex_opt = regex::extended;
 		regex_opt = (OPTION_FLAGS & IGNORE_CASE) != 0 ? regex_opt|regex::icase : regex_opt;
-		regex_opt |= (regex::flag_type)REGEX_OPTIONS; 
+		regex_opt |= (regex::flag_type)REGX_FLAGS; 
 		regex src_epx(exp, regex_opt);
 
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);

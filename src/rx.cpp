@@ -6,8 +6,6 @@
 #include "rx.hpp"
 #include <vector>
 #include <map>
-#include <utility>
-#include "_utility.hpp"
 #include <stdexcept>
 
 using namespace std;
@@ -99,6 +97,7 @@ int regx_match(int count, char* args[])
 					<< '\t' << match.position() << '\t' << match.length() << endl;
 			}
         }
+
 		if(OPTION_FLAGS & PRETTY_PRINT)
 		{
 			cout << "\nFound " << std::distance(begin, end) << " matches:\n";

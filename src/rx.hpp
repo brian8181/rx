@@ -9,15 +9,14 @@
 
 using std::map;
 using std::string;
+
 //using std::regex_constants;
 
 // constants
 const int BUFFER_LEN   = 0xFF;
 const int DEFAULT_ARGC = 2;
 const int EVENS_ONLY   = 2;
-
-// version string
-const std::string VERSION_STRING = "rx 0.0.1";
+const string VERSION_STRING = "rx 0.0.1";
 
 // options flags
 const unsigned char VERBOSE       = 0x01;
@@ -27,9 +26,6 @@ const unsigned char PRETTY_PRINT  = 0x08;
 const unsigned char EXTENDED_REGX = 0x10;
 const unsigned char REGEX_OPTIONS = 0x20;
 const unsigned char DEFAULTS = PRETTY_PRINT | EXTENDED_REGX;
-
-
-int regx_match(int count, char* args[]);
 
 // std::regx::flag_type REGX_OPTION_ECMAScript = 0x00000001;
 // std::regx::flag_type REGX_OPTION_basic      = 0x00000002;
@@ -41,7 +37,7 @@ int regx_match(int count, char* args[]);
 // std::regx::flag_type REGX_OPTION_icase      = 0x00000100;
 // std::regx::flag_type REGX_OPTION_nosubs     = 0x00000200;
 // std::regx::flag_type REGX_OPTION_optimize   = 0x00000400;
-// std::regx::flag_type REGX_OPTION_collate   = 0x00000800;
+// std::regx::flag_type REGX_OPTION_collate    = 0x00000800;
 
 const unsigned int REGX_OPTION_ECMAScript = 0x00000001;
 const unsigned int REGX_OPTION_basic      = 0x00000002;
@@ -53,7 +49,7 @@ const unsigned int REGX_OPTION_gmask      = 0x0000003F;
 const unsigned int REGX_OPTION_icase      = 0x00000100;
 const unsigned int REGX_OPTION_nosubs     = 0x00000200;
 const unsigned int REGX_OPTION_optimize   = 0x00000400;
-const unsigned int REGX_OPTION_collate   = 0x00000800;
+const unsigned int REGX_OPTION_collate    = 0x00000800;
 
 unsigned int REGX_FLAGS = 0;
 unsigned char OPTION_FLAGS = DEFAULTS;
@@ -75,5 +71,7 @@ std::map<std::string, int> enum_map =
     {"collate", REGX_OPTION_collate}
 };
 
+// match function
+int regx_match(int count, char* args[]);
 
 #endif

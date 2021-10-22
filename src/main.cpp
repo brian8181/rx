@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
 	{
 		string buffer;
 		cin >> buffer;
-		std::cout << "AA1: " << buffer;
+		//std::cout << "AA1: " << buffer;
 		// add piped buffer to end of argv
 		char* argvtmp[sizeof(char*) * argc+1];
 		memcpy(argvtmp, argv, sizeof(char*) * argc);

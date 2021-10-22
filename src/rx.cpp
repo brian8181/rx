@@ -101,7 +101,6 @@ int regx_match(int count, char* args[])
         }
 		if(OPTION_FLAGS & PRETTY_PRINT)
 		{
-			//cout << endl << (input_i) << ": ";
 			cout << "\nFound " << std::distance(begin, end) << " matches:\n";
 			cout << bash_stdio << "\n";
 		}

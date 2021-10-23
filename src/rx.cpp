@@ -1,12 +1,12 @@
 #include <iostream>
 #include <string>
 #include <regex>
-#include <getopt.h>
-#include "main.hpp"
-#include "rx.hpp"
 #include <vector>
 #include <map>
 #include <stdexcept>
+#include <getopt.h>
+#include "main.hpp"
+#include "rx.hpp"
 
 using namespace std;
 
@@ -100,8 +100,8 @@ int regx_match(int count, char* args[])
 
 		if(OPTION_FLAGS & PRETTY_PRINT)
 		{
-			cout << "\nFound " << distance(begin, end) << " matches:\n";
-			cout << bash_stdio << "\n";
+			cout << endl << "Found " << distance(begin, end) << " matches:" << endl;
+			cout << bash_stdio << endl;
 		}
 	}
 	return 0;

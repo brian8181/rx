@@ -27,10 +27,10 @@ static struct option long_options[] =
 void print_help()
 {
 	cout << "Usage: "  
-		<< FMT_BOLD << "rx" << FMT_RESET << " "
-		<< FMT_UNDERLINE << "[OPTION]..." << FMT_RESET << " "
-		<< FMT_UNDERLINE << "PATTERN" << FMT_RESET << " "
-		<< FMT_UNDERLINE << "INPUT..." << FMT_RESET << endl;
+		 << FMT_BOLD << "rx" << FMT_RESET << " "
+		 << FMT_UNDERLINE << "[OPTION]..." << FMT_RESET << " "
+		 << FMT_UNDERLINE << "PATTERN" << FMT_RESET << " "
+		 << FMT_UNDERLINE << "INPUT..." << FMT_RESET << endl;
 }
 
 void print_match_header(const string& pattern, const string& src, int count)
@@ -39,10 +39,10 @@ void print_match_header(const string& pattern, const string& src, int count)
 	{
 		cout << count << ": "; // input number / count
 		cout << FMT_FG_RED << ((OPTION_FLAGS  & SINGLE_MATCH) ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
-			<< "'" << FMT_FG_YELLOW << pattern << FMT_RESET << "'"
-			<< " -> "
-			<< FMT_FG_RED << "Input: " << FMT_RESET
-			<< "'" << FMT_FG_YELLOW << src << FMT_RESET << "'";
+			 << "'" << FMT_FG_YELLOW << pattern << FMT_RESET << "'"
+			 << " -> "
+			 << FMT_FG_RED << "Input: " << FMT_RESET
+			 << "'" << FMT_FG_YELLOW << src << FMT_RESET << "'";
 	}
 }
 
@@ -94,13 +94,13 @@ int regx_match(int count, char* args[])
 			else
 			{
 				cout << endl << (match_i+1) << "\t" << src.substr(match.position(), match.length()) 
-					<< '\t' << match.position() << '\t' << match.length() << endl;
+					 << '\t' << match.position() << '\t' << match.length() << endl;
 			}
         }
 
 		if(OPTION_FLAGS & PRETTY_PRINT)
 		{
-			cout << "\nFound " << std::distance(begin, end) << " matches:\n";
+			cout << "\nFound " << distance(begin, end) << " matches:\n";
 			cout << bash_stdio << "\n";
 		}
 	}
@@ -147,14 +147,14 @@ int parse_options(int argc, char* argv[])
 			return 0;
 		case 'o':
 		{
-			std::string sz_opt = argv[optind];
-			std::string::size_type sz_beg = 0;
-			std::string::size_type sz_end = 0;	
+			string sz_opt = argv[optind];
+			string::size_type sz_beg = 0;
+			string::size_type sz_end = 0;	
 			
-			while(sz_end != std::string::npos) 
+			while(sz_end != string::npos) 
 			{
 				sz_end = sz_opt.find('|', sz_beg);	
-				std::string split = sz_opt.substr(sz_beg, sz_end-sz_beg);
+				string split = sz_opt.substr(sz_beg, sz_end-sz_beg);
 				sz_beg = sz_end+1;
 
 				try
@@ -164,7 +164,7 @@ int parse_options(int argc, char* argv[])
 				}
 				catch(std::out_of_range const&)
 				{
-					cerr << "Exception: Unexpected option, -h for help\n";
+					cerr << "Exception: Unexpected option, -h for help" << endl;
 					return -1;
 				}
 			}
@@ -172,7 +172,7 @@ int parse_options(int argc, char* argv[])
 			break;
 		}
 		default: // unknown option before args
-			cerr << "Unexpected option, -h for help\n";
+			cerr << "Unexpected option, -h for help" << endl;
 			return -1;
 		}
 		opt = getopt_long(argc, argv, "hvispPreEo", long_options, &option_index);
@@ -180,8 +180,8 @@ int parse_options(int argc, char* argv[])
 
 	if (argc <= DEFAULT_ARGC) // not correct number of args
 	{
-		cerr << "Expected argument after options, -h for help\n";
-		return 0;
+		cerr << "Expected argument after options, -h for help" << endl;
+		return -1;
 	}
 	
 	if (OPTION_FLAGS & VERBOSE)

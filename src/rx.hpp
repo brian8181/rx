@@ -51,25 +51,41 @@ const unsigned int REGX_OPTION_nosubs     = 0x00000200;
 const unsigned int REGX_OPTION_optimize   = 0x00000400;
 const unsigned int REGX_OPTION_collate    = 0x00000800;
 
-unsigned int REGX_FLAGS = 0;
+std::regex::flag_type REGX_FLAGS = std::regex::basic;
 unsigned char OPTION_FLAGS = DEFAULTS;
 
 //debug
 std::regex::flag_type flag;
 
-std::map<std::string, int> enum_map = 
+// std::map<std::string, int> enum_map = 
+// {
+//     {"ECMAScript", REGX_OPTION_ECMAScript}, 
+//     {"basic", REGX_OPTION_basic },
+//     {"extended", REGX_OPTION_extended},
+//     {"awk", REGX_OPTION_awk},
+//     {"grep", REGX_OPTION_grep}, 
+//     {"egrep", REGX_OPTION_egrep},
+//     {"icase", REGX_OPTION_icase},
+//     {"nosubs", REGX_OPTION_nosubs},
+//     {"optimize", REGX_OPTION_optimize},
+//     {"collate", REGX_OPTION_collate}
+// };
+
+
+std::map<std::string, std::regex::flag_type> enum_map =
 {
-    {"ECMAScript", REGX_OPTION_ECMAScript}, 
-    {"basic", REGX_OPTION_basic },
-    {"extended", REGX_OPTION_extended},
-    {"awk", REGX_OPTION_awk},
-    {"grep", REGX_OPTION_grep}, 
-    {"egrep", REGX_OPTION_egrep},
-    {"icase", REGX_OPTION_icase},
-    {"nosubs", REGX_OPTION_nosubs},
-    {"optimize", REGX_OPTION_optimize},
-    {"collate", REGX_OPTION_collate}
+    {"ECMAScript", std::regex::ECMAScript}, 
+    {"basic", std::regex::basic},
+    {"extended", std::regex::extended},
+    {"awk", std::regex::awk},
+    {"grep", std::regex::grep}, 
+    {"egrep", std::regex::egrep},
+    {"icase", std::regex::icase},
+    {"nosubs", std::regex::nosubs},
+    {"optimize", std::regex::optimize},
+    {"collate", std::regex::collate}
 };
+
 
 // match function
 int regx_match(int count, char* args[]);

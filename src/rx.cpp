@@ -24,6 +24,20 @@ static struct option long_options[] =
 		{"options", no_argument, 0, 'o'} //default
 	};
 
+map<string, regex::flag_type> map_regx_flags =
+	{
+		{"ECMAScript", regex::ECMAScript}, 
+		{"basic", regex::basic},
+		{"extended", regex::extended},
+		{"awk", regex::awk},
+		{"grep", regex::grep}, 
+		{"egrep", std::regex::egrep},
+		{"icase", regex::icase},
+		{"nosubs", regex::nosubs},
+		{"optimize", regex::optimize},
+		{"collate", regex::collate}
+	};
+
 void print_help()
 {
 	cout << "Usage: "  

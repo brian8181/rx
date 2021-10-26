@@ -1,14 +1,7 @@
 #ifndef _RX_HPP
 #define _RX_HPP
 
-#include <string>
-#include <map>
-#include <vector>
 #include <regex>
-
-
-using std::map;
-using std::string;
 
 // constants
 const int BUFFER_LEN   = 0xFF;
@@ -26,20 +19,6 @@ const unsigned char DEFAULTS = PRETTY_PRINT | EXTENDED_REGX;
 // Set Defaults
 unsigned char OPTION_FLAGS = DEFAULTS;
 std::regex::flag_type REGX_FLAGS = std::regex::basic;
-
-std::map<std::string, std::regex::flag_type> map_regx_flags =
-{
-    {"ECMAScript", std::regex::ECMAScript}, 
-    {"basic", std::regex::basic},
-    {"extended", std::regex::extended},
-    {"awk", std::regex::awk},
-    {"grep", std::regex::grep}, 
-    {"egrep", std::regex::egrep},
-    {"icase", std::regex::icase},
-    {"nosubs", std::regex::nosubs},
-    {"optimize", std::regex::optimize},
-    {"collate", std::regex::collate}
-};
 
 // match function
 int regx_match(int count, char* args[]);

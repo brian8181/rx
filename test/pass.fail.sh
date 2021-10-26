@@ -9,15 +9,13 @@
 echo "abc!abc@abc$abc%abc^abc&abc*abc(abc)abc" | ../build/rx abc
 
 
-
-
 #### PASS ####
 ../build/rx "(abc)*" abcXXabc
 ../build/rx \(abc\)* abcabc
+
 ../build/rx "(abc)*" abcabcabc
 
 ../build/rx -v -s "a*b*c{2}" "abccxxxabcc"
-
 
 echo "Standard test 1:"
 ../build/rx abc abc abc abc

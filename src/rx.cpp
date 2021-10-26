@@ -71,7 +71,7 @@ int regx_match(int count, char* args[])
 		// for each match
 		for (sregex_iterator iter = begin; iter != end; ++iter, ++match_i)
 		{
-			string CURRENT_FG_COLOR( match_i % EVENS_ONLY ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
+			string CURRENT_FG_COLOR( match_i % 2 ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
 			smatch match = *iter;
 			int pos = match.position() + match_i * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
 			int len = match.length();
@@ -109,7 +109,7 @@ int parse_options(int argc, char* argv[])
 {
 	int opt = 0;
 	int option_index = 0;
-	
+
 	optind = 0;
 	opt = getopt_long(argc, argv, "hvispPreEo", long_options, &option_index);
 	while (opt != -1)
@@ -158,7 +158,7 @@ int parse_options(int argc, char* argv[])
 				try
 				{
 					// DEBUG! throw std::out_of_range("Test");
-					REGX_FLAGS |= enum_map.at(split);
+					REGX_FLAGS |= map_regx_flags.at(split);
 				}
 				catch(std::out_of_range const&)
 				{

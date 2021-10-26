@@ -62,9 +62,7 @@ int regx_match(int count, char* args[])
 		src = args[input_i];
 		print_match_header(exp, src, input_i);
 		string bash_stdio = src;
-		regex::flag_type regex_opt = (regex::flag_type)0; //DEBUG
-		regex_opt = (OPTION_FLAGS & IGNORE_CASE) != 0 ? regex_opt|regex::icase : regex_opt;
-		regex_opt |= REGX_FLAGS;
+		REGX_FLAGS = (OPTION_FLAGS & IGNORE_CASE) != 0 ? REGX_FLAGS|regex::icase : REGX_FLAGS;
 		regex src_epx(exp, REGX_FLAGS);
 
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);

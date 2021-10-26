@@ -21,13 +21,24 @@ echo "abc!abc@abc$abc%abc^abc&abc*abc(abc)abc" | ../build/rx abc
 
 echo "Standard test 1:"
 ../build/rx abc abc abc abc
+
 echo "Standard test 2:"
 ../build/rx abc abcxabc abcxabcyabc abcxabcabcyabcabczabc
+
 echo "standard test 3"
 echo abc | ../build/rx abc
-echo "standard test 2"
+
+echo "standard test 4"
 echo 'abcxabc abcyabc' | ../build/rx abc
 
-echo "TESTING INPUT-> ../build/rx -o 'basic|awk|grep|icase' abc abc" 
-../build/rx -o 'basic|awk|grep|icase' abc abc
+echo "TESTING INPUT-> ../build/rx -o 'basic|awk|grep|icase' abc ABC" 
+../build/rx -o 'basic|awk|grep|icase' abc ABC
 
+echo "TESTING INPUT-> ../build/rx -o 'icase' abc ABCxabcxABC"
+../build/rx -o 'icase' abc ABCxabcxABC
+
+echo "TESTING INPUT-> ../build/rx -o 'basic|awk|grep|icase' abc ABCxabcxABC ABCvabcvABCs" 
+../build/rx -o 'basic|awk|grep|icase' abc ABCxabcxABC ABCvabcvABCs
+
+echo "TESTING INPUT-> ../build/rx -o 'basic|awk|grep' abc ABCxabcxABC ABCvabcvABCs" 
+../build/rx -o 'basic|awk|grep' abc ABCxabcxABC ABCvabcvABCs

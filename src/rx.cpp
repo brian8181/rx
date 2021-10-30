@@ -38,6 +38,24 @@ map<string, regex::flag_type> map_regx_flags =
 		{"collate", regex::collate}
 	};
 
+map<string, std::regex_constants::match_flag_type> t =
+	{
+		{"match_default", std::regex_constants::match_default},
+		{"match_not_bol",  std::regex_constants::match_not_bol},
+		{"match_not_eol", std::regex_constants::match_not_eol},
+		{"match_not_bow", std::regex_constants::match_not_bow},
+		{"match_not_eow", std::regex_constants::match_not_eow}, 
+		{"match_any", std::regex_constants::match_any},
+		{"match_not_null", std::regex_constants::match_not_null},
+		{"match_continuous", std::regex_constants::match_continuous},
+		{"match_prev_avail", std::regex_constants::match_prev_avail},
+		{"format_default", std::regex_constants::format_default},
+		{"format_sed", std::regex_constants::format_sed},
+		{"format_no_copy", std::regex_constants::format_no_copy},
+		{"format_first_only", std::regex_constants::format_first_only}
+	};
+
+
 void print_help()
 {
 	cout << "Usage: "  

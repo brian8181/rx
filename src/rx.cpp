@@ -189,11 +189,11 @@ int parse_options(int argc, char* argv[])
 
 				try
 				{
-					// DEBUG! throw std::out_of_range("Test");
 					REGX_FLAGS |= regex_flags.at(split);
 				}
-				catch(std::out_of_range const&)
+				catch(std::out_of_range const& ex)
 				{
+					cerr << ex.what() << endl;
 					cerr << "Exception: Unexpected option, -h for help" << endl;
 					return -1;
 				}

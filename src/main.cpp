@@ -17,7 +17,6 @@ int main(int argc, char* argv[])
 		{
 			string buffer;
 			cin >> buffer;
-			//std::cout << "AA1: " << buffer;
 			// add piped buffer to end of argv
 			char* argvtmp[sizeof(char*) * argc+1];
 			memcpy(argvtmp, argv, sizeof(char*) * argc);
@@ -27,8 +26,8 @@ int main(int argc, char* argv[])
 		}
 		return parse_options(argc, argv);
 	}
-	catch(std::logic_error&)
+	catch(std::logic_error& ex)
 	{
-		std::cout << "logic error" << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
 }

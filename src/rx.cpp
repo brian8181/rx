@@ -24,7 +24,7 @@ static struct option long_options[] =
 		{"options", no_argument, 0, 'o'} //default
 	};
 
-map<string, regex::flag_type> map_regx_flags =
+map<string, regex::flag_type> regex_flags =
 	{
 		{"ECMAScript", regex::ECMAScript}, 
 		{"basic", regex::basic},
@@ -38,7 +38,7 @@ map<string, regex::flag_type> map_regx_flags =
 		{"collate", regex::collate}
 	};
 
-map<string, std::regex_constants::match_flag_type> t =
+map<string, std::regex_constants::match_flag_type>  match_flags =
 	{
 		{"match_default", std::regex_constants::match_default},
 		{"match_not_bol",  std::regex_constants::match_not_bol},
@@ -190,7 +190,7 @@ int parse_options(int argc, char* argv[])
 				try
 				{
 					// DEBUG! throw std::out_of_range("Test");
-					REGX_FLAGS |= map_regx_flags.at(split);
+					regex_flags.at(split);
 				}
 				catch(std::out_of_range const&)
 				{

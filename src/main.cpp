@@ -10,18 +10,25 @@ using std::string;
 
 int main(int argc, char* argv[])
 {
-	termios t;
-	while (tcgetattr(STDIN_FILENO, &t) < 0)
+	try
 	{
-		string buffer;
-		cin >> buffer;
-		//std::cout << "AA1: " << buffer;
-		// add piped buffer to end of argv
-		char* argvtmp[sizeof(char*) * argc+1];
-		memcpy(argvtmp, argv, sizeof(char*) * argc);
-		argvtmp[argc] = &buffer[0];
-		argv = argvtmp;
-		return parse_options(++argc, argv);
+		termios t;
+		while (tcgetattr(STDIN_FILENO, &t) < 0)
+		{
+			string buffer;
+			cin >> buffer;
+			//std::cout << "AA1: " << buffer;
+			// add piped buffer to end of argv
+			char* argvtmp[sizeof(char*) * argc+1];
+			memcpy(argvtmp, argv, sizeof(char*) * argc);
+			argvtmp[argc] = &buffer[0];
+			argv = argvtmp;
+			return parse_options(++argc, argv);
+		}
+		return parse_options(argc, argv);
 	}
-	return parse_options(argc, argv);
+	catch(std::logic_error&)
+	{
+		std::cout << "logic error" << std::endl;
+	}
 }

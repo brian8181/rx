@@ -190,7 +190,7 @@ int parse_options(int argc, char* argv[])
 				try
 				{
 					// DEBUG! throw std::out_of_range("Test");
-					regex_flags.at(split);
+					REGX_FLAGS |= regex_flags.at(split);
 				}
 				catch(std::out_of_range const&)
 				{

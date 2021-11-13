@@ -1,11 +1,9 @@
 #include <iostream>
 #include <cstring>
 #include <string>
-#include <unistd.h>
-#include "main.hpp"
-#include <stdio.h>
 #include <unistd.h>         /* for STDIN_FILENO */
 #include <sys/select.h>     /* for pselect   */
+#include "main.hpp"
 
 using std::cin;
 using std::string;
@@ -38,16 +36,12 @@ int main(int argc, char* argv[])
 				memcpy(argvtmp, argv, sizeof(char*) * argc);
 				argvtmp[argc] = &buffer[0];
 				argv = argvtmp;
-				return parse_options(++argc, argv);
+				++argc;
 		}
-		else
-		{
-			return parse_options(argc, argv);
-		}
+		return parse_options(argc, argv);
 	}
 	catch(std::logic_error& ex)
 	{
 	 	std::cout << ex.what() << std::endl;
 	}
-
 }

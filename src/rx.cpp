@@ -55,6 +55,24 @@ map<string, std::regex_constants::match_flag_type>  match_flags =
 		{"format_first_only", std::regex_constants::format_first_only}
 	};
 
+	// map<string, std::regex_constants::error_flag_type>  error_flags =
+	// {
+	// }
+
+
+// error_collate	
+// error_ctype	    
+// error_escape	
+// error_backref	
+// error_brack	    
+// error_paren	    
+// error_brace	    
+// error_badbrace	
+// error_range	    
+// error_space	    
+// error_badrepeat	
+// error_complexity
+// error_stack	    
 
 void print_help()
 {

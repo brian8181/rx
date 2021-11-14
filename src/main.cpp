@@ -8,18 +8,15 @@
 using std::cin;
 using std::string;
 
-int input (int filedes)
+int stdin_ready (int filedes)
 {
     fd_set set;
-
     /* declare/initialize zero timeout */
     struct timespec timeout = { .tv_sec = 0 };
-
     /* Initialize the file descriptor set. */
     FD_ZERO (&set);
     FD_SET (filedes, &set);
-
-    /* check whether input is ready on filedes */
+    /* check whestdin_ready is ready on filedes */
     return pselect (filedes + 1, &set, NULL, NULL, &timeout, NULL);
 }
 
@@ -27,7 +24,7 @@ int main(int argc, char* argv[])
 {
 	try
 	{
-		if (input (STDIN_FILENO))
+		if(stdin_ready (STDIN_FILENO))
 		{
 				string buffer;
 				cin >> buffer;

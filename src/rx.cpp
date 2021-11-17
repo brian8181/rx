@@ -24,6 +24,38 @@ static struct option long_options[] =
 		{"options", no_argument, 0, 'o'} //default
 	};
 
+map<string, regex::flag_type> regex_flags =
+	{
+		{"ECMAScript", regex::ECMAScript}, 
+		{"basic", regex::basic},
+		{"extended", regex::extended},
+		{"awk", regex::awk},
+		{"grep", regex::grep}, 
+		{"egrep", std::regex::egrep},
+		{"icase", regex::icase},
+		{"nosubs", regex::nosubs},
+		{"optimize", regex::optimize},
+		{"collate", regex::collate}
+	};
+
+map<string, std::regex_constants::match_flag_type>  match_flags =
+	{
+		{"match_default", std::regex_constants::match_default},
+		{"match_not_bol",  std::regex_constants::match_not_bol},
+		{"match_not_eol", std::regex_constants::match_not_eol},
+		{"match_not_bow", std::regex_constants::match_not_bow},
+		{"match_not_eow", std::regex_constants::match_not_eow}, 
+		{"match_any", std::regex_constants::match_any},
+		{"match_not_null", std::regex_constants::match_not_null},
+		{"match_continuous", std::regex_constants::match_continuous},
+		{"match_prev_avail", std::regex_constants::match_prev_avail},
+		{"format_default", std::regex_constants::format_default},
+		{"format_sed", std::regex_constants::format_sed},
+		{"format_no_copy", std::regex_constants::format_no_copy},
+		{"format_first_only", std::regex_constants::format_first_only}
+	};
+
+
 void print_help()
 {
 	cout << "Usage: "  
@@ -62,10 +94,15 @@ int regx_match(int count, char* args[])
 		src = args[input_i];
 		print_match_header(exp, src, input_i);
 		string bash_stdio = src;
+<<<<<<< HEAD
 		regex::flag_type regex_opt = regex::extended;
 		regex_opt = (OPTION_FLAGS & IGNORE_CASE) != 0 ? regex_opt|regex::icase : regex_opt;
 		regex_opt |= (regex::flag_type)REGX_FLAGS; 
 		regex src_epx(exp, regex_opt);
+=======
+		REGX_FLAGS = (OPTION_FLAGS & IGNORE_CASE) != 0 ? REGX_FLAGS|regex::icase : REGX_FLAGS;
+		regex src_epx(exp, REGX_FLAGS);
+>>>>>>> 3737389ece3a4e5b32edb84d8d0872fa34e95483
 
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
 		auto end = sregex_iterator(); 
@@ -73,7 +110,7 @@ int regx_match(int count, char* args[])
 		// for each match
 		for (sregex_iterator iter = begin; iter != end; ++iter, ++match_i)
 		{
-			string CURRENT_FG_COLOR( match_i % EVENS_ONLY ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
+			string CURRENT_FG_COLOR( match_i % 2 ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
 			smatch match = *iter;
 			int pos = match.position() + match_i * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
 			int len = match.length();
@@ -111,7 +148,7 @@ int parse_options(int argc, char* argv[])
 {
 	int opt = 0;
 	int option_index = 0;
-	
+
 	optind = 0;
 	opt = getopt_long(argc, argv, "hvispPreEo", long_options, &option_index);
 	while (opt != -1)
@@ -159,11 +196,11 @@ int parse_options(int argc, char* argv[])
 
 				try
 				{
-					// DEBUG! throw std::out_of_range("Test");
-					REGX_FLAGS |= enum_map.at(split);
+					REGX_FLAGS |= regex_flags.at(split);
 				}
-				catch(std::out_of_range const&)
+				catch(std::out_of_range const& ex)
 				{
+					cerr << ex.what() << endl;
 					cerr << "Exception: Unexpected option, -h for help" << endl;
 					return -1;
 				}

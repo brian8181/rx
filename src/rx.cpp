@@ -112,8 +112,15 @@ int regx_match(int count, char* args[])
 		src = args[input_i];
 		print_match_header(exp, src, input_i);
 		string bash_stdio = src;
+<<<<<<< HEAD
+		regex::flag_type regex_opt = regex::extended;
+		regex_opt = (OPTION_FLAGS & IGNORE_CASE) != 0 ? regex_opt|regex::icase : regex_opt;
+		regex_opt |= (regex::flag_type)REGX_FLAGS; 
+		regex src_epx(exp, regex_opt);
+=======
 		REGX_FLAGS = (OPTION_FLAGS & IGNORE_CASE) != 0 ? REGX_FLAGS|regex::icase : REGX_FLAGS;
 		regex src_epx(exp, REGX_FLAGS);
+>>>>>>> 3737389ece3a4e5b32edb84d8d0872fa34e95483
 
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
 		auto end = sregex_iterator(); 

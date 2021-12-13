@@ -11,12 +11,12 @@ using std::string;
 int stdin_ready (int filedes)
 {
     fd_set set;
-    /* declare/initialize zero timeout */
+    // declare/initialize zero timeout 
     struct timespec timeout = { .tv_sec = 0 };
-    /* Initialize the file descriptor set. */
+    // initialize the file descriptor set. 
     FD_ZERO (&set);
     FD_SET (filedes, &set);
-    /* check whestdin_ready is ready on filedes */
+    // check whestdin_ready is ready on filedes 
     return pselect (filedes + 1, &set, NULL, NULL, &timeout, NULL);
 }
 

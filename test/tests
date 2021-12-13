@@ -113,6 +113,13 @@ Found 6 matches:
 abcxabcabcyabcabczabc
 */
 
+Skips line on output...
+./rx -p abc abc
+
+
+
+
+
  
 
 

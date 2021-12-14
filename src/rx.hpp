@@ -24,17 +24,4 @@ std::regex::flag_type REGX_FLAGS = std::regex::basic;
 // match function
 int regx_match(int count, char* args[]);
 
-
-// syntax_option_type icase = /*unspecified*/;
-// syntax_option_type nosubs = /*unspecified*/;
-// syntax_option_type optimize = /*unspecified*/;
-// syntax_option_type collate = /*unspecified*/;
-// syntax_option_type ECMAScript = /*unspecified*/;
-// syntax_option_type basic = /*unspecified*/;
-// syntax_option_type extended = /*unspecified*/;
-// syntax_option_type awk = /*unspecified*/;
-// syntax_option_type grep = /*unspecified*/;
-// syntax_option_type egrep = /*unspecified*/;
-// syntax_option_type multiline = /*unspecified*/;
-
 #endif

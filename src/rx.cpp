@@ -16,12 +16,12 @@ static struct option long_options[] =
 		{"help", no_argument, 0, 'h'},
 		{"ignore_case", no_argument, 0, 'i'},
 		{"single", no_argument, 0, 's'},
-		{"pretty", no_argument, 0, 'P'}, //default
+		{"pretty", no_argument, 0, 'P'},       //default
 		{"no-pretty", no_argument, 0, 'p'},
 		{"version", no_argument, 0, 'r'},
 		{"not_extended", no_argument, 0, 'e'}, 
-		{"extended", no_argument, 0, 'E'}, //default
-		{"options", no_argument, 0, 'o'} //default
+		{"extended", no_argument, 0, 'E'},     //default
+		{"options", no_argument, 0, 'o'}       //default
 	};
 
 map<string, regex::flag_type> regex_flags =

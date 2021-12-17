@@ -15,7 +15,7 @@ AC_PROG_CPP
 
 # Initialize libtool
 #LT_PREREQ([2.2])))
-#LT_INIT
+LT_INIT
 
 # Checks for libraries.
 # FIXME: Replace `main' with a function in `-lcppunit':

@@ -14,6 +14,7 @@ AC_PROG_CC
 AC_PROG_CPP
 
 # Initialize libtool
+# the next line cause errors! so I commented it out
 #LT_PREREQ([2.2])))
 LT_INIT
 
@@ -29,7 +30,7 @@ AC_CHECK_HEADER_STDBOOL
 AC_TYPE_SIZE_T
 
 AM_INIT_AUTOMAKE
-# Checks for library functions.
+# Checks for library functions
 AC_CONFIG_FILES([Makefile
                   src/Makefile])
 AC_OUTPUT

@@ -10,8 +10,8 @@ AC_INIT([rx], [0.01], [brian8181@gmail.com], [rx], [https://github.com/brian8181
 
 
 AC_PROG_CXX
-# #AC_PROG_CC
-# AC_PROG_CPP
+AC_PROG_CC
+AC_PROG_CPP
 
 # Initialize libtool
 # LT_PREREQ([2.2])))
@@ -22,11 +22,11 @@ AC_PROG_CXX
 #AC_CHECK_LIB([CPPUNIT_TEST], [main])
 
 # Checks for header files.
-# AC_CHECK_HEADERS([netinet/in.h termios.h unistd.h])
+AC_CHECK_HEADERS([netinet/in.h termios.h unistd.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
-# AC_CHECK_HEADER_STDBOOL
-# AC_TYPE_SIZE_T
+AC_CHECK_HEADER_STDBOOL
+AC_TYPE_SIZE_T
 
 AM_INIT_AUTOMAKE
 # Checks for library functions.

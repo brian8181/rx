@@ -3,11 +3,15 @@
 #include <string>
 #include <unistd.h>         /* for STDIN_FILENO */
 #include <sys/select.h>     /* for pselect   */
-#include "main.hpp"
+#include <string>
+#include <getopt.h>
+#include "bash_color.hpp"
+//#include "rx.hpp"
 
 using std::cin;
 using std::string;
 
+//HACK! should come from rx.hpp
 int parse_options(int argc, char* argv[]);
 
 int stdin_ready (int filedes)

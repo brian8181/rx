@@ -7,6 +7,7 @@
 #include <getopt.h>
 #include "bash_color.hpp"
 #include "rx.hpp"
+#include "main.hpp"
 
 using namespace std;
 
@@ -201,7 +202,7 @@ int parse_options(int argc, char* argv[])
 				catch(out_of_range const& ex)
 				{
 					cerr << ex.what() << endl;
-					cerr << "Exception: Unexpected option, -h for help" << endl;
+					cout << "Exception: Unexpected option, -h for help" << endl;
 					return -1;
 				}
 			}

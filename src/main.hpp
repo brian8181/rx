@@ -5,4 +5,6 @@
 #include <getopt.h>
 #include "bash_color.hpp"
 
+int parse_options(int argc, char* argv[]);
+
 #endif

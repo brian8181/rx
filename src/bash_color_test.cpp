@@ -1,5 +1,5 @@
 #include <iostream>
-#include "bash_color.h"
+#include "bash_color.hpp"
 
 using std::cout;
 using std::endl;

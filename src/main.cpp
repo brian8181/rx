@@ -8,6 +8,8 @@
 using std::cin;
 using std::string;
 
+int parse_options(int argc, char* argv[]);
+
 int stdin_ready (int filedes)
 {
     fd_set set;

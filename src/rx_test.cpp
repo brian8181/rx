@@ -20,6 +20,9 @@
 using namespace CppUnit;
 using namespace std;
 
+//HACK!
+int parse_options(int argc, char* argv[]);
+
 void RxTest::setUp()
 {
 }

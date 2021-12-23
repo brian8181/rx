@@ -5,7 +5,7 @@
 #include <map>
 #include <stdexcept>
 #include <getopt.h>
-#include "main.hpp"
+#include "bash_color.hpp"
 #include "rx.hpp"
 
 using namespace std;
@@ -93,7 +93,17 @@ int regx_match(int count, char* args[])
 		print_match_header(exp, src, input_i);
 		string bash_stdio = src;
 		REGX_FLAGS = (OPTION_FLAGS & IGNORE_CASE) != 0 ? REGX_FLAGS|regex::icase : REGX_FLAGS;
-		regex src_epx(exp, REGX_FLAGS);
+
+		regex src_epx;
+		try
+		{
+			src_epx = regex(exp, REGX_FLAGS);
+		}
+		catch(std::regex_error& e)
+		{
+			std::cerr << "exception caught: " << e.what() << '\n';
+			std::cerr << "error of type " << e.code() << " was unhandled\n";
+		} 
 
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
 		auto end = sregex_iterator(); 

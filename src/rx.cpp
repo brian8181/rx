@@ -99,10 +99,10 @@ int regx_match(int count, char* args[])
 		{
 			src_epx = regex(exp, REGX_FLAGS);
 		}
-		catch(std::regex_error& e)
+		catch(regex_error& e)
 		{
-			std::cerr << "exception caught: " << e.what() << '\n';
-			std::cerr << "error of type " << e.code() << " was unhandled\n";
+			cerr << "exception caught: " << e.what() << '\n';
+			cerr << "error of type " << e.code() << " was unhandled\n";
 		} 
 
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);

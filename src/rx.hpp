@@ -1,8 +1,6 @@
 #ifndef _RX_HPP
 #define _RX_HPP
 
-using namespace std;
-
 #include <regex>
 #include <string>
 

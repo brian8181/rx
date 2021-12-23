@@ -6,13 +6,14 @@
 #include <string>
 #include <getopt.h>
 #include "bash_color.hpp"
+
+//HACK! cause link error
 //#include "rx.hpp"
+//HACK! should come from rx.hpp
+int parse_options(int argc, char* argv[]);
 
 using std::cin;
 using std::string;
-
-//HACK! should come from rx.hpp
-int parse_options(int argc, char* argv[]);
 
 int stdin_ready (int filedes)
 {

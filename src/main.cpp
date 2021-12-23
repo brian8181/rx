@@ -12,9 +12,6 @@
 //HACK! should come from rx.hpp
 int parse_options(int argc, char* argv[]);
 
-using std::cin;
-using std::string;
-
 int stdin_ready (int filedes)
 {
     fd_set set;
@@ -33,8 +30,8 @@ int main(int argc, char* argv[])
 	{
 		if(stdin_ready (STDIN_FILENO))
 		{
-				string buffer;
-				cin >> buffer;
+				std::string buffer;
+				std::cin >> buffer;
 				// add piped buffer to end of argv
 				char* argvtmp[sizeof(char*) * argc+1];
 				memcpy(argvtmp, argv, sizeof(char*) * argc);

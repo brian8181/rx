@@ -7,7 +7,6 @@
 #include <getopt.h>
 #include "bash_color.hpp"
 #include "rx.hpp"
-#include "main.hpp"
 
 using namespace std;
 

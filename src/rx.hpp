@@ -24,7 +24,7 @@ unsigned char OPTION_FLAGS = DEFAULTS;
 std::regex::flag_type REGX_FLAGS = std::regex::basic;
 
 // parse function
-//int parse_options(int argc, char* argv[]);
+int parse_options(int argc, char* argv[]);
 // match function
 int regx_match(int count, char* args[]);
 

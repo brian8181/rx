@@ -14,14 +14,14 @@ int parse_options(int argc, char* argv[]);
 
 int stdin_ready (int filedes)
 {
-    fd_set set;
-    // declare/initialize zero timeout 
-    struct timespec timeout = { .tv_sec = 0 };
-    // initialize the file descriptor set. 
-    FD_ZERO (&set);
-    FD_SET (filedes, &set);
-    // check whestdin_ready is ready on filedes 
-    return pselect (filedes + 1, &set, NULL, NULL, &timeout, NULL);
+	fd_set set;
+	// declare/initialize zero timeout 
+	struct timespec timeout = { .tv_sec = 0 };
+	// initialize the file descriptor set. 
+	FD_ZERO (&set);
+	FD_SET (filedes, &set);
+	// check whestdin_ready is ready on filedes 
+	return pselect (filedes + 1, &set, NULL, NULL, &timeout, NULL);
 }
 
 int main(int argc, char* argv[])

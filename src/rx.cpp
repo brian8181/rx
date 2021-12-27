@@ -24,7 +24,7 @@ static struct option long_options[] =
 		{"options", no_argument, 0, 'o'}       //default
 	};
 
-map<string, regex::flag_type> regex_flags =
+map<std::string, regex::flag_type> regex_flags =
 	{
 		{"ECMAScript", regex::ECMAScript}, 
 		{"basic", regex::basic},
@@ -38,7 +38,7 @@ map<string, regex::flag_type> regex_flags =
 		{"collate", regex::collate}
 	};
 
-map<string, regex_constants::match_flag_type>  match_flags =
+map<std::string, regex_constants::match_flag_type>  match_flags =
 	{
 		{"match_default", regex_constants::match_default},
 		{"match_not_bol",  regex_constants::match_not_bol},

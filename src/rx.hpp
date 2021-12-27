@@ -7,7 +7,7 @@
 // constants
 const int BUFFER_LEN   = 0xFF;
 const int DEFAULT_ARGC = 2;
-const string VERSION_STRING = "rx 0.0.1";
+const std::string VERSION_STRING = "rx 0.0.1";
 
 // options flags
 const unsigned char VERBOSE       = 0x01;

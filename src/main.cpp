@@ -5,7 +5,6 @@
 #include <sys/select.h>     /* for pselect   */
 #include <string>
 #include <getopt.h>
-#include "bash_color.hpp"
 
 //HACK! cause link error
 //#include "rx.hpp"

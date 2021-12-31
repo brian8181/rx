@@ -27,7 +27,7 @@ INCLUDES = -I/usr/local/include/cppunit/
 # Makefile settings - Can be customized.
 APPNAME = rx
 EXT = cpp
-HOME = ~
+#HOME = $(HOME)
 ROOT  = $(HOME)/src/$(APPNAME)
 SRCS = $(ROOT)/src
 BUILD = $(ROOT)/build

@@ -3,11 +3,12 @@
 # MAKE TEMPLATE 05-22-2021 1.2
 # MAKE TEMPLATE 07-07-2021 1.3
 # MAKE TEMPLATE 10-09-2021 1.4
+# January 1, 2022 1.5
 
 # RUN BEFORE autoreconf -ivfm
 # RUN BEFORE autoreconf -i
 
-MAKE_TEMPLATE = 1.3;
+MAKE_TEMPLATE = 1.5;
 BUILD_VERSION = 0.1.0
 
 prefix = /usr/local
@@ -27,7 +28,6 @@ INCLUDES = -I/usr/local/include/cppunit/
 # Makefile settings - Can be customized.
 APPNAME = rx
 EXT = cpp
-#HOME = $(HOME)
 ROOT  = $(HOME)/src/$(APPNAME)
 SRCS = $(ROOT)/src
 BUILD = $(ROOT)/build
@@ -42,11 +42,15 @@ debuggdb: all
 
 # compile & link
 all: $(APPNAME) $(APPNAME)_test bash_color_test
+	
+test:
+
 
 # link
 $(APPNAME): $(APPNAME).o main.o
 	#$(CXX) $(CXXFLAGS) $(BUILD)/$^ -o $(BUILD)/$@
 	$(CXX) $(CXXFLAGS) $(OBJS)/$(APPNAME).o $(OBJS)/main.o -o $(BUILD)/$(APPNAME)
+	
 
 # compile only
 $(APPNAME).o:

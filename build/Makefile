@@ -101,7 +101,7 @@ uninstall: unman
 clean:
 	rm -f $(BUILD)/$(APPNAME) $(OBJS)/*.o $(BUILD)/$(APPNAME)_test $(BUILD)/bash_color_test
 	rm -f $(BUILD)/*.xml $(BUILD)/$(APPNAME).$(BUILD_VERSION).tar.gz
-	rm -f $(BUILD)/$(APPNAME).core # core dump!
+	rm -f $(BUILD)/$(APPNAME).core
 
 # delete object files, app, executables, & all automake/autoconf generated files
 .PHONY: distclean

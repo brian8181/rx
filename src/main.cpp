@@ -5,11 +5,7 @@
 #include <sys/select.h>     /* for pselect   */
 #include <string>
 #include <getopt.h>
-
-//HACK! cause link error
-//#include "rx.hpp"
-//HACK! should come from rx.hpp
-int parse_options(int argc, char* argv[]);
+#include "rx.hpp"
 
 int stdin_ready (int filedes)
 {

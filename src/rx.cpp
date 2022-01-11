@@ -11,7 +11,7 @@
 using namespace std;
 
 // constants
-const int BUFFER_LEN   = 0xFF;
+const int BUFFER_LEN = 0xFF;
 const int DEFAULT_ARGC = 2;
 const string VERSION_STRING = "rx 0.0.1";
 
@@ -28,62 +28,62 @@ unsigned char OPTION_FLAGS = DEFAULTS;
 regex::flag_type REGX_FLAGS = regex::basic;
 
 static struct option long_options[] =
-	{
-		{"verbose", no_argument, 0, 'v'},
-		{"help", no_argument, 0, 'h'},
-		{"ignore_case", no_argument, 0, 'i'},
-		{"single", no_argument, 0, 's'},
-		{"pretty", no_argument, 0, 'P'},       //default
-		{"no-pretty", no_argument, 0, 'p'},
-		{"version", no_argument, 0, 'r'},
-		{"not_extended", no_argument, 0, 'e'}, 
-		{"extended", no_argument, 0, 'E'},     //default
-		{"options", no_argument, 0, 'o'}       //default
-	};
+{
+	{"verbose", no_argument, 0, 'v'},
+	{"help", no_argument, 0, 'h'},
+	{"ignore_case", no_argument, 0, 'i'},
+	{"single", no_argument, 0, 's'},
+	{"pretty", no_argument, 0, 'P'},       //default
+	{"no-pretty", no_argument, 0, 'p'},
+	{"version", no_argument, 0, 'r'},
+	{"not_extended", no_argument, 0, 'e'}, 
+	{"extended", no_argument, 0, 'E'},     //default
+	{"options", no_argument, 0, 'o'}       //default
+};
 
 map<std::string, regex::flag_type> regex_flags =
-	{
-		{"ECMAScript", regex::ECMAScript}, 
-		{"basic", regex::basic},
-		{"extended", regex::extended},
-		{"awk", regex::awk},
-		{"grep", regex::grep}, 
-		{"egrep", regex::egrep},
-		{"icase", regex::icase},
-		{"nosubs", regex::nosubs},
-		{"optimize", regex::optimize},
-		{"collate", regex::collate}
-	};
+{
+	{"ECMAScript", regex::ECMAScript}, 
+	{"basic", regex::basic},
+	{"extended", regex::extended},
+	{"awk", regex::awk},
+	{"grep", regex::grep}, 
+	{"egrep", regex::egrep},
+	{"icase", regex::icase},
+	{"nosubs", regex::nosubs},
+	{"optimize", regex::optimize},
+	{"collate", regex::collate}
+};
 
 map<std::string, regex_constants::match_flag_type>  match_flags =
-	{
-		{"match_default", regex_constants::match_default},
-		{"match_not_bol",  regex_constants::match_not_bol},
-		{"match_not_eol", regex_constants::match_not_eol},
-		{"match_not_bow", regex_constants::match_not_bow},
-		{"match_not_eow", regex_constants::match_not_eow}, 
-		{"match_any", regex_constants::match_any},
-		{"match_not_null", regex_constants::match_not_null},
-		{"match_continuous", regex_constants::match_continuous},
-		{"match_prev_avail", regex_constants::match_prev_avail},
-		{"format_default", regex_constants::format_default},
-		{"format_sed", regex_constants::format_sed},
-		{"format_no_copy", regex_constants::format_no_copy},
-		{"format_first_only", regex_constants::format_first_only}
-	};
+{
+	{"match_default", regex_constants::match_default},
+	{"match_not_bol",  regex_constants::match_not_bol},
+	{"match_not_eol", regex_constants::match_not_eol},
+	{"match_not_bow", regex_constants::match_not_bow},
+	{"match_not_eow", regex_constants::match_not_eow}, 
+	{"match_any", regex_constants::match_any},
+	{"match_not_null", regex_constants::match_not_null},
+	{"match_continuous", regex_constants::match_continuous},
+	{"match_prev_avail", regex_constants::match_prev_avail},
+	{"format_default", regex_constants::format_default},
+	{"format_sed", regex_constants::format_sed},
+	{"format_no_copy", regex_constants::format_no_copy},
+	{"format_first_only", regex_constants::format_first_only}
+};
 
 void print_help()
 {
 	cout << "Usage: "  
-		 << FMT_BOLD << "rx" << FMT_RESET << " "
+		 << FMT_BOLD      << "rx"          << FMT_RESET << " "
 		 << FMT_UNDERLINE << "[OPTION]..." << FMT_RESET << " "
-		 << FMT_UNDERLINE << "PATTERN" << FMT_RESET << " "
-		 << FMT_UNDERLINE << "INPUT..." << FMT_RESET << endl;
+		 << FMT_UNDERLINE << "PATTERN"     << FMT_RESET << " "
+		 << FMT_UNDERLINE << "INPUT..."    << FMT_RESET << endl;
 }
 
 void print_match_header(const string& pattern, const string& src, int count)
 {
-	if(OPTION_FLAGS  & PRETTY_PRINT)
+	if(OPTION_FLAGS & PRETTY_PRINT)
 	{
 		cout << count << ": "; // input number / count
 		cout << FMT_FG_RED << ((OPTION_FLAGS  & SINGLE_MATCH) ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
@@ -128,11 +128,12 @@ int regx_match(int count, char* args[])
 		// for each match
 		for (sregex_iterator iter = begin; iter != end; ++iter, ++match_i)
 		{
-			string CURRENT_FG_COLOR( match_i % 2 ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
+			string CURRENT_FG_COLOR(match_i % 2 ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE);
 			smatch match = *iter;
+
 			int pos = match.position() + match_i * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
 			int len = match.length();
-			if ( (OPTION_FLAGS & SINGLE_MATCH) && (iter != begin || pos != 0 || src.length() != (size_t)len) )
+			if ((OPTION_FLAGS & SINGLE_MATCH) && (iter != begin || pos != 0 || src.length() != (size_t)len))
 			{
 				begin = end;
 				break;
@@ -151,7 +152,7 @@ int regx_match(int count, char* args[])
 				cout << endl << (match_i+1) << "\t" << src.substr(match.position(), match.length()) 
 					 << '\t' << match.position() << '\t' << match.length() << endl;
 			}
-        }
+		}
 
 		if(OPTION_FLAGS & PRETTY_PRINT)
 		{

@@ -25,7 +25,7 @@ const unsigned char DEFAULTS = PRETTY_PRINT | EXTENDED_REGX;
 
 // Set Defaults
 unsigned char OPTION_FLAGS = DEFAULTS;
-regex::flag_type REGX_FLAGS = regex::basic;
+regex::flag_type REGX_FLAGS = regex::ECMAScript;
 
 static struct option long_options[] =
 {
@@ -122,7 +122,7 @@ int regx_match(int count, char* args[])
 			cerr << "error of type " << e.code() << " was unhandled\n";
 		} 
 
-		auto begin = sregex_iterator(src.begin(), src.end(), src_epx);
+		auto begin = sregex_iterator(src.begin(), src.end(), src_epx, regex_constants::match_default);
 		auto end = sregex_iterator(); 
 		int match_i = 0;
 		// for each match
@@ -141,7 +141,7 @@ int regx_match(int count, char* args[])
 
 			if(OPTION_FLAGS & PRETTY_PRINT)
 			{
-				// set bash green start postion￼
+				// set bash green start postion
 				bash_stdio.insert(pos, CURRENT_FG_COLOR);
 				// reset bash color position
 				pos += CURRENT_FG_COLOR.length() + len;

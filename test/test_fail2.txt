@@ -12,3 +12,8 @@ Found 1 matches:
 2: abc2: abc
 Found 2 matches:
 [32m[4mabc[0mc[36m[4mabc[0m
+
+brian@raspberrypi:~/src/rx/build $ echo 'abcxabc abc' | ./rx abc 
+1: Match Pattern: 'abc' -> Input: 'abcxabc'
+Found 2 matches:
+abcxabc

@@ -117,6 +117,14 @@ Skips line on output...
 ./rx -p abc abc
 
 
+brian@raspberrypi:~/src/rx/build $ ./rx 'abc|efg|xyz' 'abcxefgxxyz abc efg xyz'
+1: Match Pattern: 'abc|efg|xyz' -> Input: 'abcxefgxxyz abc efg xyz'
+Found 6 matches:
+abcxefgxxyz abc efg xyz
+brian@raspberrypi:~/src/rx/build $ ./rx '(abc|efg|xyz)' 'abcxefgxxyz abc efg xyz'
+1: Match Pattern: '(abc|efg|xyz)' -> Input: 'abcxefgxxyz abc efg xyz'
+Found 6 matches:
+abcxefgxxyz abc efg xyz
 
 
 

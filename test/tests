@@ -127,8 +127,12 @@ Found 6 matches:
 abcxefgxxyz abc efg xyz
 
 
+brian@raspberrypi:~/ $ rx 'abc\\\|xyz' 'abc\|xyz'
+1: Match Pattern: 'abc\\\|xyz' -> Input: 'abc\|xyz'
+Found 1 matches:
+abc\|xyz
 
- 
-
-
-
+brian@raspberrypi:~/ $ rx 'abc\|xyz' 'abc|xyz'
+1: Match Pattern: 'abc\|xyz' -> Input: 'abc|xyz'
+Found 1 matches:
+abc|xyz

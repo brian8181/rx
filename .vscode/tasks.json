@@ -1,10 +1,19 @@
 {
+<<<<<<< HEAD
+=======
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+>>>>>>> file_options
     "version": "2.0.0",
     "tasks": [
         {
             "label": "MAKE DEBUGGDB",
             "type": "shell",
+<<<<<<< HEAD
             "command": "make -f ${workspaceFolder}/build/Makefile",
+=======
+            "command": "make -f ${workspaceFolder}/build/Makefile rx",
+>>>>>>> file_options
             "problemMatcher": [
                 "$gcc"
             ],
@@ -12,11 +21,14 @@
                 "kind": "build",
                 "isDefault": true
             }
+<<<<<<< HEAD
         },
         {
             "label": "echo",
             "type": "shell",
             "command": "echo ${workspaceFolder}"
+=======
+>>>>>>> file_options
         }
     ]
 }

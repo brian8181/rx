@@ -4,6 +4,7 @@
 #include <vector>
 #include <map>
 #include <stdexcept>
+#include <fstream>
 #include <getopt.h>
 #include "bash_color.hpp"
 #include "rx.hpp"
@@ -21,6 +22,7 @@ const unsigned char IGNORE_CASE   = 0x02;
 const unsigned char SINGLE_MATCH  = 0x04;
 const unsigned char PRETTY_PRINT  = 0x08;
 const unsigned char EXTENDED_REGX = 0x10;
+const unsigned char FROM_FILE     = 0x20;
 const unsigned char DEFAULTS = PRETTY_PRINT | EXTENDED_REGX;
 
 // Set Defaults
@@ -38,7 +40,8 @@ static struct option long_options[] =
 	{"version", no_argument, 0, 'r'},
 	{"not_extended", no_argument, 0, 'e'}, 
 	{"extended", no_argument, 0, 'E'},     //default
-	{"options", no_argument, 0, 'o'}       //default
+	{"options", no_argument, 0, 'o'},       //default
+    {"file", required_argument, 0, 'f'}
 };
 
 map<std::string, regex::flag_type> regex_flags =
@@ -99,16 +102,16 @@ void print_version()
 	cout << VERSION_STRING << endl;
 }
 
-int regx_match(int count, char* args[])
+// int regx_match(int count, char* args[])
+int regx_match(const string& exp, const vector<string>& search_text)
 {
-	string src;
-	string exp(args[0]);
+	int len = search_text.size();
 	// for each input
-	for (int input_i = 1; input_i < count; ++input_i)
+	for (int input_i = 0; input_i < len; ++input_i)
 	{
-		src = args[input_i];
-		print_match_header(exp, src, input_i);
-		string bash_stdio = src;
+		//src = search_text[input_i];
+		print_match_header(exp, search_text[input_i], input_i);
+		string bash_stdio = search_text[input_i];
 		REGX_FLAGS = (OPTION_FLAGS & IGNORE_CASE) != 0 ? REGX_FLAGS|regex::icase : REGX_FLAGS;
 
 		regex src_epx;
@@ -122,7 +125,11 @@ int regx_match(int count, char* args[])
 			cerr << "error of type " << e.code() << " was unhandled\n";
 		} 
 
+<<<<<<< HEAD
 		auto begin = sregex_iterator(src.begin(), src.end(), src_epx, regex_constants::match_default);
+=======
+		auto begin = sregex_iterator(search_text[input_i].begin(), search_text[input_i].end(), src_epx);
+>>>>>>> file_options
 		auto end = sregex_iterator(); 
 		int match_i = 0;
 		// for each match
@@ -133,7 +140,7 @@ int regx_match(int count, char* args[])
 
 			int pos = match.position() + match_i * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
 			int len = match.length();
-			if ((OPTION_FLAGS & SINGLE_MATCH) && (iter != begin || pos != 0 || src.length() != (size_t)len))
+			if ((OPTION_FLAGS & SINGLE_MATCH) && (iter != begin || pos != 0 || search_text[input_i].length() != (size_t)len))
 			{
 				begin = end;
 				break;
@@ -149,7 +156,7 @@ int regx_match(int count, char* args[])
 			}
 			else
 			{
-				cout << endl << (match_i+1) << "\t" << src.substr(match.position(), match.length()) 
+				cout << endl << (match_i+1) << "\t" << search_text[input_i].substr(match.position(), match.length()) 
 					 << '\t' << match.position() << '\t' << match.length() << endl;
 			}
 		}
@@ -165,10 +172,14 @@ int regx_match(int count, char* args[])
 
 int parse_options(int argc, char* argv[])
 {
+	vector<string> search_text;
+	ifstream search_file;
+	string exp = string(argv[1]);
+
 	int opt = 0;
 	int option_index = 0;
 	optind = 0;
-	opt = getopt_long(argc, argv, "hvispPreEo", long_options, &option_index);
+	opt = getopt_long(argc, argv, "hvispPreEof:", long_options, &option_index);
 	while (opt != -1)
 	{
 		switch (opt)
@@ -200,6 +211,20 @@ int parse_options(int argc, char* argv[])
 		case 'r':
 			print_version();
 			return 0;
+		case 'f':
+		{
+			OPTION_FLAGS |= FROM_FILE;
+			search_file.open(optarg, ios::in); 
+			
+			if (search_file.is_open())
+			{   
+				string line;
+				while(getline(search_file, line))
+					search_text.push_back(line);
+				search_file.close(); 
+			}
+			break;
+		}
 		case 'o':
 		{
 			string sz_opt = argv[optind];
@@ -230,7 +255,7 @@ int parse_options(int argc, char* argv[])
 			cerr << "Unexpected option, -h for help" << endl;
 			return -1;
 		}
-		opt = getopt_long(argc, argv, "hvispPreEo", long_options, &option_index);
+		opt = getopt_long(argc, argv, "hvispPreEof:", long_options, &option_index);
 	}
 
 	if (argc <= DEFAULT_ARGC) // not correct number of args
@@ -244,7 +269,10 @@ int parse_options(int argc, char* argv[])
 		print_help();
 	}
 
-	argc -= optind;
-	argv += optind;
-	return regx_match(argc, argv);
+	if((OPTION_FLAGS & FROM_FILE) == 0)
+	{
+		for(int i = 2; i < argc; ++i)
+			search_text.push_back(argv[i]);
+	}
+	return regx_match(exp, search_text);
 }

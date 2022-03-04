@@ -1,0 +1,131 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "g++ - no args",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "./build/rx",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "MAKE DEBUGGDB",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "g++ - with args",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "./build/rx",
+            "args": ["abc", "abc"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "MAKE DEBUGGDB",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "g++ - with '-p' args",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "./build/rx",
+            "args": ["-p", "abc", "abc.abc.abc.abc"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "MAKE DEBUGGDB",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "g++ - with '-s' args",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "./build/rx",
+            "args": ["-s", "abc", "abc"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "MAKE DEBUGGDB",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "g++ - with args 3",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "./build/rx",
+            "args": ["ab[0-5]", "ab3.abc%ab6*ab5^ab0$abc#ab10!ab8~ab3"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "MAKE DEBUGGDB",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "g++ - with args & quotes",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "./build/rx",
+            "args": ["\"\"[a-c]{3}\"\"", "\"\"abc\"\".\"bca\".\"cba\""],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "MAKE DEBUGGDB",
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}

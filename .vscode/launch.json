@@ -5,9 +5,9 @@
     "version": "0.2.0",
     "configurations": [
         {
-          "name": "(gdb) Launch",
-
+            
             "type": "cppdbg",
+            "name": "(gdb) Launch",
             "request": "launch",
             "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
             "args": ["abc", "abc"],
@@ -20,12 +20,6 @@
                 {
                     "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-
-                },
-                {
-                    "description": "Set Disassembly Flavor to Intel",
-                    "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
             ],
@@ -47,11 +41,6 @@
                 {
                     "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                },
-                {
-                    "description": "Set Disassembly Flavor to Intel",
-                    "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
             ],

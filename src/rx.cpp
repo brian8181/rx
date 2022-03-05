@@ -102,16 +102,14 @@ void print_version()
 	cout << VERSION_STRING << endl;
 }
 
-// int regx_match(int count, char* args[])
 int regx_match(const string& exp, const vector<string>& search_text)
 {
 	int len = search_text.size();
 	// for each input
-	for (int input_i = 0; input_i < len; ++input_i)
+	for (int i = 0; i < len; ++i)
 	{
-		//src = search_text[input_i];
-		print_match_header(exp, search_text[input_i], input_i);
-		string bash_stdio = search_text[input_i];
+		print_match_header(exp, search_text[i], i);
+		string bash_stdio = search_text[i];
 		REGX_FLAGS = (OPTION_FLAGS & IGNORE_CASE) != 0 ? REGX_FLAGS|regex::icase : REGX_FLAGS;
 
 		regex src_epx;
@@ -125,7 +123,7 @@ int regx_match(const string& exp, const vector<string>& search_text)
 			cerr << "error of type " << e.code() << " was unhandled\n";
 		} 
 
-		auto begin = sregex_iterator(search_text[input_i].begin(), search_text[input_i].end(), src_epx, std::regex_constants::match_default);
+		auto begin = sregex_iterator(search_text[i].begin(), search_text[i].end(), src_epx, std::regex_constants::match_default);
 		auto end = sregex_iterator(); 
 		int match_i = 0;
 		// for each match
@@ -136,7 +134,7 @@ int regx_match(const string& exp, const vector<string>& search_text)
 
 			int pos = match.position() + match_i * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
 			int len = match.length();
-			if ((OPTION_FLAGS & SINGLE_MATCH) && (iter != begin || pos != 0 || search_text[input_i].length() != (size_t)len))
+			if ((OPTION_FLAGS & SINGLE_MATCH) && (iter != begin || pos != 0 || search_text[i].length() != (size_t)len))
 			{
 				begin = end;
 				break;
@@ -152,7 +150,7 @@ int regx_match(const string& exp, const vector<string>& search_text)
 			}
 			else
 			{
-				cout << endl << (match_i+1) << "\t" << search_text[input_i].substr(match.position(), match.length()) 
+				cout << endl << (match_i+1) << "\t" << search_text[i].substr(match.position(), match.length()) 
 					 << '\t' << match.position() << '\t' << match.length() << endl;
 			}
 		}

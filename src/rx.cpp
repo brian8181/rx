@@ -166,10 +166,9 @@ int regx_match(const string& exp, const vector<string>& search_text)
 
 int parse_options(int argc, char* argv[])
 {
-	vector<string> search_text;
-	ifstream search_file;
 	string exp = string(argv[1]);
-
+	vector<string> search_text;
+	
 	int opt = 0;
 	int option_index = 0;
 	optind = 0;
@@ -208,6 +207,7 @@ int parse_options(int argc, char* argv[])
 		case 'f':
 		{
 			OPTION_FLAGS |= FROM_FILE;
+			ifstream search_file;
 			search_file.open(optarg, ios::in); 
 			
 			if (search_file.is_open())

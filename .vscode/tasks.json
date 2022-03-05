@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
      "version": "2.0.0",
 =======
@@ -7,6 +8,11 @@
     // for the documentation about the tasks.json format
     "version": "2.0.0",
 >>>>>>> 48a9c703c2e2ffee7e776294a8425b8436fa712a
+=======
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+>>>>>>> origin/file_options
     "tasks": [
         {
             "label": "MAKE DEBUGGDB",
@@ -20,6 +26,7 @@
                 "isDefault": true
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         {
             "label": "echo",
@@ -27,6 +34,8 @@
             "command": "echo ${workspaceFolder}"
 =======
 >>>>>>> 48a9c703c2e2ffee7e776294a8425b8436fa712a
+=======
+>>>>>>> origin/file_options
         }
     ]
 }

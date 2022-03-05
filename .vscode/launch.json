@@ -5,9 +5,8 @@
     "version": "0.2.0",
     "configurations": [
         {
-            
-            "type": "cppdbg",
             "name": "(gdb) Launch",
+            "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
             "args": ["abc", "abc"],

@@ -3,10 +3,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
 >>>>>>> file_options
+=======
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+>>>>>>> origin/file_options
 =======
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
@@ -28,10 +33,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "command": "make -f ${workspaceFolder}/build/Makefile",
 =======
             "command": "make -f ${workspaceFolder}/build/Makefile rx",
 >>>>>>> file_options
+=======
+            "command": "make -f ${workspaceFolder}/build/Makefile rx",
+>>>>>>> origin/file_options
 =======
             "command": "make -f ${workspaceFolder}/build/Makefile rx",
 >>>>>>> origin/file_options
@@ -52,6 +61,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         {
             "label": "echo",
@@ -59,6 +69,8 @@
             "command": "echo ${workspaceFolder}"
 =======
 >>>>>>> file_options
+=======
+>>>>>>> origin/file_options
 =======
 >>>>>>> origin/file_options
 =======

@@ -5,27 +5,8 @@
     "version": "0.2.0",
     "configurations": [
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            "name": "dubug active",
-=======
-            "name": "(gdb) Launch",
->>>>>>> file_options
-=======
-            "name": "(gdb) Launch",
->>>>>>> origin/file_options
-=======
-            "name": "(gdb) Launch",
->>>>>>> origin/file_options
-=======
-            "name": "(gdb) Launch",
->>>>>>> origin/file_options
-=======
-            "name": "(gdb) Launch",
->>>>>>> origin/file_options
+          "name": "(gdb) Launch",
+
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
@@ -40,20 +21,7 @@
                     "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/file_options
-=======
->>>>>>> origin/file_options
-=======
->>>>>>> origin/file_options
-=======
->>>>>>> origin/file_options
+
                 },
                 {
                     "description": "Set Disassembly Flavor to Intel",
@@ -85,19 +53,6 @@
                     "description": "Set Disassembly Flavor to Intel",
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> file_options
-=======
->>>>>>> origin/file_options
-=======
->>>>>>> origin/file_options
-=======
->>>>>>> origin/file_options
-=======
->>>>>>> origin/file_options
                 }
             ],
             "preLaunchTask": "MAKE DEBUGGDB",

@@ -6,10 +6,14 @@
     "configurations": [
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "name": "dubug active",
 =======
             "name": "(gdb) Launch",
 >>>>>>> file_options
+=======
+            "name": "(gdb) Launch",
+>>>>>>> origin/file_options
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
@@ -25,7 +29,10 @@
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/file_options
                 },
                 {
                     "description": "Set Disassembly Flavor to Intel",
@@ -57,7 +64,10 @@
                     "description": "Set Disassembly Flavor to Intel",
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
+<<<<<<< HEAD
 >>>>>>> file_options
+=======
+>>>>>>> origin/file_options
                 }
             ],
             "preLaunchTask": "MAKE DEBUGGDB",

@@ -125,11 +125,7 @@ int regx_match(const string& exp, const vector<string>& search_text)
 			cerr << "error of type " << e.code() << " was unhandled\n";
 		} 
 
-<<<<<<< HEAD
-		auto begin = sregex_iterator(src.begin(), src.end(), src_epx, regex_constants::match_default);
-=======
-		auto begin = sregex_iterator(search_text[input_i].begin(), search_text[input_i].end(), src_epx);
->>>>>>> file_options
+		auto begin = sregex_iterator(search_text[input_i].begin(), search_text[input_i].end(), src_epx, regex_constants::match_default);
 		auto end = sregex_iterator(); 
 		int match_i = 0;
 		// for each match

@@ -7,10 +7,14 @@
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "name": "dubug active",
 =======
             "name": "(gdb) Launch",
 >>>>>>> file_options
+=======
+            "name": "(gdb) Launch",
+>>>>>>> origin/file_options
 =======
             "name": "(gdb) Launch",
 >>>>>>> origin/file_options
@@ -30,7 +34,10 @@
                     "ignoreFailures": true
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/file_options
 =======
 >>>>>>> origin/file_options
                 },
@@ -65,7 +72,10 @@
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> file_options
+=======
+>>>>>>> origin/file_options
 =======
 >>>>>>> origin/file_options
                 }

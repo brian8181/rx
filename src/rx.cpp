@@ -41,7 +41,7 @@ static struct option long_options[] =
 	{"not_extended", no_argument, 0, 'e'}, 
 	{"extended", no_argument, 0, 'E'},     //default
 	{"options", no_argument, 0, 'o'},       //default
-    {"file", required_argument, 0, 'f'}
+	{"file", required_argument, 0, 'f'}
 };
 
 map<std::string, regex::flag_type> regex_flags =

@@ -166,9 +166,7 @@ int regx_match(const string& exp, const vector<string>& search_text)
 
 int parse_options(int argc, char* argv[])
 {
-	string exp = string(argv[1]);
 	vector<string> search_text;
-	
 	int opt = 0;
 	int option_index = 0;
 	optind = 0;
@@ -262,11 +260,12 @@ int parse_options(int argc, char* argv[])
 	{
 		print_help();
 	}
-
+	
 	if((OPTION_FLAGS & FROM_FILE) == 0)
 	{
-		for(int i = 2; i < argc; ++i)
+		for(int i = optind + 1; i < argc; ++i)
 			search_text.push_back(argv[i]);
 	}
-	return regx_match(exp, search_text);
+
+	return regx_match(argv[optind], search_text);
 }

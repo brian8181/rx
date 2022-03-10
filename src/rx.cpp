@@ -268,10 +268,8 @@ int parse_options(int argc, char* argv[])
 	if((OPTION_FLAGS & FROM_FILE) == 0)
 	{
 		char** p = argv;
-		std::vector<std::string> v(p + optind, p + (argc-1));
-		search_text = v;
+		search_text.assign(p + optind, p + (argc-1));
 	}
 
 	return regx_match(argv[optind], search_text);
 }
-

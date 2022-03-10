@@ -216,6 +216,11 @@ int parse_options(int argc, char* argv[])
 					search_text.push_back(line);
 				search_file.close(); 
 			}
+			else
+			{
+				cerr << "Error: invalid path with file option" << endl;
+				return -1;
+			}
 			break;
 		}
 		case 'o':

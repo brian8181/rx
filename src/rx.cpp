@@ -8,10 +8,7 @@
 #include <getopt.h>
 #include "bash_color.hpp"
 #include "rx.hpp"
-#include <iterator>
 
-using std::begin;
-using std::end;
 using namespace std;
 
 // constants
@@ -267,8 +264,7 @@ int parse_options(int argc, char* argv[])
 	
 	if((OPTION_FLAGS & FROM_FILE) == 0)
 	{
-		char** p = argv;
-		search_text.assign(p + optind, p + (argc-1));
+		search_text.assign(argv + optind, argv + (argc-1));
 	}
 
 	return regx_match(argv[optind], search_text);

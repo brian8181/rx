@@ -136,3 +136,19 @@ brian@raspberrypi:~/ $ rx 'abc\|xyz' 'abc|xyz'
 1: Match Pattern: 'abc\|xyz' -> Input: 'abc|xyz'
 Found 1 matches:
 abc|xyz
+
+Wrong file name problem
+
+brian@fire:~/src/rx/build$ ./rx abc -f ../test/fopt.tx
+0: Match Pattern: 'abc' -> Input: './rx'
+Found 0 matches:
+./rx
+1: Match Pattern: 'abc' -> Input: 'abc'
+Found 1 matches:
+abc
+2: Match Pattern: 'abc' -> Input: '-f'
+Found 0 matches:
+-f
+3: Match Pattern: 'abc' -> Input: '../test/fopt.tx'
+Found 0 matches:
+../test/fopt.tx

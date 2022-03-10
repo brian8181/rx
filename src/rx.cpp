@@ -8,7 +8,10 @@
 #include <getopt.h>
 #include "bash_color.hpp"
 #include "rx.hpp"
+#include <iterator>
 
+using std::begin;
+using std::end;
 using namespace std;
 
 // constants
@@ -166,7 +169,7 @@ int regx_match(const string& exp, const vector<string>& search_text)
 
 int parse_options(int argc, char* argv[])
 {
-	vector<string> search_text;
+	vector<string> search_text(argv, argv + argc);
 	int opt = 0;
 	int option_index = 0;
 	optind = 0;
@@ -211,6 +214,7 @@ int parse_options(int argc, char* argv[])
 			if (search_file.is_open())
 			{   
 				string line;
+				search_text.clear();
 				while(getline(search_file, line))
 					search_text.push_back(line);
 				search_file.close(); 
@@ -263,9 +267,11 @@ int parse_options(int argc, char* argv[])
 	
 	if((OPTION_FLAGS & FROM_FILE) == 0)
 	{
-		for(int i = optind + 1; i < argc; ++i)
-			search_text.push_back(argv[i]);
+		char** p = argv;
+		std::vector<std::string> v(p + optind, p + (argc-1));
+		search_text = v;
 	}
 
 	return regx_match(argv[optind], search_text);
 }
+

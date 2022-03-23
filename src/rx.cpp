@@ -14,7 +14,7 @@ using namespace std;
 // constants
 const int BUFFER_LEN = 0xFF;
 const int DEFAULT_ARGC = 2;
-const string VERSION_STRING = "rx 0.0.1";
+const string VERSION_STRING = "rx 0.0.2";
 
 // options flags
 const unsigned char VERBOSE       = 0x01;
@@ -269,7 +269,11 @@ int parse_options(int argc, char* argv[])
 	
 	if((OPTION_FLAGS & FROM_FILE) == 0)
 	{
-		search_text.assign(argv + optind, argv + (argc-1));
+		// cout << "argc: " << argc << endl;
+		// cout << "optind: " << optind << endl;
+
+		int idx = optind + 1;
+		search_text.assign(argv+idx, (argv+idx) + (argc-idx));
 	}
 
 	return regx_match(argv[optind], search_text);

@@ -72,7 +72,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
-            "args": ["-f", "${workspaceFolder}/test/exp_fopt.txt", "abcxyabcwabc"],
+            "args": ["-f", "${workspaceFolder}/test/exp_fopt.txt", "abc", "abcxyabcwabc"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],

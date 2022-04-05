@@ -204,6 +204,9 @@ int parse_options(int argc, char* argv[])
 			return 0;
 		case 'f':
 		{
+			if(argc != optind)
+				break;
+			
 			OPTION_FLAGS |= FROM_FILE;
 			ifstream search_file;
 			search_file.open(optarg, ios::in); 

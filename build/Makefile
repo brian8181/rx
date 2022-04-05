@@ -48,9 +48,7 @@ test:
 
 # link
 $(APPNAME): $(APPNAME).o main.o
-	#$(CXX) $(CXXFLAGS) $(BUILD)/$^ -o $(BUILD)/$@
 	$(CXX) $(CXXFLAGS) $(OBJS)/$(APPNAME).o $(OBJS)/main.o -o $(BUILD)/$(APPNAME)
-	
 
 # compile only
 $(APPNAME).o:

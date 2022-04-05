@@ -205,7 +205,10 @@ int parse_options(int argc, char* argv[])
 		case 'f':
 		{
 			if(argc != optind)
+			{
+				cout << "f opt error:" << endl;
 				break;
+			}
 			
 			OPTION_FLAGS |= FROM_FILE;
 			ifstream search_file;

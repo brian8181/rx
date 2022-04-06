@@ -113,7 +113,6 @@ clean-local:
 	rm aclocal.m4
 	rm compile install-sh missing Makefile.in
 	
-
 dist: 
 	git archive HEAD | gzip > $(BUILD)/$(APPNAME).$(BUILD_VERSION).tar.gz
 

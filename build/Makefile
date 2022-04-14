@@ -42,9 +42,6 @@ debuggdb: all
 
 # compile & link
 all: $(APPNAME) $(APPNAME)_test bash_color_test
-	
-test:
-
 
 # link
 $(APPNAME): $(APPNAME).o main.o

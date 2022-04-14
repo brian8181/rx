@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 #include <string>
 #include <regex>
 #include <vector>
@@ -209,10 +210,21 @@ int parse_options(int argc, char* argv[])
 				cout << "f opt error:" << endl;
 				break;
 			}
+			// if(argc != optind)
+			// {
+			// 	string tmp_opt;
+			// 	cin >> tmp_opt;
+			// 	if(tmp_opt == "-f")
+			// 	{
+
+			// 	}
+			// 	break;
+			// }
 			
 			OPTION_FLAGS |= FROM_FILE;
 			ifstream search_file;
 			search_file.open(optarg, ios::in); 
+			
 			
 			if (search_file.is_open())
 			{   
@@ -275,8 +287,8 @@ int parse_options(int argc, char* argv[])
 	
 	if((OPTION_FLAGS & FROM_FILE) == 0)
 	{
-		// cout << "argc: " << argc << endl;
-		// cout << "optind: " << optind << endl;
+		cout << "argc: " << argc << endl;
+		cout << "optind: " << optind << endl;
 
 		int idx = optind + 1;
 		search_text.assign(argv+idx, (argv+idx) + (argc-idx));

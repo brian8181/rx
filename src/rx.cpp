@@ -167,12 +167,12 @@ int regx_match(const string& exp, const vector<string>& search_text)
 
 int parse_options(int argc, char* argv[])
 {
+	vector<string> exp_text;
 	vector<string> search_text(argv, argv + argc);
 	int opt = 0;
 	int option_index = 0;
 	optind = 0;
-	opt = getopt_long(argc, argv, "hvispPreEof:", long_options, &option_index);
-	while (opt != -1)
+	while (opt = getopt_long(argc, argv, "hvispPreEof:", long_options, &option_index) != -1)
 	{
 		switch (opt)
 		{
@@ -205,27 +205,31 @@ int parse_options(int argc, char* argv[])
 			return 0;
 		case 'f':
 		{
+			OPTION_FLAGS |= FROM_FILE;
+			ifstream exp_file;
 			if(argc != optind)
 			{
 				cout << "f opt error:" << endl;
+				cout << "optarg:" << optarg << endl;
+				string opt_tmp = optarg;
+
+				exp_file.open(optarg, ios::in);
+				if(exp_file.is_open())
+				{
+					string line;
+					exp_file.clear();
+					while(getline(exp_file, line))
+					{
+						exp_text.push_back(line);
+						cout << line << endl;
+					}
+					exp_file.close(); 	
+				}
 				break;
 			}
-			// if(argc != optind)
-			// {
-			// 	string tmp_opt;
-			// 	cin >> tmp_opt;
-			// 	if(tmp_opt == "-f")
-			// 	{
-
-			// 	}
-			// 	break;
-			// }
 			
-			OPTION_FLAGS |= FROM_FILE;
 			ifstream search_file;
 			search_file.open(optarg, ios::in); 
-			
-			
 			if (search_file.is_open())
 			{   
 				string line;
@@ -271,7 +275,6 @@ int parse_options(int argc, char* argv[])
 			cerr << "Unexpected option, -h for help" << endl;
 			return -1;
 		}
-		opt = getopt_long(argc, argv, "hvispPreEof:", long_options, &option_index);
 	}
 
 	if (argc <= DEFAULT_ARGC) // not correct number of args

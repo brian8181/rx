@@ -172,7 +172,7 @@ int parse_options(int argc, char* argv[])
 	int opt = 0;
 	int option_index = 0;
 	optind = 0;
-	while (opt = getopt_long(argc, argv, "hvispPreEof:", long_options, &option_index) != -1)
+	while ((opt = getopt_long(argc, argv, "hvispPreEof:", long_options, &option_index)) != -1)
 	{
 		switch (opt)
 		{
@@ -205,7 +205,6 @@ int parse_options(int argc, char* argv[])
 			return 0;
 		case 'f':
 		{
-			OPTION_FLAGS |= FROM_FILE;
 			ifstream exp_file;
 			if(argc != optind)
 			{
@@ -225,23 +224,25 @@ int parse_options(int argc, char* argv[])
 					}
 					exp_file.close(); 	
 				}
-				break;
-			}
-			
-			ifstream search_file;
-			search_file.open(optarg, ios::in); 
-			if (search_file.is_open())
-			{   
-				string line;
-				search_text.clear();
-				while(getline(search_file, line))
-					search_text.push_back(line);
-				search_file.close(); 
 			}
 			else
 			{
-				cerr << "Error: invalid path with file option" << endl;
-				return -1;
+				ifstream search_file;
+				search_file.open(optarg, ios::in); 
+				if (search_file.is_open())
+				{   
+					OPTION_FLAGS |= FROM_FILE;
+					string line;
+					search_text.clear();
+					while(getline(search_file, line))
+						search_text.push_back(line);
+					search_file.close(); 
+				}
+				else
+				{
+					cerr << "Error: invalid path with file option" << endl;
+					return -1;
+				}
 			}
 			break;
 		}
@@ -295,6 +296,7 @@ int parse_options(int argc, char* argv[])
 
 		int idx = optind + 1;
 		search_text.assign(argv+idx, (argv+idx) + (argc-idx));
+		return regx_match(argv[1], search_text);
 	}
 
 	return regx_match(argv[optind], search_text);

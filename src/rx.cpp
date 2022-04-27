@@ -220,9 +220,14 @@ int parse_options(int argc, char* argv[])
 					while(getline(exp_file, line))
 					{
 						exp_text.push_back(line);
-						cout << line << endl;
+						//cout << line << endl;
 					}
 					exp_file.close(); 	
+				}
+				else
+				{
+					cerr << "Error: invalid path with file option" << endl;
+					return -1;
 				}
 			}
 			else
@@ -235,7 +240,9 @@ int parse_options(int argc, char* argv[])
 					string line;
 					search_text.clear();
 					while(getline(search_file, line))
+					{
 						search_text.push_back(line);
+					}
 					search_file.close(); 
 				}
 				else
@@ -291,8 +298,8 @@ int parse_options(int argc, char* argv[])
 	
 	if((OPTION_FLAGS & FROM_FILE) == 0)
 	{
-		cout << "argc: " << argc << endl;
-		cout << "optind: " << optind << endl;
+		//cout << "argc: " << argc << endl;
+		//cout << "optind: " << optind << endl;
 
 		int idx = optind + 1;
 		search_text.assign(argv+idx, (argv+idx) + (argc-idx));

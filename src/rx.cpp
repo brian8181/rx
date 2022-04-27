@@ -76,6 +76,11 @@ map<std::string, regex_constants::match_flag_type>  match_flags =
 	{"format_first_only", regex_constants::format_first_only}
 };
 
+void print_version()
+{
+	cout << VERSION_STRING << endl;
+}
+
 void print_help()
 {
 	cout << "Usage: "  
@@ -96,11 +101,6 @@ void print_match_header(const string& pattern, const string& src, int count)
 			 << FMT_FG_RED << "Input: " << FMT_RESET
 			 << "'" << FMT_FG_YELLOW << src << FMT_RESET << "'";
 	}
-}
-
-void print_version()
-{
-	cout << VERSION_STRING << endl;
 }
 
 int regx_match(const string& exp, const vector<string>& search_text)

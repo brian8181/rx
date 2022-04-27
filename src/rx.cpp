@@ -208,10 +208,9 @@ int parse_options(int argc, char* argv[])
 			ifstream exp_file;
 			if(argc != optind)
 			{
-				cout << "f opt error:" << endl;
-				cout << "optarg:" << optarg << endl;
+				//cout << "f opt error:" << endl;
+				//cout << "optarg:" << optarg << endl;
 				string opt_tmp = optarg;
-
 				exp_file.open(optarg, ios::in);
 				if(exp_file.is_open())
 				{

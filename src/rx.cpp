@@ -23,6 +23,7 @@ const unsigned char IGNORE_CASE   = 0x02;
 const unsigned char SINGLE_MATCH  = 0x04;
 const unsigned char PRETTY_PRINT  = 0x08;
 const unsigned char EXTENDED_REGX = 0x10;
+const unsigned char REGEX_OPTIONS = 0x12;
 const unsigned char FROM_FILE     = 0x20;
 const unsigned char DEFAULTS = PRETTY_PRINT | EXTENDED_REGX;
 
@@ -254,6 +255,7 @@ int parse_options(int argc, char* argv[])
 		}
 		case 'o':
 		{
+			// option_flags |= REGEX_OPTIONS;
 			string sz_opt = argv[optind];
 			string::size_type sz_beg = 0;
 			string::size_type sz_end = 0;	

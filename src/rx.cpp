@@ -149,6 +149,7 @@ int regx_match(const string& exp, const vector<string>& search_text)
 				// reset bash color position
 				pos += CURRENT_FG_COLOR.length() + len;
 				bash_stdio.insert(pos, FMT_RESET);
+				//cout << (match_i+1) << ": " << search_text.substr(match.position(), match.length());
 			}
 			else
 			{

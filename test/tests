@@ -139,7 +139,7 @@ abc|xyz
 
 Wrong file name problem
 
-brian@fire:~/src/rx/build$ ./rx abc -f ../test/fopt.tx
+brian@fire:~/src/rx/build$ ./rx abc -f ../test/fopt.txt
 0: Match Pattern: 'abc' -> Input: './rx'
 Found 0 matches:
 ./rx

@@ -108,10 +108,10 @@ int regx_match(const string& exp, const vector<string>& search_text)
 {
 	int len = search_text.size();
 	// for each input
-	for (int i = 0; i < len; ++i)
+	for (int i = 1; i < len-1; ++i)
 	{
-		print_match_header(exp, search_text[i], i);
-		string bash_stdio = search_text[i];
+		print_match_header(exp, search_text[i+1], i);
+		string bash_stdio = search_text[i+1];
 		REGX_FLAGS = (OPTION_FLAGS & IGNORE_CASE) != 0 ? REGX_FLAGS|regex::icase : REGX_FLAGS;
 
 		regex src_epx;
@@ -125,7 +125,7 @@ int regx_match(const string& exp, const vector<string>& search_text)
 			cerr << "error of type " << e.code() << " was unhandled\n";
 		} 
 
-		auto begin = sregex_iterator(search_text[i].begin(), search_text[i].end(), src_epx, std::regex_constants::match_default);
+		auto begin = sregex_iterator(search_text[i+1].begin(), search_text[i+1].end(), src_epx, std::regex_constants::match_default);
 		auto end = sregex_iterator(); 
 		int match_i = 0;
 		// for each match
@@ -136,7 +136,7 @@ int regx_match(const string& exp, const vector<string>& search_text)
 
 			int pos = match.position() + match_i * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
 			int len = match.length();
-			if ((OPTION_FLAGS & SINGLE_MATCH) && (iter != begin || pos != 0 || search_text[i].length() != (size_t)len))
+			if ((OPTION_FLAGS & SINGLE_MATCH) && (iter != begin || pos != 0 || search_text[i+1].length() != (size_t)len))
 			{
 				begin = end;
 				break;
@@ -153,7 +153,7 @@ int regx_match(const string& exp, const vector<string>& search_text)
 			}
 			else
 			{
-				cout << endl << (match_i+1) << "\t" << search_text[i].substr(match.position(), match.length()) 
+				cout << endl << (match_i+1) << "\t" << search_text[i+1].substr(match.position(), match.length()) 
 					 << '\t' << match.position() << '\t' << match.length() << endl;
 			}
 		}
@@ -256,7 +256,7 @@ int parse_options(int argc, char* argv[])
 		}
 		case 'o':
 		{
-			// option_flags |= REGEX_OPTIONS;
+			OPTION_FLAGS |= REGEX_OPTIONS;
 			string sz_opt = argv[optind];
 			string::size_type sz_beg = 0;
 			string::size_type sz_end = 0;	
@@ -295,18 +295,23 @@ int parse_options(int argc, char* argv[])
 	
 	if (OPTION_FLAGS & VERBOSE)
 	{
-		print_help();
+		++optind;
+		//print_help();
 	}
 	
-	if((OPTION_FLAGS & FROM_FILE) == 0)
-	{
-		//cout << "argc: " << argc << endl;
-		//cout << "optind: " << optind << endl;
+	// if((OPTION_FLAGS & FROM_FILE) != 0) // file flags!
+	// if((OPTION_FLAGS & FROM_FILE) == 0) // no file flags!
+	// {
+	// 	//cout << "argc: " << argc << endl;
+	// 	//cout << "optind: " << optind << endl;
 
-		int idx = optind + 1;
-		search_text.assign(argv+idx, (argv+idx) + (argc-idx));
-		return regx_match(argv[1], search_text);
-	}
+	// 	int idx = optind + 1;
+	// 	search_text.assign(argv+idx, (argv+idx) + (argc-idx));
+	// 	return regx_match(argv[1], search_text);
+	// }
 
+	argc -= optind;
+	argv += optind;
+	//return regx_match(argc, argv);
 	return regx_match(argv[optind], search_text);
 }

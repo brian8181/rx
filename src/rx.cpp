@@ -310,8 +310,9 @@ int parse_options(int argc, char* argv[])
 	// 	return regx_match(argv[1], search_text);
 	// }
 
-	argc -= optind;
-	argv += optind;
+	//argc -= optind;
+	//argv += optind;
 	//return regx_match(argc, argv);
-	return regx_match(argv[optind], search_text);
+	//return regx_match(argv[optind], search_text);
+	return regx_match(argv[1], search_text);
 }

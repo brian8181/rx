@@ -261,7 +261,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
-            "args": ["abc", "abc", "abcxabc", "abcyabc"],
+            "args": ["abc", "abcxabc", "abcyabc"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

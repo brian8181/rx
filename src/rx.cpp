@@ -174,7 +174,7 @@ int parse_options(int argc, char* argv[])
 	int opt = 0;
 	int option_index = 0;
 	optind = 0;
-	while ((opt = getopt_long(argc, argv, "hvispPreEof:", long_options, &option_index)) != -1)
+	while ((opt = getopt_long(argc, argv, "hvispPreEo:", long_options, &option_index)) != -1)
 	{
 		switch (opt)
 		{
@@ -205,55 +205,6 @@ int parse_options(int argc, char* argv[])
 		case 'r':
 			print_version();
 			return 0;
-		case 'f':
-		{
-			ifstream exp_file;
-			if(argc != optind)
-			{
-				//cout << "f opt error:" << endl;
-				//cout << "optarg:" << optarg << endl;
-				string opt_tmp = optarg;
-				exp_file.open(optarg, ios::in);
-				if(exp_file.is_open())
-				{
-					string line;
-					exp_file.clear();
-					while(getline(exp_file, line))
-					{
-						exp_text.push_back(line);
-						//cout << line << endl;
-					}
-					exp_file.close(); 	
-				}
-				else
-				{
-					cerr << "Error: invalid path with file option" << endl;
-					return -1;
-				}
-			}
-			else
-			{
-				ifstream search_file;
-				search_file.open(optarg, ios::in); 
-				if (search_file.is_open())
-				{   
-					OPTION_FLAGS |= FROM_FILE;
-					string line;
-					search_text.clear();
-					while(getline(search_file, line))
-					{
-						search_text.push_back(line);
-					}
-					search_file.close(); 
-				}
-				else
-				{
-					cerr << "Error: invalid path with file option" << endl;
-					return -1;
-				}
-			}
-			break;
-		}
 		case 'o':
 		{
 			OPTION_FLAGS |= REGEX_OPTIONS;
@@ -292,27 +243,6 @@ int parse_options(int argc, char* argv[])
 		cerr << "Expected argument after options, -h for help" << endl;
 		return -1;
 	}
-	
-	if (OPTION_FLAGS & VERBOSE)
-	{
-		++optind;
-		//print_help();
-	}
-	
-	// if((OPTION_FLAGS & FROM_FILE) != 0) // file flags!
-	// if((OPTION_FLAGS & FROM_FILE) == 0) // no file flags!
-	// {
-	// 	//cout << "argc: " << argc << endl;
-	// 	//cout << "optind: " << optind << endl;
-
-	// 	int idx = optind + 1;
-	// 	search_text.assign(argv+idx, (argv+idx) + (argc-idx));
-	// 	return regx_match(argv[1], search_text);
-	// }
-
-	//argc -= optind;
-	//argv += optind;
-	//return regx_match(argc, argv);
-	//return regx_match(argv[optind], search_text);
+		
 	return regx_match(argv[1], search_text);
 }

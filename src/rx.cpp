@@ -205,8 +205,7 @@ int parse_options(int argc, char* argv[])
 			return 0;
 		case 'o':
 		{
-			//OPTION_FLAGS |= REGEX_OPTIONS;
-			//string sz_opt = argv[optind];
+			OPTION_FLAGS |= REGEX_OPTIONS;
 			string str_optarg = optarg;
 			string::size_type sz_beg = 0;
 			string::size_type sz_end = 0;	
@@ -228,7 +227,6 @@ int parse_options(int argc, char* argv[])
 					return -1;
 				}
 			}
-			//++optind;
 			break;
 		}
 		default: // unknown option before args

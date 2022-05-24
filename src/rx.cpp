@@ -169,7 +169,6 @@ int regx_match(const string& exp, const vector<string>& search_text)
 
 int parse_options(int argc, char* argv[])
 {
-	//vector<string> exp_text;
 	int opt = 0;
 	int option_index = 0;
 	optind = 0;
@@ -206,15 +205,16 @@ int parse_options(int argc, char* argv[])
 			return 0;
 		case 'o':
 		{
-			OPTION_FLAGS |= REGEX_OPTIONS;
-			string sz_opt = argv[optind];
+			//OPTION_FLAGS |= REGEX_OPTIONS;
+			//string sz_opt = argv[optind];
+			string str_optarg = optarg;
 			string::size_type sz_beg = 0;
 			string::size_type sz_end = 0;	
 			
 			while(sz_end != string::npos) 
 			{
-				sz_end = sz_opt.find('|', sz_beg);	
-				string split = sz_opt.substr(sz_beg, sz_end-sz_beg);
+				sz_end = str_optarg.find('|', sz_beg);	
+				string split = str_optarg.substr(sz_beg, sz_end-sz_beg);
 				sz_beg = sz_end+1;
 
 				try
@@ -228,7 +228,7 @@ int parse_options(int argc, char* argv[])
 					return -1;
 				}
 			}
-			++optind;
+			//++optind;
 			break;
 		}
 		default: // unknown option before args

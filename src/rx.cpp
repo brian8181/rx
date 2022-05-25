@@ -15,7 +15,7 @@ using namespace std;
 // constants
 const int BUFFER_LEN = 0xFF;
 const int DEFAULT_ARGC = 2;
-const string VERSION_STRING = "rx 0.0.2";
+const string VERSION_STRING = "rx 2.0.1";
 
 // options flags
 const unsigned char VERBOSE       = 0x01;
@@ -37,11 +37,11 @@ static struct option long_options[] =
 	{"help", no_argument, 0, 'h'},
 	{"ignore_case", no_argument, 0, 'i'},
 	{"single", no_argument, 0, 's'},
-	{"pretty", no_argument, 0, 'P'},       //default
+	{"pretty", no_argument, 0, 'P'},        //default
 	{"no-pretty", no_argument, 0, 'p'},
 	{"version", no_argument, 0, 'r'},
 	{"not_extended", no_argument, 0, 'e'}, 
-	{"extended", no_argument, 0, 'E'},     //default
+	{"extended", no_argument, 0, 'E'},      //default
 	{"options", no_argument, 0, 'o'},       //default
 	{"file", required_argument, 0, 'f'}
 };

@@ -15,7 +15,7 @@ using namespace std;
 // constants
 const int BUFFER_LEN = 0xFF;
 const int DEFAULT_ARGC = 2;
-const string VERSION_STRING = "rx 2.0.1";
+const string VERSION_STRING = "rx 2.81";
 
 // options flags
 const unsigned char VERBOSE       = 0x01;
@@ -24,7 +24,6 @@ const unsigned char SINGLE_MATCH  = 0x04;
 const unsigned char PRETTY_PRINT  = 0x08;
 const unsigned char EXTENDED_REGX = 0x10;
 const unsigned char REGEX_OPTIONS = 0x12;
-const unsigned char FROM_FILE     = 0x20;
 const unsigned char DEFAULTS = PRETTY_PRINT | EXTENDED_REGX;
 
 // Set Defaults
@@ -43,7 +42,6 @@ static struct option long_options[] =
 	{"not_extended", no_argument, 0, 'e'}, 
 	{"extended", no_argument, 0, 'E'},      //default
 	{"options", no_argument, 0, 'o'},       //default
-	{"file", required_argument, 0, 'f'}
 };
 
 map<std::string, regex::flag_type> regex_flags =

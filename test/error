@@ -1,3 +1,0 @@
-opt = getopt_long(argc, argv, "hvispPreEof:", long_options, &option_index)
-
-suggest parentheses around assignment used as truth value [-Wparentheses]

@@ -60,23 +60,6 @@ map<std::string, regex::flag_type> regex_flags =
 	{"collate", regex::collate}
 };
 
-// map<std::string, regex_constants::match_flag_type>  match_flags =
-// {
-// 	{"match_default", regex_constants::match_default},
-// 	{"match_not_bol",  regex_constants::match_not_bol},
-// 	{"match_not_eol", regex_constants::match_not_eol},
-// 	{"match_not_bow", regex_constants::match_not_bow},
-// 	{"match_not_eow", regex_constants::match_not_eow}, 
-// 	{"match_any", regex_constants::match_any},
-// 	{"match_not_null", regex_constants::match_not_null},
-// 	{"match_continuous", regex_constants::match_continuous},
-// 	{"match_prev_avail", regex_constants::match_prev_avail},
-// 	{"format_default", regex_constants::format_default},
-// 	{"format_sed", regex_constants::format_sed},
-// 	{"format_no_copy", regex_constants::format_no_copy},
-// 	{"format_first_only", regex_constants::format_first_only}
-// };
-
 void print_version()
 {
 	cout << VERSION_STRING << endl;

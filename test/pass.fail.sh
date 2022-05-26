@@ -1,5 +1,6 @@
 #### FAIL ####
-../build/rx -s "*ab*c{2}" "abccxxxabcc"
+./rx -s "*ab*c{2}" "abccxxxabcc"
+
 
 ../build/rx -vs "a*b*c{2}" "abccxxxabcc"
 
@@ -8,6 +9,10 @@
 
 echo "abc!abc@abc$abc%abc^abc&abc*abc(abc)abc" | ../build/rx abc
 
+
+###### TEST #####
+./rx -s ^abc$ abc
+#################
 
 #### PASS ####
 ../build/rx "(abc)*" abcXXabc

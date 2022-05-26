@@ -24,6 +24,7 @@ const unsigned char SINGLE_MATCH  = 0x04;
 const unsigned char PRETTY_PRINT  = 0x08;
 const unsigned char EXTENDED_REGX = 0x10;
 const unsigned char REGEX_OPTIONS = 0x12;
+// const unsigned char FROM_FILE     = 0x20;
 const unsigned char DEFAULTS = PRETTY_PRINT | EXTENDED_REGX;
 
 // Set Defaults
@@ -41,7 +42,8 @@ static struct option long_options[] =
 	{"version", no_argument, 0, 'r'},
 	{"not_extended", no_argument, 0, 'e'}, 
 	{"extended", no_argument, 0, 'E'},      //default
-	{"options", no_argument, 0, 'o'},       //default
+	{"options", no_argument, 0, 'o'}//,       //default
+	//{"file", required_argument, 0, 'f'}
 };
 
 map<std::string, regex::flag_type> regex_flags =
@@ -183,6 +185,54 @@ int parse_options(int argc, char* argv[])
 		case 'r':
 			print_version();
 			return 0;
+		// case 'f':
+		// {
+		// 	string line;
+		// 	ifstream exp_file;
+		// 	if(argc != optind)
+		// 	{
+		// 		string etext = "";
+		// 		cout << "f opt error:" << endl;
+		// 		cout << "optarg:" << optarg << endl;
+		// 		string opt_tmp = optarg;
+
+		// 		exp_file.open(optarg, ios::in);
+		// 		if(exp_file.is_open())
+		// 		{
+		// 			string line;
+		// 			exp_file.clear();
+		// 			while(getline(exp_file, line))
+		// 			{
+		// 				//etext.push_back(line);
+		// 				cout << line << endl;
+		// 			}
+		// 			exp_file.close(); 	
+		// 		}
+		// 	}
+		// 	else
+		// 	{
+		// 		string stext = "";
+		// 		ifstream search_file;
+		// 		search_file.open(optarg, ios::in); 
+		// 		if (search_file.is_open())
+		// 		{   
+		// 			OPTION_FLAGS |= FROM_FILE;
+		// 			string line;
+		// 			stext.clear();
+		// 			while(getline(search_file, line))
+		// 			{
+		// 				//stext.push_back(line);
+		// 			}
+		// 			search_file.close(); 
+		// 		}
+		// 		else
+		// 		{
+		// 			cerr << "Error: invalid path with file option" << endl;
+		// 			return -1;
+		// 		}
+		// 	}
+		// 	break;
+		// }
 		case 'o':
 		{
 			OPTION_FLAGS |= REGEX_OPTIONS;

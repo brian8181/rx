@@ -14,6 +14,7 @@ private:
     CPPUNIT_TEST(testOptionVerboseLong);
     CPPUNIT_TEST(testPrettyOption);
     CPPUNIT_TEST(testSingleOption);
+    CPPUNIT_TEST(testIgnoreCaseOption);
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -32,6 +33,7 @@ protected:
     void testOptionVerboseLong();  
     void testPrettyOption();
     void testSingleOption();
+    void testIgnoreCaseOption();
 
 private:
     int m_argc;

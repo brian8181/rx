@@ -118,6 +118,17 @@ void RxTest::testSingleOption()
     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
+void RxTest::testIgnoreCaseOption()
+{
+    int i = 0;
+    m_argv[i++] = const_cast<char*>("src/rx");
+    m_argv[i++] = const_cast<char*>("abc"); 
+    m_argv[i++] = const_cast<char*>("abc");
+    m_argc = i;
+
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+}
+
 void RxTest::execute()
 {
     // on head   

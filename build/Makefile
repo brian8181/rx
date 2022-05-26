@@ -8,8 +8,8 @@
 # RUN BEFORE autoreconf -ivfm
 # RUN BEFORE autoreconf -i
 
-MAKE_TEMPLATE = 1.5;
-BUILD_VERSION = 0.1.0
+MAKE_TEMPLATE = 1.6;
+BUILD_VERSION = 0.1.1
 
 prefix = /usr/local
 mandir = $(prefix)/share/man
@@ -28,7 +28,8 @@ INCLUDES = -I/usr/local/include/cppunit/
 # Makefile settings - Can be customized.
 APPNAME = rx
 EXT = cpp
-ROOT  = $(HOME)/src/$(APPNAME)
+# one up from build directory
+ROOT  = ..
 SRCS = $(ROOT)/src
 BUILD = $(ROOT)/build
 OBJS = $(ROOT)/build

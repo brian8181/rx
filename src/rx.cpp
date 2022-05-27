@@ -78,7 +78,7 @@ void print_match_header(const string& pattern, const string& src, int count)
 {
 	if(OPTION_FLAGS & PRETTY_PRINT)
 	{
-		cout << count << ": "; // input number / count
+		if(count != 1) cout << count <<  ": "; // input number / count
 		cout << FMT_FG_RED << ((OPTION_FLAGS  & SINGLE_MATCH) ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
 			 << "'" << FMT_FG_YELLOW << pattern << FMT_RESET << "'"
 			 << " -> "
@@ -190,14 +190,29 @@ int parse_options(int argc, char* argv[])
 			return 0;
 		case 'f':
 		{
-			ifstream exp_file;
-			if(argc == optind)
+			OPTION_FLAGS |= FROM_FILE;
+			if(argc != optind)
+			{
+				ifstream exp_file;
+				exp_file.open(optarg, ios::in);
+				if(exp_file.is_open())
+				{
+					string line;
+					exp_file.clear();
+					while(getline(exp_file, line))
+					{
+						exp_text.push_back(line);
+						cout << line << endl;
+					}
+					exp_file.close(); 	
+				}
+			}
+			else
 			{
 				ifstream search_file;
 				search_file.open(optarg, ios::in); 
 				if (search_file.is_open())
 				{   
-					OPTION_FLAGS |= FROM_FILE;
 					string line;
 					search_text.clear();
 					while(getline(search_file, line))

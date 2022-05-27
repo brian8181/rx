@@ -151,13 +151,13 @@ int regx_match(const string& exp, const vector<string>& search_text)
 
 int parse_options(int argc, char* argv[])
 {
-	// vector<string> exp_text;
-	// vector<string> search_text(argv, argv + argc);
+	vector<string> exp_text;
+	vector<string> search_text(argv, argv + argc);
 
 	int opt = 0;
 	int option_index = 0;
 	optind = 0;
-	while ((opt = getopt_long(argc, argv, "hvispPreEo:", long_options, &option_index)) != -1)
+	while ((opt = getopt_long(argc, argv, "hvispPreEof:", long_options, &option_index)) != -1)
 	{
 		switch (opt)
 		{
@@ -165,6 +165,11 @@ int parse_options(int argc, char* argv[])
 			print_help();
 			return 0;
 		case 'v':
+			//debug
+			cout << "opt: " << opt << endl << "optind: " << optind << endl;
+			// << optind << " optarg: " << optarg << endl;
+			//  << " opterr: " << opterr <<  " optopt: " << optopt << endl; 
+			cout << optopt << endl;
 			OPTION_FLAGS |= VERBOSE;
 			break;
 		case 'i':
@@ -190,7 +195,9 @@ int parse_options(int argc, char* argv[])
 			return 0;
 		case 'f':
 		{
-			string line;
+			//debug
+			//cout << "optind: " << optind << "optarg: " << optarg  << "opterr: " << opterr <<  endl; 
+			//string line;
 			ifstream exp_file;
 			if(argc != optind)
 			{
@@ -214,17 +221,16 @@ int parse_options(int argc, char* argv[])
 			}
 			else
 			{
-				string stext = "";
 				ifstream search_file;
 				search_file.open(optarg, ios::in); 
 				if (search_file.is_open())
 				{   
 					OPTION_FLAGS |= FROM_FILE;
 					string line;
-					stext.clear();
+					search_text.clear();
 					while(getline(search_file, line))
 					{
-						//stext.push_back(line);
+						search_text.push_back(line);
 					}
 					search_file.close(); 
 				}
@@ -273,17 +279,12 @@ int parse_options(int argc, char* argv[])
 		cerr << "Expected argument after options, -h for help" << endl;
 		return -1;
 	}
+	
+	if((OPTION_FLAGS & FROM_FILE) != 0)
+	{
+		return regx_match(argv[optind], search_text);
+	}
 
-	// if((OPTION_FLAGS & FROM_FILE) == 0)
-	// {
-	// 	cout << "argc: " << argc << endl;
-	// 	cout << "optind: " << optind << endl;
-
-	// 	int idx = optind + 1;
-	// 	search_text.assign(argv+idx, (argv+idx) + (argc-idx));
-	// 	return regx_match(argv[1], search_text);
-	// }
-
-	vector<string> search_text(argv+(optind+1), argv + argc);	
+	search_text.assign(argv+(optind+1), argv + argc);	
 	return regx_match(argv[optind], search_text);
 }

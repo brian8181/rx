@@ -27,7 +27,7 @@ const unsigned char REGEX_OPTIONS = 0x12;
 const unsigned char FROM_FILE     = 0x20;
 const unsigned char DEFAULTS = PRETTY_PRINT | EXTENDED_REGX;
 
-// Set Defaults
+// set defaults
 unsigned char OPTION_FLAGS = DEFAULTS;
 regex::flag_type REGX_FLAGS = regex::basic;
 

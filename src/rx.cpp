@@ -165,11 +165,6 @@ int parse_options(int argc, char* argv[])
 			print_help();
 			return 0;
 		case 'v':
-			//debug
-			cout << "opt: " << opt << endl << "optind: " << optind << endl;
-			// << optind << " optarg: " << optarg << endl;
-			//  << " opterr: " << opterr <<  " optopt: " << optopt << endl; 
-			cout << optopt << endl;
 			OPTION_FLAGS |= VERBOSE;
 			break;
 		case 'i':
@@ -195,31 +190,8 @@ int parse_options(int argc, char* argv[])
 			return 0;
 		case 'f':
 		{
-			//debug
-			//cout << "optind: " << optind << "optarg: " << optarg  << "opterr: " << opterr <<  endl; 
-			//string line;
 			ifstream exp_file;
-			if(argc != optind)
-			{
-		// 		string etext = "";
-		// 		cout << "f opt error:" << endl;
-		// 		cout << "optarg:" << optarg << endl;
-		// 		string opt_tmp = optarg;
-		//
-		// 		exp_file.open(optarg, ios::in);
-		// 		if(exp_file.is_open())
-		// 		{
-		// 			string line;
-		// 			exp_file.clear();
-		// 			while(getline(exp_file, line))
-		// 			{
-		// 				//etext.push_back(line);
-		// 				cout << line << endl;
-		// 			}
-		// 			exp_file.close(); 	
-		//		}
-			}
-			else
+			if(argc == optind)
 			{
 				ifstream search_file;
 				search_file.open(optarg, ios::in); 

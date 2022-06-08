@@ -29,7 +29,7 @@ INCLUDES = -I/usr/local/include/cppunit/
 APPNAME = rx
 EXT = cpp
 # one up from build directory
-ROOT  = ..
+ROOT  = /home/brian/src/rx
 SRCS = $(ROOT)/src
 BUILD = $(ROOT)/build
 OBJS = $(ROOT)/build

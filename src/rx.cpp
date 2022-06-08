@@ -232,7 +232,9 @@ int parse_options(int argc, char* argv[])
 		case 'o':
 		{
 			OPTION_FLAGS |= REGEX_OPTIONS;
-			string str_optarg = optarg;
+			//string str_optarg = optarg;
+			string str_optarg = "icase";
+			optind++;
 			string::size_type sz_beg = 0;
 			string::size_type sz_end = 0;	
 			
@@ -267,13 +269,13 @@ int parse_options(int argc, char* argv[])
 		return -1;
 	}
 	
+	// exp_text.push_back(argv[3]);
+	// if((OPTION_FLAGS & FROM_FILE) != 0)
+	// {
+	//  	return regx_match(exp_text, search_text);
+	// }
 
 	exp_text.push_back(argv[optind]);
-	if((OPTION_FLAGS & FROM_FILE) != 0)
-	{
-	 	return regx_match(exp_text, search_text);
-	}
-
 	search_text.assign(argv+(optind+1), argv + argc);	
 	return regx_match(exp_text, search_text);
 }

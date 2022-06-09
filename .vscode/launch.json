@@ -47,11 +47,11 @@
             "miDebuggerPath": "/usr/bin/gdb"
         },    
         {
-            "name": "(gdb) Launch -o options icase",
+            "name": "(gdb) Launch -o options icase(1)",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
-            "args": ["-o", "icase", "abc", "abcxabc"],
+            "args": ["-o", "icase", "abc", "abcxABC"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
@@ -66,7 +66,28 @@
             ],
             "preLaunchTask": "MAKE DEBUGGDB",
             "miDebuggerPath": "/usr/bin/gdb"
-        },    
+        },
+        {
+            "name": "(gdb) Launch -o options icase(2)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+            "args": ["-o", "icase", "abc", "abcxABC", "abcyABC"],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "MAKE DEBUGGDB",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
         {
             "name": "(gdb) Launch -o options",
             "type": "cppdbg",

@@ -157,7 +157,7 @@ int parse_options(int argc, char* argv[])
 	int opt = 0;
 	int option_index = 0;
 	optind = 0;
-	while ((opt = getopt_long(argc, argv, "hvispPreEof:", long_options, &option_index)) != -1)
+	while ((opt = getopt_long(argc, argv, "hvispPreEo:f:", long_options, &option_index)) != -1)
 	{
 		switch (opt)
 		{
@@ -232,9 +232,7 @@ int parse_options(int argc, char* argv[])
 		case 'o':
 		{
 			OPTION_FLAGS |= REGEX_OPTIONS;
-			//string str_optarg = optarg;
-			string str_optarg = "icase";
-			optind++;
+			string str_optarg = optarg;
 			string::size_type sz_beg = 0;
 			string::size_type sz_end = 0;	
 			

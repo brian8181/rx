@@ -74,11 +74,11 @@ void print_help()
 		 << FMT_UNDERLINE << "INPUT..."    << FMT_RESET << endl;
 }
 
-void print_match_header(const string& pattern, const string& src, int count)
+void print_match_header(const string& pattern, const string& src, int count, int len)
 {
 	if(OPTION_FLAGS & PRETTY_PRINT)
 	{
-		if(count != 1) cout << count <<  ": "; // input number / count
+		if(len > 1) cout << count <<  ": "; // input number / count
 		cout << FMT_FG_RED << ((OPTION_FLAGS  & SINGLE_MATCH) ? "Single Match Pattern: " : "Match Pattern: ") << FMT_RESET
 			 << "'" << FMT_FG_YELLOW << pattern << FMT_RESET << "'"
 			 << " -> "
@@ -87,20 +87,20 @@ void print_match_header(const string& pattern, const string& src, int count)
 	}
 }
 
-int regx_match(const string& exp, const vector<string>& search_text)
+int regx_match(const vector<string>& exp_text, const vector<string>& search_text)
 {
 	int len = search_text.size();
 	// for each input
 	for (int i = 0; i < len; ++i)
 	{
-		print_match_header(exp, search_text[i], i+1);
+		print_match_header(exp_text[0], search_text[i], i+1, len);
 		string bash_stdio = search_text[i];
 		REGX_FLAGS = (OPTION_FLAGS & IGNORE_CASE) != 0 ? REGX_FLAGS|regex::icase : REGX_FLAGS;
 
 		regex src_epx;
 		try
 		{
-			src_epx = regex(exp, REGX_FLAGS);
+			src_epx = regex(exp_text[0], REGX_FLAGS);
 		}
 		catch(regex_error& e)
 		{
@@ -157,7 +157,7 @@ int parse_options(int argc, char* argv[])
 	int opt = 0;
 	int option_index = 0;
 	optind = 0;
-	while ((opt = getopt_long(argc, argv, "hvispPreEof:", long_options, &option_index)) != -1)
+	while ((opt = getopt_long(argc, argv, "hvispPreEo:f:", long_options, &option_index)) != -1)
 	{
 		switch (opt)
 		{
@@ -267,11 +267,13 @@ int parse_options(int argc, char* argv[])
 		return -1;
 	}
 	
-	if((OPTION_FLAGS & FROM_FILE) != 0)
+	exp_text.push_back(argv[optind]);
+	
+	if(OPTION_FLAGS & FROM_FILE)
 	{
-		return regx_match(argv[optind], search_text);
+		return regx_match(exp_text, search_text);
 	}
 
 	search_text.assign(argv+(optind+1), argv + argc);	
-	return regx_match(argv[optind], search_text);
+	return regx_match(exp_text, search_text);
 }

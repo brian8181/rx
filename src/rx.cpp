@@ -267,13 +267,13 @@ int parse_options(int argc, char* argv[])
 		return -1;
 	}
 	
-	// exp_text.push_back(argv[3]);
-	// if((OPTION_FLAGS & FROM_FILE) != 0)
-	// {
-	//  	return regx_match(exp_text, search_text);
-	// }
-
 	exp_text.push_back(argv[optind]);
+	
+	if(OPTION_FLAGS & FROM_FILE)
+	{
+		return regx_match(exp_text, search_text);
+	}
+
 	search_text.assign(argv+(optind+1), argv + argc);	
 	return regx_match(exp_text, search_text);
 }

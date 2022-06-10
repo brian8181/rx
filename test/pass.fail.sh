@@ -47,4 +47,4 @@ echo "TESTING INPUT-> ../build/rx -o 'basic|awk|grep' abc ABCxabcxABC ABCvabcvAB
 ../build/rx -o 'basic|awk|grep' abc ABCxabcxABC ABCvabcvABCs
 
 echo "TESTING INPUT-> ./rx abc -f ../test/fopt.txt"
-./rx abc -f ../test/fopt.txt
+../build/rx abc -f ../test/fopt.txt

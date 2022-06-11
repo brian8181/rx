@@ -1,11 +1,9 @@
 #### FAIL ####
-./rx -s "*ab*c{2}" "abccxxxabcc"
-
-
-../build/rx -vs "a*b*c{2}" "abccxxxabcc"
+#../build/rx -s "*ab*c{2}" "abccxxxabcc"
+#../build/rx -vs "a*b*c{2}" "abccxxxabcc"
 
 # invalid long option
-../build/rx --babe abc abc
+#../build/rx --babe abc abc
 
 echo "abc!abc@abc$abc%abc^abc&abc*abc(abc)abc" | ../build/rx abc
 
@@ -17,8 +15,12 @@ echo "abc!abc@abc$abc%abc^abc&abc*abc(abc)abc" | ../build/rx abc
 #### PASS ####
 ../build/rx "(abc)*" abcXXabc
 ../build/rx \(abc\)* abcabc
-
 ../build/rx "(abc)*" abcabcabc
+
+./build/rx '\(abc\)' abc
+./build/rx '\(abc\)*' abc
+./build/rx '\(abc\)*x' x
+
 
 ../build/rx -v -s "a*b*c{2}" "abccxxxabcc"
 

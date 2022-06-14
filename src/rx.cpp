@@ -271,12 +271,11 @@ int parse_options(int argc, char* argv[])
 		cerr << "Expected argument after options, -h for help" << endl;
 		return -1;
 	}
-		
+
+	exp_text.push_back(argv[optind]);			
 	if((OPTION_FLAGS & FROM_FILE) == 0)
 	{
 		search_text.assign(argv+(optind+1), argv + argc);
 	}
-
-	exp_text.push_back(argv[optind]);	
 	return regx_match(exp_text, search_text);
 }

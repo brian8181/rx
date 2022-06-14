@@ -278,6 +278,10 @@ int parse_options(int argc, char* argv[])
 	{
 		return regx_match(exp_text, search_text);
 	}
+	else
+	{
+		
+	}
 
 	search_text.assign(argv+(optind+1), argv + argc);	
 	return regx_match(exp_text, search_text);

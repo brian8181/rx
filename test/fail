@@ -1,0 +1,4 @@
+brian@raspberrypi:~/src/rx/build $ ./rx -s ab{1} ab{1}
+Single Match Pattern: 'ab{1}' -> Input: 'ab{1}'
+Found 1 matches:
+ab{1}

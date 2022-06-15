@@ -209,7 +209,6 @@ int parse_options(int argc, char* argv[])
 					while(getline(exp_file, line))
 					{
 						exp_text.push_back(line);
-						cout << line << endl;
 					}
 					exp_file.close(); 	
 				}
@@ -279,7 +278,6 @@ int parse_options(int argc, char* argv[])
 		return -1;
 	}
 
-			
 	if((OPTION_FLAGS & FROM_FILE) != 0)
 	{
 		search_text.assign(argv+(optind), argv + argc);

@@ -157,7 +157,8 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 int parse_options(int argc, char* argv[])
 {
 	vector<string> exp_text;
-	vector<string> search_text(argv, argv + argc);
+	vector<string> search_text;
+	//vector<string> search_text(argv, argv + argc);
 
 	int opt = 0;
 	int option_index = 0;
@@ -236,7 +237,10 @@ int parse_options(int argc, char* argv[])
 		}
 		case 'o':
 		{
+			// command line "flag option" = set
 			OPTION_FLAGS |= REGEX_OPTIONS;
+			// turn off all "regex::flag_type" flags
+			REGX_FLAGS = (regex::flag_type)0;
 			string str_optarg = optarg;
 			string::size_type sz_beg = 0;
 			string::size_type sz_end = 0;	

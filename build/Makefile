@@ -28,6 +28,9 @@ INCLUDES = -I/usr/local/include/cppunit/
 # Makefile settings - Can be customized.
 APPNAME = rx
 EXT = cpp
+
+mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
+current_dir := $(notdir $(patsubst %/,%,$(dir $(mkfile_path))))
 # one up from build directory
 ROOT  = /home/brian/src/rx
 SRCS = $(ROOT)/src
@@ -43,12 +46,14 @@ debuggdb: all
 
 # compile & link
 all: $(APPNAME) $(APPNAME)_test bash_color_test
+	@echo "MAKE PATH:" $(mkfile_path)
 	
 
 # link
 $(APPNAME): $(APPNAME).o main.o
+	@echo "MAKE PATH:" $(mkfile_path)
 	$(CXX) $(CXXFLAGS) $(OBJS)/$(APPNAME).o $(OBJS)/main.o -o $(BUILD)/$(APPNAME)
-
+	
 # compile only
 $(APPNAME).o:
 	$(CXX) $(CXXFLAGS) -c $(SRCS)/$(APPNAME).$(EXT) -o $(OBJS)/$(APPNAME).o

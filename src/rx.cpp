@@ -160,8 +160,7 @@ int parse_options(int argc, char* argv[])
 {
 	vector<string> exp_text;
 	vector<string> search_text;
-	//vector<string> search_text(argv, argv + argc);
-
+	
 	int opt = 0;
 	int option_index = 0;
 	optind = 0;
@@ -280,9 +279,14 @@ int parse_options(int argc, char* argv[])
 		return -1;
 	}
 
-	exp_text.push_back(argv[optind]);			
-	if((OPTION_FLAGS & FROM_FILE) == 0)
+			
+	if((OPTION_FLAGS & FROM_FILE) != 0)
 	{
+		exp_text.push_back(argv[optind]);	
+	}
+	else
+	{
+		exp_text.push_back(argv[optind]);
 		search_text.assign(argv+(optind+1), argv + argc);
 	}
 	return regx_match(exp_text, search_text);

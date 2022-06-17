@@ -13,7 +13,6 @@
 using namespace std;
 
 // constants
-const int BUFFER_LEN = 0xFF;
 const int DEFAULT_ARGC = 2;
 const string VERSION_STRING = "rx 2.81";
 
@@ -108,10 +107,11 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 			}
 			catch(regex_error& e)
 			{
+				//hack!
 				cout << endl;
 				cout << "Regex flags inconsistent ..." << endl;
-				cerr << "exception caught: " << e.what() << '\n';
-				cerr << "error of type " << e.code() << " was unhandled\n";
+				cerr << "exception caught: " << e.what() << endl;
+				cerr << "error of type " << e.code() << " was unhandled" << endl;
 			} 
 
 			auto begin = sregex_iterator(search_text[j].begin(), search_text[j].end(), src_epx, std::regex_constants::match_default);
@@ -212,6 +212,11 @@ int parse_options(int argc, char* argv[])
 					}
 					exp_file.close(); 	
 				}
+					else
+				{
+					cerr << "Error: invalid path with file option" << endl;
+					return -1;
+				}
 			}
 			else
 			{
@@ -240,7 +245,7 @@ int parse_options(int argc, char* argv[])
 			// command line "flag option" = set
 			OPTION_FLAGS |= REGEX_OPTIONS;
 			// turn off all "regex::flag_type" flags
-			REGX_FLAGS = (regex::flag_type)0;
+			REGX_FLAGS = regex::flag_type();
 			string str_optarg = optarg;
 			string::size_type sz_beg = 0;
 			string::size_type sz_end = 0;	
@@ -257,6 +262,7 @@ int parse_options(int argc, char* argv[])
 				}
 				catch(out_of_range const& ex)
 				{
+					//hack!
 					cout << endl;
 					cout << "Regex flags inconsistent ..." << endl;
 					cerr << ex.what() << endl;

@@ -162,3 +162,27 @@ Match Pattern: 'a{3}' -> Input: 'aaa'
 Found 0 matches:
 aaa
 
+[brian@fire build]$ ./rx -o 'egrep|icase' abc{2} ABCc
+Match Pattern: 'abc{2}' -> Input: 'ABCc'
+Found 1 matches:
+ABCc
+[brian@fire build]$ ./rx -o 'icase' abc{2} ABCc
+Match Pattern: 'abc{2}' -> Input: 'ABCc'
+Found 1 matches:
+ABCc
+[brian@fire build]$ ./rx a{3} aaa
+Match Pattern: 'a{3}' -> Input: 'aaa'
+Found 0 matches:
+aaa
+[brian@fire build]$ ./rx -o 'icase' a{3} aaa
+Match Pattern: 'a{3}' -> Input: 'aaa'
+Found 1 matches:
+aaa
+[brian@fire build]$ ./rx -o 'basic' a{3} aaa
+Match Pattern: 'a{3}' -> Input: 'aaa'
+Found 0 matches:
+aaa
+[brian@fire build]$ ./rx -o 'basic|icase' a{3} aaa
+Match Pattern: 'a{3}' -> Input: 'aaa'
+Found 0 matches:
+aaa

@@ -3,7 +3,8 @@
 # MAKE TEMPLATE 05-22-2021 1.2
 # MAKE TEMPLATE 07-07-2021 1.3
 # MAKE TEMPLATE 10-09-2021 1.4
-# January 1, 2022 1.5
+# January 1, 2022:         1.5
+# June 17, 2022:           1.6
 
 # RUN BEFORE autoreconf -ivfm
 # RUN BEFORE autoreconf -i
@@ -17,8 +18,11 @@ man1dir = $(mandir)/man1
 
 # Compiler settings - Can be customized.
 CXX = g++
-CXXFLAGS = -Wall -std=c++11 -std=gnu++17
-CXXFLAGS += -DDEBUG -ggdb -fPIC
+CC = $(CXX)
+
+DEBUG_LEVEL      = -DDEBUG -ggdb
+EXTRA_CXXFLAGS   = -Wall -std=c++11 -std=gnu++17
+CXXFLAGS = $(EXTRA_CXXFLAGS) $(DEBUG_LEVEL)
 
 # lib settings
 LDFLAGS = -static -lcppunit -L/usr/local/lib/

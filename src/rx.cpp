@@ -107,9 +107,9 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 			}
 			catch(regex_error& e)
 			{
-				//hack!
-				cout << endl;
-				cout << "Regex flags inconsistent ..." << endl;
+				// //hack!
+				// cout << endl;
+				// cout << "Regex flags inconsistent ..." << endl;
 				cerr << "exception caught: " << e.what() << endl;
 				cerr << "error of type " << e.code() << " was unhandled" << endl;
 			} 
@@ -262,9 +262,9 @@ int parse_options(int argc, char* argv[])
 				}
 				catch(out_of_range const& ex)
 				{
-					//hack!
-					cout << endl;
-					cout << "Regex flags inconsistent ..." << endl;
+					// //hack!
+					// cout << endl;
+					// cout << "Regex flags inconsistent ..." << endl;
 					cerr << ex.what() << endl;
 					cout << "Exception: Unexpected option, -h for help" << endl;
 					return -1;

@@ -160,7 +160,7 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 int parse_options(int argc, char* argv[])
 {
 	vector<string> exp_text;
-	vector<string> search_text(argv, argv + argc);
+	vector<string> search_text;
 
 	int opt = 0;
 	int option_index = 0;
@@ -277,17 +277,14 @@ int parse_options(int argc, char* argv[])
 		cerr << "Expected argument after options, -h for help" << endl;
 		return -1;
 	}
-	
-	exp_text.push_back(argv[optind]);
-	
+			
 	if(OPTION_FLAGS & FROM_FILE)
 	{
 		return regx_match(exp_text, search_text);
 	}
-	else
-	{
-	}
-
+	
+	//exp_text.push_back(argv[optind]);
+	exp_text.assign(argv+(optind), argv+(optind+1));
 	search_text.assign(argv+(optind+1), argv + argc);	
 	return regx_match(exp_text, search_text);
 }

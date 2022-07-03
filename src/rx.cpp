@@ -43,8 +43,9 @@ static struct option long_options[] =
 	{"version", no_argument, 0, 'r'},
 	{"not_extended", no_argument, 0, 'e'}, 
 	{"extended", no_argument, 0, 'E'},      //default
-	{"options", no_argument, 0, 'o'},       //default
-	{"file", required_argument, 0, 'f'}
+	{"options", required_argument, 0, 'o'},       //default
+	{"file", required_argument, 0, 'f'},
+	{"regex_file", required_argument, 0, 'x'}
 };
 
 map<std::string, regex::flag_type> regex_flags =
@@ -162,7 +163,11 @@ int parse_options(int argc, char* argv[])
 {
 	vector<string> exp_text;
 	vector<string> search_text;
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> exp_from_file_option
 	int opt = 0;
 	int option_index = 0;
 	optind = 0;
@@ -200,12 +205,15 @@ int parse_options(int argc, char* argv[])
 		case 'f':
 		{
 			OPTION_FLAGS |= FROM_FILE;
-			if(argc != optind)
-			{
-				ifstream exp_file;
-				exp_file.open(optarg, ios::in);
-				if(exp_file.is_open())
+			ifstream search_file;
+			search_file.open(optarg, ios::in); 
+			if (search_file.is_open())
+			{   
+				string line;
+				search_text.clear();
+				while(getline(search_file, line))
 				{
+<<<<<<< HEAD
 					string line;
 					exp_file.clear();
 					while(getline(exp_file, line))
@@ -219,28 +227,40 @@ int parse_options(int argc, char* argv[])
 					cerr << "Error: invalid path with file option" << endl;
 					return -1;
 				}
+=======
+					search_text.push_back(line);
+				}
+				search_file.close(); 
+>>>>>>> exp_from_file_option
 			}
 			else
 			{
-				ifstream search_file;
-				search_file.open(optarg, ios::in); 
-				if (search_file.is_open())
-				{   
-					string line;
-					search_text.clear();
-					while(getline(search_file, line))
-					{
-						search_text.push_back(line);
-					}
-					search_file.close(); 
-				}
-				else
-				{
-					cerr << "Error: invalid path with file option" << endl;
-					return -1;
-				}
+				cerr << "Error: invalid path with file option" << endl;
+				return -1;
 			}
 			break;
+		}
+		case 'x':
+		{
+			OPTION_FLAGS |= FROM_FILE;
+			ifstream exp_file;
+			exp_file.open(optarg, ios::in);
+			if(exp_file.is_open())
+			{
+				string line;
+				exp_file.clear();
+				while(getline(exp_file, line))
+				{
+					exp_text.push_back(line);
+					cout << line << endl;
+				}
+				exp_file.close(); 	
+			}
+			else
+			{
+				cerr << "Error: invalid path with regex file option" << endl;
+				return -1;
+			}
 		}
 		case 'o':
 		{
@@ -285,16 +305,28 @@ int parse_options(int argc, char* argv[])
 		cerr << "Expected argument after options, -h for help" << endl;
 		return -1;
 	}
+<<<<<<< HEAD
 
 	if((OPTION_FLAGS & FROM_FILE) != 0)
+=======
+			
+	if(OPTION_FLAGS & FROM_FILE)
+>>>>>>> exp_from_file_option
 	{
 		search_text.assign(argv+(optind), argv + argc);
 	}
+<<<<<<< HEAD
 	else
 	{
 		exp_text.push_back(argv[optind]);
 		search_text.assign(argv+(optind+1), argv + argc);
 	}
 	
+=======
+	
+	//exp_text.push_back(argv[optind]);
+	exp_text.assign(argv+(optind), argv+(optind+1));
+	search_text.assign(argv+(optind+1), argv + argc);	
+>>>>>>> exp_from_file_option
 	return regx_match(exp_text, search_text);
 }

@@ -13,6 +13,7 @@
 using namespace std;
 
 // constants
+const int BUFFER_LEN = 0xFF;
 const int DEFAULT_ARGC = 2;
 const string VERSION_STRING = "rx 2.81";
 
@@ -28,7 +29,7 @@ const unsigned char SEARCH_FROM_FILE = 0x40;
 const unsigned char REGEX_FROM_FILE  = 0x80;
 const unsigned char DEFAULTS = PRETTY_PRINT | EXTENDED_REGX;
 
-// set defaults
+// Set Defaults
 unsigned char OPTION_FLAGS = DEFAULTS;
 regex::flag_type REGX_FLAGS = regex::basic;
 
@@ -110,11 +111,8 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 			}
 			catch(regex_error& e)
 			{
-				// //hack!
-				// cout << endl;
-				// cout << "Regex flags inconsistent ..." << endl;
-				cerr << "exception caught: " << e.what() << endl;
-				cerr << "error of type " << e.code() << " was unhandled" << endl;
+				cerr << "exception caught: " << e.what() << '\n';
+				cerr << "error of type " << e.code() << " was unhandled\n";
 			} 
 
 			auto begin = sregex_iterator(search_text[j].begin(), search_text[j].end(), src_epx, std::regex_constants::match_default);
@@ -163,11 +161,7 @@ int parse_options(int argc, char* argv[])
 {
 	vector<string> exp_text;
 	vector<string> search_text;
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> exp_from_file_option
 	int opt = 0;
 	int option_index = 0;
 	optind = 0;
@@ -213,25 +207,9 @@ int parse_options(int argc, char* argv[])
 				search_text.clear();
 				while(getline(search_file, line))
 				{
-<<<<<<< HEAD
-					string line;
-					exp_file.clear();
-					while(getline(exp_file, line))
-					{
-						exp_text.push_back(line);
-					}
-					exp_file.close(); 	
-				}
-					else
-				{
-					cerr << "Error: invalid path with file option" << endl;
-					return -1;
-				}
-=======
 					search_text.push_back(line);
 				}
 				search_file.close(); 
->>>>>>> exp_from_file_option
 			}
 			else
 			{
@@ -264,10 +242,7 @@ int parse_options(int argc, char* argv[])
 		}
 		case 'o':
 		{
-			// command line "flag option" = set
 			OPTION_FLAGS |= REGEX_OPTIONS;
-			// turn off all "regex::flag_type" flags
-			REGX_FLAGS = regex::flag_type();
 			string str_optarg = optarg;
 			string::size_type sz_beg = 0;
 			string::size_type sz_end = 0;	
@@ -284,9 +259,6 @@ int parse_options(int argc, char* argv[])
 				}
 				catch(out_of_range const& ex)
 				{
-					// //hack!
-					// cout << endl;
-					// cout << "Regex flags inconsistent ..." << endl;
 					cerr << ex.what() << endl;
 					cout << "Exception: Unexpected option, -h for help" << endl;
 					return -1;
@@ -305,28 +277,14 @@ int parse_options(int argc, char* argv[])
 		cerr << "Expected argument after options, -h for help" << endl;
 		return -1;
 	}
-<<<<<<< HEAD
-
-	if((OPTION_FLAGS & FROM_FILE) != 0)
-=======
 			
 	if(OPTION_FLAGS & FROM_FILE)
->>>>>>> exp_from_file_option
 	{
-		search_text.assign(argv+(optind), argv + argc);
+		return regx_match(exp_text, search_text);
 	}
-<<<<<<< HEAD
-	else
-	{
-		exp_text.push_back(argv[optind]);
-		search_text.assign(argv+(optind+1), argv + argc);
-	}
-	
-=======
 	
 	//exp_text.push_back(argv[optind]);
 	exp_text.assign(argv+(optind), argv+(optind+1));
 	search_text.assign(argv+(optind+1), argv + argc);	
->>>>>>> exp_from_file_option
 	return regx_match(exp_text, search_text);
 }

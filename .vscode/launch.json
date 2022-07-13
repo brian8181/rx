@@ -131,11 +131,11 @@
             "miDebuggerPath": "/usr/bin/gdb"
         },        
         {
-            "name": "debug -f exp",
+            "name": "debug -x exp",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
-            "args": ["-f", "${workspaceFolder}/test/exp_fopt.txt", "abc", "abcxyabcwabc"],
+            "args": ["-x", "${workspaceFolder}/test/exp_fopt.txt", "abc", "abcxyabcwabc"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
@@ -152,11 +152,11 @@
             "miDebuggerPath": "/usr/bin/gdb"
         },
         {
-            "name": "debug -f exp2",
+            "name": "debug -x exp -f search",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
-            "args": ["abc", "abcxyabcwabc"],
+            "args": ["-x", "${workspaceFolder}/test/exp_fopt.txt", "-f", "${workspaceFolder}/test/search_fopt.txt"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],

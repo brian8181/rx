@@ -159,13 +159,14 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 
 int parse_options(int argc, char* argv[])
 {
+	cout << "DEBUG: " << endl;
 	vector<string> exp_text;
 	vector<string> search_text;
 
 	int opt = 0;
 	int option_index = 0;
 	optind = 0;
-	while ((opt = getopt_long(argc, argv, "hvispPreEo:f:", long_options, &option_index)) != -1)
+	while ((opt = getopt_long(argc, argv, "hvispPreEo:x:f:", long_options, &option_index)) != -1)
 	{
 		switch (opt)
 		{
@@ -222,6 +223,7 @@ int parse_options(int argc, char* argv[])
 		case 'x':
 		{
 			OPTION_FLAGS |= FROM_FILE;
+			OPTION_FLAGS |= REGEX_FROM_FILE;
 			ifstream exp_file;
 			exp_file.open(optarg, ios::in);
 			if(exp_file.is_open())
@@ -231,15 +233,16 @@ int parse_options(int argc, char* argv[])
 				while(getline(exp_file, line))
 				{
 					exp_text.push_back(line);
-					cout << line << endl;
+					//cout << line << endl;
 				}
-				exp_file.close(); 	
+				exp_file.close();
 			}
 			else
 			{
 				cerr << "Error: invalid path with regex file option" << endl;
 				return -1;
 			}
+			break;
 		}
 		case 'o':
 		{
@@ -278,15 +281,28 @@ int parse_options(int argc, char* argv[])
 		cerr << "Expected argument after options, -h for help" << endl;
 		return -1;
 	}
+
+	if((OPTION_FLAGS & SEARCH_FROM_FILE) && (OPTION_FLAGS & REGEX_FROM_FILE))
+	{
+		// exp_text.assign(argv+(optind), argv+(optind+1));
+		// search_text.assign(argv+optind, argv + argc);
+		return regx_match(exp_text, search_text);
+	}
 			
 	if(OPTION_FLAGS & SEARCH_FROM_FILE)
 	{
 		exp_text.assign(argv+(optind), argv+(optind+1));
 		return regx_match(exp_text, search_text);
 	}
-	
+
+	if(OPTION_FLAGS & REGEX_FROM_FILE)
+	{
+		search_text.assign(argv+optind, argv + argc);
+		return regx_match(exp_text, search_text);
+	}
+
 	//exp_text.push_back(argv[optind]);
-	exp_text.assign(argv+(optind), argv+(optind+1));
+	exp_text.assign(argv+optind, argv+(optind+1));
 	search_text.assign(argv+(optind+1), argv + argc);	
 	return regx_match(exp_text, search_text);
 }

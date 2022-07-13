@@ -199,6 +199,7 @@ int parse_options(int argc, char* argv[])
 		case 'f':
 		{
 			OPTION_FLAGS |= FROM_FILE;
+			OPTION_FLAGS |= SEARCH_FROM_FILE;
 			ifstream search_file;
 			search_file.open(optarg, ios::in); 
 			if (search_file.is_open())
@@ -278,8 +279,9 @@ int parse_options(int argc, char* argv[])
 		return -1;
 	}
 			
-	if(OPTION_FLAGS & FROM_FILE)
+	if(OPTION_FLAGS & SEARCH_FROM_FILE)
 	{
+		exp_text.assign(argv+(optind), argv+(optind+1));
 		return regx_match(exp_text, search_text);
 	}
 	

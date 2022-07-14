@@ -158,7 +158,6 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 
 int parse_options(int argc, char* argv[])
 {
-	cout << "DEBUG: " << endl;
 	vector<string> exp_text;
 	vector<string> search_text;
 

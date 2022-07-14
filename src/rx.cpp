@@ -24,7 +24,6 @@ const unsigned char SINGLE_MATCH     = 0x04;
 const unsigned char PRETTY_PRINT     = 0x08;
 const unsigned char EXTENDED_REGX    = 0x10;
 const unsigned char REGEX_OPTIONS    = 0x12;
-const unsigned char FROM_FILE        = 0x20;
 const unsigned char SEARCH_FROM_FILE = 0x40;
 const unsigned char REGEX_FROM_FILE  = 0x80;
 const unsigned char DEFAULTS = PRETTY_PRINT | EXTENDED_REGX;
@@ -199,7 +198,6 @@ int parse_options(int argc, char* argv[])
 			return 0;
 		case 'f':
 		{
-			OPTION_FLAGS |= FROM_FILE;
 			OPTION_FLAGS |= SEARCH_FROM_FILE;
 			ifstream search_file;
 			search_file.open(optarg, ios::in); 
@@ -222,7 +220,6 @@ int parse_options(int argc, char* argv[])
 		}
 		case 'x':
 		{
-			OPTION_FLAGS |= FROM_FILE;
 			OPTION_FLAGS |= REGEX_FROM_FILE;
 			ifstream exp_file;
 			exp_file.open(optarg, ios::in);

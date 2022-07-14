@@ -282,23 +282,21 @@ int parse_options(int argc, char* argv[])
 		return -1;
 	}
 
-	if((OPTION_FLAGS & SEARCH_FROM_FILE) && (OPTION_FLAGS & REGEX_FROM_FILE))
-	{
-		return regx_match(exp_text, search_text);
-	}
-			
-	if(OPTION_FLAGS & SEARCH_FROM_FILE)
-	{
-		exp_text.assign(argv+(optind), argv+(optind+1));
-	}
-	else if(OPTION_FLAGS & REGEX_FROM_FILE)
-	{
-		search_text.assign(argv+optind, argv + argc);
-	}
-	else
-	{
-		exp_text.assign(argv+optind, argv+(optind+1));
-		search_text.assign(argv+(optind+1), argv + argc);	
+	if(!((OPTION_FLAGS & SEARCH_FROM_FILE) && (OPTION_FLAGS & REGEX_FROM_FILE)))
+	{			
+		if(OPTION_FLAGS & SEARCH_FROM_FILE)
+		{
+			exp_text.assign(argv+(optind), argv+(optind+1));
+		}
+		else if(OPTION_FLAGS & REGEX_FROM_FILE)
+		{
+			search_text.assign(argv+optind, argv + argc);
+		}
+		else
+		{
+			exp_text.assign(argv+optind, argv+(optind+1));
+			search_text.assign(argv+(optind+1), argv + argc);	
+		}
 	}
 
 	return regx_match(exp_text, search_text);

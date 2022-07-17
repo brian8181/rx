@@ -1,3 +1,6 @@
-//sudo cp rx.1 /usr/local/share/man/man1
-//sudo gzip /usr/local/share/man/man1/rx.1
-//sudo mandb
+#!/bin/bash
+
+mkdir /usr/local/man/man1
+cp rx.1 /usr/local/man/man1
+gzip /usr/local/man/man1/ms.1
+mandb

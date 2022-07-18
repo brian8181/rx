@@ -55,7 +55,6 @@ all: $(APPNAME) $(APPNAME)_test bash_color_test
 
 # link
 $(APPNAME): $(APPNAME).o main.o
-	@echo "MAKE PATH:" $(mkfile_path)
 	$(CXX) $(CXXFLAGS) $(OBJS)/$(APPNAME).o $(OBJS)/main.o -o $(BUILD)/$(APPNAME)
 	
 # compile only

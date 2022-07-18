@@ -37,4 +37,3 @@ src/Search.code-search
 build/rx.core
 test/rx.core
 .vscode/*.log
-

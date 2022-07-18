@@ -4,6 +4,8 @@ echo "Testing..."
 ../build/rx abc abc abc abc
 echo "Testing..."
 ../build/rx abc abcxabc abcxabcyabc abcxabcabcyabcabczabc
+echo "0000063: Pipe Causes Segmentation Fault"
+echo abcxabcyabc | ../build/rx abc abc
 echo "TESTING INPUT-> ../build/rx -o 'basic|awk|grep|icase' abc ABC" 
 ../build/rx -o 'basic|awk|grep|icase' abc ABC
 echo "TESTING INPUT-> ../build/rx -o 'icase' abc ABCxabcxABC"

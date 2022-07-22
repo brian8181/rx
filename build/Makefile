@@ -82,7 +82,7 @@ bash_color_test.o:
 .PHONY: man
 man:
 	cp ../man/$(APPNAME).1 $(man1dir)
-	# gzip $(man1dir)/$(APPNAME).1
+	gzip $(man1dir)/$(APPNAME).1
 	mandb
 	
 # uninstall man pages
@@ -93,7 +93,7 @@ unman:
 
 # install 
 .PHONY: install
-install: man
+install: #man # no man for now
 	cp $(BUILD)/$(APPNAME) $(prefix)/bin/$(APPNAME)
 
 # uninstall

@@ -13,7 +13,6 @@
 using namespace std;
 
 // constants
-const int BUFFER_LEN = 0xFF;
 const int DEFAULT_ARGC = 2;
 const string VERSION_STRING = "rx 2.81";
 
@@ -43,7 +42,7 @@ static struct option long_options[] =
 	{"version", no_argument, 0, 'r'},
 	{"not_extended", no_argument, 0, 'e'}, 
 	{"extended", no_argument, 0, 'E'},      //default
-	{"options", required_argument, 0, 'o'},       //default
+	{"options", required_argument, 0, 'o'}, //default
 	{"file", required_argument, 0, 'f'},
 	{"regex_file", required_argument, 0, 'x'}
 };

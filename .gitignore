@@ -1,10 +1,10 @@
 *.o
 src/rx_test
 src/rx
-build/rx
-build/rx_test
-build/bash_color_test
-build/cppRxTestResults.xml
+# build/rx
+# build/rx_test
+# build/bash_color_test
+# build/cppRxTestResults.xml
 src/Makefile
 src/Makefile.in
 src/.deps
@@ -37,3 +37,6 @@ src/Search.code-search
 build/rx.core
 test/rx.core
 .vscode/*.log
+**/build
+!build/Makefile
+

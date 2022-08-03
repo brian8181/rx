@@ -58,7 +58,8 @@ map<std::string, regex::flag_type> regex_flags =
 	{"icase", regex::icase},
 	{"nosubs", regex::nosubs},
 	{"optimize", regex::optimize},
-	{"collate", regex::collate}
+	{"collate", regex::collate},//
+	//{"multiline". regex::multiline} (since C++17)
 };
 
 void print_version()
@@ -105,7 +106,7 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 			regex src_epx;
 			try
 			{
-				src_epx = regex(exp_text[i], regex::ECMAScript);
+				src_epx = regex(exp_text[i], REGX_FLAGS);
 			}
 			catch(regex_error& e)
 			{
@@ -241,6 +242,7 @@ int parse_options(int argc, char* argv[])
 		}
 		case 'o':
 		{
+			REGX_FLAGS = regex_constants::basic;
 			OPTION_FLAGS |= REGEX_OPTIONS;
 			string str_optarg = optarg;
 			string::size_type sz_beg = 0;

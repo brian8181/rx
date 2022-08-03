@@ -29,7 +29,7 @@ const unsigned char DEFAULTS = PRETTY_PRINT | EXTENDED_REGX;
 
 // Set Defaults
 unsigned char OPTION_FLAGS = DEFAULTS;
-regex::flag_type REGX_FLAGS = regex::basic;
+regex::flag_type REGX_FLAGS = regex::ECMAScript;
 
 static struct option long_options[] =
 {
@@ -105,7 +105,7 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 			regex src_epx;
 			try
 			{
-				src_epx = regex(exp_text[i], REGX_FLAGS);
+				src_epx = regex(exp_text[i], regex::ECMAScript);
 			}
 			catch(regex_error& e)
 			{

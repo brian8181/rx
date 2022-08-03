@@ -1,0 +1,30 @@
+[31mMatch Pattern: [0m'[33m[^{}][a-z]*[0m' -> [31mInput: [0m'[33m{if}yes{else}no{/if}[0m'
+Found 5 matches:
+{[32m[4mif[0m}[36m[4myes[0m{[32m[4melse[0m}[36m[4mno[0m{[32m[4m/if[0m}
+[31mMatch Pattern: [0m'[33m[^{}][a-z]*[0m' -> [31mInput: [0m'[33m{if}yes{else}no{/if}[0m'
+Found 5 matches:
+{[32m[4mif[0m}[36m[4myes[0m{[32m[4melse[0m}[36m[4mno[0m{[32m[4m/if[0m}
+[31mMatch Pattern: [0m'[33m}[a-z]*{[0m' -> [31mInput: [0m'[33m{if}yes{else}no{/if}[0m'
+Found 2 matches:
+{if[32m[4m}yes{[0melse[36m[4m}no{[0m/if}
+[31mMatch Pattern: [0m'[33m[^{}][a-z]*[0m' -> [31mInput: [0m'[33m{if}yes{else}no{/if}[0m'
+Found 5 matches:
+{[32m[4mif[0m}[36m[4myes[0m{[32m[4melse[0m}[36m[4mno[0m{[32m[4m/if[0m}
+[31mMatch Pattern: [0m'[33m{.*}[0m' -> [31mInput: [0m'[33m{if}yes{else}no{/if}[0m'
+Found 1 matches:
+[32m[4m{if}yes{else}no{/if}[0m
+[31mMatch Pattern: [0m'[33m{.*?}[0m' -> [31mInput: [0m'[33m{if}yes{else}no{/if}[0m'
+Found 0 matches:
+{if}yes{else}no{/if}
+[31mMatch Pattern: [0m'[33m{[a-z/]}[0m' -> [31mInput: [0m'[33m{if}yes{else}no{/if}[0m'
+Found 0 matches:
+{if}yes{else}no{/if}
+[31mMatch Pattern: [0m'[33m{[a-z/]*}[0m' -> [31mInput: [0m'[33m{if}yes{else}no{/if}[0m'
+Found 3 matches:
+[32m[4m{if}[0myes[36m[4m{else}[0mno[32m[4m{/if}[0m
+[31mMatch Pattern: [0m'[33ma\(b\)c[0m' -> [31mInput: [0m'[33mabc[0m'
+Found 1 matches:
+[32m[4mabc[0m
+[31mMatch Pattern: [0m'[33ma\(b\)c[0m' -> [31mInput: [0m'[33mabc[0m'
+Found 1 matches:
+[32m[4mabc[0m

@@ -1,0 +1,3 @@
+[31mMatch Pattern: [0m'[33m[^{}][a-z]*[0m' -> [31mInput: [0m'[33m{if}yes{else}no{/if}[0m'
+Found 5 matches:
+{[32m[4mif[0m}[36m[4myes[0m{[32m[4melse[0m}[36m[4mno[0m{[32m[4m/if[0m}

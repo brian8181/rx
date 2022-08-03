@@ -1,0 +1,4 @@
+hello
+[31mMatch Pattern: [0m'[33m}\([a-z]*\){[0m' -> [31mInput: [0m'[33m{if}testa{/if}[0m'
+Found 1 matches:
+{if[32m[4m}testa{[0m/if}

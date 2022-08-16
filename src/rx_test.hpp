@@ -15,6 +15,7 @@ private:
     CPPUNIT_TEST(testPrettyOption);
     CPPUNIT_TEST(testSingleOption);
     CPPUNIT_TEST(testIgnoreCaseOption);
+    CPPUNIT_TEST(testOptionOption_IgnoreCase);
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -34,6 +35,7 @@ protected:
     void testPrettyOption();
     void testSingleOption();
     void testIgnoreCaseOption();
+    void testOptionOption_IgnoreCase();
 
 private:
     int m_argc;

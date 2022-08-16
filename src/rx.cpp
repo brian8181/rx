@@ -14,7 +14,7 @@ using namespace std;
 
 // constants
 const int DEFAULT_ARGC = 2;
-const string VERSION_STRING = "rx 2.81";
+const string VERSION_STRING = "rx 2.90";
 
 // options flags
 const unsigned char VERBOSE          = 0x01;

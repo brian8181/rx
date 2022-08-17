@@ -35,7 +35,7 @@ static struct option long_options[] =
 {
 	{"verbose", no_argument, 0, 'v'},
 	{"help", no_argument, 0, 'h'},
-	{"ignore_case", no_argument, 0, 'i'},
+	{"icase", no_argument, 0, 'i'},
 	{"single", no_argument, 0, 's'},
 	{"pretty", no_argument, 0, 'P'},        //default
 	{"no-pretty", no_argument, 0, 'p'},

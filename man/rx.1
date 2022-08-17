@@ -1,10 +1,18 @@
 .\" Manpage for rx.
 .\" Contact contact@digitalleaves.com for comments or help.
-.TH man 1 "28 Apr 2020" "1.0" "rx man page"
+.TH man 1 "17 August 2022" "2.90" "rx man page"
 .SH NAME
 rx \- regular expression match / tester
 .SH SYNOPSIS
-rx [-[hirPpEeo]] [-x] REGEXP [-f] SOURCE
+
+command line input:
+
+rx [-[hirPpEeo]] REGEXP SOURCE
+
+input from file:
+
+rx -x REGEXP_PATH -f SOURCE_PATH
+
 .SH DESCRIPTION
 Command line testing application for "c++ standard regex implemnetation", aka "#include <regex>".
 .SH OPTIONS

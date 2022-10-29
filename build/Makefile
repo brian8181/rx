@@ -21,7 +21,10 @@ CXX = g++
 CC = $(CXX)
 
 DEBUG_LEVEL      = -DDEBUG -ggdb
-EXTRA_CXXFLAGS   = -Wall -std=c++11 -std=gnu++17
+# VERBOSE 
+#EXTRA_CXXFLAGS   = -v -Wall -std=c++11
+# NOT VERBOSE
+EXTRA_CXXFLAGS   = -Wall -std=c++11 	
 CXXFLAGS = $(EXTRA_CXXFLAGS) $(DEBUG_LEVEL)
 
 # lib settings
@@ -49,7 +52,7 @@ debug: all
 debuggdb: all
 
 # compile & link
-all: $(APPNAME) $(APPNAME)_test bash_color_test
+all: $(APPNAME) bash_color_test
 	@echo "MAKE PATH:" $(mkfile_path)
 	
 
@@ -65,12 +68,12 @@ main.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCS)/main.$(EXT) -o $(OBJS)/main.o
 
 # link
-$(APPNAME)_test: $(APPNAME)_test.o
-	$(CXX) $(CXXFLAGS) $(INCLUDES) $(OBJS)/$(APPNAME)_test.o $(OBJS)/$(APPNAME).o $(LDFLAGS) -o $(BUILD)/$(APPNAME)_test
+# $(APPNAME)_test: $(APPNAME)_test.o
+# 	$(CXX) $(CXXFLAGS) $(INCLUDES) $(OBJS)/$(APPNAME)_test.o $(OBJS)/$(APPNAME).o $(LDFLAGS) -o $(BUILD)/$(APPNAME)_test
 
 # compile only
-$(APPNAME)_test.o:
-	$(CXX) $(CXXFLAGS) -c $(SRCS)/$(APPNAME)_test.cpp -o $(OBJS)/$(APPNAME)_test.o
+# $(APPNAME)_test.o:
+# 	$(CXX) $(CXXFLAGS) -c $(SRCS)/$(APPNAME)_test.cpp -o $(OBJS)/$(APPNAME)_test.o
 
 bash_color_test: bash_color_test.o
 	$(CXX) $(CXXFLAGS) $(OBJS)/bash_color_test.o -o $(BUILD)/bash_color_test
@@ -104,24 +107,28 @@ uninstall: unman
 # delete object files & app executable
 .PHONY: clean
 clean:
-	rm -f $(BUILD)/$(APPNAME) $(OBJS)/*.o $(BUILD)/$(APPNAME)_test $(BUILD)/bash_color_test
-	rm -f $(BUILD)/*.xml $(BUILD)/$(APPNAME).$(BUILD_VERSION).tar.gz
-	rm -f $(BUILD)/$(APPNAME).core
+	-rm -f $(BUILD)/$(APPNAME) 
+	-rm -f $(OBJS)/*.o 
+	-rm -f $(BUILD)/$(APPNAME)_test
+	-rm -f $(BUILD)/bash_color_test
+	-rm -f $(BUILD)/*.xml 
+	-rm -f $(BUILD)/$(APPNAME).$(BUILD_VERSION).tar.gz
+	-rm -f $(BUILD)/$(APPNAME).core
 
 # delete object files, app, executables, & all automake/autoconf generated files
 .PHONY: distclean
 distclean: clean
-	rm -f $(ROOT)/config.* $(ROOT)/Makefile $(ROOT)/Makefile.in $(ROOT)/INSTALL $(ROOT)/configure 
-	rm $(ROOT)/stamp-h1 $(ROOT)/aclocal.m4 $(ROOT)/compile $(ROOT)/install-sh $(ROOT)/libtool $(ROOT)/ltmain.sh $(ROOT)/stamp-h1 $(ROOT)/missing $(ROOT)/depcomp
-	rm $(SRCS)/Makefile $(SRCS)/Makefile.in
-	rm -rf $(ROOT)/autom4te.cache $(SRCS)/.deps $(SRCS)/.libs
+	-rm -f $(ROOT)/config.* $(ROOT)/Makefile $(ROOT)/Makefile.in $(ROOT)/INSTALL $(ROOT)/configure 
+	-rm $(ROOT)/stamp-h1 $(ROOT)/aclocal.m4 $(ROOT)/compile $(ROOT)/install-sh $(ROOT)/libtool $(ROOT)/ltmain.sh $(ROOT)/stamp-h1 $(ROOT)/missing $(ROOT)/depcomp
+	-rm $(SRCS)/Makefile $(SRCS)/Makefile.in
+	-rm -rf $(ROOT)/autom4te.cache $(SRCS)/.deps $(SRCS)/.libs
 
 clean-local:
-	rm config.status configure config.log
-	rm Makefile
-	rm -r autom4te.cache/
-	rm aclocal.m4
-	rm compile install-sh missing Makefile.in
+	-rm config.status configure config.log
+	-rm Makefile
+	-rm -r autom4te.cache/
+	-rm aclocal.m4
+	-rm compile install-sh missing Makefile.in
 	
 dist: 
 	git archive HEAD | gzip > $(BUILD)/$(APPNAME).$(BUILD_VERSION).tar.gz

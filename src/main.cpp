@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
 			char* argvtmp[sizeof(char*) * argc+1];
 			memcpy(argvtmp, argv, sizeof(char*) * argc);
 			argvtmp[argc] = &buffer[0];
-			//argv = argvtmp;
+			argv = argvtmp;
 			++argc;
 			return parse_options(argc, argvtmp);
 		}

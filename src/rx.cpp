@@ -17,18 +17,19 @@ const int DEFAULT_ARGC = 2;
 const string VERSION_STRING = "rx 2.90";
 
 // options flags
-const unsigned char VERBOSE          = 0x01;
-const unsigned char IGNORE_CASE      = 0x02;
-const unsigned char SINGLE_MATCH     = 0x04;
-const unsigned char PRETTY_PRINT     = 0x08;
-const unsigned char EXTENDED_REGX    = 0x10;
-const unsigned char REGEX_OPTIONS    = 0x12;
-const unsigned char SEARCH_FROM_FILE = 0x40;
-const unsigned char REGEX_FROM_FILE  = 0x80;
-const unsigned char DEFAULTS = PRETTY_PRINT | EXTENDED_REGX;
+const unsigned short VERBOSE          = 0x01;
+const unsigned short IGNORE_CASE      = 0x02;
+const unsigned short SINGLE_MATCH     = 0x04;
+const unsigned short PRETTY_PRINT     = 0x08;
+const unsigned short GROUPS           = 0x10;
+const unsigned short EXTENDED_REGX    = 0x20;
+const unsigned short REGEX_OPTIONS    = 0x40;
+const unsigned short SEARCH_FROM_FILE = 0x80;
+const unsigned short REGEX_FROM_FILE  = 0x100;
+const unsigned short DEFAULTS = PRETTY_PRINT | EXTENDED_REGX;
 
 // Set Defaults
-unsigned char OPTION_FLAGS = DEFAULTS;
+unsigned short OPTION_FLAGS = DEFAULTS;
 regex::flag_type REGX_FLAGS = regex::ECMAScript;
 
 static struct option long_options[] =
@@ -37,6 +38,7 @@ static struct option long_options[] =
 	{"help", no_argument, 0, 'h'},
 	{"icase", no_argument, 0, 'i'},
 	{"single", no_argument, 0, 's'},
+	{"groups", no_argument, 0, 'g'},
 	{"pretty", no_argument, 0, 'P'},        //default
 	{"no-pretty", no_argument, 0, 'p'},
 	{"version", no_argument, 0, 'r'},
@@ -185,6 +187,9 @@ int parse_options(int argc, char* argv[])
 			break;
 		case 'p':
 			OPTION_FLAGS &= ~PRETTY_PRINT;
+			break;
+		case 'g':
+			OPTION_FLAGS |= GROUPS;
 			break;
 		case 'E':
 			OPTION_FLAGS |= EXTENDED_REGX;

@@ -135,11 +135,18 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 
 				if(OPTION_FLAGS & PRETTY_PRINT)
 				{
-					// set bash green start postion￼
+					// set bash green start postion
 					bash_stdio.insert(pos, CURRENT_FG_COLOR);
 					// reset bash color position
 					pos += CURRENT_FG_COLOR.length() + search_text_len;
 					bash_stdio.insert(pos, FMT_RESET);
+
+					if(OPTION_FLAGS & GROUPS)
+					{
+						string s = "\n   Submatch 1:";
+						bash_stdio.insert(pos+1, s);
+						pos += s.size();
+					}
 				}
 				else
 				{
@@ -166,7 +173,7 @@ int parse_options(int argc, char* argv[])
 	int opt = 0;
 	int option_index = 0;
 	optind = 0;
-	while ((opt = getopt_long(argc, argv, "hvispPreEo:x:f:", long_options, &option_index)) != -1)
+	while ((opt = getopt_long(argc, argv, "hvispgPreEo:x:f:", long_options, &option_index)) != -1)
 	{
 		switch (opt)
 		{

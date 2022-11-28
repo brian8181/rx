@@ -150,7 +150,7 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 							if(match[i].matched)
 							{
 								ostringstream ss;
-								ss << "\n\tSubmatch " << i << ": " << match[i].str(); 
+								ss << "\n\t" << i << ": " << FMT_FG_RED << "Submatch: " << FMT_RESET << FMT_FG_GREEN  << match[i].str() << FMT_RESET; 
 								bash_stdio.insert(pos, ss.str());
 								pos += ss.str().size();
 							}

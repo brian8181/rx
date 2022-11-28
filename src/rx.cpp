@@ -145,12 +145,12 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 					if(OPTION_FLAGS & GROUPS)
 					{
 						int len = match.size();
-						for(int i = 0; i < len; ++i)
+						for(int i = 1; i < len; ++i)
 						{
 							if(match[i].matched)
 							{
 								ostringstream ss;
-								ss << "\nSubmatch " << i << ": " << match[i].str(); 
+								ss << "\n\tSubmatch " << i << ": " << match[i].str(); 
 								bash_stdio.insert(pos, ss.str());
 								pos += ss.str().size();
 							}

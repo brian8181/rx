@@ -149,13 +149,12 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 						{
 							if(match[i].matched)
 							{
-								string s = "\nSubmatch "; 
-								//string sm = match[i].str() + "\n";
-								bash_stdio.insert(pos, s);
-								pos += s.size();
+								ostringstream ss;
+								ss << "\nSubmatch " << i << ": " << match[i].str(); 
+								bash_stdio.insert(pos, ss.str());
+								pos += ss.str().size();
 							}
 						}
-					// 	pos += s.size();
 					}
 				}
 				else

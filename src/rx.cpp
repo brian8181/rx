@@ -141,21 +141,21 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 					pos += CURRENT_FG_COLOR.length() + search_text_len;
 					bash_stdio.insert(pos, FMT_RESET);
 
-					// if(OPTION_FLAGS & GROUPS)
-					// {
-					// 	string s = "\n   Submatch 1:";
-					// 	int len = match.size();
-					// 	for(int i = 0; i < len; ++i)
-					// 	{
-					// 		if(match[i].matched)
-					// 		{
-					// 			string sm = match[i].str() + "\n";
-					// 			bash_stdio.insert(pos, sm);
-					// 			pos += sm.size();
-					// 		}
-					// 	}
+					if(OPTION_FLAGS & GROUPS)
+					{
+						int len = match.size();
+						for(int i = 0; i < len; ++i)
+						{
+							if(match[i].matched)
+							{
+								string s = "\nSubmatch "; 
+								//string sm = match[i].str() + "\n";
+								bash_stdio.insert(pos, s);
+								pos += s.size();
+							}
+						}
 					// 	pos += s.size();
-					// }
+					}
 				}
 				else
 				{

@@ -93,6 +93,10 @@ void print_match_header(const string& pattern, const string& src, int count, int
 
 int regx_match(const vector<string>& exp_text, const vector<string>& search_text)
 {
+	//testing
+	string sparen = "( ...";
+	string eparen = "... )";
+
 	int exp_text_len = exp_text.size();
 	// for each exp
 	for(int i = 0; i < exp_text_len; ++i)
@@ -125,7 +129,7 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 				string CURRENT_FG_COLOR(match_i % 2 ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE);
 				smatch match = *iter;
 
-				int pos = match.position() + match_i * (CURRENT_FG_COLOR.length() + FMT_RESET.length());
+				int pos = match.position() + match_i * (CURRENT_FG_COLOR.length() + FMT_RESET.length() + sparen.length() + eparen.length());
 				int search_text_len = match.length();
 				if ((OPTION_FLAGS & SINGLE_MATCH) && (iter != begin || pos != 0 || search_text[j].length() != (size_t)search_text_len))
 				{
@@ -135,27 +139,34 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 
 				if(OPTION_FLAGS & PRETTY_PRINT)
 				{
+					
+					bash_stdio.insert(pos, sparen);
+					pos += sparen.length();
+
 					// set bash green start postion
 					bash_stdio.insert(pos, CURRENT_FG_COLOR);
 					// reset bash color position
 					pos += CURRENT_FG_COLOR.length() + search_text_len;
 					bash_stdio.insert(pos, FMT_RESET);
-					pos += FMT_RESET.length(); 
+					pos += FMT_RESET.length();
 
-					if(OPTION_FLAGS & GROUPS)
-					{
-						int len = match.size();
-						for(int i = 1; i < len; ++i)
-						{
-							if(match[i].matched)
-							{
-								ostringstream ss;
-								ss << "\n\t" << i << ": " << FMT_FG_RED << "Submatch: " << FMT_RESET << FMT_FG_GREEN  << match[i].str() << FMT_RESET; 
-								bash_stdio.insert(pos, ss.str());
-								pos += ss.str().size();
-							}
-						}
-					}
+					bash_stdio.insert(pos, eparen);
+					pos += eparen.length(); 
+
+					// if(OPTION_FLAGS & GROUPS)
+					// {
+					// 	int len = match.size();
+					// 	for(int i = 1; i < len; ++i)
+					// 	{
+					// 		if(match[i].matched)
+					// 		{
+					// 			ostringstream ss;
+					// 			ss << "\n\t" << i << ": " << FMT_FG_RED << "Submatch: " << FMT_RESET << FMT_FG_GREEN  << match[i].str() << FMT_RESET; 
+					// 			bash_stdio.insert(pos, ss.str());
+					// 			pos += ss.str().size();
+					// 		}
+					// 	}
+					// }
 				}
 				else
 				{

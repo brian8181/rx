@@ -135,13 +135,13 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 				string CURRENT_FG_COLOR(match_i % 2 ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE);
 				smatch match = *iter;
 
-				// //int pos = match.position() + match_i * (sparen.length() + CURRENT_FG_COLOR.length() + FMT_RESET.length() + eparen.length());
-				// // int search_text_len = match.length();
-				// if ((OPTION_FLAGS & SINGLE_MATCH) && (iter != begin || pos != 0 || search_text[j].length() != (size_t)search_text_len))
-				// {
-				// 	begin = end;
-				// 	break;
-				// }
+				// int pos = match.position() + match_i * (sparen.length() + CURRENT_FG_COLOR.length() + FMT_RESET.length() + eparen.length());
+				// int search_text_len = match.length();
+				if ((OPTION_FLAGS & SINGLE_MATCH) && (iter != begin || curr_pos != 0 || search_text[j].length() != (size_t)search_text_len))
+				{
+					begin = end;
+					break;
+				}
 
 				if(OPTION_FLAGS & PRETTY_PRINT)
 				{
@@ -155,7 +155,6 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 					// pos += FMT_RESET.length();
 					// bash_stdio.insert(pos, eparen);
 					// pos += eparen.length(); 
-				
 
 					// NEW
 					curr_pos = match.position();
@@ -176,7 +175,6 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 							}
 						}
 					}
-
 				}
 				else
 				{

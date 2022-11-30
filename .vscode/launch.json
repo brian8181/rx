@@ -6,7 +6,7 @@
     "configurations": [
     
         {
-            "name": "(gdb) Launch Debug(1)",
+           "name": "(gdb) Launch Debug(1)",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
@@ -382,8 +382,27 @@
             ],
             "preLaunchTask": "MAKE DEBUGGDB",
             "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "Mantis 83: Group Fail",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+            "args": ["-g", "(a)(b)(c)", "abcxabc"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "MAKE DEBUGGDB",
+            "miDebuggerPath": "/usr/bin/gdb"
         }
-
-
     ]
 }

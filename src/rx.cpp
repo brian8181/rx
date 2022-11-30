@@ -144,14 +144,21 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 
 					if(OPTION_FLAGS & GROUPS)
 					{
+						int tmp = match.length();
 						int len = match.size();
+						// BKP TESTING
+						cout << endl;
 						for(int i = 1; i < len; ++i)
 						{
 							if(match[i].matched)
 							{
 								//oss << "(" << ")";
+								// BKP TESTING!
+								cout << "*DEBUG* " << match[i].str() << " : ";
 							}
 						}
+						// BKP TESTING
+						cout << endl;
 					}
 				}
 				else

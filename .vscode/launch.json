@@ -367,7 +367,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
-            "args": ["-g", "(a)(b)(c)", "abc"],
+            "args": ["-g", "(a+)(b+)(c+)(d+)(e+)", "abbccddddeeeee"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

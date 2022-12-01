@@ -104,6 +104,8 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 		{
 			print_match_header(exp_text[i], search_text[j], j+1, search_text_len);
 			ostringstream oss;
+			ostringstream oss2;
+
 			REGX_FLAGS = (OPTION_FLAGS & IGNORE_CASE) != 0 ? REGX_FLAGS|regex::icase : REGX_FLAGS;
 			regex src_epx;
 			try
@@ -165,6 +167,7 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 								auto sz2 = distance(sm.first, sm.second);
 								auto pos2 = distance(match[0].first, sm.first);
 								string sss2 = search_text[j].substr(pos2, sz2);
+								oss2 << i << " " << sss2 << endl; 
 								cout << "*DEBUG* 2* " << sss2 << " : " << endl;		
 								
 									
@@ -197,6 +200,8 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 				// get unmatched test before match
 				oss << search_text[j].substr(prev_pos, curr_pos-prev_pos);
 				cout << oss.str() << endl;
+				//testing
+				cout << oss2.str() << endl;
 			}
 		}
 	}

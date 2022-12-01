@@ -148,7 +148,6 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 						short int epos2 = 0;
 						stack<short int> pos_stack;
 
-
 						cout << endl;
 						for(int i = 0; i < len; ++i)
 						{
@@ -156,17 +155,19 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 							{
 								
 								//try 1
-								ssub_match sm =  match[i];
+								auto sm =  match[i];
 								auto sz1 = match.position(i);
 								auto pos1 = match.length(i);
+								string sss1 = search_text[j].substr(pos1, sz1);	
+								cout << "*DEBUG* 1* " << sss1 << " : " << endl;
+
 								// same thing as above ?
 								auto sz2 = distance(sm.first, sm.second);
 								auto pos2 = distance(match[0].first, sm.first);
-
-								string sss1 = search_text[j].substr(pos1, sz1);		
-								string sss2 = search_text[j].substr(pos2, sz2);		
-								cout << "*DEBUG* 1* " << sss1 << " : " << endl;
-								cout << "*DEBUG* 2* " << sss2 << " : " << endl;			
+								string sss2 = search_text[j].substr(pos2, sz2);
+								cout << "*DEBUG* 2* " << sss2 << " : " << endl;		
+								
+									
 								cout << "*DEBUG* 3* " << sm.str() << " : " << endl;
 							}
 						}

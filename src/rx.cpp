@@ -144,12 +144,12 @@ int regx_match(const vector<string> &exp_text, const vector<string> &search_text
 						// Todo ...
 						int len = match.size();
 						// BKP TESTING
-						// try 2
-						short int spos1 = 0;
-						short int epos1 = 0;
-						short int spos2 = 0;
-						short int epos2 = 0;
-						stack<short int> pos_stack;
+						// // try 2
+						// short int spos1 = 0;
+						// short int epos1 = 0;
+						// short int spos2 = 0;
+						// short int epos2 = 0;
+						// stack<short int> pos_stack;
 
 						cout << endl;
 
@@ -157,7 +157,7 @@ int regx_match(const vector<string> &exp_text, const vector<string> &search_text
 						ptrdiff_t p_pos = 0;
 						ptrdiff_t c_pos = 0;
 						ptrdiff_t len_to_next = 0;
-						ptrdiff_t c_sz = distance(match[0].first, match[0].second);
+						//ptrdiff_t c_sz = distance(match[0].first, match[0].second);
 
 						for (int i = 1; i < len; ++i)
 						{
@@ -172,7 +172,7 @@ int regx_match(const vector<string> &exp_text, const vector<string> &search_text
 								//  cout << "*DEBUG* 1* " << sss1 << " : " << endl;
 
 								// same thing as above ?
-								c_sz = distance(sm.first, sm.second);
+								// c_sz = distance(sm.first, sm.second);
 								c_pos = distance(match[0].first, sm.first);
 
 								len_to_next = (c_pos - p_pos); // or end

@@ -2,7 +2,6 @@
 # MAKE_TEMPLATE = 0.1.7;
 # BUILD_VERSION = 0.1.2
 
-
 CXX = g++
 CXXFLAGS = -Wall -std=c++11 -DDEBUG -ggdb
 # LDFLAGS = -static -lcppunit -L/usr/local/lib/
@@ -22,7 +21,7 @@ debug: all
 debuggdb: all
 
 # compile & link
-all: $(APPNAME) $(APPNAME)_test bash_color_test
+all: $(APPNAME) bash_color_test 
 	
 # link
 $(APPNAME): $(APPNAME).o main.o

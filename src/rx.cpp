@@ -144,20 +144,34 @@ int regx_match(const vector<string> &exp_text, const vector<string> &search_text
 						// Todo ...
 						int len = match.size();
 						// BKP TESTING
-						// // try 2
+						// try 2
 						// short int spos1 = 0;
 						// short int epos1 = 0;
 						// short int spos2 = 0;
 						// short int epos2 = 0;
 						// stack<short int> pos_stack;
+						// auto smm = match[i];
+						
+						stack<int> sm_stack;
+						// sm_stack.push(0);
 
+						// int n = sm_stack.pop();
+						// int ntop = sm_stack.top();
+						// if(match[ntop] <= match[n])
+						// {
+							
+						// }
 						cout << endl;
 
 						// testing
+						//ptrdiff_t end = len;
 						ptrdiff_t p_pos = 0;
 						ptrdiff_t c_pos = 0;
 						ptrdiff_t len_to_next = 0;
+						//ptrdiff_t len_to_end = 0;
 						//ptrdiff_t c_sz = distance(match[0].first, match[0].second);
+						//ptrdiff_t end = c_sz;
+
 
 						for (int i = 1; i < len; ++i)
 						{
@@ -165,20 +179,34 @@ int regx_match(const vector<string> &exp_text, const vector<string> &search_text
 							{
 
 								auto sm = match[i];
-								// try 1
+
+								// same thing as below ?
 								//  auto sz1 = match.position(i);
 								//  auto pos1 = match.length(i);
 								//  string sss1 = search_text[j].substr(pos1, sz1);
 								//  cout << "*DEBUG* 1* " << sss1 << " : " << endl;
-
-								// same thing as above ?
-								// c_sz = distance(sm.first, sm.second);
+								
+								//c_sz = distance(sm.first, sm.second);
 								c_pos = distance(match[0].first, sm.first);
 
 								len_to_next = (c_pos - p_pos); // or end
-								string snip = search_text[j].substr(p_pos, len_to_next);
-								p_pos = c_pos;
-								oss3 << "(" << snip;
+								// if(c_pos+c_sz < c_pos+len_to_next)
+								// { 
+								// 	string whole = search_text[j].substr(c_pos, c_sz);
+								// 	oss3 << "(" << whole << ")";
+								// }
+								//else
+								{
+									string snip = search_text[j].substr(p_pos, len_to_next);
+									p_pos = c_pos;
+									oss3 << "(" << snip;		
+								}
+
+								// if(len_to_next < end)
+								// {
+								// 	sm_stack.push(i);
+								// }
+							
 
 								// get unmatched test before match
 								// oss3 << sss2;

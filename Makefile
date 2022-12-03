@@ -1,11 +1,12 @@
-# June 17, 2022
-# MAKE_TEMPLATE = 1.6;
-# BUILD_VERSION = 0.1.1
+# Dec 03, 2022
+# MAKE_TEMPLATE = 0.1.7;
+# BUILD_VERSION = 0.1.2
+
 
 CXX = g++
 CXXFLAGS = -Wall -std=c++11 -DDEBUG -ggdb
-LDFLAGS = -static -lcppunit -L/usr/local/lib/
-INCLUDES = -I/usr/local/include/cppunit/
+# LDFLAGS = -static -lcppunit -L/usr/local/lib/
+# INCLUDES = -I/usr/local/include/cppunit/
 APPNAME = rx
 EXT = cpp
 ROOT  = .
@@ -35,12 +36,12 @@ main.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCS)/main.$(EXT) -o $(OBJS)/main.o
 
 # link
-$(APPNAME)_test: $(APPNAME)_test.o
-	# $(CXX) $(CXXFLAGS) $(INCLUDES) $(OBJS)/$(APPNAME)_test.o $(OBJS)/$(APPNAME).o $(LDFLAGS) -o $(BUILD)/$(APPNAME)_test
+# $(APPNAME)_test: $(APPNAME)_test.o
+# 	$(CXX) $(CXXFLAGS) $(INCLUDES) $(OBJS)/$(APPNAME)_test.o $(OBJS)/$(APPNAME).o $(LDFLAGS) -o $(BUILD)/$(APPNAME)_test
 
-# compile only
-$(APPNAME)_test.o:
-	$(CXX) $(CXXFLAGS) -c $(SRCS)/$(APPNAME)_test.cpp -o $(OBJS)/$(APPNAME)_test.o
+# # compile only
+# $(APPNAME)_test.o:
+# 	$(CXX) $(CXXFLAGS) -c $(SRCS)/$(APPNAME)_test.cpp -o $(OBJS)/$(APPNAME)_test.o
 
 bash_color_test: bash_color_test.o
 	$(CXX) $(CXXFLAGS) $(OBJS)/bash_color_test.o -o $(BUILD)/bash_color_test

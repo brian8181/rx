@@ -5,6 +5,7 @@
 #include <vector>
 #include <map>
 #include <stack>
+#include <utility>
 #include <stdexcept>
 #include <fstream>
 #include <getopt.h>
@@ -106,6 +107,7 @@ int regx_match(const vector<string> &exp_text, const vector<string> &search_text
 			ostringstream oss;
 			ostringstream oss2;
 			ostringstream oss3;
+			ostringstream oss4;
 
 			REGX_FLAGS = (OPTION_FLAGS & IGNORE_CASE) != 0 ? REGX_FLAGS | regex::icase : REGX_FLAGS;
 			regex src_epx;
@@ -141,73 +143,44 @@ int regx_match(const vector<string> &exp_text, const vector<string> &search_text
 				{
 					if (OPTION_FLAGS & GROUPS)
 					{
-						// Todo ...
-						int len = match.size();
 						// BKP TESTING
-						// try 2
-						// short int spos1 = 0;
-						// short int epos1 = 0;
-						// short int spos2 = 0;
-						// short int epos2 = 0;
-						// stack<short int> pos_stack;
-						// auto smm = match[i];
-						
-						stack<int> sm_stack;
-						// sm_stack.push(0);
-
-						// int n = sm_stack.pop();
-						// int ntop = sm_stack.top();
-						// if(match[ntop] <= match[n])
-						// {
-							
-						// }
+						int len = match.size();
+						stack<std::pair<ssub_match, string>> sub_match_stack;
 						cout << endl;
 
 						// testing
-						//ptrdiff_t end = len;
-						ptrdiff_t p_pos = 0;
-						ptrdiff_t c_pos = 0;
-						ptrdiff_t len_to_next = 0;
-						//ptrdiff_t len_to_end = 0;
-						//ptrdiff_t c_sz = distance(match[0].first, match[0].second);
-						//ptrdiff_t end = c_sz;
+						ptrdiff_t p_pos = distance(match[0].first, match[1].second);;
+						//ptrdiff_t p_len = distance(match[0].first, match[1].second);
+						ptrdiff_t c_pos = distance(match[0].first, match[2].second);
+						//ptrdiff_t c_len = distance(match[1].first, match[2].second);
+						//size_t end = search_text[j].length();
+						
+						ptrdiff_t len_to_next = (c_pos - p_pos); // or end ? could be negative
+						string snip = search_text[j].substr(p_pos, len_to_next);
+						pair<ssub_match, string> match_pair(match[i], snip);
+						sub_match_stack.push(match_pair);
+	
+						// struct SMatch
+						// {
+						// 	ssub_match ssmatch;
+						// 	string sub_str;
+						// };
 
-
-						for (int i = 1; i < len; ++i)
+						for (int i = 2; i < len; ++i)
 						{
 							if (match[i].matched)
 							{
-
-								auto sm = match[i];
-
+								//  auto sm = match[i];
 								// same thing as below ?
 								//  auto sz1 = match.position(i);
 								//  auto pos1 = match.length(i);
 								//  string sss1 = search_text[j].substr(pos1, sz1);
 								//  cout << "*DEBUG* 1* " << sss1 << " : " << endl;
 								
-								//c_sz = distance(sm.first, sm.second);
-								c_pos = distance(match[0].first, sm.first);
-
-								len_to_next = (c_pos - p_pos); // or end
-								// if(c_pos+c_sz < c_pos+len_to_next)
-								// { 
-								// 	string whole = search_text[j].substr(c_pos, c_sz);
-								// 	oss3 << "(" << whole << ")";
-								// }
-								//else
-								{
-									string snip = search_text[j].substr(p_pos, len_to_next);
-									p_pos = c_pos;
-									oss3 << "(" << snip;		
-								}
-
-								// if(len_to_next < end)
-								// {
-								// 	sm_stack.push(i);
-								// }
-							
-
+								// c_sz = distance(sm.first, sm.second);
+								// p_pos = c_pos;
+								// oss3 << "(" << snip;		
+								
 								// get unmatched test before match
 								// oss3 << sss2;
 								// p_pos = c_pos + sz2;
@@ -217,15 +190,71 @@ int regx_match(const vector<string> &exp_text, const vector<string> &search_text
 								// oss2 << "(" << i << ":" << sss2 << ".";
 								// cout << "*DEBUG* 2* " << sss2 << " : " << endl;
 								// cout << "*DEBUG* 3* " << sm.str() << " : " << endl;
+								
+								// TODO
+								c_pos = distance(match[0].first, match[i].first);
+								len_to_next = (c_pos - p_pos); // or end
+								string snip = search_text[j].substr(p_pos, len_to_next);
+								pair<ssub_match, string> match_pair(match[i], snip);
+								sub_match_stack.push(match_pair);
+										
+								while(c_pos < p_pos)
+								{
+
+									auto top = sub_match_stack.top();
+									sub_match_stack.pop();
+									auto next = sub_match_stack.top();
+									sub_match_stack.pop();
+									
+									// push cat and add paren
+									string cat = next.second + top.second + ")";
+									pair<ssub_match, string> cat_pair(next.first, cat);
+									sub_match_stack.push(cat_pair);
+
+									// push current match
+									pair<ssub_match, string> top_pair(match[i], "?");
+									sub_match_stack.push(top_pair);
+
+									p_pos = c_pos;
+									c_pos = distance(match[0].first, sub_match_stack.top().first.first);
+								}
+
+								
 							}
 						}
 
-						ptrdiff_t len_to_end = distance(match[0].first, match[0].second) - c_pos;
-						string snip_to_end = search_text[j].substr(c_pos, len_to_end);
-						oss3 << "(" << snip_to_end;
+						auto top = sub_match_stack.top();
+						sub_match_stack.pop();
+						if(!sub_match_stack.empty())
+						{
+							// ?
+						}
+						string last = top.first.str();
+						cout << "Try:" << endl;
+						cout << last;
 
-						// BKP TESTING
-						cout << endl;
+						// ptrdiff_t len_to_end = distance(match[0].first, match[0].second) - c_pos;
+						// string snip_to_end = search_text[j].substr(c_pos, len_to_end);
+						// oss3 << "(" << snip_to_end;
+
+						// cout << "unwind stack: " << endl;
+						// oss4 << "unwind stack: " << endl;
+						// while(!sub_match_stack.empty())
+						// {
+						// 	auto sm = sub_match_stack.top();
+						// 	cout << sm.first.str() << endl;
+						// 	sub_match_stack.pop();
+							
+						// 	sm.first.str().length();
+						// 	c_pos = distance(match[0].first, sm.first.first);
+						// 	len_to_next = (c_pos - p_pos); // or end
+						// 	string snip = search_text[j].substr(p_pos, len_to_next);
+						// 	p_pos = c_pos;
+						// 	oss4 << "(" << snip;		
+						// }
+
+						// // BKP TESTING
+						// cout << endl;
 					}
 					else
 					{
@@ -254,6 +283,7 @@ int regx_match(const vector<string> &exp_text, const vector<string> &search_text
 				// testing
 				cout << oss2.str() << endl;
 				cout << oss3.str() << endl;
+				cout << oss4.str() << endl;
 			}
 		}
 	}

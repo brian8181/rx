@@ -144,34 +144,33 @@ int regx_match(const vector<string> &exp_text, const vector<string> &search_text
 					if (OPTION_FLAGS & GROUPS)
 					{
 						// BKP TESTING
-						int len = match.size();
-						stack<std::pair<ssub_match, string>> sub_match_stack;
-						cout << endl;
-
-						// testing
-						ptrdiff_t p_pos = distance(match[0].first, match[1].second);;
-						//ptrdiff_t p_len = distance(match[0].first, match[1].second);
-						ptrdiff_t c_pos = distance(match[0].first, match[2].second);
-						//ptrdiff_t c_len = distance(match[1].first, match[2].second);
-						//size_t end = search_text[j].length();
-						
-						ptrdiff_t len_to_next = (c_pos - p_pos); // or end ? could be negative
-						string snip = search_text[j].substr(p_pos, len_to_next);
-						pair<ssub_match, string> match_pair(match[i], snip);
-						sub_match_stack.push(match_pair);
-	
 						// struct SMatch
 						// {
 						// 	ssub_match ssmatch;
 						// 	string sub_str;
 						// };
 
+						int len = match.size();
+						stack<std::pair<ssub_match, string>> sub_match_stack;
+						cout << endl;
+
+						ptrdiff_t p_pos = distance(match[0].first, match[1].second);;
+						//ptrdiff_t p_len = distance(match[0].first, match[1].second);
+						ptrdiff_t c_pos = distance(match[0].first, match[2].second);
+						//ptrdiff_t c_len = distance(match[1].first, match[2].second);
+						//size_t end = search_text[j].length();
+						
+						ptrdiff_t len_2_next = (c_pos - p_pos); // or end ? could be negative
+						string snip = search_text[j].substr(p_pos, len_2_next);
+						pair<ssub_match, string> match_pair(match[i], snip);
+						sub_match_stack.push(match_pair);
+
 						for (int i = 2; i < len; ++i)
 						{
 							if (match[i].matched)
 							{
 								//  auto sm = match[i];
-								// same thing as below ?
+								//  // same thing as below ?
 								//  auto sz1 = match.position(i);
 								//  auto pos1 = match.length(i);
 								//  string sss1 = search_text[j].substr(pos1, sz1);
@@ -193,14 +192,13 @@ int regx_match(const vector<string> &exp_text, const vector<string> &search_text
 								
 								// TODO
 								c_pos = distance(match[0].first, match[i].first);
-								len_to_next = (c_pos - p_pos); // or end
-								string snip = search_text[j].substr(p_pos, len_to_next);
+								len_2_next = (c_pos - p_pos); // or end
+								string snip = search_text[j].substr(p_pos, len_2_next);
 								pair<ssub_match, string> match_pair(match[i], snip);
 								sub_match_stack.push(match_pair);
 										
 								while(c_pos < p_pos)
 								{
-
 									auto top = sub_match_stack.top();
 									sub_match_stack.pop();
 									auto next = sub_match_stack.top();
@@ -218,8 +216,6 @@ int regx_match(const vector<string> &exp_text, const vector<string> &search_text
 									p_pos = c_pos;
 									c_pos = distance(match[0].first, sub_match_stack.top().first.first);
 								}
-
-								
 							}
 						}
 

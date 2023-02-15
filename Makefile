@@ -21,7 +21,7 @@ debug: all
 debuggdb: all
 
 # compile & link
-all: $(APPNAME) $(APPNAME)_test bash_color_test
+all: $(APPNAME) bash_color_test
 	
 # link
 $(APPNAME): $(APPNAME).o main.o

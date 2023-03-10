@@ -20,3 +20,4 @@ Match Pattern: '([a-z0-9_.-]+)@([a-z0-9_.-]+)\.([a-z]{2,6})$' -> Input: 'brian@a
 Found 1 matches:
 brian@abc.com
 
+./rx \([a-z0-9_\.-]+\)@\([a-z0-9_\.-]+\)\\.\([a-z\]\{2,6\}\)$ brian@abc.com

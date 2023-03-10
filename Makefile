@@ -94,3 +94,5 @@ clean-local:
 	
 dist: 
 	git archive HEAD | gzip > $(BUILD)/$(APPNAME).$(BUILD_VERSION).tar.gz
+
+dist-gz: dist

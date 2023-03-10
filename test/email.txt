@@ -1,0 +1,22 @@
+BARE REGEX
+^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$
+
+BASH ESCAPED
+\([a-z0-9_\.-]+\)@\([a-z0-9_\.-]+\)\\.\([a-z\]\{2,6\}\)$
+
+
+[brian@gamma build]$ ./rx \([a-z0-9_\.-]+\)@ brian@
+Match Pattern: '([a-z0-9_.-]+)@' -> Input: 'brian@'
+Found 1 matches:
+brian@
+
+[brian@gamma build]$ ./rx \([a-z0-9_\.-]+\)@\([a-z0-9_\.-]+\)\\. brian@abc.
+Match Pattern: '([a-z0-9_.-]+)@([a-z0-9_.-]+)\.' -> Input: 'brian@abc.'
+Found 1 matches:
+brian@abc.
+
+[brian@gamma build]$ ./rx \([a-z0-9_\.-]+\)@\([a-z0-9_\.-]+\)\\.\([a-z\]\{2,6\}\)$ brian@abc.com
+Match Pattern: '([a-z0-9_.-]+)@([a-z0-9_.-]+)\.([a-z]{2,6})$' -> Input: 'brian@abc.com'
+Found 1 matches:
+brian@abc.com
+

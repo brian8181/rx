@@ -292,6 +292,7 @@ int parse_options(int argc, char* argv[])
 			cerr << "Unexpected option, -h for help" << endl;
 			return -1;
 		}
+		return 0;
 	}
 
 	if (argc <= DEFAULT_ARGC) // not correct number of args

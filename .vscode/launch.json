@@ -9,7 +9,7 @@
             "name": "(gdb) Launch Debug(1)",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+            "program": "${workspaceFolder}/build/rx",
             "args": ["abc", "abcxabc"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",

@@ -6,10 +6,21 @@
 #include <string>
 #include <getopt.h>
 #include "rx.hpp"
+#include <signal.h>
 
 int stdin_ready (int filedes)
 {
 	fd_set set;
+	// struct timeval timeout2 = { .tv_sec = 0 };
+	// sigset_t sset;
+	// sigemptyset(&sset);
+	// sigset_t origmask;
+	// sigemptyset(&origmask);
+	// pthread_sigmask(SIG_SETMASK, &sset, &origmask);
+	// int ready = select(filedes + 1, &set, NULL, NULL, &timeout2);
+	// pthread_sigmask(SIG_SETMASK, &origmask, NULL);
+	// return ready;
+
 	// declare/initialize zero timeout 
 	struct timespec timeout = { .tv_sec = 0 };
 	// initialize the file descriptor set

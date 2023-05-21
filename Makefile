@@ -22,6 +22,8 @@ debuggdb: all
 
 # compile & link
 all: $(APPNAME) bash_color_test
+
+rebuild: clean all
 	
 # link
 $(APPNAME): $(APPNAME).o main.o

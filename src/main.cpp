@@ -1,3 +1,9 @@
+// License:    GPL
+// Author:     Brian K Preston
+// File Name:  main.cpp
+// Build Date: Sat Aug  5 11:17:18 PM CDT 2023
+// Version:    0.0.1
+
 #include <iostream>
 #include <cstring>
 #include <string>
@@ -6,21 +12,10 @@
 #include <string>
 #include <getopt.h>
 #include "rx.hpp"
-#include <signal.h>
 
 int stdin_ready (int filedes)
 {
 	fd_set set;
-	// struct timeval timeout2 = { .tv_sec = 0 };
-	// sigset_t sset;
-	// sigemptyset(&sset);
-	// sigset_t origmask;
-	// sigemptyset(&origmask);
-	// pthread_sigmask(SIG_SETMASK, &sset, &origmask);
-	// int ready = select(filedes + 1, &set, NULL, NULL, &timeout2);
-	// pthread_sigmask(SIG_SETMASK, &origmask, NULL);
-	// return ready;
-
 	// declare/initialize zero timeout 
 	struct timespec timeout = { .tv_sec = 0 };
 	// initialize the file descriptor set
@@ -34,7 +29,6 @@ int main(int argc, char* argv[])
 {
 	try
 	{
-		//char* argvtmp[(sizeof(char*) * argc)+1];
 		if(stdin_ready(STDIN_FILENO))
 		{
 			std::string buffer;
@@ -45,7 +39,6 @@ int main(int argc, char* argv[])
 			argvtmp[argc] = &buffer[0];
 			argv = argvtmp;
 			++argc;
-			return parse_options(argc, argvtmp);
 		}
 		return parse_options(argc, argv);
 	}

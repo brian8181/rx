@@ -1,6 +1,5 @@
+# Wed Nov  8 08:33:47 AM CST 2023
 # June 17, 2022
-# MAKE_TEMPLATE = 1.6;
-# BUILD_VERSION = 0.1.1
 
 CXX = g++
 CXXFLAGS = -Wall -std=c++11 -DDEBUG -ggdb
@@ -9,40 +8,30 @@ INCLUDES = -I/usr/local/include/cppunit/
 APPNAME = rx
 EXT = cpp
 ROOT  = .
-SRCS = ./src
-BUILD = ./build
-OBJS = ./build
+SRCS = src
+BUILD = build
+OBJS = build
 
-# compile & link for debug
-#debug: CXXFLAGS += -DDEBUG -g
+all: rx
+
 debug: all
-
-# compile & link for debug GDBversion variable
-debuggdb: all
-
-# compile & link
-all: $(APPNAME) bash_color_test
 
 rebuild: clean all
 	
-# link
-$(APPNAME): $(APPNAME).o main.o
-	$(CXX) $(CXXFLAGS) $(OBJS)/$(APPNAME).o $(OBJS)/main.o -o $(BUILD)/$(APPNAME)
-	
-# compile only
-$(APPNAME).o:
-	$(CXX) $(CXXFLAGS) -c $(SRCS)/$(APPNAME).$(EXT) -o $(OBJS)/$(APPNAME).o
-	
+rx: rx.o main.o
+	$(CXX) $(CXXFLAGS) $(OBJS)/rx.o $(OBJS)/main.o -o $(BUILD)/rx
+
 main.o:
-	$(CXX) $(CXXFLAGS) -c $(SRCS)/main.$(EXT) -o $(OBJS)/main.o
+	$(CXX) $(CXXFLAGS) -c $(SRCS)/main.cpp -o $(OBJS)/main.o
 
-# link
-$(APPNAME)_test: $(APPNAME)_test.o
-	$(CXX) $(CXXFLAGS) $(INCLUDES) $(OBJS)/$(APPNAME)_test.o $(OBJS)/$(APPNAME).o $(LDFLAGS) -o $(BUILD)/$(APPNAME)_test
+rx.o:
+	$(CXX) $(CXXFLAGS) -c $(SRCS)/rx.cpp -o $(OBJS)/rx.o
 
-# compile only
-$(APPNAME)_test.o:
-	$(CXX) $(CXXFLAGS) -c $(SRCS)/$(APPNAME)_test.cpp -o $(OBJS)/$(APPNAME)_test.o
+rx_test: rx_test.o
+	$(CXX) $(CXXFLAGS) $(INCLUDES) $(OBJS)/rx_test.o $(OBJS)/rx.o $(LDFLAGS) -o $(BUILD)/rx_test
+
+rx_test.o:
+	$(CXX) $(CXXFLAGS) -c $(SRCS)/rx_test.cpp -o $(OBJS)/rx_test.o
 
 bash_color_test: bash_color_test.o
 	$(CXX) $(CXXFLAGS) $(OBJS)/bash_color_test.o -o $(BUILD)/bash_color_test
@@ -50,37 +39,31 @@ bash_color_test: bash_color_test.o
 bash_color_test.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCS)/bash_color_test.cpp -o $(OBJS)/bash_color_test.o
 
-# install man pages
-.PHONY: man
-man:
-	cp ../man/$(APPNAME).1 $(man1dir)
-	gzip $(man1dir)/$(APPNAME).1
-	mandb
-	
 # uninstall man pages
 .PHONY: unman
 unman:
-	rm $(man1dir)/$(APPNAME).1.gz
+	rm $(man1dir)/rx.1.gz
 	mandb
 
 # install 
 .PHONY: install
 install: #man # no man for now
-	cp $(BUILD)/$(APPNAME) $(prefix)/bin/$(APPNAME)
+	cp $(BUILD)/rx $(prefix)/bin/rx
 
 # uninstall
 .PHONY: uninstall
 uninstall: unman
-	rm $(prefix)/bin/$(APPNAME)
-# delete object files & app executable
+	rm $(prefix)/bin/rx
+
+# clean
 .PHONY: clean
 clean:
 	-rm -f $(OBJS)/*.o 
-	-rm -f $(BUILD)/$(APPNAME) 
-	-rm -f $(BUILD)/$(APPNAME)_test 
+	-rm -f $(BUILD)/rx 
+	-rm -f $(BUILD)/rx_test 
 	-rm -f $(BUILD)/bash_color_test
-	-rm -f $(BUILD)/*.xml $(BUILD)/$(APPNAME).$(BUILD_VERSION).tar.gz
-	-rm -f $(BUILD)/$(APPNAME).core
+	-rm -f $(BUILD)/*.xml $(BUILD)/rx.$(BUILD_VERSION).tar.gz
+	-rm -f $(BUILD)/rx.core
 
 # delete object files, app, executables, & all automake/autoconf generated files
 .PHONY: distclean
@@ -95,6 +78,6 @@ clean-local:
 	-rm -f compile install-sh missing Makefile.in
 	
 dist: 
-	git archive HEAD | gzip > $(BUILD)/$(APPNAME).$(BUILD_VERSION).tar.gz
+	git archive HEAD | gzip > $(BUILD)/rx.$(BUILD_VERSION).tar.gz
 
 dist-gz: dist

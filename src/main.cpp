@@ -1,6 +1,6 @@
 // License:    GPL
 // Author:     Brian K Preston
-// File Name:  main.cpp
+// File Name:  ./main.cpp
 // Build Date: Sat Aug  5 11:17:18 PM CDT 2023
 // Version:    0.0.1
 
@@ -11,11 +11,6 @@
 #include <sys/select.h>     /* for pselect   */
 #include <string>
 #include <getopt.h>
-// # License:    None
-// # Author:     @@AUTHOR@@
-// # File Name:  ./Makefile
-// # Build Date: Wed Nov  8 08:33:47 AM CST 2023
-// # Version:    0.1
 
 #include "rx.hpp"
 

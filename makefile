@@ -25,7 +25,7 @@ $(OBJ)/rx.o: $(SRC)/rx.cpp
 	$(CXX) $(CXXFLAGS) -c $(SRC)/rx.cpp -o $(OBJ)/rx.o
 
 .PHONY: install
-install: #man # no man for now
+install:
 	cp $(BLD)/rx $(prefix)/bin/rx
 
 .PHONY: uninstall

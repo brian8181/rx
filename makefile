@@ -13,19 +13,19 @@ SRC = src
 BLD = build
 OBJ = build
 
-all: rx
+all: $(BLD)/rx
 
 debug: all
 
 rebuild: clean all
-	
-rx: rx.o main.o
+
+$(BLD)/rx: $(OBJ)/rx.o $(OBJ)/main.o
 	$(CXX) $(CXXFLAGS) $(OBJ)/rx.o $(OBJ)/main.o -o $(BLD)/rx
 
-main.o:
+$(OBJ)/main.o: $(SRC)/main.cpp
 	$(CXX) $(CXXFLAGS) -c $(SRC)/main.cpp -o $(OBJ)/main.o
 
-rx.o:
+$(OBJ)/rx.o: $(SRC)/rx.cpp
 	$(CXX) $(CXXFLAGS) -c $(SRC)/rx.cpp -o $(OBJ)/rx.o
 
 .PHONY: install
@@ -38,4 +38,5 @@ uninstall:
 
 .PHONY: clean
 clean:
+	-rm -f $(OBJ)/*
 	-rm -f $(BLD)/*

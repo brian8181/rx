@@ -1,11 +1,7 @@
 # License:    None
-# Author:     @@AUTHOR@@
-# File Name:  ./Makefile
-# Build Date: Wed Nov  8 08:33:47 AM CST 2023
-# Version:    0.1
-
-# Wed Nov  8 08:33:47 AM CST 2023
-
+# File Name:  ../rx/makefile
+# Build Date: Fri Feb 16 04:38:08 PM CST 2024
+# Version:    0.1.0
 
 CXX = g++
 CXXFLAGS = -g -Wall -std=c++11 -DDEBUG

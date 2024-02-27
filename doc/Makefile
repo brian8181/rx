@@ -39,15 +39,15 @@ debuggdb: all
 
 # compile & link
 all: $(APPNAME) $(APPNAME)_test bash_color_test
-	
+
 # link
 $(APPNAME): $(APPNAME).o main.o
 	$(CXX) $(CXXFLAGS) $(OBJS)/$(APPNAME).o $(OBJS)/main.o -o $(BUILD)/$(APPNAME)
-	
+
 # compile only
 $(APPNAME).o:
 	$(CXX) $(CXXFLAGS) -c $(SRCS)/$(APPNAME).$(EXT) -o $(OBJS)/$(APPNAME).o
-	
+
 main.o:
 	$(CXX) $(CXXFLAGS) -c $(SRCS)/main.$(EXT) -o $(OBJS)/main.o
 
@@ -71,14 +71,14 @@ man:
 	cp ../man/$(APPNAME).1 $(man1dir)
 	gzip $(man1dir)/$(APPNAME).1
 	mandb
-	
+
 # uninstall man pages
 .PHONY: unman
 unman:
 	rm $(man1dir)/$(APPNAME).1.gz
 	mandb
 
-# install 
+# install
 .PHONY: install
 install: #man # no man for now
 	cp $(BUILD)/$(APPNAME) $(prefix)/bin/$(APPNAME)
@@ -90,9 +90,9 @@ uninstall: unman
 # delete object files & app executable
 .PHONY: clean
 clean:
-	-rm -f $(OBJS)/*.o 
-	-rm -f $(BUILD)/$(APPNAME) 
-	-rm -f $(BUILD)/$(APPNAME)_test 
+	-rm -f $(OBJS)/*.o
+	-rm -f $(BUILD)/$(APPNAME)
+	-rm -f $(BUILD)/$(APPNAME)_test
 	-rm -f $(BUILD)/bash_color_test
 	-rm -f $(BUILD)/*.xml $(BUILD)/$(APPNAME).$(BUILD_VERSION).tar.gz
 	-rm -f $(BUILD)/$(APPNAME).core
@@ -100,7 +100,7 @@ clean:
 # delete object files, app, executables, & all automake/autoconf generated files
 .PHONY: distclean
 distclean: clean
-	-rm -f $(ROOT)/config.* $(ROOT)/Makefile $(ROOT)/Makefile.in $(ROOT)/INSTALL $(ROOT)/configure 
+	-rm -f $(ROOT)/config.* $(ROOT)/Makefile $(ROOT)/Makefile.in $(ROOT)/INSTALL $(ROOT)/configure
 	-rm -f $(ROOT)/stamp-h1 $(ROOT)/aclocal.m4 $(ROOT)/compile $(ROOT)/install-sh $(ROOT)/libtool $(ROOT)/ltmain.sh $(ROOT)/stamp-h1 $(ROOT)/missing $(ROOT)/depcomp
 	-rm -f $(SRCS)/Makefile $(SRCS)/Makefile.in
 	-rm -rf $(ROOT)/autom4te.cache $(SRCS)/.deps $(SRCS)/.libs
@@ -110,8 +110,17 @@ clean-local:
 	-rm -rf autom4te.cache/
 	-rm =-f aclocal.m4
 	-rm -f compile install-sh missing Makefile.in
-	
-dist: 
+
+dist:
 	git archive HEAD | gzip > $(BUILD)/$(APPNAME).$(BUILD_VERSION).tar.gz
 
 dist-gz: dist
+
+.PHONY: help
+help:
+	@echo  '  all         - build all'
+	@echo  '  rx          - build rx executable'
+	@echho '  rx.o        - build not link'
+	@echo  '  clean		  - remove most generated files but keep the config'
+	@echo  '  install     - copy files to usr/local'
+	@echo  '  dist        - create distribution, tar.gz'

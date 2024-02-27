@@ -36,3 +36,13 @@ uninstall:
 clean:
 	-rm -f $(OBJ)/*
 	-rm -f $(BLD)/*
+
+
+.PHONY: help
+help:
+	@echo  '  all         - build all'
+	@echo  '  rx          - build rx executable'
+	@echo  '  rx.o        - build not link'
+	@echo  '  clean       - remove most generated files but keep the config'
+	@echo  '  install     - copy files to usr/local'
+	@echo  '  dist        - create distribution, tar.gz'

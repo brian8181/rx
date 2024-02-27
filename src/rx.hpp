@@ -1,5 +1,3 @@
-// # License:    None
-// # Author:     @@AUTHOR@@
 // # File Name:  ./rx.hpp
 // # Build Date: Wed Nov  8 08:33:47 AM CST 2023
 // # Version:    0.1

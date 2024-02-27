@@ -1,6 +1,3 @@
-
-// # License:    None
-// # Author:     @@AUTHOR@@
 // # File Name:  ./rx_test.hpp
 // # Build Date: Wed Nov  8 08:33:47 AM CST 2023
 // # Version:    0.1
@@ -8,7 +5,7 @@
 #ifndef _RX_TEST_H
 #define _RX_TEST_H
 
-#include <cppunit/Test.h> 
+#include <cppunit/Test.h>
 
 class RxTest : public CppUnit::TestFixture
 {
@@ -27,7 +24,7 @@ private:
 
 public:
     void setUp();
-    void tearDown();    
+    void tearDown();
 
     // agregate test functions
     void execute();
@@ -38,7 +35,7 @@ protected:
     void testOptionHelp();
     void testOptionHelpLong();
     void testOptionVerbose();
-    void testOptionVerboseLong();  
+    void testOptionVerboseLong();
     void testPrettyOption();
     void testSingleOption();
     void testIgnoreCaseOption();
@@ -47,7 +44,7 @@ protected:
 private:
     int m_argc;
     char* m_argv[10];
-    
+
 };
 
 #endif

@@ -1,5 +1,3 @@
-// License:    GPL
-// Author:     Brian K Preston
 // File Name:  ./main.cpp
 // Build Date: Sat Aug  5 11:17:18 PM CDT 2023
 // Version:    0.0.1
@@ -17,12 +15,12 @@
 int stdin_ready (int filedes)
 {
 	fd_set set;
-	// declare/initialize zero timeout 
+	// declare/initialize zero timeout
 	struct timespec timeout = { .tv_sec = 0 };
 	// initialize the file descriptor set
 	FD_ZERO(&set);
 	FD_SET(filedes, &set);
-	// check stdin_ready is ready on filedes 
+	// check stdin_ready is ready on filedes
 	return pselect(filedes + 1, &set, NULL, NULL, &timeout, NULL);
 }
 

@@ -1,13 +1,12 @@
-# License:    None
-# File Name:  ../rx/makefile
-# Build Date: Fri Feb 16 04:38:08 PM CST 2024
+# File Name:  rx/makefile
+# Build Date: Mon Mar  4 09:11:39 AM CST 2024
 # Version:    0.1.0
 
-CXX = g++
-CXXFLAGS = -g -Wall -std=c++11 -DDEBUG
-SRC = src
-BLD = build
-OBJ = build
+CXX=g++
+CXXFLAGS=-g -Wall -std=c++11 -DDEBUG
+SRC=src
+BLD=build
+OBJ=build
 
 all: $(BLD)/rx
 

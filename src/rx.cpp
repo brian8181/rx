@@ -15,6 +15,15 @@
 #include "rx.hpp"
 
 using namespace std;
+using std::string;
+using std::vector;
+using std::map;
+using std::cout;
+using std::cin;
+using std::endl;
+using std::ifstream;
+using std::ofstream;
+
 
 // constants
 const int DEFAULT_ARGC = 2;

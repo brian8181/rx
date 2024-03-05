@@ -5,8 +5,10 @@
 cmake_minimum_required(VERSION 3.2)
 project(regexer CXX)
 
+enable_testing()
+
 # create executable
 add_executable(rx
-main.cpp
-rx.cpp
+    main.cpp
+    rx.cpp
 )

@@ -16,4 +16,6 @@ add_executable(rx
 # This concise form requires CMake 3.14 or later
 install(TARGETS rx
         RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib
 )

@@ -10,8 +10,6 @@ OBJ=build
 
 all: $(BLD)/rx
 
-debug: all
-
 rebuild: clean all
 
 $(BLD)/rx: $(OBJ)/rx.o $(OBJ)/main.o

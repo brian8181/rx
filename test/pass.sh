@@ -20,3 +20,5 @@ echo "TESTING INPUT-> ./rx abc -x ../test/exp_fopt.txt abcxabcxyzedf"
 ../build/rx abc -x ../test/exp_fopt.txt abcxabcxyzedf
 echo "TESTING INPUT-> ./rx abc -x ../test/exp_fopt.txt -f ../test/search_fopt.txt"
 ../build/rx abc -x ../test/exp_fopt.txt -f ../test/search_fopt.txt
+echo "TESTING email ..."
+../build/rx \([a-z0-9_\.-]+\)@\([a-z0-9_\.-]+\)\\.\([a-z\]\{2,6\}\)$ brian@abc.com

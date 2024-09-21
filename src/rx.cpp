@@ -1,3 +1,7 @@
+// # File Name:  ./rx.cpp
+// # Build Date: Wed Nov  8 08:33:47 AM CST 2023
+// # Version:    0.1
+
 #include <iostream>
 #include <stdlib.h>
 #include <string>
@@ -11,6 +15,15 @@
 #include "rx.hpp"
 
 using namespace std;
+using std::string;
+using std::vector;
+using std::map;
+using std::cout;
+using std::cin;
+using std::endl;
+using std::ifstream;
+using std::ofstream;
+
 
 // constants
 const int DEFAULT_ARGC = 2;
@@ -42,7 +55,7 @@ static struct option long_options[] =
 	{"pretty", no_argument, 0, 'P'},        //default
 	{"no-pretty", no_argument, 0, 'p'},
 	{"version", no_argument, 0, 'r'},
-	{"not_extended", no_argument, 0, 'e'}, 
+	{"not_extended", no_argument, 0, 'e'},
 	{"extended", no_argument, 0, 'E'},      //default
 	{"options", required_argument, 0, 'o'}, //default
 	{"file", required_argument, 0, 'f'},
@@ -51,11 +64,11 @@ static struct option long_options[] =
 
 map<std::string, regex::flag_type> regex_flags =
 {
-	{"ECMAScript", regex::ECMAScript}, 
+	{"ECMAScript", regex::ECMAScript},
 	{"basic", regex::basic},
 	{"extended", regex::extended},
 	{"awk", regex::awk},
-	{"grep", regex::grep}, 
+	{"grep", regex::grep},
 	{"egrep", regex::egrep},
 	{"icase", regex::icase},
 	{"nosubs", regex::nosubs},
@@ -71,7 +84,7 @@ void print_version()
 
 void print_help()
 {
-	cout << "Usage: "  
+	cout << "Usage: "
 		 << FMT_BOLD      << "rx"          << FMT_RESET << " "
 		 << FMT_UNDERLINE << "[OPTION]..." << FMT_RESET << " "
 		 << FMT_UNDERLINE << "PATTERN"     << FMT_RESET << " "
@@ -114,10 +127,10 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 			{
 				cerr << "exception caught: " << e.what() << '\n';
 				cerr << "error of type " << e.code() << " was unhandled\n";
-			} 
+			}
 
 			auto begin = sregex_iterator(search_text[j].begin(), search_text[j].end(), src_epx, std::regex_constants::match_default);
-			auto end = sregex_iterator(); 
+			auto end = sregex_iterator();
 			int match_i = 0;
 			// for each match
 			for (sregex_iterator iter = begin; iter != end; ++iter, ++match_i)
@@ -140,7 +153,7 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 					// reset bash color position
 					pos += CURRENT_FG_COLOR.length() + search_text_len;
 					bash_stdio.insert(pos, FMT_RESET);
-					pos += FMT_RESET.length(); 
+					pos += FMT_RESET.length();
 
 					if(OPTION_FLAGS & GROUPS)
 					{
@@ -150,7 +163,7 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 							if(match[i].matched)
 							{
 								ostringstream ss;
-								ss << "\n\t" << i << ": " << FMT_FG_RED << "Submatch: " << FMT_RESET << FMT_FG_GREEN  << match[i].str() << FMT_RESET; 
+								ss << "\n\t" << i << ": " << FMT_FG_RED << "Submatch: " << FMT_RESET << FMT_FG_GREEN  << match[i].str() << FMT_RESET;
 								bash_stdio.insert(pos, ss.str());
 								pos += ss.str().size();
 							}
@@ -159,7 +172,7 @@ int regx_match(const vector<string>& exp_text, const vector<string>& search_text
 				}
 				else
 				{
-					cout << (match_i+1) << "\t" << search_text[j].substr(match.position(), match.length()) 
+					cout << (match_i+1) << "\t" << search_text[j].substr(match.position(), match.length())
 						<< '\t' << match.position() << '\t' << match.length() << endl;
 				}
 			}
@@ -220,16 +233,16 @@ int parse_options(int argc, char* argv[])
 		{
 			OPTION_FLAGS |= SEARCH_FROM_FILE;
 			ifstream search_file;
-			search_file.open(optarg, ios::in); 
+			search_file.open(optarg, ios::in);
 			if (search_file.is_open())
-			{   
+			{
 				string line;
 				search_text.clear();
 				while(getline(search_file, line))
 				{
 					search_text.push_back(line);
 				}
-				search_file.close(); 
+				search_file.close();
 			}
 			else
 			{
@@ -267,11 +280,11 @@ int parse_options(int argc, char* argv[])
 			OPTION_FLAGS |= REGEX_OPTIONS;
 			string str_optarg = optarg;
 			string::size_type sz_beg = 0;
-			string::size_type sz_end = 0;	
-			
-			while(sz_end != string::npos) 
+			string::size_type sz_end = 0;
+
+			while(sz_end != string::npos)
 			{
-				sz_end = str_optarg.find('|', sz_beg);	
+				sz_end = str_optarg.find('|', sz_beg);
 				string split = str_optarg.substr(sz_beg, sz_end-sz_beg);
 				sz_beg = sz_end+1;
 
@@ -292,6 +305,7 @@ int parse_options(int argc, char* argv[])
 			cerr << "Unexpected option, -h for help" << endl;
 			return -1;
 		}
+		return 0;
 	}
 
 	if (argc <= DEFAULT_ARGC) // not correct number of args
@@ -301,7 +315,7 @@ int parse_options(int argc, char* argv[])
 	}
 
 	if(!((OPTION_FLAGS & SEARCH_FROM_FILE) && (OPTION_FLAGS & REGEX_FROM_FILE)))
-	{			
+	{
 		if(OPTION_FLAGS & SEARCH_FROM_FILE)
 		{
 			exp_text.assign(argv+(optind), argv+(optind+1));
@@ -313,7 +327,7 @@ int parse_options(int argc, char* argv[])
 		else
 		{
 			exp_text.assign(argv+optind, argv+(optind+1));
-			search_text.assign(argv+(optind+1), argv + argc);	
+			search_text.assign(argv+(optind+1), argv + argc);
 		}
 	}
 

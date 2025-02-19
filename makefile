@@ -3,10 +3,11 @@
 # Version:    0.1.0
 
 CXX=g++
-CXXFLAGS=-g -Wall -std=c++11 -DDEBUG
+CXXFLAGS=-g -Wall -std=c++11 -DDEBUG -DCYGWIN
 SRC=src
 BLD=build
 OBJ=build
+
 
 all: $(BLD)/rx
 

@@ -1,27 +1,34 @@
-// File Name:  ./main.cpp
-// Build Date: Sat Aug  5 11:17:18 PM CDT 2023
-// Version:    0.0.1
-
 #include <iostream>
 #include <cstring>
 #include <string>
+
+#include <sys/time.h>
+#include <sys/types.h>
 #include <unistd.h>         /* for STDIN_FILENO */
 #include <sys/select.h>     /* for pselect   */
-#include <string>
-#include <getopt.h>
 
+#include <getopt.h>
 #include "rx.hpp"
 
 int stdin_ready (int filedes)
 {
 	fd_set set;
 	// declare/initialize zero timeout
-	struct timespec timeout = { .tv_sec = 0 };
+#ifndef CYGWIN
+	//struct timespec timeout = { .tv_sec = 0 };
+#else
+	struct timeval timeout = { .tv_sec = 0 };
+#endif
 	// initialize the file descriptor set
 	FD_ZERO(&set);
 	FD_SET(filedes, &set);
+
 	// check stdin_ready is ready on filedes
-	return pselect(filedes + 1, &set, NULL, NULL, &timeout, NULL);
+#ifndef CYGWIN
+		return pselect(filedes + 1, &set, NULL, NULL, &timeout, NULL);
+#else
+		return select(filedes + 1, &set, NULL, NULL, &timeout);
+#endif
 }
 
 int main(int argc, char* argv[])

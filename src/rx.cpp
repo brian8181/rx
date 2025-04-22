@@ -14,7 +14,6 @@
 #include "bash_color.hpp"
 #include "rx.hpp"
 
-using namespace std;
 using std::string;
 using std::vector;
 using std::map;
@@ -23,7 +22,9 @@ using std::cin;
 using std::endl;
 using std::ifstream;
 using std::ofstream;
+using std::regex;
 
+using namespace std;
 
 // constants
 const int DEFAULT_ARGC = 2;
@@ -259,11 +260,10 @@ int parse_options(int argc, char* argv[])
 			if(exp_file.is_open())
 			{
 				string line;
-				exp_file.clear();
+				exp_text.clear();
 				while(getline(exp_file, line))
 				{
 					exp_text.push_back(line);
-					//cout << line << endl;
 				}
 				exp_file.close();
 			}
@@ -305,7 +305,7 @@ int parse_options(int argc, char* argv[])
 			cerr << "Unexpected option, -h for help" << endl;
 			return -1;
 		}
-		return 0;
+		//return 0;
 	}
 
 	if (argc <= DEFAULT_ARGC) // not correct number of args

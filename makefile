@@ -6,8 +6,8 @@ APP=rx
 CXX=g++
 CXXFLAGS=-Wall -pedantic -std=c++20 -Wno-vla
 SRC=src
-BLD=build
-OBJ=build
+BLD?=build
+OBJ?=build
 
 # lib settings
 LDFLAGS = -static -lcppunit -L/usr/local/lib/

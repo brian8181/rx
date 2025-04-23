@@ -3,7 +3,7 @@
 # Version:    0.1.0
 
 CXX=g++
-CXXFLAGS=-g -Wall -std=c++11 -DDEBUG -DCYGWIN
+CXXFLAGS=-Wall -std=c++11
 SRC=src
 BLD=build
 OBJ=build
@@ -12,9 +12,17 @@ OBJ=build
 LDFLAGS = -static -lcppunit -L/usr/local/lib/
 INCLUDES = -I/usr/local/include/cppunit/
 
+ifdef DEBUG
+	CXXFLAGS +=-g -DDEBUG
+endif
+
+ifdef CYGWIN
+	CXXFLAGS += -DCYGWIN
+endif
+
 all: ./$(BLD)/rx ./$(BLD)/rx_test
 
-#rebuild: clean all
+rebuild: clean all
 
 ./$(BLD)/rx: ./$(OBJ)/rx.o ./$(OBJ)/main.o
 	$(CXX) $(CXXFLAGS) ./$(OBJ)/rx.o ./$(OBJ)/main.o -o ./$(BLD)/rx

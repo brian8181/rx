@@ -2,6 +2,7 @@
 # Build Date: Mon Mar  4 09:11:39 AM CST 2024
 # Version:    0.1.0
 
+APP=rx
 CXX=g++
 CXXFLAGS=-Wall -std=c++11
 SRC=src
@@ -49,8 +50,9 @@ uninstall:
 
 .PHONY: clean
 clean:
-	-rm -f ./$(OBJ)/*
-	-rm -f ./$(BLD)/*
+	-rm -f ./$(OBJ)/*.o
+	-rm -f ./$(BLD)/*.o
+	-rm -f ./$(BLD)/$(APP)*
 
 
 .PHONY: help

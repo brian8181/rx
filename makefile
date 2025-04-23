@@ -4,7 +4,7 @@
 
 APP=rx
 CXX=g++
-CXXFLAGS=-Wall -std=c++11
+CXXFLAGS=-Wall -pedantic -std=c++20 -Wno-vla
 SRC=src
 BLD=build
 OBJ=build

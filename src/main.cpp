@@ -18,6 +18,8 @@ int stdin_ready (int filedes)
 	//struct timespec timeout = { .tv_sec = 0 };
 #else
 	struct timeval timeout = { .tv_sec = 0 };
+	// struct timeval timeout;
+	// timeout.tv_sec = 0;
 #endif
 	// initialize the file descriptor set
 	FD_ZERO(&set);

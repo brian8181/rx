@@ -28,17 +28,20 @@ rebuild: clean all
 ./$(BLD)/rx: ./$(OBJ)/rx.o ./$(OBJ)/main.o
 	$(CXX) $(CXXFLAGS) ./$(OBJ)/rx.o ./$(OBJ)/main.o -o ./$(BLD)/rx
 
-./$(OBJ)/main.o: ./$(SRC)/main.cpp
-	$(CXX) $(CXXFLAGS) -c ./$(SRC)/main.cpp -o ./$(OBJ)/main.o
-
-./$(OBJ)/rx.o: ./$(SRC)/rx.cpp
-	$(CXX) $(CXXFLAGS) -c ./$(SRC)/rx.cpp -o ./$(OBJ)/rx.o
-
 ./$(BLD)/rx_test: ./$(OBJ)/rx.o ./$(OBJ)/rx_test.o
 	$(CXX) $(CXXFLAGS) ./$(OBJ)/rx.o ./$(OBJ)/rx_test.o -lcppunit -o ./$(BLD)/rx_test
 
-./$(OBJ)/rx_test.o: ./$(SRC)/rx_test.cpp
-	$(CXX) $(CXXFLAGS) -c ./$(SRC)/rx_test.cpp -o ./$(OBJ)/rx_test.o
+./$(OBJ)/%.o: ./$(SRC)/%.cpp
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
+
+# ./$(OBJ)/main.o: ./$(SRC)/main.cpp
+# 	$(CXX) $(CXXFLAGS) -c ./$(SRC)/main.cpp -o ./$(OBJ)/main.o
+
+# ./$(OBJ)/rx.o: ./$(SRC)/rx.cpp
+# 	$(CXX) $(CXXFLAGS) -c ./$(SRC)/rx.cpp -o ./$(OBJ)/rx.o
+
+# ./$(OBJ)/rx_test.o: ./$(SRC)/rx_test.cpp
+# 	$(CXX) $(CXXFLAGS) -c ./$(SRC)/rx_test.cpp -o ./$(OBJ)/rx_test.o
 
 .PHONY: install
 install:

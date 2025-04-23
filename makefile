@@ -12,7 +12,7 @@ OBJ=build
 LDFLAGS = -static -lcppunit -L/usr/local/lib/
 INCLUDES = -I/usr/local/include/cppunit/
 
-all: ./$(BLD)/rx ./$(BLD)/rx_test_test #./$(BLD)/rx_test
+all: ./$(BLD)/rx ./$(BLD)/rx_test
 
 #rebuild: clean all
 
@@ -25,16 +25,11 @@ all: ./$(BLD)/rx ./$(BLD)/rx_test_test #./$(BLD)/rx_test
 ./$(OBJ)/rx.o: ./$(SRC)/rx.cpp
 	$(CXX) $(CXXFLAGS) -c ./$(SRC)/rx.cpp -o ./$(OBJ)/rx.o
 
-# ./$(BLD)/rx_test: rx_test.o
-#  	$(CXX) $(CXXFLAGS) ./$(INCLUDES) ./$(OBJ)/rx_test.o ./$(OBJ)/rx.o ./$(LDFLAGS) -o ./$(BLD)/rx_test
+./$(BLD)/rx_test: ./$(OBJ)/rx.o ./$(OBJ)/rx_test.o
+	$(CXX) $(CXXFLAGS) ./$(OBJ)/rx.o ./$(OBJ)/rx_test.o -lcppunit -o ./$(BLD)/rx_test
 
 ./$(OBJ)/rx_test.o: ./$(SRC)/rx_test.cpp
 	$(CXX) $(CXXFLAGS) -c ./$(SRC)/rx_test.cpp -o ./$(OBJ)/rx_test.o
-
-
-./$(BLD)/rx_test_test: ./$(SRC)/rx_test_test.cpp ./$(SRC)/test.cpp
-	$(CXX) $(CXXFLAGS) ./$(SRC)/rx_test_test.cpp ./$(SRC)/test.cpp -lcppunit -o ./$(BLD)/rx_test_test
-
 
 .PHONY: install
 install:

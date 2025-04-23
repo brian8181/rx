@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
+<TestRun>
+  <FailedTests>
+    <FailedTest id="1">
+      <Name>RxTest::testNoOptions</Name>
+      <FailureType>Assertion</FailureType>
+      <Location>
+        <File>./src/rx_test.cpp</File>
+        <Line>48</Line>
+      </Location>
+      <Message>assertion failed
+- Expression: parse_options(m_argc, m_argv) == 0
+</Message>
+    </FailedTest>
+    <FailedTest id="4">
+      <Name>RxTest::testOptionVerbose</Name>
+      <FailureType>Assertion</FailureType>
+      <Location>
+        <File>./src/rx_test.cpp</File>
+        <Line>89</Line>
+      </Location>
+      <Message>assertion failed
+- Expression: parse_options(m_argc, m_argv) == 0
+</Message>
+    </FailedTest>
+    <FailedTest id="9">
+      <Name>RxTest::testOptionOption_IgnoreCase</Name>
+      <FailureType>Assertion</FailureType>
+      <Location>
+        <File>./src/rx_test.cpp</File>
+        <Line>145</Line>
+      </Location>
+      <Message>assertion failed
+- Expression: parse_options(m_argc, m_argv) == 0
+</Message>
+    </FailedTest>
+  </FailedTests>
+  <SuccessfulTests>
+    <Test id="2">
+      <Name>RxTest::testOptionHelp</Name>
+    </Test>
+    <Test id="3">
+      <Name>RxTest::testOptionHelpLong</Name>
+    </Test>
+    <Test id="5">
+      <Name>RxTest::testOptionVerboseLong</Name>
+    </Test>
+    <Test id="6">
+      <Name>RxTest::testPrettyOption</Name>
+    </Test>
+    <Test id="7">
+      <Name>RxTest::testSingleOption</Name>
+    </Test>
+    <Test id="8">
+      <Name>RxTest::testIgnoreCaseOption</Name>
+    </Test>
+  </SuccessfulTests>
+  <Statistics>
+    <Tests>9</Tests>
+    <FailuresTotal>3</FailuresTotal>
+    <Errors>0</Errors>
+    <Failures>3</Failures>
+  </Statistics>
+</TestRun>

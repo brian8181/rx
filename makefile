@@ -31,6 +31,12 @@ rebuild: clean all
 ./$(BLD)/rx_test: ./$(OBJ)/rx.o ./$(OBJ)/rx_test.o
 	$(CXX) $(CXXFLAGS) ./$(OBJ)/rx.o ./$(OBJ)/rx_test.o -lcppunit -o ./$(BLD)/rx_test
 
+#./$(BLD)/rx: ./$(OBJ)/rx.o ./$(OBJ)/main.o
+#	$(CXX) $(CXXFLAGS) $< -o ./$(BLD)/rx
+
+#./$(BLD)/rx_test: ./$(OBJ)/rx.o ./$(OBJ)/rx_test.o
+#	$(CXX) $(CXXFLAGS) $< -lcppunit -o ./$(BLD)/rx_test
+
 ./$(OBJ)/%.o: ./$(SRC)/%.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 

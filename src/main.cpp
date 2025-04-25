@@ -1,35 +1,27 @@
 #include <iostream>
 #include <cstring>
 #include <string>
-
 #include <sys/time.h>
 #include <sys/types.h>
 #include <unistd.h>         /* for STDIN_FILENO */
 #include <sys/select.h>     /* for pselect   */
-
 #include <getopt.h>
 #include "rx.hpp"
 
 int stdin_ready (int filedes)
 {
-	fd_set set;
-	// declare/initialize zero timeout
-#ifndef CYGWIN
-	//struct timespec timeout = { .tv_sec = 0 };
-#else
-	struct timeval timeout = { .tv_sec = 0 };
-	// struct timeval timeout;
-	// timeout.tv_sec = 0;
-#endif
 	// initialize the file descriptor set
+	fd_set set;
 	FD_ZERO(&set);
 	FD_SET(filedes, &set);
-
-	// check stdin_ready is ready on filedes
 #ifndef CYGWIN
-		return pselect(filedes + 1, &set, NULL, NULL, &timeout, NULL);
+	// declare/initialize timespec 
+	struct timespec timeout = { .tv_sec = 0 };
+	return pselect(filedes + 1, &set, NULL, NULL, &timeout, NULL);
 #else
-		return select(filedes + 1, &set, NULL, NULL, &timeout);
+	// declare/initialize timeout 
+	struct timeval timeout = { .tv_sec = 0 };
+	return select(filedes + 1, &set, NULL, NULL, &timeout);
 #endif
 }
 

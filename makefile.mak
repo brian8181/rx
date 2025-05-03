@@ -24,6 +24,7 @@ endif
 
 all: $(BLD)/$(APP) $(BLD)/$(APP)_test $(BLD)/lib$(APP).so $(BLD)/lib$(APP).a
 
+.PHONY: rebuild
 rebuild: clean all
 
 $(BLD)/$(APP): $(OBJ)/$(APP).o $(OBJ)/main.o

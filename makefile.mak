@@ -3,7 +3,7 @@
 # Version:    0.1.0
 APP=rx
 CXX=g++
-CXXFLAGS=-Wall -pedantic -std=c++20 -Wno-vla
+CXXFLAGS=-fPIC -Wall -pedantic -std=c++20 -Wno-vla
 SRC?=src
 BLD?=build
 OBJ?=build
@@ -55,17 +55,17 @@ uninstall:
 clean:
 	-rm -f $(OBJ)/*.o
 	-rm -f $(BLD)/*.o
-	-rm -f $(BLD)/$((APP))*
+	-rm -f $(BLD)/$(APP)*
 
 .PHONY: help
 help:
-	@echo  '  all         - build all'
-	@echo  '  $(APP)          - build $(APP) executable'
-	@echo  '  $(APP).o        - build not link'
-	@echo  '  $(APP)_test     - build cppunit test'
-	@echo  '  $(APP)_test.o   - build cppunit test'
-	@echo  '  clean       - remove all files from build dir'
-	@echo  '  install     - copy files to usr/local'
-	@echo  '  dist        - create distribution, tar.gz'
-	@echo  '  install     - copy files to usr/local'
-	@echo  '  dist        - create distribution, tar.gz'
+	@echo  '  all           - build all'
+	@echo  '  $(APP)        - build $(APP) executable'
+	@echo  '  $(APP).o      - build not link'
+	@echo  '  $(APP)_test   - build cppunit test'
+	@echo  '  $(APP)_test.o - build cppunit test'
+	@echo  '  clean         - remove all files from build dir'
+	@echo  '  install       - copy files to usr/local'
+	@echo  '  dist          - create distribution, tar.gz'
+	@echo  '  install       - copy files to usr/local'
+	@echo  '  dist          - create distribution, tar.gz'

@@ -12,7 +12,7 @@ OBJ=build
 LDFLAGS= -static -lcppunit -L/usr/local/lib/
 INCLUDES= -I/usr/local/include/cppunit/
 
-all: $(BLD)/rx #$(OBJ)/rx_test_runner.o $(BLD)/rx_test_runner #$(OBJ)/rx_test_runner2.o
+all: $(BLD)/rx $(BLD)/rx_test_runner
 
 rebuild: clean all
 
@@ -25,7 +25,7 @@ $(OBJ)/main.o: $(SRC)/main.cpp
 $(OBJ)/rx.o: $(SRC)/rx.cpp
 	$(CXX) $(CXXFLAGS) -c $(SRC)/rx.cpp -o $(OBJ)/rx.o
 
-$(BLD)/rx_test_runner: $(OBJ)/rx_test_runner.o
+$(BLD)/rx_test_runner:
 	$(CXX) $(CXXFLAGS) $(OBJ)/rx_test_runner.o -o $(OBJ)/rx_test_runner
 
 $(OBJ)/rx_test_runner.o: $(SRC)/rx_test_runner.cpp

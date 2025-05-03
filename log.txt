@@ -1,0 +1,4988 @@
+commit c4cd85a45f0a7d0be0694fe041f97e70930de3eb
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Mon Sep 23 17:00:41 2024 -0500
+
+    update makefile ...
+
+M	makefile
+
+commit e24802307254e911e21e944c9dc8fc8eec77afd7
+Merge: dff2465 75f8c17
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Mon Sep 23 16:48:43 2024 -0500
+
+    Merge branch 'master' of https://github.com/brian8181/rx
+
+commit dff24651a845968d7d021d632362efe55038e607
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Mon Sep 23 16:48:32 2024 -0500
+
+    fix makefile ...
+
+M	makefile
+
+commit 75f8c17b104aaec6840821a1d3d875d39d79ebca
+Merge: 86648c4 c8e326d
+Author: Brian <brian8181@gmail.com>
+Date:   Mon Sep 23 16:34:25 2024 -0500
+
+    Merge pull request #6 from brian8181/brian8181-patch-1
+    
+    Update readme.md
+
+commit c8e326d1ee4f8a25f1ac24258fe9e76ea5eca20a
+Author: Brian <brian8181@gmail.com>
+Date:   Mon Sep 23 16:32:30 2024 -0500
+
+    Update readme.md
+
+M	readme.md
+
+commit 86648c47fd15e2aa87287d73c9b5520016b58447
+Merge: e8aca84 84b7b1a
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sat Sep 21 05:08:26 2024 -0500
+
+    update ...
+
+commit e8aca84be526c321840673faa96c61add628f420
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sat Sep 21 05:06:29 2024 -0500
+
+    clean & update ...
+
+D	AUTHORS
+D	COPYING
+D	ChangeLog
+D	Makefile
+D	Makefile (copy 1)
+D	Makefile.am
+D	NEWS
+D	README
+D	cleandist.sh
+D	configure.ac
+D	doc/Makefile
+D	doc/todo
+A	makefile
+D	notes.txt
+D	octave-workspace
+D	src/Makefile.am
+D	src/bash_color_test
+D	src/bash_color_test.cpp
+
+commit 53eac49c7a5c0bb07be8fd107f59aeee396ac666
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Tue Sep 17 19:55:51 2024 -0500
+
+    update ...
+
+M	AUTHORS
+
+commit 84b7b1a5e962c1bdf4981939b049e90a55c97bd8
+Author: Brian K <brian8181@gmail.com>
+Date:   Fri Jun 7 09:24:37 2024 -0500
+
+    remove debug target from makefile ...
+
+M	makefile
+
+commit aa93fae6c5e5bc6fd9a391c58cf8fdc01375b837
+Author: Brian K <brian8181@gmail.com>
+Date:   Fri Mar 15 13:04:26 2024 -0500
+
+    add install lib & archive to cmake ...
+
+M	src/CMakeLists.txt
+
+commit 293e97a768ea4bcc8c2ffec904895451ce94f600
+Author: Brian K <brian8181@gmail.com>
+Date:   Fri Mar 15 12:52:34 2024 -0500
+
+    add install to cmake ...
+
+M	src/CMakeLists.txt
+
+commit 498ba9ae65c802964c00b540547eadb1a9597ef2
+Author: Brian K <brian8181@gmail.com>
+Date:   Tue Mar 5 16:18:38 2024 -0600
+
+    update CMakeLists.txt...
+
+M	src/CMakeLists.txt
+
+commit 79ef6b760a838cb74dfb954f33c2a0ee924d5566
+Author: Brian K <brian8181@gmail.com>
+Date:   Mon Mar 4 20:17:00 2024 -0600
+
+    update CMakeLists.txt ...
+
+M	src/CMakeLists.txt
+
+commit 56e6566496d01380852e4813dcc3fc6760fd3486
+Author: Brian K <brian8181@gmail.com>
+Date:   Mon Mar 4 18:48:04 2024 -0600
+
+    update all ..
+
+M	src/CMakeLists.txt
+M	src/rx.cpp
+
+commit 85417e56ff61e5e24549bd85004d03aa7a3863fd
+Author: Brian K <brian8181@gmail.com>
+Date:   Mon Mar 4 09:29:32 2024 -0600
+
+    updated CMakeList.txt
+
+M	src/CMakeLists.txt
+
+commit 7e967da019049d8a0a4e8d25c759edcd77ec3e83
+Author: Brian K <brian8181@gmail.com>
+Date:   Mon Mar 4 09:27:55 2024 -0600
+
+    added CMakeList.xtxt
+
+A	src/CMakeLists.txt
+
+commit e59107ba10ff1c7c4d6932e798d8e63736fb39f3
+Author: Brian K <brian8181@gmail.com>
+Date:   Mon Mar 4 09:12:41 2024 -0600
+
+    update makefile ...
+
+M	makefile
+
+commit 381b789903db4c5eb8a437f0cde481cdb736d293
+Author: Brian K <brian8181@gmail.com>
+Date:   Tue Feb 27 11:08:08 2024 -0600
+
+    remove infio from headers ...
+
+M	src/main.cpp
+M	src/rx.cpp
+M	src/rx.hpp
+M	src/rx_test.cpp
+M	src/rx_test.hpp
+
+commit 5449aaf6bbe24907ee5d52be28e03bb1e9785924
+Author: Brian K <brian8181@gmail.com>
+Date:   Tue Feb 27 10:58:35 2024 -0600
+
+    clean out automake files ...
+
+D	authors
+D	changelog
+D	cleandist.sh
+D	configure.ac
+M	doc/Makefile
+R100	cmakelist.txt	doc/cmakelist.txt
+M	makefile
+D	makefile.am
+D	man/Makefile.am
+D	readme
+D	src/Makefile.am
+D	src/bash_color_test.cpp
+
+commit 9453e3df43f16872337da50856e85b7b0a8b8114
+Author: Brian K <brian8181@gmail.com>
+Date:   Fri Feb 16 16:53:40 2024 -0600
+
+    update makefile ...
+
+M	makefile
+
+commit 3082d251010f585f59c4746259e234987b2cb721
+Author: Brian K <brian8181@gmail.com>
+Date:   Fri Feb 16 16:38:33 2024 -0600
+
+    update makefile ...
+
+M	makefile
+
+commit 3dddd4bad85be3f7680db594ead464e6654298ad
+Author: Brian K <brian8181@gmail.com>
+Date:   Fri Feb 16 16:37:05 2024 -0600
+
+    update makefile ...
+
+M	makefile
+
+commit 82e99294fd92a36e6cdce4407109ae509d2484c4
+Author: Brian K <brian8181@gmail.com>
+Date:   Fri Feb 16 16:30:46 2024 -0600
+
+    rename files to lowercase ...
+
+M	.vscode/launch.json
+R100	AUTHORS	authors
+R100	ChangeLog	changelog
+A	cmakelist.txt
+R100	COPYING	copying
+R100	Makefile	makefile
+R100	Makefile.am	makefile.am
+R100	NEWS	news
+R100	README	readme
+R100	README.md	readme.md
+
+commit d69e1843425b30791cbcad21281e4c0a0f79484f
+Author: Brian K <brian8181@gmail.com>
+Date:   Tue Nov 14 07:28:00 2023 -0600
+
+    fix info header info ...
+
+M	src/main.cpp
+M	src/rx.cpp
+M	src/rx.hpp
+M	src/rx_test.cpp
+M	src/rx_test.hpp
+
+commit 6c0c2a2ee93ac766cea1a47a3deaf997b2516a87
+Author: Brian K <brian8181@gmail.com>
+Date:   Tue Nov 14 07:24:07 2023 -0600
+
+    adding file info headers ...
+
+M	Makefile
+D	notes.txt
+D	octave-workspace
+M	src/main.cpp
+M	src/rx.cpp
+M	src/rx.hpp
+M	src/rx_test.cpp
+M	src/rx_test.hpp
+
+commit 8b30b23f3496208e9532c8e457c07e6bc0a100ff
+Author: Brian K <brian8181@gmail.com>
+Date:   Fri Nov 10 13:57:54 2023 -0600
+
+    clen up make file ...
+
+M	Makefile
+
+commit ced07c8cd1797cfb248a4616f85c10709831bef1
+Author: Brian K <brian8181@gmail.com>
+Date:   Wed Nov 8 08:46:35 2023 -0600
+
+    fixed the make after, butchering it during clean up....
+
+M	Makefile
+D	src/bash_color_test
+
+commit 505ae324e776d01d97dc2e1f5902a51ac97b41e3
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Mon Sep 18 09:38:31 2023 -0500
+
+    commit restore main.cpp ...
+
+M	.vscode/launch.json
+M	src/main.cpp
+
+commit 4bf52e67c04dd69f6f78b453b7ff4b9b680aab84
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sun May 21 10:24:28 2023 -0500
+
+    revert chnages ...
+
+M	src/main.cpp
+
+commit c829599cfe798c12ca7f810d57c5fbe754615470
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sun May 21 10:18:40 2023 -0500
+
+    commit all..
+
+M	Makefile
+M	src/main.cpp
+
+commit c5b117b4389ba19ab5fcbda93ca330188a2442e0
+Merge: f577512 0cf8ab8
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sat Mar 25 14:56:44 2023 -0500
+
+    Merge branch 'master' of https://github.com/brian8181/rx
+
+commit f5775120baa07195e11a2cf97009af9c20c21118
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sat Mar 25 14:55:55 2023 -0500
+
+    experimenting with stdin_ready func
+
+M	.vscode/launch.json
+M	src/main.cpp
+
+commit 0cf8ab8f1ae7bad26f2ef342271e47a968085850
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sun Mar 19 13:48:59 2023 -0500
+
+    return 0; & add test file
+
+M	src/rx.cpp
+A	test/nl.txt
+
+commit de518c067abae33790bab45b391f5c2b96a5f371
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Fri Mar 10 19:16:08 2023 -0600
+
+    delete test files
+
+D	test/1.txt
+D	test/t2.txt
+
+commit bf97dc6c0f9c27ac03066c94274413e424588352
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Fri Mar 10 17:26:12 2023 -0600
+
+    mod email test
+
+M	test/email.txt
+M	test/pass.sh
+
+commit 0165e1ba8658e442b3c1f6db82cfd0244ad8dd2e
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Fri Mar 10 10:02:17 2023 -0600
+
+    add ../test/email.txt
+
+A	test/email.txt
+
+commit 2315ee0e3f6c3e68bfa6a4cd56960c59fdb8351d
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Fri Mar 10 09:15:40 2023 -0600
+
+    delete Makefile cpy
+
+M	Makefile
+D	Makefile (copy 1)
+
+commit 6e210667b43d54bbc8c977be5b8ba4eebe039ef1
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Thu Mar 9 18:24:47 2023 -0600
+
+    remove dist-gz
+
+M	Makefile
+
+commit 55e4e286de1ba7bd80e53d4db6230e45de8ae4a6
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Tue Feb 14 19:19:55 2023 -0600
+
+    commit ...
+
+M	Makefile
+
+commit 7b9591d51f7f44448b66fa438bf8ae369326e2c1
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Tue Feb 14 19:18:51 2023 -0600
+
+    commit ...
+
+A	.vscode/c_cpp_properties.json
+
+commit 3763088f890f6d70d27b10bd68a1027060b20dc7
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Mon Nov 28 10:15:46 2022 -0600
+
+    Mantis 44,46: Groups/Submatches
+
+M	.vscode/launch.json
+M	src/rx.cpp
+
+commit bc9c86cb7d99efb3292da62d283b43dc38db189d
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Nov 9 05:53:38 2022 -0600
+
+    add makefile back to project
+
+M	.gitignore
+M	.vscode/tasks.json
+A	Makefile
+A	Makefile (copy 1)
+A	doc/Makefile
+
+commit 6bef1f66a3583d6ccfd7a778f49aae4fe92f1f3d
+Merge: ffb25ad 6aba1b6
+Author: Brian K Preston <brian@fire.tx.rr.com>
+Date:   Wed Nov 2 07:53:07 2022 -0500
+
+    commit conflicts
+
+commit ffb25ad4952294f5f3bded498715f5be5457030e
+Author: Brian K Preston <brian@fire.tx.rr.com>
+Date:   Wed Nov 2 07:46:48 2022 -0500
+
+    moved Makefile one to root, one to doc, clean up Makefile, empty build directory
+
+M	.vscode/launch.json
+D	build/Makefile
+M	src/main.cpp
+R100	build/1.txt	test/1.txt
+R100	build/input.txt	test/input.txt
+R100	build/t2.txt	test/t2.txt
+R100	build/test.txt	test/test.txt
+A	test/wtf.txt
+
+commit 6aba1b650d9ce098e5a34b8b612b0c5940a425f9
+Author: brian8181 <brian8181@gmail.com>
+Date:   Sat Oct 29 11:44:15 2022 -0500
+
+    update build directory
+
+M	.gitignore
+D	build/1.txt
+M	build/Makefile
+D	build/t2.txt
+D	build/test.txt
+
+commit 1068883c4bc8f34aef177f79427c91ea4e92e32c
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Aug 17 09:34:50 2022 -0500
+
+    0000079: 'ignore_case' could be named 'icase' more succinctly
+
+M	src/rx.cpp
+
+commit 4d1e2c590f25d2c4d328d84a2bdbcebdb89144c7
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Aug 17 09:28:44 2022 -0500
+
+    update man pages
+
+M	man/rx.1
+
+commit c3fbd6d5e4e184b70ec57f945920007a1f25d862
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Aug 17 08:45:57 2022 -0500
+
+    update man pages
+
+M	man/rx.1
+
+commit 9b1a9b84c73b36f2f4aba9d5d23e43003dbc63a2
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Tue Aug 16 19:37:45 2022 -0500
+
+    add to man file
+
+M	man/rx.1
+
+commit a5fc2ad74d672ef5b04c44c0de8625e2b272360d
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Tue Aug 16 18:36:10 2022 -0500
+
+    make version 2.90, add all ...
+
+M	man/rx.1
+M	src/rx.cpp
+M	src/rx_test.cpp
+M	src/rx_test.hpp
+
+commit 020a20afd690586bda091f650fcdb904182fd775
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Aug 3 17:04:42 2022 -0500
+
+    commit all ..
+
+M	src/rx.cpp
+
+commit a1b62d7c88a4ffc83e963a6240dbba252842bee8
+Merge: 558fc11 d6bb706
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Aug 3 01:26:07 2022 -0500
+
+    Merge branch 'master' of https://github.com/brian8181/rx
+
+commit 558fc110fa51d504669e49fb6feb2601b4fcb8bc
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Aug 3 01:21:04 2022 -0500
+
+    Mantis:0000071: Regex "+" (one or many) operator not working as expected
+
+M	src/rx.cpp
+
+commit d6bb7068f0a2302c5555085bb38786d3d9327022
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Aug 3 01:21:04 2022 -0500
+
+    changed default syntax to ECMAScript
+
+M	src/rx.cpp
+
+commit 157ecc2545b98f704fb537339c24103c5aa7d8dc
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Aug 3 01:16:51 2022 -0500
+
+    commit test ...
+
+A	test/out.txt
+A	test/tag.txt
+A	test/tag1.txt
+A	test/tag2.txt
+A	test/tag22.txt
+A	test/tag33.txt
+
+commit b17f367180b48974ab7f1a9bc0d06a289f768205
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Fri Jul 22 12:22:17 2022 -0500
+
+    clean up, commit all ...
+
+M	.gitignore
+M	build/Makefile
+M	src/rx.cpp
+
+commit c8f277f7b58ab19990b652efd08bdb24b230ccb7
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Mon Jul 18 12:18:30 2022 -0500
+
+    commit all ...
+
+M	.gitignore
+M	test/pass.sh
+
+commit 6c848ae6ec753191a9ae5e01e99e13198a2fb981
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sun Jul 17 20:43:39 2022 -0500
+
+    Mantis 0000063: Pipe Causes Segmentation Fault
+
+M	build/Makefile
+M	src/main.cpp
+
+commit f156b825c7607897cd8c3c07ab8e31c662db03eb
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sun Jul 17 07:00:25 2022 -0500
+
+    fix man/install.sh
+
+M	man/install.sh
+
+commit 9306e1876687ebd582adc80aa066ff6a8f4d3a29
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Thu Jul 14 22:09:07 2022 -0500
+
+    add GDB Pipe Testing Syntax!
+
+A	test/GDB_PIPE_DEBUG
+
+commit 3bf55973a4fb175f03a28ea4c233ad1f92385b9e
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Thu Jul 14 13:16:57 2022 -0500
+
+    add pass.sh test file
+
+M	src/rx.cpp
+A	test/pass.sh
+
+commit 0a69c5e974b9b7c07b5c25ad9afcc023159dbafe
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Jul 13 22:06:03 2022 -0500
+
+    clean up ...
+
+M	src/rx.cpp
+
+commit 460dbd36f36edbf4d817fb0e69c80e38453aa9b8
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Jul 13 22:03:25 2022 -0500
+
+    more clean up...
+
+M	src/rx.cpp
+
+commit 275d5dbfa9dfe0a1b78ee550b72d35155c786749
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Jul 13 21:57:48 2022 -0500
+
+    clean up...
+
+M	src/rx.cpp
+
+commit 76212d260339dfceb60b067de25b37c8bfc42b34
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Jul 13 17:26:22 2022 -0500
+
+    fix for mantis:52
+
+M	.vscode/launch.json
+M	src/rx.cpp
+R081	test/search_fopt .txt	test/search_fopt.txt
+
+commit 933d96608da299d5a0554397d39048d5d4c012d2
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Jul 13 09:28:02 2022 -0500
+
+    Mantis:0000053: intial fix (seems to work properlly, not thourghly tested)
+
+M	src/rx.cpp
+
+commit d30ce245c045374e76c81c6d97f574000a900f6c
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Jul 13 09:08:30 2022 -0500
+
+    add input file
+
+A	build/1.txt
+
+commit fac84140467f674164c691f16f8633e990ae6b56
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sun Jul 3 19:00:28 2022 -0500
+
+    commit unmerged changes
+
+M	src/rx.cpp
+
+commit 1930445749dfbf940dc81bdb1db77fd3df6ef26a
+Merge: 0e58639 7a3017b
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sun Jul 3 18:49:44 2022 -0500
+
+    commit all
+
+commit 7a3017b6982d3a57fa53a6e9b6ea29dd6c1090e8
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sun Jul 3 07:03:42 2022 -0500
+
+    commit all
+
+A	build/input.txt
+M	test/pass.fail.sh
+
+commit be180c3db8474f301b7348efde11f0082d768178
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Fri Jun 24 19:58:46 2022 -0500
+
+    commit all
+
+M	src/rx.cpp
+
+commit 2c6abb27a17cba63a64821d14f2d9fc26a42d193
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Fri Jun 24 19:38:09 2022 -0500
+
+    begin adding -x option
+
+M	src/rx.cpp
+
+commit 0e586394825eca01b23e4b16630bb4be8b059034
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sun Jun 19 21:30:44 2022 -0500
+
+    add constant to both regex & search strings from file
+
+M	src/rx.cpp
+
+commit 0bdb9e8ba9c9e010029b73c8239731aef604cfe6
+Author: Brian K Preston <brian@fire.tx.rr.com>
+Date:   Sun Jun 19 20:41:48 2022 -0500
+
+    comment out exception ouput
+
+M	src/rx.cpp
+
+commit 5a6efc2baa3e32f57466355a7474453c26bc0266
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Fri Jun 17 02:11:11 2022 -0400
+
+    small changes to Makefile, and rx.cpp output
+
+M	build/Makefile
+M	src/rx.cpp
+M	test/tests
+
+commit 76891f56bdc96f0a0bcc68b0cc0d419633714624
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Jun 15 18:00:22 2022 -0400
+
+    minor fixes for exp from file option
+
+M	build/t2.txt
+M	src/rx.cpp
+
+commit 35ca9fc3e55975b79a58ad02d111b68141807792
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Jun 15 17:23:49 2022 -0400
+
+    working on expression from file option
+
+M	build/Makefile
+A	build/t2.txt
+M	src/rx.cpp
+
+commit bb92c15a7e578987a059d2ecaf0ef6975ecd5304
+Author: Brian K Preston <brian@fire.net>
+Date:   Wed Jun 15 10:46:14 2022 -0400
+
+    file options chnages
+
+M	src/rx.cpp
+
+commit b9545677ffebeb6f17d366b5ce426c6dd78adc92
+Author: Brian K Preston <brian@fire.net>
+Date:   Wed Jun 15 10:10:14 2022 -0400
+
+    working on regex grammar flags
+
+M	src/rx.cpp
+
+commit e9beb8d7939858f2ed0de2b4e41a963ca021b2d3
+Author: Brian K Preston <brian@fire.net>
+Date:   Tue Jun 14 21:47:01 2022 -0400
+
+    set option regex::flag_type to zero, to start with
+
+M	src/rx.cpp
+M	test/tests
+
+commit dd0740d5013c7ef971802a04abcf3fac2dc50e28
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Jun 14 17:06:19 2022 -0500
+
+    checking in all
+
+M	src/rx.cpp
+
+commit f3dcde316f3f18f423507dc24bd754b6c9cd7372
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Jun 14 16:12:33 2022 -0500
+
+    add fail file, to test folder, logs fails
+
+A	test/fail
+
+commit 0fc3e2c5460b261bb42b100352a5374688814d35
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Jun 14 12:54:48 2022 -0500
+
+    chck in all, branch change
+
+M	src/rx.cpp
+M	test/pass.fail.sh
+
+commit 0f2a09bb3cef3b84d6ca056adba8837b32675237
+Merge: 6405b4d 2d5f5a7
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Jun 12 10:48:48 2022 -0500
+
+    Merge branch 'from_file_option'
+
+commit 6405b4d41929ea39381a66e6f777d7271e95894a
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Jun 12 10:48:42 2022 -0500
+
+    I don't know
+
+M	AUTHORS
+M	COPYING
+M	ChangeLog
+M	Makefile.am
+M	NEWS
+M	README
+M	README.md
+M	build/Makefile
+M	cleandist.sh
+M	configure.ac
+M	man/install.sh
+M	notes.txt
+M	test/pass.fail.sh
+
+commit 2d5f5a714f249f430d01ff5be8a9820b1dcce294
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Jun 12 10:43:01 2022 -0500
+
+    I don't know what this is.
+
+M	AUTHORS
+M	COPYING
+M	ChangeLog
+M	Makefile.am
+M	NEWS
+M	README
+M	README.md
+M	build/Makefile
+M	cleandist.sh
+M	configure.ac
+M	man/install.sh
+M	notes.txt
+M	test/pass.fail.sh
+
+commit e84e233de0c4842a646c7d635c97ed28121c7d4f
+Merge: ffaecc6 fd4c3cd
+Author: brian <brian8181@gmail.com>
+Date:   Sat Jun 11 18:15:25 2022 -0500
+
+    Merge branch 'from_file_option'
+    Continue expression option ...
+
+commit fd4c3cd697198518a54c517f1911bd7cd9ad5122
+Author: brian <brian8181@gmail.com>
+Date:   Sat Jun 11 18:12:44 2022 -0500
+
+    continue from_file_option's for expression
+
+M	src/rx.cpp
+M	test/pass.fail.sh
+
+commit 087ee902b60bd051ce88875bbb098838a6576ec4
+Author: brian <brian8181@gmail.com>
+Date:   Sat Jun 11 12:08:43 2022 -0500
+
+    begin adding from_file expression code
+
+M	src/rx.cpp
+
+commit ffaecc6675eac8c52079113c0b956e496224a995
+Author: brian <brian8181@gmail.com>
+Date:   Fri Jun 10 15:25:27 2022 -0500
+
+    clean or obscure code (depends on who you ask)
+
+M	src/rx.cpp
+
+commit d1a67b430a07d29b4beeed1b0d372a1aa53f21c2
+Merge: a8a6e1d 63d1081
+Author: brian <brian8181@gmail.com>
+Date:   Fri Jun 10 15:09:41 2022 -0500
+
+    Merge branch 'from_file_option'
+
+commit 63d108189ad453f1094e1e4cb57dacc8bedaab54
+Author: brian <brian8181@gmail.com>
+Date:   Fri Jun 10 15:05:14 2022 -0500
+
+    file option working agian
+
+M	.vscode/launch.json
+M	src/rx.cpp
+M	test/pass.fail.sh
+
+commit 5e1e2a9962eebf2f4f1f515fe2e6a20cd04d2ef9
+Author: brian <brian8181@gmail.com>
+Date:   Thu Jun 9 12:39:06 2022 -0500
+
+    options working, for icase
+
+M	.vscode/launch.json
+A	.vscode/settings.json
+M	src/rx.cpp
+
+commit 4c8225c9fb60d2ad84a3644d6ed9b01a422f1c10
+Author: brian <brian8181@gmail.com>
+Date:   Wed Jun 8 10:03:19 2022 -0500
+
+    change debug (launch.json) file, temporary fix Makefile, tmp fix rx.cpp for option (-o)
+
+M	.vscode/launch.json
+M	build/Makefile
+M	src/rx.cpp
+
+commit ae831c884d9f675faea286417c43f7560a904194
+Author: brian <brian8181@gmail.com>
+Date:   Fri May 27 14:22:39 2022 -0500
+
+    change output numbering (only number when a least 2 items), change regx_match to take to vectors
+
+M	src/rx.cpp
+M	test/exp_fopt.txt
+
+commit a8a6e1dd88bc04f932d08656c6941a13059a28b0
+Author: brian <brian8181@gmail.com>
+Date:   Fri May 27 05:46:26 2022 -0500
+
+    trivial change commets
+
+M	src/rx.cpp
+
+commit cae22cb0c711261b3023dec9c295a17a8fa29fcb
+Author: brian <brian8181@gmail.com>
+Date:   Fri May 27 05:37:45 2022 -0500
+
+    Fix:Mantis:0000062: Formatted output: don't display search count if it is the one
+
+M	src/rx.cpp
+
+commit d9af4b781db47847165e218c157d8a7d64843c15
+Author: brian <brian8181@gmail.com>
+Date:   Fri May 27 04:51:58 2022 -0500
+
+    Mantis:0000061: "From File" option for search text, removed comments
+
+M	src/rx.cpp
+
+commit d96b079e69988ef6ff82cc79cc938d1017b22293
+Author: brian <brian8181@gmail.com>
+Date:   Fri May 27 04:48:49 2022 -0500
+
+    Mantis:0000061: "From File" option for search text
+
+M	src/rx.cpp
+A	test/test_2.81.sh
+
+commit f0e9a2c2f547f3a6ff511b8e77af44effb4653eb
+Author: brian <brian8181@gmail.com>
+Date:   Thu May 26 18:52:18 2022 -0500
+
+    begin adding file options, add unit test, add test script
+
+M	src/rx.cpp
+M	src/rx_test.cpp
+M	src/rx_test.hpp
+
+commit 3e91db3f1c8383cbc63040b2a738c18b1bfdcdb5
+Author: brian <brian8181@gmail.com>
+Date:   Thu May 26 11:45:42 2022 -0500
+
+    make $ROOT relative to build dir
+
+M	build/Makefile
+
+commit 36581e2af33550d573c9aec226ad312970cfe7a1
+Author: brian <brian8181@gmail.com>
+Date:   Thu May 26 11:14:06 2022 -0500
+
+    add commented out lines of old FROM_FILE options code
+
+M	src/rx.cpp
+
+commit 9a22c7b091273a34aeee66bdc00342c95bf69440
+Author: brian <brian8181@gmail.com>
+Date:   Wed May 25 23:45:11 2022 -0500
+
+    checkin
+
+M	test/pass.fail.sh
+
+commit f6f22a08d76f9685ad103fa57010f27d4612c034
+Author: brian <brian8181@gmail.com>
+Date:   Wed May 25 16:36:03 2022 -0500
+
+    change version number
+
+M	src/rx.cpp
+D	test/error
+
+commit 5f081e0fb74427b621bf71884b5450cbfb9ed2fa
+Author: brian <brian8181@gmail.com>
+Date:   Wed May 25 09:08:16 2022 -0500
+
+    change VERSION_STRING = "2.0.1"
+
+M	src/rx.cpp
+
+commit 8046b3db4190ce17999236346ca5066f91fbb9dc
+Merge: 6ea8dea 8d01e24
+Author: brian <brian8181@gmail.com>
+Date:   Wed May 25 02:32:41 2022 -0500
+
+    Merge branch 'master' of https://github.com/brian8181/rx
+
+commit 6ea8deac965e367c7bdb4a20f5cc57219502549c
+Author: brian <brian8181@gmail.com>
+Date:   Wed May 25 02:29:46 2022 -0500
+
+    deleted, commented out regex_constants::match_flag_type
+
+M	src/rx.cpp
+
+commit 8d01e24d26f9cf1af9114e131af8d5355b93bca4
+Author: brian <brian8181@gmail.com>
+Date:   Wed May 25 02:29:46 2022 -0500
+
+    commented out regex_constants::match_flag_type
+
+M	src/rx.cpp
+
+commit 769e3c17257e77a5ea0126d698b4558ce78b0337
+Author: brian <brian8181@gmail.com>
+Date:   Tue May 24 16:25:30 2022 -0500
+
+    commented out regex_constants::match_flag_type
+
+M	src/rx.cpp
+
+commit c9957e5070c76aef6aa0f713847ea1fc3bd55664
+Author: brian <brian8181@gmail.com>
+Date:   Tue May 24 11:01:28 2022 -0500
+
+    Fix:Mantis:0000060: -p option (not pretty) output: skips a initial line
+
+M	src/rx.cpp
+
+commit f37f1a29dfb00d3118c6bf2dcf22306352948912
+Author: brian <brian8181@gmail.com>
+Date:   Tue May 24 08:40:24 2022 -0500
+
+    Fix-Mantis:0000059: Option -o not working, Exception: Unexpected option.
+
+M	src/rx.cpp
+
+commit 022fe8a18bdc280f2d993b0f648229c8a7f197df
+Merge: 9095f6e a43b7eb
+Author: brian <brian8181@gmail.com>
+Date:   Tue May 24 08:37:14 2022 -0500
+
+    Merge branch 'master' of https://github.com/brian8181/rx
+
+commit 9095f6e512ab69799b75922f861921b447d32f23
+Author: brian <brian8181@gmail.com>
+Date:   Tue May 24 08:28:43 2022 -0500
+
+    Fix-Mantis:0000059: Option -o not working, Exception: Unexpected option.
+    
+    Changes to be committed:
+    modified:   .vscode/launch.json
+    modified:   src/rx.cpp
+    Continue working on fix ...
+
+M	.vscode/launch.json
+M	src/rx.cpp
+
+commit a43b7eb72d462737dcddb15240f1109c9e223978
+Author: brian <brian8181@gmail.com>
+Date:   Tue May 24 08:28:43 2022 -0500
+
+    Fi0000059: Option -o not working, Exception: Unexpected option.
+
+M	.vscode/launch.json
+M	src/rx.cpp
+
+commit c37b064f8dcf873cf78f3472d2127fbf5f5e91a9
+Author: brian <brian8181@gmail.com>
+Date:   Sun May 22 19:54:32 2022 -0500
+
+    Fix: Mantis56-58 ignore & verbose not working
+
+M	.vscode/launch.json
+M	src/rx.cpp
+
+commit 8b918a9b718b6c751129dc2485f24d1006d6d1f8
+Author: brian <brian8181@gmail.com>
+Date:   Sun May 22 07:43:17 2022 -0500
+
+    removing file options
+
+M	.vscode/launch.json
+M	src/rx.cpp
+
+commit 93666345319687ec87be59bc748de49e46859cc4
+Author: brian <brian8181@gmail.com>
+Date:   Fri May 20 15:25:40 2022 -0500
+
+    Mantis0000055: Arguments are not parsed correctly
+
+M	.vscode/launch.json
+M	src/rx.cpp
+
+commit 491dfebd492d1187bfe95c1fdba364e0c6826bca
+Author: brian <brian8181@gmail.com>
+Date:   Fri May 20 12:07:21 2022 -0500
+
+    add log files to git ignore list
+
+M	.gitignore
+
+commit 97bb9ebeb3b556b0c0d89b4642d86f019c07067e
+Author: brian <brian8181@gmail.com>
+Date:   Fri May 20 12:01:52 2022 -0500
+
+    Mantis: 0000055
+
+M	.vscode/launch.json
+M	src/rx.cpp
+
+commit 9c308c283f6c9a40a561c8df542d1a74456724a9
+Author: brian <brian8181@gmail.com>
+Date:   Wed May 4 16:24:17 2022 -0500
+
+    update test files/scripts
+
+M	test/pass.fail.sh
+D	test/test69
+D	test/test_fail2.txt
+M	test/tests
+
+commit b3d82a371951e3e2e2e3d361f31f0a61de50d9f2
+Author: brian <brian8181@gmail.com>
+Date:   Mon May 2 00:34:22 2022 -0500
+
+    add comment line
+
+M	src/rx.cpp
+
+commit c113ae4f2cd649d88efd01109417c50bd744068d
+Author: brian <brian8181@gmail.com>
+Date:   Sun May 1 06:35:44 2022 -0500
+
+    options reimplement
+
+M	src/rx.cpp
+
+commit 629dec7aad48bbc8f23dce010605a3cdf94b0255
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Apr 27 18:22:39 2022 -0500
+
+    comment out man install script, I do not wnat it running for the time being
+
+M	man/install.sh
+
+commit 921e31f8107637f1d6f183e48a1a25eadceceaa4
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Apr 26 21:19:21 2022 -0500
+
+    put get version function first
+
+M	src/rx.cpp
+
+commit e267a9c8176917b5c09e96f00dd1d433c060ee8e
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Apr 26 21:16:17 2022 -0500
+
+    comment out tests
+
+M	src/rx.cpp
+
+commit 478586acf61fa7dc947bab1c4d5c06c3ba404e94
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Apr 26 21:12:10 2022 -0500
+
+    comment out tests, add error message
+
+M	src/rx.cpp
+
+commit ef9a814165704608e764bf71adebb984681090fd
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Apr 26 15:02:29 2022 -0500
+
+    fix launch.json variarbles, from rx -> ${fileBasenameNoExtension}
+
+M	.vscode/launch.json
+
+commit 9b1f9cba64ad2033230f926f27bc28d28095d632
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Apr 24 11:06:53 2022 -0500
+
+    contiue -f opt feature
+
+M	src/rx.cpp
+
+commit 3dbf8ad31da131d5a74eac86d1fccb48684c4e2c
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Apr 24 09:44:06 2022 -0500
+
+    added error msg, added debug conf, continued -f options feature
+
+M	.vscode/launch.json
+M	src/rx.cpp
+A	test/error
+
+commit a1b9e1da9802bb207c27fbcba3ddf1953b4900fd
+Merge: 5071606 a8ae39c
+Author: brian <brian8181@gmail.com>
+Date:   Wed Apr 13 22:29:43 2022 -0500
+
+    fix conflicts
+
+commit a8ae39c072745a0138b829719cf4887b9f1d9781
+Author: brian <brian8181@gmail.com>
+Date:   Wed Apr 13 19:30:52 2022 -0500
+
+    add fpot
+
+M	build/Makefile
+A	octave-workspace
+M	src/rx.cpp
+M	test/exp_fopt.txt
+
+commit 507160631b141d9cc016ee88cf5c8a8732d428c2
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Apr 6 09:30:53 2022 -0500
+
+    remove spaces
+
+M	build/Makefile
+
+commit e4d676d1adab7191bcf204b2afb8da4122e1798f
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Apr 6 09:20:21 2022 -0500
+
+    remove "test" from Makefile
+
+M	build/Makefile
+
+commit 096d266c6a02ae607a7a2b2e5c2166929e588e0d
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Apr 5 16:18:16 2022 -0500
+
+    add error msg for f opt
+
+M	build/Makefile
+M	src/rx.cpp
+
+commit f77bdcdaee76c6a1239bdf5b0f64062872b19406
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Apr 5 10:03:28 2022 -0500
+
+    add line to fopt.txt
+
+M	test/fopt.txt
+
+commit f6722a1c31618b100ecb1a78c94c1953f51e2c21
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Apr 5 10:00:17 2022 -0500
+
+    case f argc break
+
+M	.vscode/launch.json
+M	src/rx.cpp
+
+commit f23cb0a002fef8c3d296f5f09d2611c5eb7394bd
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Apr 1 16:43:14 2022 -0500
+
+    add from_file expresssion, files
+
+A	test/exp_fopt.txt
+A	test/search_fopt .txt
+
+commit 6da9055da023f5e507fbfc93f6daaa190ab0175d
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Apr 1 16:42:35 2022 -0500
+
+    add from_file expresssion, files
+
+M	.vscode/launch.json
+
+commit 6a5bea49163cba5ff906c734705d60dc941bd483
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Mar 30 12:47:52 2022 -0500
+
+    add "-fPIC to build options
+
+M	build/Makefile
+
+commit c585762cac8cfc72a6a31a83f0c9a12be6a2efcb
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Mar 23 10:53:29 2022 -0500
+
+    fix options
+
+M	.vscode/launch.json
+M	src/rx.cpp
+
+commit db457096611e48f8c301c9eaad9c77a842521a1e
+Merge: 76a369c 1e05364
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Mar 10 23:51:41 2022 -0600
+
+    Merge branch 'master' of https://github.com/brian8181/rx
+
+commit 76a369cf7dcb2ed0242d81c30c95f351e248392d
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Mar 10 23:51:20 2022 -0600
+
+    remove git shell scripts (testing stuff) from script directory
+
+D	script/.data/rx.cpp-824a16e2458c6893ac2e1ea2a3f53a014fa2fcfd~2020-11-23.tmp
+D	script/.data/rx.cpp-d6a6237c2ba7aa6bac339bd1801ff29b3c1ce24f~2021-03-22.tmp
+D	script/git-file-hist.sh
+D	script/h
+D	script/notes.txt
+
+commit 1e05364573a1116460e3898e38a0eabf28478977
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Mar 10 10:44:46 2022 -0600
+
+    MANTIS: 0000050
+
+M	src/rx.cpp
+
+commit ef599bdc06f44e4a9fa32bc1ddffcd51d64d1c15
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Mar 10 06:47:31 2022 -0600
+
+    optimize vector init code...
+
+M	src/rx.cpp
+
+commit 78ac75fc5bbeb1c93383048dc3ddb0b3f35d2a1c
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Mar 10 06:43:39 2022 -0600
+
+    optimize vector init code
+
+M	src/rx.cpp
+
+commit 11c68b4deace5bb11e3c623d1f6d187a3319b5c7
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Mar 10 06:33:22 2022 -0600
+
+    add todo
+
+M	doc/todo
+
+commit 62ebd1b71ce7fe99d1a64588d6bc4de2dc5805f4
+Merge: 1d33626 e1a5d4f
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Mar 10 06:21:13 2022 -0600
+
+    merge
+
+commit 1d3362618bb91f982024504c23f2d9f937da8ed0
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Mar 10 06:18:53 2022 -0600
+
+    optimize vector init
+
+M	.vscode/launch.json
+M	src/rx.cpp
+M	test/tests
+
+commit e1a5d4f6971a990ef4c33a96b4aae5ddfd6f804b
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Mar 9 07:11:55 2022 -0600
+
+    add debug configs
+
+M	.vscode/launch.json
+
+commit 0df976156dfaeaf6857ee9dfaac5632f2f916ec4
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Mar 7 13:51:20 2022 -0600
+
+    fix bugs
+
+M	.vscode/launch.json
+M	src/rx.cpp
+
+commit 70127bf58ab637c10faaa556927f5f536aea8457
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Mar 5 16:21:00 2022 -0600
+
+    clean up
+
+M	src/rx.cpp
+
+commit bb6520193ec62f27b7a173baff75210a7ff4ba85
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Mar 5 15:27:31 2022 -0600
+
+    clean up code ...
+
+M	src/rx.cpp
+
+commit 140c250ff47d9c021799b0acc298ea8d2d84a08a
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Mar 5 15:24:12 2022 -0600
+
+    clean up code
+
+M	src/rx.cpp
+
+commit c54c97440bd3aa78ce6be91dd09dba8d49f90e76
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Mar 5 14:52:56 2022 -0600
+
+    finish manual merge
+
+M	src/rx.cpp
+M	test/fopt.txt
+
+commit ac560451a7dc68acc20c03375c583a435896242f
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Mar 5 14:49:05 2022 -0600
+
+    manual merge rx.cpp
+
+M	src/rx.cpp
+
+commit 171e2834ba03f3bbe8ea0841160fadb7fb19aa18
+Merge: 56a57ec 1deb74f
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Mar 5 14:45:38 2022 -0600
+
+    man merge
+
+commit 56a57ec48906f833c28f2ecc0cc639021232e466
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Mar 5 14:41:10 2022 -0600
+
+    manual merge file_options
+
+M	.vscode/launch.json
+M	src/rx.cpp
+
+commit 1deb74f8f535f05ea9f07790a8a0f10325457be4
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Mar 5 11:22:00 2022 -0600
+
+    Resolved merge conflict by incorporating both suggestions.
+
+M	.vscode/launch.json
+M	.vscode/tasks.json
+M	src/rx.cpp
+
+commit d805e737f1ee8b23d233e2bbb09bd53b5ef19c69
+Merge: ab05244 48a9c70
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Mar 5 11:17:19 2022 -0600
+
+    Resolved merge conflict by incorporating both suggestions.
+
+commit ab05244907aacbbb4ae4daabaf36cd2668fb0638
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Mar 5 11:13:11 2022 -0600
+
+    Resolved merge conflict by incorporating both suggestions.
+
+M	.vscode/launch.json
+M	.vscode/tasks.json
+M	src/rx.cpp
+
+commit a3dc4e76487c4bcf6f284ec073d38c926b370493
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Mar 4 20:21:53 2022 -0600
+
+    fix7
+
+M	.vscode/launch.json
+M	.vscode/tasks.json
+M	src/rx.cpp
+
+commit 48a9c703c2e2ffee7e776294a8425b8436fa712a
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Mar 4 20:20:40 2022 -0600
+
+    fix6
+
+M	.vscode/launch.json
+M	.vscode/tasks.json
+M	src/rx.cpp
+
+commit ff8efe9bd76b230abdfb12356d27156964e0ae33
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Mar 4 20:18:57 2022 -0600
+
+    fix5
+
+M	.vscode/tasks.json
+
+commit a2c70fb0c32efe4a4c9c31f96ea1aa2fc862c554
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Mar 4 20:18:10 2022 -0600
+
+    fix4
+
+M	.vscode/launch.json
+M	.vscode/tasks.json
+M	src/rx.cpp
+
+commit 206b7bc980846fcc947d1cf229e9a2da916ece60
+Merge: dfe12e8 93cee91
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Mar 4 20:16:45 2022 -0600
+
+    fix3
+
+commit dfe12e8f567e065cb720e0ab3a0d1d65c453d846
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Mar 4 20:11:15 2022 -0600
+
+    fix2
+
+M	.vscode/launch.json
+M	.vscode/tasks.json
+M	src/rx.cpp
+
+commit 93cee91011d1ff1c6a5576fbbf3bcf1873398fa3
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Mar 4 20:08:20 2022 -0600
+
+    fix conflics
+
+M	.vscode/launch.json
+M	.vscode/tasks.json
+M	src/rx.cpp
+
+commit 13bcff30a39c9ecd0bbe5821caa1099f06781d57
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Mar 4 20:00:55 2022 -0600
+
+    m2
+
+M	.vscode/launch.json
+M	.vscode/tasks.json
+M	src/rx.cpp
+
+commit 1d48f73b95c88a1760fa9f5dabcd1f7787cf0a08
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Mar 4 19:58:33 2022 -0600
+
+    merge reslove
+
+M	.vscode/launch.json
+M	.vscode/tasks.json
+M	src/rx.cpp
+
+commit 9423700ffa3f4fd5271e863ed13f2e8134445827
+Merge: afce312 e4d210e
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Mar 4 11:39:44 2022 -0600
+
+    Merge branch 'master' of https://github.com/brian8181/rx
+
+commit afce312d2b1c38945a35aa651fb610366800172e
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Mar 4 11:39:26 2022 -0600
+
+    commit before merge
+
+A	.vscode/launch.bak.json
+M	.vscode/launch.json
+M	.vscode/tasks.json
+A	build/test.txt
+M	src/rx.cpp
+A	test/fopt.txt
+A	test/test69
+
+commit e4d210e6cd249fe5572b7647b802f32d193eebf5
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Mar 1 09:43:03 2022 -0600
+
+    add test case note to file.
+
+M	test/tests
+
+commit 2769d6bb8a503922731a61c0f92e6a4450b65010
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Feb 20 16:01:45 2022 -0600
+
+    update tests
+
+A	doc/todo
+M	test/tests
+
+commit 965e11fc1463ea92a8d06e3c99d3a29ce91f88a5
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Feb 19 10:01:56 2022 -0600
+
+    changed default constants
+
+M	src/rx.cpp
+M	test/test_fail2.txt
+
+commit 1610ef9d3f88135af7eafe19907fe617c7adbacc
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Feb 19 09:47:34 2022 -0600
+
+    add debug configs
+
+M	.gitignore
+A	.vscode/launch.json
+M	.vscode/tasks.json
+
+commit 552c7d2c3070e291c8164c4ba58e69a387b37d7b
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Jan 10 22:58:47 2022 -0600
+
+    remove extra spaces, changes aligment of code, etc ..
+
+M	src/main.cpp
+M	src/rx.cpp
+
+commit dcdb5d9c82d5e30175d870ab6de66402e0e46899
+Merge: d2f11e7 0ac19ce
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Jan 9 18:52:38 2022 -0600
+
+    Merge branch 'master' of https://github.com/brian8181/rx
+
+commit d2f11e78639ef23fb059903c06a5fa1f709113f8
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Jan 9 18:52:26 2022 -0600
+
+    fix header, const, redefine issue
+
+M	src/main.cpp
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit 0ac19ce10de4601101179a9a8895e7c59808d293
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Jan 5 15:47:24 2022 -0600
+
+    remove old comment from Makefile
+
+M	build/Makefile
+
+commit bd1a9944c0fee2f13ccadfc54715d38b04c01eb1
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Jan 2 13:26:14 2022 -0600
+
+    updates
+
+D	script/hist.sh
+D	script/kdiff3.sh
+D	script/kompare.sh
+M	src/rx_test.cpp
+
+commit bd3b70bfe59162fce124125628551f98437be30a
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jan 1 14:43:23 2022 -0600
+
+    delete utility, small change to Makefile
+
+M	build/Makefile
+D	src/utility.cpp
+D	src/utility.hpp
+
+commit 97de2f12e32282bb3b951b0653978088a2faabda
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Dec 31 02:30:55 2021 -0600
+
+    remove HOME var
+
+M	build/Makefile
+
+commit dfde8bef901e2d0e48b9c9b3c39d81f62656a06c
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Dec 27 15:54:22 2021 -0600
+
+    clean, fix
+
+M	src/main.cpp
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit d6c92a0c15f7fa8ce016364c51089220ea848ac6
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Dec 26 16:05:17 2021 -0600
+
+    fix tabs in main.cpp
+
+M	src/main.cpp
+
+commit 0d8bc0f277565abe5592d19a190e39a9c2e34c9b
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Dec 26 16:03:50 2021 -0600
+
+    fix tabs in main.cppp
+
+M	src/main.cpp
+
+commit e146840ba58c82103f4da161f8482bb5a2b566ab
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Dec 22 23:23:37 2021 -0600
+
+    clean out using statements from main.cpp, removed main.hpp
+
+M	src/main.cpp
+D	src/main.hpp
+
+commit ca0060b5859f7c5a03088f7007dceda6c126411b
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Dec 22 23:16:50 2021 -0600
+
+    remove std namespace from rx.hpp. remove std:: from rx.cpp
+
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit 2689225bebae47ceeb0989f09c4cfe7d35aedd54
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Dec 22 23:11:19 2021 -0600
+
+    commented HACK
+
+M	src/main.cpp
+
+commit f14b85a76cd4652ee703b8b4ce018cd763336038
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Dec 22 23:05:13 2021 -0600
+
+    fix last commit
+
+M	src/main.hpp
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit c3c787dffbb0bf9aa121e102abe3e3f3b8a37f29
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Dec 22 23:00:12 2021 -0600
+
+    add hack fix for link error
+
+D	src/main
+M	src/main.cpp
+M	src/main.hpp
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit ff8da27675de5adc8144ac5ecc7d3985cf1cef12
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Dec 22 22:27:41 2021 -0600
+
+    add newline too rx.hpp
+
+M	src/rx.hpp
+
+commit 042a764d7b39f06daa805338da0f40d518c115a4
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Dec 22 22:25:56 2021 -0600
+
+    add function to header
+
+M	src/rx.hpp
+
+commit e6a1c2b98f1b2010286a24f73812106a80aca118
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Dec 22 22:21:15 2021 -0600
+
+    oops, a exception handler for regex
+
+D	src/bash_color.h
+M	src/bash_color_test.cpp
+M	src/main.cpp
+M	src/main.hpp
+M	src/rx.cpp
+M	src/rx.hpp
+M	src/rx_test.cpp
+
+commit 56b726627b11e7038424435e5c646c2f1e3c357e
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Dec 22 22:19:38 2021 -0600
+
+    a exception handler for regex
+
+A	src/bash_color.hpp
+
+commit 60d3781f929e32e0787a68d968ca2194fb4dbba2
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Fri Dec 17 10:47:21 2021 -0600
+
+    remove extra spaces
+
+M	Makefile.am
+M	src/rx.cpp
+
+commit 3a4988df3ae13a0ca262c88c68df7a9558b73e43
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Fri Dec 17 03:36:34 2021 -0600
+
+    add back auto conf lines
+
+M	configure.ac
+
+commit 1e8849686d25a45646fb7a15c7b5e4d56bc9f0d7
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Fri Dec 17 03:35:13 2021 -0600
+
+    add back auto conf lines
+
+M	configure.ac
+
+commit 038228b0ee6963e4a6131c59c0848b1051c3acdd
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Fri Dec 17 03:33:49 2021 -0600
+
+    add back auto conf lines
+
+M	configure.ac
+
+commit c5a82b3888141417f78bbbd08d5e73d8b30d48af
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Fri Dec 17 03:30:45 2021 -0600
+
+    uncomment autoconf lines
+
+M	configure.ac
+
+commit d3df7acc4ee7b089b5e4e00c900fca38e4b97a59
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Dec 16 00:50:49 2021 -0600
+
+    comment out lines till it would autocinfig
+
+M	configure.ac
+
+commit 7b6b7140358e900fac653baf951df14cc7ce2a7d
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Tue Dec 14 06:30:52 2021 -0600
+
+    clean up
+
+M	src/rx.cpp
+
+commit 310c46268cf430dcdd909f605ccad64d6b8d92ed
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Tue Dec 14 06:29:19 2021 -0600
+
+    clean up hpp
+
+M	src/rx.hpp
+
+commit daf6d44c9d77525a2ac30952b35fdd879eac6ed8
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Mon Dec 13 02:29:33 2021 -0600
+
+    fix comments cpp style
+
+M	src/main.cpp
+M	test/tests
+
+commit 5dd83e80ce924e801d7c33f386a00cf206cf92d4
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Thu Dec 2 21:42:05 2021 -0600
+
+    update refix after merge
+
+M	.gitignore
+M	src/rx.cpp
+
+commit 2f2df6460d180fda3d678480641e62034b3a0ad0
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Dec 1 16:17:55 2021 -0600
+
+    fix fucking file
+
+M	src/rx.hpp
+
+commit a3bd6f383b9908327120388fb4ebd6d353f4f3f4
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Dec 1 16:11:14 2021 -0600
+
+    add all agian
+
+M	src/rx.cpp
+
+commit 9262219d960c2d0069a634ca3b234e482e057c48
+Merge: 3a9413b e375e3f
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Dec 1 16:04:51 2021 -0600
+
+    add all
+
+commit e375e3f52aa4d4582e1a06377d68614948e6620e
+Merge: 3c01de1 3737389
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Nov 16 23:21:44 2021 -0600
+
+    fix build
+
+commit 3c01de1790aed6c3d67e126f7c61c29882d38a51
+Merge: b9de2f7 bc37cb1
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Nov 16 23:12:59 2021 -0600
+
+    because I said so
+
+commit 3a9413b08dcb68057da356d8cec94df5b47f4249
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sun Nov 14 01:10:24 2021 -0600
+
+    rename function, input to stdin_ready
+
+M	src/main.cpp
+
+commit b4cde25eb4c9fb6bd9ef7bd8823e08d0af117c53
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sat Nov 13 02:02:08 2021 -0600
+
+    clean up pipe code
+
+M	src/main.cpp
+
+commit 43110ee3c1be657ca34382fa2a269f9e552f2d4a
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Fri Nov 12 20:52:29 2021 -0600
+
+    new pipe read code complies seem to test
+
+M	.vscode/tasks.json
+M	src/main.cpp
+M	src/rx.cpp
+
+commit 3737389ece3a4e5b32edb84d8d0872fa34e95483
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sat Oct 30 19:33:12 2021 -0500
+
+    add what to catch
+
+M	src/main.cpp
+M	src/rx.cpp
+
+commit 5a69658055131c9a8bd4a1877f21bf1fbde78799
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sat Oct 30 19:14:44 2021 -0500
+
+    add try catch
+
+M	src/main.cpp
+M	src/rx.cpp
+
+commit 9daee263d5eb8e4b618647354a358f9410c73253
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sat Oct 30 19:05:23 2021 -0500
+
+    fix syntax errors of flags maps
+
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit f32a544324d1e4d8a5d5258693d138324dc24fc4
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sat Oct 30 17:19:52 2021 -0500
+
+    add match option flags, ch mode on files
+
+M	AUTHORS
+M	COPYING
+M	ChangeLog
+M	Makefile.am
+M	NEWS
+M	README
+M	README.md
+M	configure.ac
+M	notes.txt
+M	src/rx.cpp
+
+commit 1de503f6ae491da18d216d93a453ad5494c2f63a
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Tue Oct 26 10:13:56 2021 -0500
+
+    renames
+
+R100	src/_utility.cpp	src/utility.cpp
+R100	src/_utility.hpp	src/utility.hpp
+
+commit d23738d823c9932c755251b04e2be29a06ee5081
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Mon Oct 25 21:55:45 2021 -0500
+
+    remove std quailfier where it is not needed
+
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit 93d83f77ba04ff152408c53b8abeb6a4109f1c4e
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Mon Oct 25 21:49:56 2021 -0500
+
+    rename regex map
+
+M	src/rx.cpp
+M	src/rx.hpp
+M	test/pass.fail.sh
+
+commit cf707aba3029e3197350d5d2a34ebf1883e4a489
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Mon Oct 25 20:56:41 2021 -0500
+
+    add test cases for regex option flags
+
+M	src/rx.cpp
+M	src/rx.hpp
+M	test/pass.fail.sh
+
+commit 85dcf42860510aa448909a87ebccc378d238a124
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Mon Oct 25 14:47:28 2021 -0500
+
+    std::regex options seem to be working
+
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit bc37cb1f249a67f0c5d260164cd9c8040568dc63
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sun Oct 24 00:05:42 2021 -0500
+
+    use workspace variable in vscode task
+
+M	.vscode/tasks.json
+
+commit bb4933440ac2f35c55170160bb01aa63138ed11b
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sat Oct 23 11:31:14 2021 -0500
+
+    add endl's
+
+M	src/rx.cpp
+
+commit da8e8d7781dfeb9fbefa28cd372838b54b96b101
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sat Oct 23 00:50:01 2021 -0500
+
+    clean up code & formating
+
+M	src/rx.cpp
+
+commit b10f470377e3cdeaba2fcc79f3deb2844c5373df
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Fri Oct 22 10:53:52 2021 -0500
+
+    remove utility dependendcy
+
+M	src/rx.cpp
+
+commit 3916b5007cdebc07230576303bf1dfc3e6f21f25
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Fri Oct 22 10:48:42 2021 -0500
+
+    clean up code
+
+M	.vscode/tasks.json
+M	src/main.cpp
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit b9de2f736f87b03c51392f4edd11628be5a09a9b
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Oct 20 23:08:48 2021 -0500
+
+    working on options & debugging with code
+
+M	.vscode/tasks.json
+D	build/Makefile.bak
+A	src/main
+M	src/main.cpp
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit d02f88df01a633232898f2cec546eddb86d43824
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Oct 20 23:05:38 2021 -0500
+
+    change mode on many files
+
+M	man/Makefile.am
+M	man/rx.1
+M	src/Makefile.am
+M	src/bash_color.h
+M	src/bash_color_test
+M	src/bash_color_test.cpp
+M	src/main.cpp
+M	src/main.hpp
+M	src/rx.cpp
+M	src/rx.hpp
+M	src/rx_test.cpp
+M	src/rx_test.hpp
+D	test/rx.core
+M	test/tests
+
+commit 19af08eb32b87e8721ebab3879a59aba91ab22b6
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Wed Oct 20 23:00:32 2021 -0500
+
+    change permissions on files
+
+M	.gitignore
+D	.vscode/launch.json
+M	AUTHORS
+M	COPYING
+M	ChangeLog
+M	Makefile.am
+M	NEWS
+M	README
+M	README.md
+M	build/Makefile
+M	configure.ac
+M	notes.txt
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit f99f9d8b0a69be39b34ea6d8eb44a7a3f1402211
+Author: Brian K Preston <brian8181@gmail.com>
+Date:   Sat Jan 5 09:19:30 2008 -0600
+
+    add files to git ignore list
+
+M	.gitignore
+
+commit ced04b77c71a35b52140a8867efe82d5980159ac
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Oct 13 00:52:23 2021 -0500
+
+    update build/Makefile, error handling code for regx options
+
+M	build/Makefile
+M	src/rx.cpp
+
+commit ea7f1a9ea2d3e7e5ff8f4eb2c7454f88c5df30a1
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Oct 11 07:03:55 2021 -0500
+
+    add more try catch code
+
+M	src/rx.cpp
+
+commit d2009d679d52ea6befaef39dd21a9a9ac89bd753
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Oct 11 00:50:31 2021 -0500
+
+    add try catch code
+
+M	build/Makefile
+D	build/rx.core
+M	src/rx.cpp
+
+commit 39df6ec4f75103120be3db2e4f0a7b3c0c4b3cd4
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Oct 8 16:17:07 2021 -0500
+
+    random small fixes/chnages
+
+M	.vscode/tasks.json
+M	build/Makefile
+A	build/rx.core
+A	src/_utility.cpp
+A	src/_utility.hpp
+M	src/main.cpp
+M	src/rx.hpp
+M	test/pass.fail.sh
+A	test/rx.core
+
+commit c937e30e36193275c4f61e2d4e6d8e1125106c32
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Oct 7 05:16:49 2021 -0500
+
+    update Makefile, continue update rx.cpp for regex options option "-o"
+
+M	build/Makefile
+D	missing
+M	src/rx.hpp
+
+commit 724f9c1fdabb0cabeb645402b4644d1368c867fd
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Oct 6 17:14:31 2021 -0500
+
+    changed comment
+
+M	build/Makefile
+
+commit 114838c12b6de99352afaec12e809bbe850c0169
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Oct 6 17:12:42 2021 -0500
+
+    added icase to enum map
+
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit 6a0caec38c8c44b28a9362d9054399436bb4536a
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Oct 6 16:53:44 2021 -0500
+
+    regx options build, not tested
+
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit 05eec6a8a175c9467fbd545ddba069d6823d912a
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Oct 6 16:33:57 2021 -0500
+
+    is splitting option correctly
+
+M	src/rx.cpp
+
+commit 070addef28599cbc0255af75ba5b4c70baa843d0
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Oct 6 05:40:44 2021 -0500
+
+    fix typos in command line option
+
+M	src/rx.cpp
+
+commit 33143651766262361b735b61c840f472f1604876
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Sep 30 01:52:43 2021 -0500
+
+    small changes to Makefile
+
+M	build/Makefile
+
+commit 62a4f4835d74648056a716b16eda6c2580e2f7ba
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Sep 30 01:19:59 2021 -0500
+
+    remove OBJDIR\'s from path
+
+M	build/Makefile
+
+commit 2fb509e4dcfcab4061b87bdadda4acf2e1965e46
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Sep 30 01:17:41 2021 -0500
+
+    add OBJDIR\'s to path
+
+M	build/Makefile
+R080	build/Makefile.copy	build/Makefile.bak
+D	build/Makefile.copy2
+
+commit c453b13406b645726433a870dbdfdab48fe9af74
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Sep 28 21:07:18 2021 -0500
+
+    clean up extra code
+
+M	build/Makefile
+M	src/main.cpp
+M	src/rx.cpp
+M	test/pass.fail.sh
+
+commit 5c451c74cb8e2d7c4036f3a7863e805247c1f145
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Sep 24 14:14:46 2021 -0500
+
+    clean up options code agian ... (not implemented)
+
+M	src/rx.cpp
+
+commit 4e8e8098709e12edae7b4b83edd07ba8716bf9e1
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Sep 24 14:09:47 2021 -0500
+
+    clean up options code (not implemented)
+
+M	src/rx.cpp
+
+commit cc692a0e23ea64bb79d0ccbcb36160193a26eb31
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Sep 23 12:21:43 2021 -0500
+
+    add comment line
+
+M	src/rx.cpp
+
+commit 394896d4a2682e6f4044c21c1b826216ad9c2781
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Sep 23 11:52:13 2021 -0500
+
+    added input numbering to output first line
+
+M	src/rx.cpp
+
+commit c6671a0a0fa75fb89516ad48faf6c25550bc1a2f
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Sep 23 08:22:27 2021 -0500
+
+    add test, move mutli-input numbering code
+
+M	src/rx.cpp
+M	test/tests
+
+commit 71b22a60e04bb4c81b45f095324664afbb0e06ea
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Sep 21 17:33:28 2021 -0500
+
+    continued -> change output (match numbering)
+
+M	src/rx.cpp
+
+commit 3f04fad3f5f4e5e9aa6ec4dc77bfd28f7271b6ce
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Sep 20 21:51:11 2021 -0500
+
+    change output (match numbering)
+
+M	src/rx.cpp
+
+commit 12f07ac1be515ee0b3980f987173344711da26e1
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Sep 20 21:34:02 2021 -0500
+
+    added "endl" to output, deleted rx.2.cpp
+
+D	rx.2.cpp
+M	src/rx.cpp
+
+commit 6e75c1d0d1424f2cbb22bc54a944465b9a207df0
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Sep 20 21:32:38 2021 -0500
+
+    added "endl" to output, deleted rx.2.cpp
+
+D	build/Mafefile2
+M	build/Makefile
+
+commit d3008b3274152f86af3907557023501a0392a81f
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Sep 14 18:13:45 2021 -0500
+
+    check in partial options code
+
+M	build/Makefile
+A	rx.2.cpp
+M	src/rx.cpp
+M	src/rx.hpp
+M	src/rx_test.cpp
+
+commit 6fbf39fa137dbe6978f54b11d8b1c4db064195d7
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Sep 5 13:31:55 2021 -0500
+
+    get to build
+
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit 3bc6cc0e6cb1823897a6a3b7c97b50098a9bc7b2
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Sep 5 13:12:25 2021 -0500
+
+    text paste corruption
+
+M	src/rx.cpp
+
+commit 1f8bc0dc2d96eaeddecfdb0236b561122c2ce35b
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Sep 5 13:06:11 2021 -0500
+
+    some changes that may be merged
+
+M	build/Makefile
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit 11da9f5cfbb8ae4a436e2f0e56b045dfd13ca1d5
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Sep 4 23:54:48 2021 -0500
+
+    add config.h.in~ auto gen file to ignore
+
+M	.gitignore
+
+commit 603819367b3be84d4b12a608cff2bc2053251e03
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Sep 4 23:51:09 2021 -0500
+
+    remove blank lines from output
+
+M	build/Makefile
+M	src/rx.cpp
+
+commit f2d4d4ef87f80174c33da9996fe508cf96840ebe
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Sep 4 23:39:57 2021 -0500
+
+    fix recurring bug, all inputs are not scaned, the index was off
+
+M	src/rx.cpp
+
+commit 7139aca780c2f9ba3d9e1f6e413ef789165e69c7
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Sep 2 19:03:08 2021 -0500
+
+    change perms NEWS
+
+M	NEWS
+
+commit 9c4c4b9a5a64e4f8503b5dbf7b4cef6e4ac07cef
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Sep 1 18:37:40 2021 -0500
+
+    fix
+
+M	src/rx.cpp
+
+commit 2cf5011dadae0ed9ed37936245ff17c9a1c249d6
+Merge: c82ff41 6c9b1f6
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Sep 1 18:28:12 2021 -0500
+
+    fix comficts
+
+commit c82ff41b9155674736266ede06cd7329d9313453
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Aug 31 07:46:56 2021 -0500
+
+    fix build
+
+D	.github/ISSUE_TEMPLATE/bug_report.md
+D	.github/ISSUE_TEMPLATE/custom.md
+D	.github/ISSUE_TEMPLATE/feature_request.md
+D	.github/workflows/c-cpp.yml
+M	.gitignore
+D	.vscode/configurationCache.log
+D	.vscode/dryrun.log
+D	.vscode/settings.json
+D	.vscode/targets.log
+M	NEWS
+M	configure.ac
+D	src/.vscode/dryrun.log
+D	src/.vscode/settings.json
+A	src/bash_color_test
+M	src/rx.cpp
+D	src/rx_BUILD
+
+commit 9417adb7693eaecd9fe3df59817035fd2afb1a2c
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Aug 25 20:44:03 2021 -0500
+
+    Update rx_test.cpp
+
+M	src/rx_test.cpp
+
+commit 41266b1de4e91810ea98254c81bdd8ced20edc41
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Aug 20 05:39:04 2021 -0500
+
+    fix typo
+
+M	build/Makefile
+
+commit 571b0d8070c86d33b078b217e77b97edcb977222
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Aug 19 19:55:33 2021 -0500
+
+    ignore m4
+
+D	m4/libtool.m4
+D	m4/ltoptions.m4
+D	m4/ltsugar.m4
+D	m4/ltversion.m4
+D	m4/lt~obsolete.m4
+
+commit e43068a78d00a76b2122212636560b075acd411e
+Merge: 5089477 6843bc3
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Aug 19 19:07:41 2021 -0500
+
+    Merge branch 'master' of https://github.com/brian8181/rx
+    
+    merge this shit
+
+commit 5089477a31b35115a5e0c4776821e560ce75df1c
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Aug 19 19:06:28 2021 -0500
+
+    add changes
+
+M	configure.ac
+A	m4/libtool.m4
+A	m4/ltoptions.m4
+A	m4/ltsugar.m4
+A	m4/ltversion.m4
+A	m4/lt~obsolete.m4
+
+commit 6843bc362b0c5cfba9a97f317b8745679591520f
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Aug 14 16:47:42 2021 -0500
+
+    rename makefile
+
+R100	build/Makefile.1	build/Makefile.copy2
+
+commit 6f7b82051e7b66eff5255b7a05c0c79c00061762
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Aug 14 14:08:20 2021 -0500
+
+    make path in make file relative
+
+M	build/Makefile
+A	build/Makefile.copy
+
+commit 6c9b1f65056640b9c1fc3a286f9e7f9c4cf9087a
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Aug 14 12:47:17 2021 -0500
+
+    stash
+
+M	src/rx.cpp
+
+commit 17f9daad637403a28242542c0abb47271d7a53d8
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Aug 14 12:46:15 2021 -0500
+
+    testing & stash
+
+A	build/Mafefile2
+
+commit 4331afbc23e77fa615f2346c7d0214714aacaab3
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Aug 13 09:48:39 2021 -0500
+
+    add test fail2
+
+A	test/test_fail2.txt
+
+commit f4f0bda54d306b84ac011f60e1ea355b88c5468a
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Aug 12 16:31:05 2021 -0500
+
+    add regx options flag
+
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit 525920d5d987f48b17c1b37ca06617c31f734979
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Aug 12 16:05:43 2021 -0500
+
+    add .vscode to ignore
+
+M	.gitignore
+
+commit 438b0a12b61b60941a11d206e57f375ee2bcfb10
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Aug 12 16:01:55 2021 -0500
+
+    add o option
+
+M	src/rx.cpp
+
+commit 7ed9a83af12205a094022199e62e28a134c299be
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Aug 12 15:10:24 2021 -0500
+
+    fix input index
+
+M	src/rx.cpp
+
+commit 0a88947f3b830d2f8e09ebd8328699a3016741c1
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Aug 11 13:11:04 2021 -0500
+
+    libtoolize: Consider adding AC_CONFIG_MACRO_DIRS([m4]) to configure.ac
+
+M	configure.ac
+
+commit 317ef37dcd457f1daeef97f38c5859fa5510aa76
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Aug 11 11:02:31 2021 -0500
+
+    Update README.md
+
+M	README.md
+
+commit 82c29ea098d5dbe24f6da07ebf841eee0c4449a9
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Aug 11 11:02:11 2021 -0500
+
+    Update README.md
+
+M	README.md
+
+commit f5f9513b7e22bf03d79ac30f97da4fcc898c67d4
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Aug 11 09:40:17 2021 -0500
+
+    remove spaces!
+
+M	.gitignore
+M	src/rx.cpp
+
+commit 3e346e3f740674eb1f77e325172b8a1a4efc9cea
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Aug 11 08:02:35 2021 -0500
+
+    add m4 dir to clean script
+
+M	cleandist.sh
+
+commit d203a55463a366619b347f0e98b4b8f09cd3b955
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Aug 10 16:56:40 2021 -0500
+
+    autotools stuff
+
+M	Makefile.am
+
+commit b0fe1b34cf0db7191091d1691fdebd909b19d0d8
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Aug 10 16:55:32 2021 -0500
+
+    autotools stuff
+
+M	.gitignore
+M	Makefile.am
+
+commit 8b93bf3cabb2ae964b06e2d98250d2d5860347a3
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Aug 10 16:20:04 2021 -0500
+
+    reomve option class from Makefile
+
+M	build/Makefile
+
+commit f3708b6a485ec9ba9f86dd64fa22f03ee9bf22cc
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Aug 10 15:55:16 2021 -0500
+
+    .vscode dir
+
+A	.vscode/configurationCache.log
+A	.vscode/dryrun.log
+A	.vscode/targets.log
+A	src/.vscode/dryrun.log
+A	src/.vscode/settings.json
+
+commit 4261d2104704b2b2548fc85cc7bef07767e819b0
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Aug 7 15:53:04 2021 -0500
+
+    remove remove class files
+
+M	cleandist.sh
+D	src/OptionParser.cpp
+D	src/OptionParser.hpp
+
+commit 2d37b4f5847fdd97d2889bd8b68cbd095d15e314
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Aug 6 15:29:09 2021 -0500
+
+    fix mess
+
+M	src/OptionParser.cpp
+M	src/OptionParser.hpp
+M	src/bash_color_test.cpp
+
+commit 9fcd0d65adf36b65423332a739222bf1d8cfc0b7
+Merge: b72e340 e05a179
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Aug 6 15:21:59 2021 -0500
+
+    Merge branch 'master' of https://github.com/brian8181/rx
+    whet ever
+
+commit b72e3407ae099269e3ba76be691a6213078ea856
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Aug 6 15:20:59 2021 -0500
+
+    remove auto gererated files
+
+D	aclocal.m4
+D	autom4te.cache/output.0
+D	autom4te.cache/requests
+D	autom4te.cache/traces.0
+D	rx.geany
+
+commit e05a179bccaf17bcdf79f2fbbdd718a09c7ee219
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Jul 26 17:33:08 2021 -0500
+
+    add file to cleandist.sh
+
+M	cleandist.sh
+
+commit 2298caaa15f9dc53240642709eca859b5244bd7f
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Jul 26 17:25:24 2021 -0500
+
+    mod .git ignore
+
+M	.gitignore
+
+commit af6a7056cdb382e52ddc47c210aa05050106d682
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Jul 26 17:09:57 2021 -0500
+
+    remove auto gen files
+
+D	aclocal.m4
+D	autom4te.cache/output.0
+D	autom4te.cache/requests
+D	autom4te.cache/traces.0
+
+commit a9ab67ce8a3e33aedea0d67e90835dace86c8986
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Jul 23 20:23:04 2021 -0500
+
+    delete flags.hpp Makefile.in ../cleandist.sh
+
+M	cleandist.sh
+D	src/Makefile.in
+D	src/flags.hpp
+
+commit a1cb64f1459905eb03c8024c9f2e3eafc0082ff0
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Jul 23 20:17:36 2021 -0500
+
+    fix new ignore temlapte
+
+M	.gitignore
+A	aclocal.m4
+A	autom4te.cache/output.0
+A	autom4te.cache/requests
+A	autom4te.cache/traces.0
+A	missing
+A	src/Makefile.in
+
+commit ed1b59680d5a1212bb41c791db9e384b670b413d
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Jul 23 20:10:09 2021 -0500
+
+    added Makefile.1
+
+M	.gitignore
+M	build/Makefile
+A	build/Makefile.1
+
+commit dc5793efb52e8c964dbd2fbb1aaf2ed9ca743971
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Jul 7 14:30:59 2021 -0500
+
+    fixup .gitignore
+
+M	.gitignore
+M	test/pass.fail.sh
+
+commit dcf5e357446d2d93a3508ddf6aab3009062a164b
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Jul 7 07:55:48 2021 -0500
+
+    clean up
+
+M	.gitignore
+M	build/Makefile
+M	cleandist.sh
+A	src/flags.hpp
+
+commit 02f5bac12e658ccf9e7a3ac3ada218688a28a220
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Jul 2 06:33:41 2021 -0500
+
+    cleandist.sh
+
+A	cleandist.sh
+
+commit 9220b41ab76c14324269c4bd44db638eec0222a1
+Merge: 0f7d00d e38941b
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Jul 2 06:02:41 2021 -0500
+
+    Merge branch 'extended_rgx'
+    merge in extended changes
+
+commit 0f7d00d8276dddd4dd959998e21fd146d039b653
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Jul 1 22:11:48 2021 -0500
+
+    quick changes
+
+M	src/OptionParser.cpp
+M	src/OptionParser.hpp
+M	src/rx.hpp
+
+commit 398c9841e9d6a8c11b7ff6102cb9ee84e980e788
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Jul 1 22:06:15 2021 -0500
+
+    fix build errors
+
+M	src/OptionParser.cpp
+M	src/OptionParser.hpp
+
+commit 3962b4571cf123ccdccf42284938af84495d87e5
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Jul 1 11:34:00 2021 -0500
+
+    add class files
+
+M	build/Makefile
+
+commit df8bb5869f7f0f89864187782643f5eb8d81a990
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Jun 28 21:03:24 2021 -0500
+
+    began creating classes
+
+A	src/OptionParser.cpp
+A	src/OptionParser.hpp
+
+commit e38941bea610fe5ac9f3d2050924fd4107dc0a73
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Jun 28 06:40:35 2021 -0500
+
+    fix error with extend flag init
+
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit 8bbd448343e79d5d8108aad74db6d4f0ec0b34a2
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jun 26 20:36:13 2021 -0500
+
+    add all autogererated files by \"autoreconf -i\" to .gitignore
+
+M	.gitignore
+
+commit a0e4e4621b8722550c7b0ad6b66b4aabe2bce47b
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jun 26 07:45:52 2021 -0500
+
+    started implementing options ,e & E (extended)
+
+M	.gitignore
+M	src/bash_color_test.cpp
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit 52d3c63e255e8902f2c72d442ae4a285f5c4b5a3
+Merge: 556e6bf a59ab9b
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Jun 25 17:32:04 2021 -0500
+
+    Merge branch 'master' of https://github.com/brian8181/rx
+    
+    merge chnages from origin
+
+commit 556e6bf3aae6dee7b31affddf58f0e4b602f6ea1
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Jun 25 17:31:46 2021 -0500
+
+    change ref sematics of constant
+
+M	src/rx.hpp
+
+commit a59ab9ba1a5c0d532e4e6154a3727f5a61c5db2a
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Jun 25 17:11:41 2021 -0500
+
+    Update README.md
+
+M	README.md
+
+commit eaba92713b56948af80aa837ca627b0fe4971b57
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Jun 25 17:11:08 2021 -0500
+
+    Update README.md
+
+M	README.md
+
+commit 53574dc0e0fcd64a28c53e3e966c7ec91f051f70
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Jun 21 22:56:15 2021 -0500
+
+    minor chnages to format
+
+M	src/main.cpp
+M	src/main.hpp
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit d712c9a527b7a289fdc4b33cd9022266fc1f05c9
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Jun 20 11:14:25 2021 -0500
+
+    update version string
+
+M	build/Makefile
+D	build/bash_color_test_
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit f1e4b69ad57ecea49d5b23bce7debb02b1464880
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jun 19 17:35:09 2021 -0500
+
+    fix build errors (build/make)
+
+M	build/Makefile
+A	build/bash_color_test_
+M	src/rx.cpp
+M	src/rx_test.cpp
+
+commit d369e34933374c7cbec5f4152fc21e46389158bd
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Jun 14 16:39:18 2021 -0500
+
+    add BUILD/VERSION file
+
+M	src/rx.cpp
+A	src/rx_BUILD
+
+commit 28ef3eb939f19036fe12e7f21dda3e52a4c965b2
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Jun 13 11:24:53 2021 -0500
+
+    added "--version" option
+
+M	src/rx.cpp
+
+commit dd034f8f8a91a24cc75afa3cc99ae90818742538
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jun 12 18:19:10 2021 -0500
+
+    create bash_color_test to test bash_colors.h
+
+M	.gitignore
+M	build/Makefile
+A	src/bash_color_test.cpp
+
+commit 613a8fe0a5ead72277a9a4ec25054cb29eb70d7b
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jun 12 05:58:01 2021 -0500
+
+    add .* (object files, gererated during build) to git ignore
+
+M	.gitignore
+
+commit 4cba18e7ca3d4703627248ba61c2bf3f3ad4c622
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Jun 11 21:00:43 2021 -0500
+
+    added consts for bash formating
+
+M	src/bash_color.h
+
+commit 1e4e26d9d173929b55c30749c7aeadf53cd34c07
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Jun 11 14:29:50 2021 -0500
+
+    added colors to bash_colors.hpp file
+
+M	src/bash_color.h
+
+commit 44fd52ac9a2bb1c81f4f2523467c4ac82ecc53ec
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Jun 9 16:04:05 2021 -0500
+
+    add files to ignore & delete misc auto gen files
+
+M	.gitignore
+M	build/Makefile
+D	missing
+D	src/main.o
+D	src/rx.o
+
+commit 78afa585b19032699e0a730a69a2ca1d178c555e
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Jun 9 15:45:48 2021 -0500
+
+    testing, some stuff
+
+M	.gitignore
+M	.vscode/settings.json
+M	build/Makefile
+M	man/install.sh
+M	src/main.cpp
+A	src/main.o
+A	src/rx.o
+M	src/rx_test.cpp
+
+commit c318e364c2728be89baab2589f9e963301ff6b33
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Jun 9 02:54:34 2021 -0500
+
+    no-pretty option implemented
+
+M	src/rx.cpp
+
+commit 9aca314745fc254aaf78e1a49f6cf88219d98dde
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Jun 6 22:00:50 2021 -0500
+
+    check in latest
+
+M	rx.geany
+M	src/rx_test.cpp
+
+commit 0b6a65a8e6f6d48384f91295a8cec426e09b1afc
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jun 5 11:39:05 2021 -0500
+
+    working on test cases, got all passing at last
+
+M	src/rx_test.cpp
+M	src/rx_test.hpp
+
+commit 177a598bbf85a218f0cb33234667e0c880988128
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jun 5 09:19:19 2021 -0500
+
+    cleanup, minor refactor, etc
+
+M	src/rx.cpp
+M	src/rx_test.cpp
+
+commit 67a33b71ad57992462ad73bb9e458b924bc685ee
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jun 5 08:43:34 2021 -0500
+
+    removed file options from test cases
+
+M	src/rx_test.cpp
+M	src/rx_test.hpp
+
+commit d7a76f6568e59156b841fed9d71064bd70ea4829
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Jun 4 20:19:27 2021 -0500
+
+    pretty & no-prettyr fix
+
+M	src/rx.cpp
+
+commit bbd4cfad459c5fb402c2c450b3e41d191698f4ae
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Jun 4 13:54:46 2021 -0500
+
+    hack, fix on idxing bug
+
+M	src/rx.cpp
+
+commit 0f8145e7429459ad95f0517fc0bf4409e674c10a
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Jun 4 12:43:05 2021 -0500
+
+    add bit flags for options, split off regx code form parsing options, default to pretty printing
+
+D	build/Makefile.test
+A	rx.geany
+M	src/rx.cpp
+M	src/rx.hpp
+M	src/rx_test.cpp
+
+commit f808945d9c7b76e691957978d3ea15cc33c002b6
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Jun 2 23:26:41 2021 -0500
+
+    added file, I do not know where this came from
+
+A	.vscode/settings.json
+
+commit a5dee172ac6e84e83afff93c936e895fa8dae8f5
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Jun 2 23:25:33 2021 -0500
+
+    debugging match color coded formatting, misc
+
+M	src/rx.cpp
+
+commit eac5ce43d559ae1e40b4c7716f5b98cf969af6dc
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Jun 2 22:39:54 2021 -0500
+
+    changed --help format, made i (index offset) more obvious
+
+M	src/rx.cpp
+
+commit d9b7b39dd4105883f17f38966b566c3c982a089d
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Jun 1 12:45:01 2021 -0500
+
+    work on test cases
+
+M	src/rx.cpp
+M	src/rx.hpp
+M	src/rx_test.cpp
+M	src/rx_test.hpp
+
+commit 7c10b0badda7c37c995fbe785a415d07c2ab1872
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon May 31 20:10:30 2021 -0500
+
+    fix option s & p together
+
+M	src/rx.cpp
+
+commit 8ec968b3b07ffe365ba91c3bbdab102870b7fd6e
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon May 31 15:47:58 2021 -0500
+
+    add constant EVENS_ONLY
+
+M	src/main.hpp
+M	src/rx.cpp
+M	src/rx.hpp
+M	src/rx_test.cpp
+
+commit e242c68b0fafab5d00a2ef19427cca1503a61d2e
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon May 31 15:36:48 2021 -0500
+
+    adjust index value so they are 1 based
+
+M	src/rx.cpp
+
+commit a8f1bda3a28c029116484fdd7e3c07de5c69a206
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon May 31 15:32:06 2021 -0500
+
+    remove duplicate idx value, hope it is a duplicate
+
+M	src/rx.cpp
+
+commit fc77b8e676e6d5515440521932b118d60b84bf46
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon May 31 12:24:35 2021 -0500
+
+    update file for varibale option list
+
+M	src/rx.cpp
+
+commit f5da18156215a1f216720f117b960afccd1801f2
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri May 28 22:20:06 2021 -0500
+
+    make template file main.hpp
+
+M	src/main.cpp
+R068	src/std.hpp	src/main.hpp
+M	src/rx.cpp
+
+commit dc1ede018b3891f854ec48051e154a5acb813a83
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed May 26 15:29:10 2021 -0500
+
+    add params to functions, add debug configs
+
+M	.vscode/launch.json
+M	src/rx.hpp
+
+commit 9ebb3aa83dcc8a078ce0ef54225648a85b194960
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed May 26 14:47:00 2021 -0500
+
+    add some pretty printing, broke single match
+
+M	src/rx.cpp
+
+commit 32771b3c42cd6cd0f21d5a9660c3b4125e26582a
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed May 26 09:01:03 2021 -0500
+
+    update print_help(), -h / --help option
+
+M	src/rx.cpp
+
+commit ced1a9eac07d7ae1e6740eac485c50c063c5b648
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue May 25 09:04:32 2021 -0500
+
+    continue adding pretty option
+
+M	src/rx.cpp
+
+commit efd51bcdbb4ddd1396f35820a3b08199a6b921ae
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon May 24 22:50:20 2021 -0500
+
+    add "pretty option" skeleton, no implementation
+
+M	src/rx.cpp
+
+commit 6a32dd734554a29b6aafda5d5544becd158822d7
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon May 24 10:06:54 2021 -0500
+
+    add "build/cppRxTestResults.xml" to .gitingonre
+
+M	.gitignore
+
+commit 83bffe59e28a3867ae1f1f962629816b81e03ff7
+Merge: c1a6cda 2acec25
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon May 24 06:19:35 2021 -0500
+
+    remove unnecessary volatile keyword, worked on print_match_header()
+
+commit c1a6cda580996b182f4ade26e65459a7280ffd82
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon May 24 06:09:09 2021 -0500
+
+    remove unnecessary volatile keyword, worked on print_match_header()
+
+M	src/rx.cpp
+
+commit 2acec2561996c324eb56b9171b70dee3ca0a5893
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon May 24 06:09:09 2021 -0500
+
+    revove unnecessary volatile keyword, worked on print_match_header()
+
+M	src/rx.cpp
+
+commit f3885ea1dfd9bda66ce9929a3419a7b384b10a2b
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun May 23 15:46:40 2021 -0500
+
+    changed single match output
+
+M	src/rx.cpp
+
+commit 0541ef4a84490143fd6399443f7f8f2118e9ae5f
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun May 23 15:45:50 2021 -0500
+
+    add debug configurations for vscode
+
+M	.vscode/launch.json
+
+commit 17fdf02aa2c9d3e1d0fc91008cf95acf2dddad25
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun May 23 12:45:33 2021 -0500
+
+    added std.hpp, changed spaces to tabs only
+
+M	src/main.cpp
+M	src/rx.cpp
+M	src/rx.hpp
+A	src/std.hpp
+
+commit 303affc61748f5c857a5f327f410cf6d59f705d5
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun May 23 12:22:36 2021 -0500
+
+    delete autotools, bak directory
+
+D	bak/INSTALL
+D	bak/Makefile
+D	bak/Makefile.in
+D	bak/aclocal.m4
+D	bak/autoscan.log
+D	bak/compile
+D	bak/config.guess
+D	bak/config.h
+D	bak/config.h.in
+D	bak/config.log
+D	bak/config.status
+D	bak/config.sub
+D	bak/configure
+D	bak/configure.ac.2
+D	bak/configure.ac.bak
+D	bak/configure.scan
+D	bak/depcomp
+D	bak/install-sh
+D	bak/libtool
+D	bak/ltmain.sh
+D	bak/stamp-h1
+D	src/Makefile
+
+commit 5bcd6fe9813b4cb767b072011c6f5cbffebb751d
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun May 23 12:18:44 2021 -0500
+
+    delete autotolls generated files agian
+
+A	bak/Makefile
+A	bak/config.h.in
+A	script/.data/rx.cpp-824a16e2458c6893ac2e1ea2a3f53a014fa2fcfd~2020-11-23.tmp
+A	script/.data/rx.cpp-d6a6237c2ba7aa6bac339bd1801ff29b3c1ce24f~2021-03-22.tmp
+A	script/h
+A	src/Makefile
+
+commit 06bc82d2d0910761e7fae8a3e87c5968c4dc0f3b
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun May 23 12:14:49 2021 -0500
+
+    delete autotools generated files
+
+M	.gitignore
+D	m4/libtool.m4
+D	m4/ltoptions.m4
+D	m4/ltsugar.m4
+D	m4/ltversion.m4
+D	m4/lt~obsolete.m4
+
+commit bc6e358994f332b8bef93bde68716b13d72a1ee2
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat May 22 08:20:38 2021 -0500
+
+    move configure.ac from bak
+
+R091	bak/configure.ac	configure.ac
+
+commit e87555e574d46fd5f5b2ba7af14bb1dca6331543
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat May 22 08:16:37 2021 -0500
+
+    move / rename autofiles
+
+R100	INSTALL	bak/INSTALL
+A	bak/Makefile.in
+R100	autoscan.log	bak/autoscan.log
+R100	compile	bak/compile
+A	bak/configure
+R100	configure.ac	bak/configure.ac
+R100	depcomp	bak/depcomp
+R100	install-sh	bak/install-sh
+R100	libtool	bak/libtool
+R100	ltmain.sh	bak/ltmain.sh
+D	bak/notes.txt
+R100	stamp-h1	bak/stamp-h1
+D	rx.geany
+D	test/testFileOption.txt
+
+commit cc5f7e13b02017cc5d03b28b5c62588e1c17d203
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat May 22 08:14:50 2021 -0500
+
+    fix \ cleanup Makefile, move notes.txt
+
+M	build/Makefile
+A	notes.txt
+
+commit e39431b17596194c6fe8c6b1af3163f38f970020
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri May 21 23:17:49 2021 -0500
+
+    fix permissions
+
+M	.github/ISSUE_TEMPLATE/bug_report.md
+M	.github/ISSUE_TEMPLATE/custom.md
+M	.github/ISSUE_TEMPLATE/feature_request.md
+M	.github/workflows/c-cpp.yml
+M	.gitignore
+M	.vscode/launch.json
+M	.vscode/tasks.json
+M	AUTHORS
+M	COPYING
+M	ChangeLog
+M	INSTALL
+M	Makefile.am
+M	NEWS
+M	README
+M	README.md
+M	autoscan.log
+M	bak/aclocal.m4
+M	bak/config.h
+M	bak/config.log
+M	bak/configure.ac.2
+M	bak/configure.ac.bak
+M	bak/configure.scan
+M	bak/notes.txt
+M	build/Makefile
+M	build/Makefile.test
+M	configure.ac
+M	ltmain.sh
+M	man/Makefile.am
+M	man/install.sh
+M	man/rx.1
+M	missing
+M	rx.geany
+M	script/git-file-hist.sh
+M	script/notes.txt
+M	src/Makefile.am
+M	src/bash_color.h
+M	src/main.cpp
+M	src/rx.cpp
+M	src/rx.hpp
+M	src/rx_test.cpp
+M	src/rx_test.hpp
+M	stamp-h1
+M	test/testFileOption.txt
+M	test/tests
+
+commit 3560df41e70a106b16c6bd85b7c83fe406ee9914
+Author: brian8181 <brian8181@gmail.com>
+Date:   Fri May 14 00:23:53 2021 -0500
+
+    remove variable number inputs, penidng fixes
+
+D	.gitignore.save
+D	build-aux/compile
+D	build-aux/config.guess
+D	build-aux/config.sub
+D	build-aux/depcomp
+D	build-aux/install-sh
+D	build-aux/ltmain.sh
+D	build-aux/missing
+D	build/.gitignore.bak
+M	build/Makefile
+D	config.log
+M	missing
+M	src/main.cpp
+M	src/rx.cpp
+M	src/rx.hpp
+D	src/stamp-h2
+
+commit f0990a916201cb1d68f7269cd69be0dc95661bbc
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun May 9 19:30:17 2021 -0500
+
+    changed output format
+
+M	.gitignore
+M	src/main.cpp
+M	src/rx.cpp
+
+commit 166b7cabf87682850fefcdae67af5b9b27a90abb
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Apr 22 13:12:57 2021 -0500
+
+    clean up main pipe buffer code
+
+D	.vscode/c_cpp_properties.json
+M	.vscode/launch.json
+D	.vscode/launch.json.bak
+D	.vscode/settings.json
+M	.vscode/tasks.json
+D	after.autoreconf.txt
+D	before.autoreconf.txt
+M	build/Makefile
+A	build/Makefile.test
+D	src/.vscode/launch.json
+D	src/.vscode/tasks.json
+M	src/main.cpp
+M	src/rx_test.hpp
+
+commit 8d28fef1ced863918cf58cac4186e5a85b620e5d
+Merge: 4fb2807 d08433d
+Author: brian8181 <brian8181@gmail.com>
+Date:   Sat Apr 17 09:58:00 2021 -0500
+
+    Merge branch 'master' of https://github.com/brian8181/rx
+
+commit 4fb2807f55dfacd71033b8a5c97ac18b8ded8026
+Author: brian8181 <brian8181@gmail.com>
+Date:   Sat Apr 17 09:57:40 2021 -0500
+
+    testing
+
+M	.gitignore
+M	rx.geany
+M	src/main.cpp
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit d08433de87761ec84833032e463587dc0d55cb40
+Author: brian8181 <brian8181@gmail.com>
+Date:   Sat Apr 17 09:53:55 2021 -0500
+
+    testing
+
+M	NEWS
+
+commit 348ddf47a0c579b76c291f355c0519a3dda4ff1a
+Author: brian8181 <brian8181@gmail>
+Date:   Sat Apr 17 09:50:25 2021 -0500
+
+    testing
+
+M	NEWS
+
+commit ce61af6d0a222c2b0dc8fb3a3c837558ea8a3342
+Author: brian8181 <brian8181@gmail>
+Date:   Sat Apr 17 09:46:39 2021 -0500
+
+    testing
+
+M	NEWS
+
+commit 44d86fc82e89e0901c51263c0e19453ebeb72d6c
+Author: brian8181 <brian8181@gmail>
+Date:   Tue Apr 13 19:59:27 2021 -0500
+
+    clean up
+
+M	rx.geany
+M	src/rx.cpp
+
+commit 01d928b98d51532afc9fef822580c568f7ef881b
+Author: brian8181 <brian8181@gmail>
+Date:   Tue Apr 13 19:50:31 2021 -0500
+
+    tune, single match maode
+
+M	rx.geany
+M	src/bash_color.h
+M	src/rx.cpp
+
+commit c56cc447e97b8ed2f6dd8969f1c6e58bb064d794
+Author: brian8181 <brian8181@gmail>
+Date:   Tue Apr 13 11:54:13 2021 -0500
+
+    fix/update verbose output
+
+M	rx.geany
+M	src/main.cpp
+M	src/rx.cpp
+
+commit e0e7216f9038f97d3dc331e40a52d10719fab46b
+Author: brian8181 <brian8181@gmail>
+Date:   Tue Apr 13 09:44:57 2021 -0500
+
+    clean up files
+
+M	.gitignore
+A	build/.gitignore.bak
+D	build/rx
+D	build/rx_test
+
+commit b6f42429824d0f2e0a2fa54d92c5ff792f694224
+Author: brian8181 <brian8181@gmail>
+Date:   Tue Apr 13 00:15:45 2021 -0500
+
+    code cleanup
+
+M	rx.geany
+M	src/rx.cpp
+
+commit b7147742271579866b9e61cb548fe25a9160376c
+Author: brian8181 <brian8181@gmail>
+Date:   Mon Apr 12 23:53:32 2021 -0500
+
+    fix build/Makefile
+
+A	build/Makefile
+M	rx.geany
+
+commit 21f1cd922fbf4f391d327a6bb059252928910015
+Author: brian8181 <brian8181@gmail>
+Date:   Mon Apr 12 16:55:20 2021 -0500
+
+    ignore & geany
+
+M	.gitignore
+M	rx.geany
+
+commit e7f22c813d6b61280885a3d5e204b947d40242ef
+Author: brian <brian8181@gmail>
+Date:   Sun Apr 11 12:12:47 2021 -0500
+
+    remove make dir
+
+M	build/rx
+M	build/rx_test
+D	make/Makefile
+
+commit 9091b9e54e4d2597cd51ea61402b7797145dd307
+Author: brian <brian8181@gmail>
+Date:   Sun Apr 11 12:01:57 2021 -0500
+
+    single msg, geany stuff
+
+M	.gitignore
+A	.gitignore.save
+A	rx.geany
+M	src/rx.cpp
+
+commit 68126f278c879ae8c0df145b2d4931db744b270d
+Author: brian <brian8181@gmail>
+Date:   Sat Apr 10 19:06:45 2021 -0500
+
+    blah blah Blah
+
+A	build/rx
+A	build/rx_test
+M	src/rx.cpp
+
+commit af24c10c4376397cde07c1e45d83ee483eec8fd8
+Author: brian <brian8181@gmail>
+Date:   Sat Apr 10 14:21:34 2021 -0500
+
+    added build dir
+
+M	make/Makefile
+M	src/main.cpp
+
+commit d90ca61fdd1cea7b8f21765e8c302f1e73d7a197
+Author: brian <brian8181@gmail>
+Date:   Fri Apr 9 23:43:51 2021 -0500
+
+    fixed append pipe code
+
+M	src/main.cpp
+
+commit f8de169416aad830d6f1520351c15d11dd485791
+Author: Brian K <brian8181@gmail.com>
+Date:   Thu Apr 1 14:43:10 2021 -0500
+
+    rename iterator
+
+M	src/main.cpp
+M	src/rx.cpp
+
+commit f456ce32d7494298fe1c6e0b463832621e64e4ab
+Author: Brian K <brian8181@gmail.com>
+Date:   Wed Mar 31 16:58:40 2021 -0500
+
+    add alternating color so the matches stand out
+
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit 4bd47a2e307c93ab5043674a77feb4908dd6bf50
+Author: Brian K <brian8181@gmail.com>
+Date:   Wed Mar 31 09:02:42 2021 -0500
+
+    fixed ignore case, and count in single mode
+
+M	src/rx.cpp
+
+commit c60da30bca63e0873f7c4f3f196bdd8477fd084c
+Author: Brian K <brian8181@gmail.com>
+Date:   Wed Mar 31 08:44:33 2021 -0500
+
+    single match mode seems to be working
+
+M	.vscode/launch.json
+A	.vscode/launch.json.bak
+M	.vscode/tasks.json
+M	script/git-file-hist.sh
+A	script/notes.txt
+M	src/.vscode/launch.json
+M	src/rx.cpp
+
+commit 5f45d77f26093ad68f6d5812b3746f8a811125fd
+Author: Brian K <brian8181@gmail.com>
+Date:   Tue Mar 30 15:48:44 2021 -0500
+
+    delete diff test scripts
+
+D	script/diff.sh
+D	script/generic_diff.sh
+R100	git-file-hist.sh	script/git-file-hist.sh
+D	script/meld.sh
+D	script/rdif.sh
+D	script/template.sh
+
+commit b76027dffdb56fa0c06417c05b45ee288ed390c3
+Author: Brian K <brian8181@gmail.com>
+Date:   Tue Mar 30 14:00:10 2021 -0500
+
+    remove elf files
+
+D	src/elf.txt
+D	src/elf_symbols.txt
+
+commit d61d08a01f6219cd4c8b2271cb12015512bfbb83
+Author: Brian K <brian8181@gmail.com>
+Date:   Tue Mar 30 13:56:58 2021 -0500
+
+    root cppRxTestResults.xml, to ignore list
+
+M	.gitignore
+
+commit 731d848011537f2c0b8eaccdbc147cd1ec7aa005
+Author: Brian K <brian8181@gmail.com>
+Date:   Tue Mar 30 13:55:17 2021 -0500
+
+    add rx_text, cppRxTestResults.xml, to ignore list
+
+M	.gitignore
+
+commit 386e896501018808d3fd455a31137662e950320f
+Author: Brian K <brian8181@gmail.com>
+Date:   Tue Mar 30 11:56:24 2021 -0500
+
+    commit missed files
+
+M	.gitignore
+M	script/hist.sh
+
+commit de5f429450936d99c53135386e1833656abe54e8
+Author: Brian K <brian8181@gmail.com>
+Date:   Tue Mar 30 11:54:04 2021 -0500
+
+    autotools backup, remove all in future
+
+M	.gitignore
+A	INSTALL
+A	after.autoreconf.txt
+A	bak/aclocal.m4
+A	bak/config.guess
+A	bak/config.h
+A	bak/config.log
+A	bak/config.status
+A	bak/config.sub
+R100	configure.ac.2	bak/configure.ac.2
+R100	configure.ac.bak	bak/configure.ac.bak
+R100	configure.scan	bak/configure.scan
+A	bak/notes.txt
+A	before.autoreconf.txt
+A	build-aux/compile
+A	build-aux/config.guess
+A	build-aux/config.sub
+A	build-aux/depcomp
+A	build-aux/install-sh
+A	build-aux/ltmain.sh
+A	build-aux/missing
+A	compile
+A	config.log
+M	configure.ac
+D	configure.ac~
+A	depcomp
+A	libtool
+A	ltmain.sh
+A	m4/libtool.m4
+A	m4/ltoptions.m4
+A	m4/ltsugar.m4
+A	m4/ltversion.m4
+A	m4/lt~obsolete.m4
+M	script/meld.sh
+A	src/stamp-h2
+A	stamp-h1
+
+commit 5b277e2da058a63937e25f3db8ca41761b6b6d73
+Author: Brian K <brian8181@gmail.com>
+Date:   Mon Mar 29 18:11:04 2021 -0500
+
+    git mel.sh to run with new git_diff.sh, add libtool to configure.ac
+
+M	.gitignore
+M	configure.ac
+M	script/meld.sh
+M	script/template.sh
+
+commit a589a1e6b1480b31b40753ed7b8f2f5cea751f08
+Author: Brian K <brian8181@gmail.com>
+Date:   Sun Mar 28 21:49:06 2021 -0500
+
+    kdiff3 now working
+
+M	script/kdiff3.sh
+M	script/meld.sh
+M	script/template.sh
+
+commit 930f6ca8ddd868a048470ac69647439f5b182eff
+Author: Brian K <brian8181@gmail.com>
+Date:   Sun Mar 28 18:53:35 2021 -0500
+
+    creating template file
+
+A	script/template.sh
+
+commit 11a6fddf7fc40d0251ba0a5184816783dca45abb
+Author: Brian K <brian8181@gmail.com>
+Date:   Sun Mar 28 18:43:12 2021 -0500
+
+    creating a template file
+
+M	script/generic_diff.sh
+A	script/kdiff3.sh
+M	script/meld.sh
+
+commit f2178df4ecb6d10fd078eabd1942f83b3768acb6
+Author: Brian K <brian8181@gmail.com>
+Date:   Sun Mar 28 02:43:39 2021 -0500
+
+    update scripts
+
+M	script/diff.sh
+M	script/generic_diff.sh
+M	script/meld.sh
+
+commit fb01629e0f1f1fc663fc646bbf3caf2dbd8c892a
+Author: Brian K <brian8181@gmail.com>
+Date:   Sun Mar 28 00:12:18 2021 -0500
+
+    added kompare script
+
+M	configure.ac
+A	configure.ac.2
+M	script/generic_diff.sh
+M	script/hist.sh
+A	script/kompare.sh
+
+commit e5da14856daebf722dd7e621ba11a584ce6428c4
+Author: Brian K <brian8181@gmail.com>
+Date:   Sat Mar 27 21:25:12 2021 -0500
+
+    getting auto stuff to work
+
+M	.gitignore
+M	Makefile.am
+M	autoscan.log
+M	configure.ac
+A	configure.ac.bak
+A	configure.ac~
+M	configure.scan
+M	script/diff.sh
+M	script/hist.sh
+M	src/Makefile.am
+
+commit 37e0345bcd82b3737d2504b3a4544ca1b366e0c6
+Author: Brian K <brian8181@gmail.com>
+Date:   Sat Mar 27 18:17:35 2021 -0500
+
+    got multi exec enabled
+
+M	script/diff.sh
+A	script/generic_diff.sh
+A	script/hist.sh
+M	script/meld.sh
+
+commit c4c860ae60f399aa6e769c3688ad18703cccfdd1
+Author: Brian K <brian8181@gmail.com>
+Date:   Sat Mar 27 16:32:55 2021 -0500
+
+    got diff & meld working
+
+D	script/hist.sh
+M	script/meld.sh
+M	script/rdif.sh
+
+commit 459dfc5a2af7be9d13563c438f1f2e5912826c00
+Author: Brian K <brian8181@gmail.com>
+Date:   Sat Mar 27 16:08:05 2021 -0500
+
+    git diff/hist scripts
+
+M	.gitignore
+M	configure.ac
+A	install-sh
+A	script/diff.sh
+A	script/hist.sh
+A	script/meld.sh
+A	script/rdif.sh
+
+commit cc16a543b6937db86e97f2e9ce41345bb120e1e8
+Author: Brian K <brian8181@gmail.com>
+Date:   Thu Mar 25 11:31:53 2021 -0500
+
+    new script
+
+A	git-file-hist.sh
+
+commit 71488bc5ecb9ed66ad1c317c7378f631a33544b9
+Author: Brian K <brian8181@gmail.com>
+Date:   Wed Mar 24 02:44:36 2021 -0500
+
+    testing
+
+commit 23e49b2903bf0eaf2045908912680f4c457e94c8
+Author: Brian K <brian8181@gmail.com>
+Date:   Wed Mar 24 02:44:19 2021 -0500
+
+    small format changes
+
+M	Makefile.am
+M	configure.ac
+M	make/Makefile
+
+commit d6a6237c2ba7aa6bac339bd1801ff29b3c1ce24f
+Author: Brian K <brian8181@gmail.com>
+Date:   Mon Mar 22 12:17:49 2021 -0500
+
+    auto stuff
+
+A	autoscan.log
+A	configure.scan
+M	make/Makefile
+D	rx
+M	src/rx.cpp
+
+commit a764d077cddbd287d64e46f62a1e02b785b6469d
+Author: Brian K <brian8181@gmail.com>
+Date:   Thu Mar 11 10:21:09 2021 -0600
+
+    add building section to README
+
+M	README
+
+commit 6d4c837278ff02e2ce4a229817d7ad5e4bd773d2
+Author: Brian K <brian8181@gmail.com>
+Date:   Thu Mar 11 10:03:28 2021 -0600
+
+    update make file, removed all refs to rx
+
+M	make/Makefile
+
+commit a9633b9ba7c4e090be2f9a461443b137f9e11549
+Author: Brian K <brian8181@gmail.com>
+Date:   Thu Mar 11 01:40:55 2021 -0600
+
+    fix ignore
+
+M	.gitignore
+A	rx
+
+commit 8558bb1d8053bb9ec3001a2573daf2594e5c4403
+Author: Brian K <brian8181@gmail.com>
+Date:   Thu Mar 11 01:34:41 2021 -0600
+
+    delete files
+
+D	.deps/main.Po
+D	.deps/rx.Po
+D	.deps/rx.Tpo
+D	.deps/rx_test.Po
+D	INSTALL
+D	Makefile
+D	bak/.gitignore
+D	bak/Makefile copy
+D	bak/man/Makefile.am
+D	bak/src/Makefile.am
+D	build-aux/compile
+D	config.h.in
+D	doc/Makefile.am
+D	examples/Makefile.am
+
+commit d9c603f442eddaa1749263e68c238ef7f944ba80
+Merge: 0c4b545 319460e
+Author: Brian K <brian8181@gmail.com>
+Date:   Thu Mar 11 01:26:54 2021 -0600
+
+    Merge branch 'master' of https://github.com/brian8181/rx
+
+commit 319460e72cc41daf80c4d4fedf041991f4b47dac
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Mar 11 01:21:01 2021 -0600
+
+    Update issue templates
+
+A	.github/ISSUE_TEMPLATE/bug_report.md
+A	.github/ISSUE_TEMPLATE/custom.md
+A	.github/ISSUE_TEMPLATE/feature_request.md
+
+commit 0c4b545fe8f9e282496f5d8e885ba8fa372569b7
+Author: Brian K <brian8181@gmail.com>
+Date:   Thu Mar 11 00:48:23 2021 -0600
+
+    autotools
+
+M	.gitignore
+M	ChangeLog
+M	Makefile
+D	compile
+D	depcomp
+D	install-sh
+M	make/Makefile
+D	rx
+M	test/tests
+D	tmp
+
+commit ff01483f11d590190d2d6005aa38872f3aba1f50
+Author: Brian K <brian8181@gmail.com>
+Date:   Tue Mar 9 22:37:18 2021 -0600
+
+    changed g++ options in Makefile, add options rx.cpp
+
+M	make/Makefile
+M	src/rx.cpp
+
+commit d772d15c41e2b09bdd385bdb254227ed873fb1aa
+Author: Brian K <brian8181@gmail.com>
+Date:   Tue Mar 9 18:28:20 2021 -0600
+
+    test
+
+M	src/rx.cpp
+
+commit b5c4229020d2e98f27ed53bec63f8285678a883a
+Author: Brian K <brian8181@gmail.com>
+Date:   Tue Mar 9 17:38:05 2021 -0600
+
+    stuff
+
+A	Makefile
+T	build-aux/compile
+M	configure.ac
+A	rx
+
+commit 9b255fede099762502f8d33788d25e5d3bb52de3
+Author: Brian K <brian8181@gmail.com>
+Date:   Sat Mar 6 17:06:45 2021 -0600
+
+    readelf output
+
+A	src/elf.txt
+A	src/elf_symbols.txt
+
+commit 76b6efa62d07b961f50db6cc0d7c2aefbe65e9c6
+Author: Brian K <brian8181@gmail.com>
+Date:   Sat Mar 6 11:02:44 2021 -0600
+
+    delete .vs
+
+D	.vs/ProjectSettings.json
+D	.vs/slnx.sqlite
+
+commit 1b3349647415b08ae9d61833ec6bd5ab28a52f89
+Author: Brian K <brian8181@gmail.com>
+Date:   Sat Mar 6 11:01:53 2021 -0600
+
+    trivial changes
+
+M	.gitignore
+M	AUTHORS
+M	ChangeLog
+M	NEWS
+M	README
+
+commit 369fb7c874e841723698d51e4a937705e97f769a
+Author: Brian K <brian8181@gmail.com>
+Date:   Sat Mar 6 10:50:05 2021 -0600
+
+    all good with -> (autoreconf -fvim, ./configure, make)
+
+M	Makefile.am
+M	configure.ac
+
+commit cfcdc40e984e15f0217e7170ac40276c51bce593
+Author: Brian K <brian8181@gmail.com>
+Date:   Sat Mar 6 10:38:31 2021 -0600
+
+    change Makefile src dir, works in place
+
+M	make/Makefile
+
+commit 515129cfb8ae27cf6515fb1520c7d72d4718bc2e
+Author: Brian K <brian8181@gmail.com>
+Date:   Thu Mar 4 14:34:04 2021 -0600
+
+    delete  Makefile.bak
+
+D	Makefile.bak
+
+commit 25acd9ba07c0d1c7a2a404ed1743e42f349ad940
+Author: Brian K <brian8181@gmail.com>
+Date:   Thu Mar 4 13:57:13 2021 -0600
+
+    create make dir for Makefile
+
+M	.gitignore
+D	Makefile.in
+A	bak/.gitignore
+A	make/Makefile
+
+commit 8c4f126f21e6ffe5ba933a03eb3db9f4050867a0
+Author: Brian K <brian8181@gmail.com>
+Date:   Thu Mar 4 10:23:27 2021 -0600
+
+    add bash_color.h
+
+D	bak/Makefile
+A	src/bash_color.h
+M	src/rx.hpp
+
+commit d4f27aea1fd1d8fcd395ec5328015ef38718746a
+Author: Brian K <brian8181@gmail.com>
+Date:   Mon Mar 1 08:29:02 2021 -0600
+
+    small format changes
+
+M	.vscode/tasks.json
+D	.vscode/tasks.json.bak
+M	src/rx.cpp
+
+commit bc341270898c4a2af2660503107597cc5ab70643
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Feb 25 09:14:33 2021 -0600
+
+    config files changed
+
+A	Makefile.in
+M	configure.ac
+M	src/Makefile.am
+M	src/rx_test.cpp
+M	src/rx_test.hpp
+
+commit 6b9fef41a751f32ac460563281b2c2a27a43401f
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Feb 25 09:11:48 2021 -0600
+
+    do it
+
+M	.gitignore
+M	.vscode/tasks.json
+M	Makefile.am
+A	Makefile.bak
+M	depcomp
+M	src/Makefile.am
+M	src/rx_test.hpp
+A	test/testFileOption.txt
+
+commit 8f73a3936f997f7193f7752296c7ac316e24c808
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Feb 23 19:34:11 2021 -0600
+
+    update Makefile.ams
+
+M	.gitignore
+M	Makefile.am
+M	configure.ac
+M	src/Makefile.am
+
+commit 200ddc456fd1d1507b18ad2424107d7bebaf3ddf
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Feb 23 15:33:40 2021 -0600
+
+    update auto make stuff
+
+M	.gitignore
+M	Makefile.am
+D	config.h
+M	src/Makefile.am
+
+commit 40ebaca27d354e7899861e878c909f659da7ecf1
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Feb 23 15:00:14 2021 -0600
+
+    test
+
+A	tmp
+
+commit 54014425b27115dbbb5fd1aa62b941aa1ace7981
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Feb 23 14:56:52 2021 -0600
+
+    delete auto files, configure, Makefile.in, Makefile
+
+D	Makefile
+D	Makefile.in
+D	configure
+M	src/Makefile.am
+D	vc140.pdb
+
+commit 13068fa936039eb6592b0a06701c2d09c3b30f24
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Jan 15 07:03:02 2021 -0600
+
+    fix typos
+
+M	Makefile
+
+commit 129e668f9b015d6d363e728980e121586b27868a
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Dec 29 15:22:33 2020 -0600
+
+    formating src
+
+A	.vscode/tasks.json
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit 027dcffa62a265912465156bdd561aac1da480e9
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Dec 3 18:17:48 2020 -0600
+
+    format document
+
+M	.vs/slnx.sqlite
+M	src/rx.cpp
+
+commit 73ab650b53b7b51531873b0d3c7ed274daa157e8
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Dec 3 18:11:53 2020 -0600
+
+    add note to main.cpp
+
+A	.vs/ProjectSettings.json
+A	.vs/slnx.sqlite
+R100	.vscode/tasks.json	.vscode/tasks.json.bak
+M	src/main.cpp
+A	vc140.pdb
+
+commit 0a0994dcaa2ba8deb4b70a52b9a71fe541842ec0
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Nov 23 17:13:49 2020 -0600
+
+    remove commented code, print_match_header()
+
+M	src/rx.cpp
+
+commit 824a16e2458c6893ac2e1ea2a3f53a014fa2fcfd
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Nov 23 16:39:45 2020 -0600
+
+    create function for printing match infomation
+
+M	src/rx.cpp
+
+commit 1b1b4625f33a09fe4a5fa0b0471bae1706cdb54e
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Nov 23 13:18:41 2020 -0600
+
+    comment single option code
+
+M	src/rx.cpp
+
+commit 83a6f5f6bb5f5922a7f91326e36d65e24054ec7b
+Author: brian8181 <brian8181@gmail.com>
+Date:   Mon Nov 23 12:23:05 2020 -0600
+
+    Update c-cpp.yml
+    
+    disable workflow for now...
+
+M	.github/workflows/c-cpp.yml
+
+commit 99fe2ef35105d889fa8237ca47b0aa27640e6de2
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Nov 23 12:05:42 2020 -0600
+
+    add colors to header file
+
+M	src/rx.hpp
+
+commit 6ebbff92b7dd5848711a94e0415df863ca4aef83
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Nov 23 11:34:21 2020 -0600
+
+    add colors to output
+
+M	Makefile
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit 4774cf3632d9047af8d0c1b77cd503d677e4eb3e
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Nov 23 08:34:22 2020 -0600
+
+    remove single match stuff
+
+T	missing
+M	src/rx.cpp
+
+commit 128b6c4f07b64256ec804b9bc45699d0e3c9a075
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Nov 23 08:05:24 2020 -0600
+
+    bunch of autotool  autogenerated stuff
+
+M	.deps/main.Po
+A	.deps/rx.Tpo
+M	Makefile.in
+A	compile
+M	configure
+M	configure.ac
+A	install-sh
+
+commit 7b743a39ff941af81b1f8ec7f9cd96e6d26eb85f
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Nov 23 08:04:17 2020 -0600
+
+    switch bak Makefile in for automake file
+
+M	Makefile
+
+commit bcd5027fed2f00efb82a8b4c68e760dd9504b2ba
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Nov 23 08:01:52 2020 -0600
+
+    quick change backup Makefile
+
+M	bak/Makefile
+
+commit d0c8a1a7c57559fca3f93f9458011e65ce65cbfb
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Nov 23 07:42:36 2020 -0600
+
+    fix typos
+
+M	src/rx.cpp
+
+commit 4c55fe06bce2de815d4204cb4c3f29b174a3d57b
+Author: Brian Preston <brian8181@.gmail.com>
+Date:   Fri Nov 13 20:40:47 2020 -0600
+
+    fixed returns
+
+D	config.h.in~
+D	configure.2
+D	src/foo.txt
+M	src/rx.cpp
+
+commit 00ffd9b42815b276b517f88a37f5feb9d5a4ca12
+Author: Brian Preston <brian8181@.gmail.com>
+Date:   Sun Nov 8 10:43:23 2020 -0600
+
+    remove single option stuff
+
+M	src/rx.cpp
+
+commit 7059626bcf96ae4ee44f5a3d9c6a5d16d1bc218a
+Merge: 1c51a82 3b509cb
+Author: Brian Preston <brian8181@.gmail.com>
+Date:   Sun Nov 8 10:22:20 2020 -0600
+
+    Merge branch 'master' of https://github.com/brian8181/rx
+
+commit 3b509cb93c8f4e79bde98a452e17696fc8be21c6
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Nov 8 05:23:32 2020 -0600
+
+    autotools stuff, make ran sucessfully
+
+A	.deps/main.Po
+A	.deps/rx.Po
+A	.deps/rx_test.Po
+M	Makefile
+M	Makefile.in
+A	build-aux/compile
+M	config.h
+M	config.h.in
+A	config.h.in~
+M	configure
+M	configure.ac
+A	depcomp
+
+commit 0fd541642c01ac4390bacd30b1357603dcac05ae
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun Nov 8 04:02:35 2020 -0600
+
+    commit
+
+M	.vscode/tasks.json
+M	src/rx.cpp
+
+commit 1c51a82d0931d3088897fc39a036c4985df2089c
+Author: Brian Preston <brian8181@.gmail.com>
+Date:   Sat Nov 7 18:29:45 2020 -0600
+
+    remove stdio.h
+
+A	src/.vscode/launch.json
+A	src/.vscode/tasks.json
+M	src/rx.cpp
+
+commit f27a48c3000b684df69c70ae25a369f220628f1f
+Merge: 7a4c39e 7a93454
+Author: Brian Preston <brian8181@.gmail.com>
+Date:   Sat Nov 7 12:11:28 2020 -0600
+
+    Merge branch 'master' of https://github.com/brian8181/rx
+
+commit 7a4c39e68fba60f76e33c60134950442c0b2b1df
+Merge: e9ead3a a0b34b9
+Author: Brian Preston <brian8181@.gmail.com>
+Date:   Sat Nov 7 12:08:12 2020 -0600
+
+    Merge branch 'pipe'
+
+commit a0b34b9cfb88f5bd998b1a4c6a7fb1d3fcb91543
+Author: Brian Preston <brian8181@.gmail.com>
+Date:   Sat Nov 7 12:04:12 2020 -0600
+
+    more changes
+
+M	AUTHORS
+M	src/rx.cpp
+
+commit 7a934540fab945406c7eb6626ff7b4c40bfe09c5
+Merge: 9e1b0b9 d41cd49
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Nov 7 09:15:22 2020 -0600
+
+    Merge branch 'pipe'
+
+commit d41cd49ec4db34176835cb309fb24f48f05b88b0
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Nov 7 09:13:50 2020 -0600
+
+    comments and rx tests
+
+M	Makefile
+A	src/foo.txt
+M	src/rx.cpp
+M	test/tests
+
+commit 9e1b0b9e102cff57158d1a9f531ad4c5a32f4d01
+Merge: e9ead3a 74d21be
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Nov 7 00:49:38 2020 -0600
+
+    check in stuff
+
+commit 74d21be4403cefed611de80dc31d75ec211eacde
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Nov 7 00:42:58 2020 -0600
+
+    clean up shit
+
+M	src/rx.cpp
+
+commit 2ae6fd1b3d51033ec84a22e3751818bfa41a94d1
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Nov 6 17:15:51 2020 -0600
+
+    clean up
+
+M	src/main.cpp
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit 706facae2cc2fefb0b6c2e1d8e2331830cafceaa
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Nov 6 16:56:44 2020 -0600
+
+    changed to memcpy
+
+M	src/main.cpp
+
+commit 991017bef8be834d76de571e7b7e7df3c65df06f
+Author: Brian Preston <brian8181@.gmail.com>
+Date:   Fri Nov 6 16:25:45 2020 -0600
+
+    add ouput
+
+M	src/main.cpp
+
+commit 8adf9b4c88e56ec73ba75d49232708c942c476db
+Author: Brian Preston <brian8181@.gmail.com>
+Date:   Fri Nov 6 16:23:14 2020 -0600
+
+    switch scanf to cin
+
+M	src/main.cpp
+
+commit 39a4fd327c76bad4fb0190dc145aab1339a31317
+Author: Brian Preston <brian8181@.gmail.com>
+Date:   Fri Nov 6 16:15:59 2020 -0600
+
+    trivial
+
+M	src/main.cpp
+
+commit fc1fe72bedbb754e00ad4bda7ddd44d9909d9cb7
+Author: Brian Preston <brian8181@.gmail.com>
+Date:   Fri Nov 6 16:02:10 2020 -0600
+
+    small modification
+
+M	src/main.cpp
+
+commit 7d5ec54e95eb33ab7067d70bbe6a75794903447f
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Nov 6 15:02:19 2020 -0600
+
+    basic pipe functionality working
+
+M	src/main.cpp
+
+commit e9ead3a0ae140bab7e8d883e6c9650c6c4a30c6f
+Author: Brian Preston <brian8181@.gmail.com>
+Date:   Thu Nov 5 08:10:00 2020 -0600
+
+    add outputs
+
+M	src/main.cpp
+
+commit c1cd41568b7daedffc19c50653f85f98b76c3f3c
+Author: Brian Preston <brian8181@.gmail.com>
+Date:   Thu Nov 5 07:45:46 2020 -0600
+
+    no pipe found, normal operation fixed
+
+M	src/main.cpp
+
+commit a652f22c1cee8afae249fef6858f376608b2bccb
+Author: Brian Preston <brian8181@.gmail.com>
+Date:   Thu Nov 5 07:39:23 2020 -0600
+
+    begin transition to using pipe, this is pipe only
+
+M	src/main.cpp
+M	src/rx.cpp
+
+commit 74ea1db7b652a28aa4d8bb9279e9fcdc9ac56c8a
+Author: Brian Preston <brian8181@.gmail.com>
+Date:   Thu Nov 5 07:15:20 2020 -0600
+
+    configure.ac changes
+
+M	configure
+M	configure.ac
+
+commit fbe1b8dd37123a87876e51742e4bde960befd763
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Oct 28 12:09:56 2020 -0500
+
+     FIX: gcc warning unused variable
+
+M	src/main.cpp
+
+commit 2a51fda9da0e6231cf37667b71c0f0156ba42fe9
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Oct 28 11:59:07 2020 -0500
+
+    replace "\e" with "\033" to supress warning
+
+M	Makefile
+A	configure.2
+M	src/rx.hpp
+
+commit 4094c5b3f1762d8ceffd5d3589293f10f3f89fb9
+Author: Brian Preston <brian8181@.gmail.com>
+Date:   Mon Oct 12 15:50:56 2020 -0500
+
+    add GCC -pedantic option to make files.
+
+M	Makefile
+M	bak/Makefile
+
+commit 05b6f30cb2ccf7ca0a0316388ea8b105e2af7307
+Author: Brian Preston <brian@fire-island-net.island.net>
+Date:   Sat Sep 19 18:31:14 2020 -0500
+
+    minor changes
+
+M	Makefile
+M	src/rx.cpp
+M	src/rx_test.hpp
+A	test/tests
+
+commit 39bc75567610160eb28cb48e807fb7bdb9928a51
+Author: Brian Preston <brian@fire-island-net.island.net>
+Date:   Sat Sep 19 10:34:14 2020 -0500
+
+    remove add function declaration
+
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit 93362f030d074fa50ef41a707594e02795a1912c
+Author: Brian Preston <brian@fire-island-net.island.com>
+Date:   Wed Sep 16 11:02:26 2020 -0500
+
+    commit fix
+
+M	src/rx.cpp
+
+commit b33b687aa83766cd224b02b21e65054617ddd6c5
+Author: Brian Preston <brian@fire-island-net.island.com>
+Date:   Wed Sep 16 10:59:59 2020 -0500
+
+    commit changes
+
+M	.vscode/tasks.json
+M	src/rx.cpp
+M	src/rx_test.cpp
+
+commit a9e667399da6caa5d92ff7ac16e711f08735f8c7
+Author: Brian Preston <brian@fire-island-net.island.com>
+Date:   Sun Sep 13 08:00:12 2020 -0500
+
+    minor changes to Makefile for Fedora
+
+M	.vscode/tasks.json
+M	Makefile
+A	bak/Makefile copy
+M	src/rx_test.hpp
+D	src/rxx
+
+commit aec4746b924e06422669dd402bd1c8748bfdc439
+Author: Brian Preston <brian@fire-island-net.island.com>
+Date:   Wed Sep 2 09:59:32 2020 -0500
+
+    checkin all
+
+A	.vscode/c_cpp_properties.json
+M	.vscode/launch.json
+M	.vscode/tasks.json
+M	Makefile
+M	src/main.cpp
+A	src/rxx
+
+commit f6b33691cc3e228fe8cbde1bf5548bb5a80c3ec0
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jul 11 21:42:12 2020 -0500
+
+    a few changes
+
+M	.vscode/tasks.json
+M	src/main.cpp
+M	src/rx.cpp
+M	src/rx.hpp
+
+commit 39f75130c417c9aa578afe6aa5f3f507c468dc5d
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Jul 9 12:44:05 2020 -0500
+
+    update files
+
+M	src/main.cpp
+M	src/rx.cpp
+
+commit fc1b9d847509b09144e448c152ddbb405d50aa9b
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Jul 9 12:43:03 2020 -0500
+
+    autotool experiments
+
+M	.gitignore
+A	Makefile
+M	Makefile.am
+M	Makefile.in
+A	config.h
+M	configure
+M	configure.ac
+
+commit 29d7f3cca302374df73cea94e7358d99ddd826ba
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Jul 2 20:41:09 2020 -0500
+
+    autotools stuff
+
+M	.vscode/launch.json
+M	.vscode/tasks.json
+D	Makefile
+M	Makefile.am
+M	Makefile.in
+D	config.h
+M	src/rx.cpp
+
+commit 45fc5dc2d83d99a474294b6b9a6869606c1b97c1
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Jun 30 09:48:53 2020 -0500
+
+    autotools stuff
+
+A	COPYING
+A	INSTALL
+M	Makefile
+M	Makefile.am
+A	Makefile.in
+A	config.h
+A	config.h.in
+A	configure
+M	configure.ac
+
+commit 1b9601572e295bae0e15000bbab165ccb8e2c4e6
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Jun 26 15:50:46 2020 -0500
+
+    changes configure.ac
+
+M	.gitignore
+M	Makefile
+M	configure.ac
+
+commit bb672c38ec9c8f965b48e386369ee8d288711750
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Jun 25 11:08:57 2020 -0500
+
+    various changes
+
+M	.gitignore
+A	AUTHORS
+A	ChangeLog
+M	Makefile
+A	Makefile.am
+A	NEWS
+A	bak/Makefile
+A	bak/man/Makefile.am
+A	bak/src/Makefile.am
+A	configure.ac
+A	doc/Makefile.am
+A	examples/Makefile.am
+A	man/Makefile.am
+A	missing
+A	src/Makefile.am
+R100	main.cpp	src/main.cpp
+R095	rx.cpp	src/rx.cpp
+R100	rx.hpp	src/rx.hpp
+R100	rx_test.cpp	src/rx_test.cpp
+R100	rx_test.hpp	src/rx_test.hpp
+
+commit fd31a9ec082496bb23f728f3ee11e07306822561
+Merge: 3e2c4bb 2b85416
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Jun 17 08:19:27 2020 -0500
+
+    Merge branch 'unit_test_exp'
+
+commit 3e2c4bbbb3069724674fff6b4f6d91bbcb86eb0b
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Jun 17 08:19:04 2020 -0500
+
+    squash unit tests
+
+M	Makefile
+A	main.cpp
+M	rx.cpp
+A	rx.hpp
+M	rx_test.cpp
+M	rx_test.hpp
+
+commit 2b8541659a7f961221eef807310ba653210cd3b3
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Jun 17 08:17:27 2020 -0500
+
+    finish up unit test
+
+M	rx_test.cpp
+M	rx_test.hpp
+
+commit 015e2dd43b9b43399b62d7ad8f4ca235dcdc71ae
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Jun 16 16:07:56 2020 -0500
+
+    unit testing continued ...
+
+M	rx_test.cpp
+M	rx_test.hpp
+
+commit 7fe654f78af207e56334fcc7d3f7ebd640da10aa
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Jun 16 12:34:22 2020 -0500
+
+    unit testing continued ...
+
+M	rx_test.cpp
+M	rx_test.hpp
+
+commit 2f72b7daaec920a4e5cd8271b42201c9f2b1a73d
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Jun 16 12:20:47 2020 -0500
+
+    unit testing continued ...
+
+M	Makefile
+M	rx_test.cpp
+
+commit 58d3f77f30c683618782fc8dae4d8b5e416c2eca
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Jun 16 09:20:16 2020 -0500
+
+    fix typo main.cpp
+
+M	main.cpp
+
+commit e733ae34ca53d68e753bdb107929cb13a0c98ce9
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Tue Jun 16 09:19:20 2020 -0500
+
+    continue adding unit test
+
+M	Makefile
+A	main.cpp
+M	rx.cpp
+A	rx.hpp
+M	rx_test.cpp
+M	rx_test.hpp
+
+commit f2d1d19d112e1dfd67fdcef52c81a5f016fc2c94
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jun 13 18:49:51 2020 -0500
+
+    Create c-cpp.yml
+
+A	.github/workflows/c-cpp.yml
+
+commit 823fdd6997c6477bf27ce8d6da3fc14b305963bd
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jun 13 18:47:45 2020 -0500
+
+    v0.1.0
+
+M	Makefile
+
+commit 6c2267ea8fdfcab040bfbda5cd428ee96db8d66d
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jun 13 17:24:57 2020 -0500
+
+    add README
+
+A	README
+
+commit bd537fabcb97b20c5a025e80a3e4ee089e428e42
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jun 13 16:51:02 2020 -0500
+
+    Mantis: 0000061: Add Unit Test Framework
+
+M	Makefile
+
+commit b7eb921e9e07c2eeb2eb7ab02dd7a82ddd834157
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jun 13 10:25:44 2020 -0500
+
+    remove unused code files
+
+D	functions.cpp
+D	functions.h
+
+commit 4205370affe3679f1bf35872ca4ef724d220dd3f
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jun 13 10:23:18 2020 -0500
+
+    remove unit test example code
+
+M	.vscode/launch.json
+M	.vscode/tasks.json
+D	CBasicMath.cpp
+D	CBasicMath.h
+M	Makefile
+D	TestBasicMath.cpp
+M	rx_test.cpp
+R085	rx_test.h	rx_test.hpp
+
+commit 7106f39cea93817e21da4f5396a493162cd72a63
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Fri Jun 12 09:44:54 2020 -0500
+
+    rename main & create parse_options function
+
+A	functions.cpp
+A	functions.h
+M	rx.cpp
+
+commit 21a88a26501ac7db750d75179a510b4929148032
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Thu Jun 11 22:15:03 2020 -0500
+
+    begin adding cppunit framework
+
+M	.gitignore
+M	.vscode/launch.json
+M	.vscode/tasks.json
+A	CBasicMath.cpp
+A	CBasicMath.h
+M	Makefile
+A	TestBasicMath.cpp
+A	rx_test.cpp
+A	rx_test.h
+
+commit d3a24cb366deda0c0f16143599fb33f97e2b7519
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Jun 8 20:37:36 2020 -0500
+
+    add target
+
+M	Makefile
+
+commit 32fdbd3e21b57820edbefa25b603dbc8ba801e78
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Jun 8 20:35:15 2020 -0500
+
+    make dist target
+
+M	Makefile
+
+commit 4b78faf2747c575a8a6e082f680866fa1aa63e74
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Jun 8 16:30:49 2020 -0500
+
+    add make std argument
+
+M	Makefile
+M	rx.cpp
+
+commit 062b6a384cac358d404e8f051688cea7e7d3bffc
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Jun 8 14:49:05 2020 -0500
+
+    Mantis:  0000062: No man pages
+
+M	Makefile
+A	man/install.sh
+A	man/rx.1
+
+commit ca4299aa4999ed6760e93055304d6f741a86f73a
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Jun 8 12:47:18 2020 -0500
+
+    trival chnages
+
+M	rx.cpp
+M	test/pass.fail.sh
+
+commit a832f7c7bd0383e4173ff077b57e301e1fa55374
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Jun 8 12:43:34 2020 -0500
+
+    const for number argumnets
+
+M	rx.cpp
+
+commit 6ad70a8ffa679a447067e0b7c70dbea6e09e1688
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Jun 8 12:40:51 2020 -0500
+
+    clean up code ...
+
+M	rx.cpp
+
+commit 549029c8a011e911d16b041d04597548567c817f
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Jun 8 12:29:27 2020 -0500
+
+    add autoscan generated files to .gitignore
+
+M	.gitignore
+
+commit a6a465468a760d023486cf491dde9c1b57e3187f
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Jun 8 11:56:37 2020 -0500
+
+    change code comments
+
+M	rx.cpp
+
+commit ab935b3b25cea257de5fab7be5b28a0cb30925d6
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jun 6 17:25:55 2020 -0500
+
+    Partial fix: 0000057: Create Single Match Option
+
+M	.vscode/launch.json
+M	rx.cpp
+
+commit d3380e734f876942e8de02da0a4589bfaeea44fd
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jun 6 16:10:34 2020 -0500
+
+    format document
+
+M	rx.cpp
+
+commit 47b7b5bddee0fbd2b0a30248f7c05a9346dea3cd
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sat Jun 6 09:39:46 2020 -0500
+
+    merge long_opt with squash
+
+M	.vscode/launch.json
+A	.vscode/settings.json
+M	rx.cpp
+
+commit f173612a19f3b081f24c472aaf03a3ef10722318
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Jun 3 20:42:25 2020 -0500
+
+    fix flags ...
+
+M	rx.cpp
+
+commit c5899df7c81c6402a8f356174cbfe09774f014b6
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed Jun 3 16:10:52 2020 -0500
+
+    merge master & single_option
+
+M	.vscode/launch.json
+M	Makefile
+M	rx.cpp
+M	test/pass.fail.sh
+
+commit 62e9618f28684d01303beb06e75d589932f1255b
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Mon Jun 1 17:38:49 2020 -0500
+
+    0000056: Make Install, Uninstall, & Archive
+
+M	.gitignore
+M	Makefile
+M	rx.cpp
+A	test/pass.fail.sh
+
+commit 09515b941f89b7bb0ca5c3cee492ef1e8e4f1a44
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun May 31 22:37:23 2020 -0500
+
+    add install and uninstall to Makefile
+
+M	Makefile
+
+commit d46dc2a830a6f445e19314202fa0d5fac8dc6a20
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Sun May 31 22:18:27 2020 -0500
+
+    check number args correction
+
+A	.vscode/launch.json
+M	.vscode/tasks.json
+M	rx.cpp
+
+commit e17294d88633b462dcaa1a6343f178910d050f66
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed May 13 06:44:15 2020 -0500
+
+    add rx.cpp & Makefile
+
+M	.gitignore
+A	.vscode/tasks.json
+A	Makefile
+A	rx.cpp
+
+commit cf003f7233b3b49fd4fa1c68750cee9faed9675b
+Author: Brian Preston <brian8181@gmail.com>
+Date:   Wed May 13 06:34:06 2020 -0500
+
+    Initial commit
+
+A	.gitignore
+A	README.md

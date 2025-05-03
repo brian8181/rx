@@ -1,0 +1,2341 @@
+c4cd85a45f0a7d0be0694fe041f97e70930de3eb update makefile ...
+ makefile | 71 ++++++++++++++++++++++++++++++++--------------------------------
+ 1 file changed, 36 insertions(+), 35 deletions(-)
+e24802307254e911e21e944c9dc8fc8eec77afd7 Merge branch 'master' of https://github.com/brian8181/rx
+dff24651a845968d7d021d632362efe55038e607 fix makefile ...
+ makefile | 108 ++++++---------------------------------------------------------
+ 1 file changed, 10 insertions(+), 98 deletions(-)
+75f8c17b104aaec6840821a1d3d875d39d79ebca Merge pull request #6 from brian8181/brian8181-patch-1
+c8e326d1ee4f8a25f1ac24258fe9e76ea5eca20a Update readme.md
+ readme.md | 13 -------------
+ 1 file changed, 13 deletions(-)
+86648c47fd15e2aa87287d73c9b5520016b58447 update ...
+e8aca84be526c321840673faa96c61add628f420 clean & update ...
+ AUTHORS                 |   1 -
+ COPYING                 | 674 ------------------------------------------------
+ ChangeLog               |   0
+ Makefile                | 100 -------
+ Makefile (copy 1)       | 136 ----------
+ Makefile.am             |   2 -
+ NEWS                    |   1 -
+ README                  |  11 -
+ cleandist.sh            |   4 -
+ configure.ac            |  36 ---
+ doc/Makefile            | 117 ---------
+ doc/todo                |   2 -
+ makefile                |  84 ++++++
+ notes.txt               |  64 -----
+ octave-workspace        | Bin 1877 -> 0 bytes
+ src/Makefile.am         |   4 -
+ src/bash_color_test     | Bin 68748 -> 0 bytes
+ src/bash_color_test.cpp |  16 --
+ 18 files changed, 84 insertions(+), 1168 deletions(-)
+53eac49c7a5c0bb07be8fd107f59aeee396ac666 update ...
+ AUTHORS | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+84b7b1a5e962c1bdf4981939b049e90a55c97bd8 remove debug target from makefile ...
+ makefile | 2 --
+ 1 file changed, 2 deletions(-)
+aa93fae6c5e5bc6fd9a391c58cf8fdc01375b837 add install lib & archive to cmake ...
+ src/CMakeLists.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+293e97a768ea4bcc8c2ffec904895451ce94f600 add install to cmake ...
+ src/CMakeLists.txt | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+498ba9ae65c802964c00b540547eadb1a9597ef2 update CMakeLists.txt...
+ src/CMakeLists.txt | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+79ef6b760a838cb74dfb954f33c2a0ee924d5566 update CMakeLists.txt ...
+ src/CMakeLists.txt | 5 +++++
+ 1 file changed, 5 insertions(+)
+56e6566496d01380852e4813dcc3fc6760fd3486 update all ..
+ src/CMakeLists.txt | 2 +-
+ src/rx.cpp         | 9 +++++++++
+ 2 files changed, 10 insertions(+), 1 deletion(-)
+85417e56ff61e5e24549bd85004d03aa7a3863fd updated CMakeList.txt
+ src/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+7e967da019049d8a0a4e8d25c759edcd77ec3e83 added CMakeList.xtxt
+ src/CMakeLists.txt | 7 +++++++
+ 1 file changed, 7 insertions(+)
+e59107ba10ff1c7c4d6932e798d8e63736fb39f3 update makefile ...
+ makefile | 15 +++++++--------
+ 1 file changed, 7 insertions(+), 8 deletions(-)
+381b789903db4c5eb8a437f0cde481cdb736d293 remove infio from headers ...
+ src/main.cpp    |  6 ++----
+ src/rx.cpp      | 38 ++++++++++++++++++--------------------
+ src/rx.hpp      |  2 --
+ src/rx_test.cpp | 40 +++++++++++++++++++---------------------
+ src/rx_test.hpp | 11 ++++-------
+ 5 files changed, 43 insertions(+), 54 deletions(-)
+5449aaf6bbe24907ee5d52be28e03bb1e9785924 clean out automake files ...
+ authors                            |  2 --
+ changelog                          |  0
+ cleandist.sh                       |  4 ----
+ configure.ac                       | 36 ------------------------------------
+ doc/Makefile                       | 31 ++++++++++++++++++++-----------
+ cmakelist.txt => doc/cmakelist.txt |  0
+ makefile                           | 10 ++++++++++
+ makefile.am                        |  2 --
+ man/Makefile.am                    |  1 -
+ readme                             | 11 -----------
+ src/Makefile.am                    |  4 ----
+ src/bash_color_test.cpp            | 16 ----------------
+ 12 files changed, 30 insertions(+), 87 deletions(-)
+9453e3df43f16872337da50856e85b7b0a8b8114 update makefile ...
+ makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+3082d251010f585f59c4746259e234987b2cb721 update makefile ...
+ makefile | 10 +++-------
+ 1 file changed, 3 insertions(+), 7 deletions(-)
+3dddd4bad85be3f7680db594ead464e6654298ad update makefile ...
+ makefile | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+82e99294fd92a36e6cdce4407109ae509d2484c4 rename files to lowercase ...
+ .vscode/launch.json        | 21 +++++++++++++++++++++
+ AUTHORS => authors         |  0
+ ChangeLog => changelog     |  0
+ cmakelist.txt              | 40 ++++++++++++++++++++++++++++++++++++++++
+ COPYING => copying         |  0
+ Makefile => makefile       |  0
+ Makefile.am => makefile.am |  0
+ NEWS => news               |  0
+ README => readme           |  0
+ README.md => readme.md     |  0
+ 10 files changed, 61 insertions(+)
+d69e1843425b30791cbcad21281e4c0a0f79484f fix info header info ...
+ src/main.cpp    | 7 +------
+ src/rx.cpp      | 2 +-
+ src/rx.hpp      | 2 +-
+ src/rx_test.cpp | 2 +-
+ src/rx_test.hpp | 2 +-
+ 5 files changed, 5 insertions(+), 10 deletions(-)
+6c0c2a2ee93ac766cea1a47a3deaf997b2516a87 adding file info headers ...
+ Makefile         |   7 ++++++
+ notes.txt        |  64 -------------------------------------------------------
+ octave-workspace | Bin 1877 -> 0 bytes
+ src/main.cpp     |   6 ++++++
+ src/rx.cpp       |   6 ++++++
+ src/rx.hpp       |   6 ++++++
+ src/rx_test.cpp  |   6 ++++++
+ src/rx_test.hpp  |   7 ++++++
+ 8 files changed, 38 insertions(+), 64 deletions(-)
+8b30b23f3496208e9532c8e457c07e6bc0a100ff clen up make file ...
+ Makefile | 71 ++++++++++------------------------------------------------------
+ 1 file changed, 11 insertions(+), 60 deletions(-)
+ced07c8cd1797cfb248a4616f85c10709831bef1 fixed the make after, butchering it during clean up....
+ Makefile            |  71 ++++++++++++++++++++--------------------------------
+ src/bash_color_test | Bin 68748 -> 0 bytes
+ 2 files changed, 27 insertions(+), 44 deletions(-)
+505ae324e776d01d97dc2e1f5902a51ac97b41e3 commit restore main.cpp ...
+ .vscode/launch.json |  2 +-
+ src/main.cpp        | 19 ++++++-------------
+ 2 files changed, 7 insertions(+), 14 deletions(-)
+4bf52e67c04dd69f6f78b453b7ff4b9b680aab84 revert chnages ...
+ src/main.cpp | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+c829599cfe798c12ca7f810d57c5fbe754615470 commit all..
+ Makefile     | 2 ++
+ src/main.cpp | 5 +++--
+ 2 files changed, 5 insertions(+), 2 deletions(-)
+c5b117b4389ba19ab5fcbda93ca330188a2442e0 Merge branch 'master' of https://github.com/brian8181/rx
+f5775120baa07195e11a2cf97009af9c20c21118 experimenting with stdin_ready func
+ .vscode/launch.json |  2 +-
+ src/main.cpp        | 11 +++++++++++
+ 2 files changed, 12 insertions(+), 1 deletion(-)
+0cf8ab8f1ae7bad26f2ef342271e47a968085850 return 0; & add test file
+ src/rx.cpp  | 1 +
+ test/nl.txt | 1 +
+ 2 files changed, 2 insertions(+)
+de518c067abae33790bab45b391f5c2b96a5f371 delete test files
+ test/1.txt  | 1 -
+ test/t2.txt | 3 ---
+ 2 files changed, 4 deletions(-)
+bf97dc6c0f9c27ac03066c94274413e424588352 mod email test
+ test/email.txt | 1 +
+ test/pass.sh   | 4 +++-
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+0165e1ba8658e442b3c1f6db82cfd0244ad8dd2e add ../test/email.txt
+ test/email.txt | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+2315ee0e3f6c3e68bfa6a4cd56960c59fdb8351d delete Makefile cpy
+ Makefile          |   2 +
+ Makefile (copy 1) | 136 ------------------------------------------------------
+ 2 files changed, 2 insertions(+), 136 deletions(-)
+6e210667b43d54bbc8c977be5b8ba4eebe039ef1 remove dist-gz
+ Makefile | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+55e4e286de1ba7bd80e53d4db6230e45de8ae4a6 commit ...
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+7b9591d51f7f44448b66fa438bf8ae369326e2c1 commit ...
+ .vscode/c_cpp_properties.json | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+3763088f890f6d70d27b10bd68a1027060b20dc7 Mantis 44,46: Groups/Submatches
+ .vscode/launch.json | 22 ++++++++++++++++++++++
+ src/rx.cpp          | 45 +++++++++++++++++++++++++++++++++------------
+ 2 files changed, 55 insertions(+), 12 deletions(-)
+bc9c86cb7d99efb3292da62d283b43dc38db189d add makefile back to project
+ .gitignore         |   1 -
+ .vscode/tasks.json |   2 +-
+ Makefile           | 100 +++++++++++++++++++++++++++++++++++++++
+ Makefile (copy 1)  | 136 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/Makefile       | 117 +++++++++++++++++++++++++++++++++++++++++++++
+ 5 files changed, 354 insertions(+), 2 deletions(-)
+6bef1f66a3583d6ccfd7a778f49aae4fe92f1f3d commit conflicts
+ffb25ad4952294f5f3bded498715f5be5457030e moved Makefile one to root, one to doc, clean up Makefile, empty build directory
+ .vscode/launch.json       |   1 +
+ build/Makefile            | 129 ----------------------------------------------
+ src/main.cpp              |   2 +-
+ {build => test}/1.txt     |   0
+ {build => test}/input.txt |   0
+ {build => test}/t2.txt    |   0
+ {build => test}/test.txt  |   0
+ test/wtf.txt              |   0
+ 8 files changed, 2 insertions(+), 130 deletions(-)
+6aba1b650d9ce098e5a34b8b612b0c5940a425f9 update build directory
+ .gitignore     | 11 ++++-------
+ build/1.txt    |  1 -
+ build/Makefile | 43 +++++++++++++++++++++++++------------------
+ build/t2.txt   |  3 ---
+ build/test.txt |  1 -
+ 5 files changed, 29 insertions(+), 30 deletions(-)
+1068883c4bc8f34aef177f79427c91ea4e92e32c 0000079: 'ignore_case' could be named 'icase' more succinctly
+ src/rx.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+4d1e2c590f25d2c4d328d84a2bdbcebdb89144c7 update man pages
+ man/rx.1 | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
+c3fbd6d5e4e184b70ec57f945920007a1f25d862 update man pages
+ man/rx.1 | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+9b1a9b84c73b36f2f4aba9d5d23e43003dbc63a2 add to man file
+ man/rx.1 | 30 ++++++++++++++++++++++++++++--
+ 1 file changed, 28 insertions(+), 2 deletions(-)
+a5fc2ad74d672ef5b04c44c0de8625e2b272360d make version 2.90, add all ...
+ man/rx.1        |  7 +++++--
+ src/rx.cpp      |  2 +-
+ src/rx_test.cpp | 13 +++++++++++++
+ src/rx_test.hpp |  2 ++
+ 4 files changed, 21 insertions(+), 3 deletions(-)
+020a20afd690586bda091f650fcdb904182fd775 commit all ..
+ src/rx.cpp | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+a1b62d7c88a4ffc83e963a6240dbba252842bee8 Merge branch 'master' of https://github.com/brian8181/rx
+558fc110fa51d504669e49fb6feb2601b4fcb8bc Mantis:0000071: Regex "+" (one or many) operator not working as expected
+ src/rx.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+d6bb7068f0a2302c5555085bb38786d3d9327022 changed default syntax to ECMAScript
+ src/rx.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+157ecc2545b98f704fb537339c24103c5aa7d8dc commit test ...
+ test/out.txt   |  4 ++++
+ test/tag.txt   | 30 ++++++++++++++++++++++++++++++
+ test/tag1.txt  |  3 +++
+ test/tag2.txt  |  3 +++
+ test/tag22.txt |  3 +++
+ test/tag33.txt |  3 +++
+ 6 files changed, 46 insertions(+)
+b17f367180b48974ab7f1a9bc0d06a289f768205 clean up, commit all ...
+ .gitignore     | 11 +++++++----
+ build/Makefile |  4 ++--
+ src/rx.cpp     |  3 +--
+ 3 files changed, 10 insertions(+), 8 deletions(-)
+c8f277f7b58ab19990b652efd08bdb24b230ccb7 commit all ...
+ .gitignore   | 1 -
+ test/pass.sh | 2 ++
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+6c848ae6ec753191a9ae5e01e99e13198a2fb981 Mantis 0000063: Pipe Causes Segmentation Fault
+ build/Makefile | 1 -
+ src/main.cpp   | 3 ++-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+f156b825c7607897cd8c3c07ab8e31c662db03eb fix man/install.sh
+ man/install.sh | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+9306e1876687ebd582adc80aa066ff6a8f4d3a29 add GDB Pipe Testing Syntax!
+ test/GDB_PIPE_DEBUG | 3 +++
+ 1 file changed, 3 insertions(+)
+3bf55973a4fb175f03a28ea4c233ad1f92385b9e add pass.sh test file
+ src/rx.cpp   |  1 -
+ test/pass.sh | 20 ++++++++++++++++++++
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+0a69c5e974b9b7c07b5c25ad9afcc023159dbafe clean up ...
+ src/rx.cpp | 3 ---
+ 1 file changed, 3 deletions(-)
+460dbd36f36edbf4d817fb0e69c80e38453aa9b8 more clean up...
+ src/rx.cpp | 32 +++++++++++++++-----------------
+ 1 file changed, 15 insertions(+), 17 deletions(-)
+275d5dbfa9dfe0a1b78ee550b72d35155c786749 clean up...
+ src/rx.cpp | 15 ++++++---------
+ 1 file changed, 6 insertions(+), 9 deletions(-)
+76212d260339dfceb60b067de25b37c8bfc42b34 fix for mantis:52
+ .vscode/launch.json                        |  8 ++++----
+ src/rx.cpp                                 | 26 +++++++++++++++++++++-----
+ test/{search_fopt .txt => search_fopt.txt} |  2 +-
+ 3 files changed, 26 insertions(+), 10 deletions(-)
+933d96608da299d5a0554397d39048d5d4c012d2 Mantis:0000053: intial fix (seems to work properlly, not thourghly tested)
+ src/rx.cpp | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+d30ce245c045374e76c81c6d97f574000a900f6c add input file
+ build/1.txt | 1 +
+ 1 file changed, 1 insertion(+)
+fac84140467f674164c691f16f8633e990ae6b56 commit unmerged changes
+ src/rx.cpp | 52 +++++-----------------------------------------------
+ 1 file changed, 5 insertions(+), 47 deletions(-)
+1930445749dfbf940dc81bdb1db77fd3df6ef26a commit all
+7a3017b6982d3a57fa53a6e9b6ea29dd6c1090e8 commit all
+ build/input.txt   |  1 +
+ test/pass.fail.sh | 19 ++++---------------
+ 2 files changed, 5 insertions(+), 15 deletions(-)
+be180c3db8474f301b7348efde11f0082d768178 commit all
+ src/rx.cpp | 13 +++++--------
+ 1 file changed, 5 insertions(+), 8 deletions(-)
+2c6abb27a17cba63a64821d14f2d9fc26a42d193 begin adding -x option
+ src/rx.cpp | 83 +++++++++++++++++++++++++++++++++-----------------------------
+ 1 file changed, 44 insertions(+), 39 deletions(-)
+0e586394825eca01b23e4b16630bb4be8b059034 add constant to both regex & search strings from file
+ src/rx.cpp | 16 +++++++++-------
+ 1 file changed, 9 insertions(+), 7 deletions(-)
+0bdb9e8ba9c9e010029b73c8239731aef604cfe6 comment out exception ouput
+ src/rx.cpp | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+5a6efc2baa3e32f57466355a7474453c26bc0266 small changes to Makefile, and rx.cpp output
+ build/Makefile | 10 +++++++---
+ src/rx.cpp     | 14 ++++++++++----
+ test/tests     | 24 ++++++++++++++++++++++++
+ 3 files changed, 41 insertions(+), 7 deletions(-)
+76891f56bdc96f0a0bcc68b0cc0d419633714624 minor fixes for exp from file option
+ build/t2.txt | 1 +
+ src/rx.cpp   | 2 --
+ 2 files changed, 1 insertion(+), 2 deletions(-)
+35ca9fc3e55975b79a58ad02d111b68141807792 working on expression from file option
+ build/Makefile | 7 ++++++-
+ build/t2.txt   | 2 ++
+ src/rx.cpp     | 3 ++-
+ 3 files changed, 10 insertions(+), 2 deletions(-)
+bb92c15a7e578987a059d2ecaf0ef6975ecd5304 file options chnages
+ src/rx.cpp | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+b9545677ffebeb6f17d366b5ce426c6dd78adc92 working on regex grammar flags
+ src/rx.cpp | 4 ++++
+ 1 file changed, 4 insertions(+)
+e9beb8d7939858f2ed0de2b4e41a963ca021b2d3 set option regex::flag_type to zero, to start with
+ src/rx.cpp |  6 +++++-
+ test/tests | 10 ++++++++++
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+dd0740d5013c7ef971802a04abcf3fac2dc50e28 checking in all
+ src/rx.cpp | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+f3dcde316f3f18f423507dc24bd754b6c9cd7372 add fail file, to test folder, logs fails
+ test/fail | 4 ++++
+ 1 file changed, 4 insertions(+)
+0fc3e2c5460b261bb42b100352a5374688814d35 chck in all, branch change
+ src/rx.cpp        | 4 ++++
+ test/pass.fail.sh | 0
+ 2 files changed, 4 insertions(+)
+0f2a09bb3cef3b84d6ca056adba8837b32675237 Merge branch 'from_file_option'
+6405b4d41929ea39381a66e6f777d7271e95894a I don't know
+ AUTHORS           | 0
+ COPYING           | 0
+ ChangeLog         | 0
+ Makefile.am       | 0
+ NEWS              | 0
+ README            | 0
+ README.md         | 0
+ build/Makefile    | 0
+ cleandist.sh      | 0
+ configure.ac      | 0
+ man/install.sh    | 0
+ notes.txt         | 0
+ test/pass.fail.sh | 0
+ 13 files changed, 0 insertions(+), 0 deletions(-)
+2d5f5a714f249f430d01ff5be8a9820b1dcce294 I don't know what this is.
+ AUTHORS           | 0
+ COPYING           | 0
+ ChangeLog         | 0
+ Makefile.am       | 0
+ NEWS              | 0
+ README            | 0
+ README.md         | 0
+ build/Makefile    | 0
+ cleandist.sh      | 0
+ configure.ac      | 0
+ man/install.sh    | 0
+ notes.txt         | 0
+ test/pass.fail.sh | 0
+ 13 files changed, 0 insertions(+), 0 deletions(-)
+e84e233de0c4842a646c7d635c97ed28121c7d4f Merge branch 'from_file_option' Continue expression option ...
+fd4c3cd697198518a54c517f1911bd7cd9ad5122 continue from_file_option's for expression
+ src/rx.cpp        | 12 ++++++------
+ test/pass.fail.sh | 14 ++++++++------
+ 2 files changed, 14 insertions(+), 12 deletions(-)
+087ee902b60bd051ce88875bbb098838a6576ec4 begin adding from_file expression code
+ src/rx.cpp | 95 +++++++++++++++++++++++++++++++++-----------------------------
+ 1 file changed, 50 insertions(+), 45 deletions(-)
+ffaecc6675eac8c52079113c0b956e496224a995 clean or obscure code (depends on who you ask)
+ src/rx.cpp | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+d1a67b430a07d29b4beeed1b0d372a1aa53f21c2 Merge branch 'from_file_option'
+63d108189ad453f1094e1e4cb57dacc8bedaab54 file option working agian
+ .vscode/launch.json | 44 +-------------------------------------------
+ src/rx.cpp          | 12 ++++++------
+ test/pass.fail.sh   |  2 +-
+ 3 files changed, 8 insertions(+), 50 deletions(-)
+5e1e2a9962eebf2f4f1f515fe2e6a20cd04d2ef9 options working, for icase
+ .vscode/launch.json   | 27 ++++++++++++++++++++++++---
+ .vscode/settings.json |  6 ++++++
+ src/rx.cpp            |  6 ++----
+ 3 files changed, 32 insertions(+), 7 deletions(-)
+4c8225c9fb60d2ad84a3644d6ed9b01a422f1c10 change debug (launch.json) file, temporary fix Makefile, tmp fix rx.cpp for option (-o)
+ .vscode/launch.json |  4 ++--
+ build/Makefile      |  2 +-
+ src/rx.cpp          | 14 ++++++++------
+ 3 files changed, 11 insertions(+), 9 deletions(-)
+ae831c884d9f675faea286417c43f7560a904194 change output numbering (only number when a least 2 items), change regx_match to take to vectors
+ src/rx.cpp        | 16 +++++++++-------
+ test/exp_fopt.txt |  1 +
+ 2 files changed, 10 insertions(+), 7 deletions(-)
+a8a6e1dd88bc04f932d08656c6941a13059a28b0 trivial change commets
+ src/rx.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+cae22cb0c711261b3023dec9c295a17a8fa29fcb Fix:Mantis:0000062: Formatted output: don't display search count if it is the one
+ src/rx.cpp | 23 +++++++++++++++++++----
+ 1 file changed, 19 insertions(+), 4 deletions(-)
+d9af4b781db47847165e218c157d8a7d64843c15 Mantis:0000061: "From File" option for search text, removed comments
+ src/rx.cpp | 30 +-----------------------------
+ 1 file changed, 1 insertion(+), 29 deletions(-)
+d96b079e69988ef6ff82cc79cc938d1017b22293 Mantis:0000061: "From File" option for search text
+ src/rx.cpp        | 37 +++++++++++++++++++------------------
+ test/test_2.81.sh | 13 +++++++++++++
+ 2 files changed, 32 insertions(+), 18 deletions(-)
+f0e9a2c2f547f3a6ff511b8e77af44effb4653eb begin adding file options, add unit test, add test script
+ src/rx.cpp      | 85 +++++++++++++++++++++++++++++++++------------------------
+ src/rx_test.cpp | 11 ++++++++
+ src/rx_test.hpp |  2 ++
+ 3 files changed, 62 insertions(+), 36 deletions(-)
+3e91db3f1c8383cbc63040b2a738c18b1bfdcdb5 make $ROOT relative to build dir
+ build/Makefile | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+36581e2af33550d573c9aec226ad312970cfe7a1 add commented out lines of old FROM_FILE options code
+ src/rx.cpp | 52 +++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 51 insertions(+), 1 deletion(-)
+9a22c7b091273a34aeee66bdc00342c95bf69440 checkin
+ test/pass.fail.sh | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+f6f22a08d76f9685ad103fa57010f27d4612c034 change version number
+ src/rx.cpp | 4 +---
+ test/error | 3 ---
+ 2 files changed, 1 insertion(+), 6 deletions(-)
+5f081e0fb74427b621bf71884b5450cbfb9ed2fa change VERSION_STRING = "2.0.1"
+ src/rx.cpp | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+8046b3db4190ce17999236346ca5066f91fbb9dc Merge branch 'master' of https://github.com/brian8181/rx
+6ea8deac965e367c7bdb4a20f5cc57219502549c deleted, commented out regex_constants::match_flag_type
+ src/rx.cpp | 17 -----------------
+ 1 file changed, 17 deletions(-)
+8d01e24d26f9cf1af9114e131af8d5355b93bca4 commented out regex_constants::match_flag_type
+ src/rx.cpp | 17 -----------------
+ 1 file changed, 17 deletions(-)
+769e3c17257e77a5ea0126d698b4558ce78b0337 commented out regex_constants::match_flag_type
+ src/rx.cpp | 32 ++++++++++++++++----------------
+ 1 file changed, 16 insertions(+), 16 deletions(-)
+c9957e5070c76aef6aa0f713847ea1fc3bd55664 Fix:Mantis:0000060: -p option (not pretty) output: skips a initial line
+ src/rx.cpp | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+f37f1a29dfb00d3118c6bf2dcf22306352948912 Fix-Mantis:0000059: Option -o not working, Exception: Unexpected option.
+ src/rx.cpp | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+022fe8a18bdc280f2d993b0f648229c8a7f197df Merge branch 'master' of https://github.com/brian8181/rx
+9095f6e512ab69799b75922f861921b447d32f23 Fix-Mantis:0000059: Option -o not working, Exception: Unexpected option.
+ .vscode/launch.json | 23 ++++++++++++++++++++++-
+ src/rx.cpp          | 12 ++++++------
+ 2 files changed, 28 insertions(+), 7 deletions(-)
+a43b7eb72d462737dcddb15240f1109c9e223978 Fi0000059: Option -o not working, Exception: Unexpected option.
+ .vscode/launch.json | 23 ++++++++++++++++++++++-
+ src/rx.cpp          | 12 ++++++------
+ 2 files changed, 28 insertions(+), 7 deletions(-)
+c37b064f8dcf873cf78f3472d2127fbf5f5e91a9 Fix: Mantis56-58 ignore & verbose not working
+ .vscode/launch.json | 44 +++++++++++++++++++++++++++++++++++++++++++-
+ src/rx.cpp          | 20 ++++++++++----------
+ 2 files changed, 53 insertions(+), 11 deletions(-)
+8b918a9b718b6c751129dc2485f24d1006d6d1f8 removing file options
+ .vscode/launch.json | 22 ++++++++++++++++
+ src/rx.cpp          | 74 ++---------------------------------------------------
+ 2 files changed, 24 insertions(+), 72 deletions(-)
+93666345319687ec87be59bc748de49e46859cc4 Mantis0000055: Arguments are not parsed correctly
+ .vscode/launch.json | 2 +-
+ src/rx.cpp          | 7 ++++---
+ 2 files changed, 5 insertions(+), 4 deletions(-)
+491dfebd492d1187bfe95c1fdba364e0c6826bca add log files to git ignore list
+ .gitignore | 1 +
+ 1 file changed, 1 insertion(+)
+97bb9ebeb3b556b0c0d89b4642d86f019c07067e Mantis: 0000055
+ .vscode/launch.json | 42 ++++++++++++++++++++++++++++++++++++++++++
+ src/rx.cpp          | 37 +++++++++++++++++++++----------------
+ 2 files changed, 63 insertions(+), 16 deletions(-)
+9c308c283f6c9a40a561c8df542d1a74456724a9 update test files/scripts
+ test/pass.fail.sh   |  3 +++
+ test/test69         |  0
+ test/test_fail2.txt | 19 -------------------
+ test/tests          |  2 +-
+ 4 files changed, 4 insertions(+), 20 deletions(-)
+b3d82a371951e3e2e2e3d361f31f0a61de50d9f2 add comment line
+ src/rx.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+c113ae4f2cd649d88efd01109417c50bd744068d options reimplement
+ src/rx.cpp | 2 ++
+ 1 file changed, 2 insertions(+)
+629dec7aad48bbc8f23dce010605a3cdf94b0255 comment out man install script, I do not wnat it running for the time being
+ man/install.sh | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+921e31f8107637f1d6f183e48a1a25eadceceaa4 put get version function first
+ src/rx.cpp | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+e267a9c8176917b5c09e96f00dd1d433c060ee8e comment out tests
+ src/rx.cpp | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+478586acf61fa7dc947bab1c4d5c06c3ba404e94 comment out tests, add error message
+ src/rx.cpp | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
+ef9a814165704608e764bf71adebb984681090fd fix launch.json variarbles, from rx -> ${fileBasenameNoExtension}
+ .vscode/launch.json | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+9b1f9cba64ad2033230f926f27bc28d28095d632 contiue -f opt feature
+ src/rx.cpp | 34 ++++++++++++++++++----------------
+ 1 file changed, 18 insertions(+), 16 deletions(-)
+3dbf8ad31da131d5a74eac86d1fccb48684c4e2c added error msg, added debug conf, continued -f options feature
+ .vscode/launch.json | 21 +++++++++++++++++++++
+ src/rx.cpp          | 35 +++++++++++++++++++----------------
+ test/error          |  3 +++
+ 3 files changed, 43 insertions(+), 16 deletions(-)
+a1b9e1da9802bb207c27fbcba3ddf1953b4900fd fix conflicts
+a8ae39c072745a0138b829719cf4887b9f1d9781 add fpot
+ build/Makefile    |   3 ---
+ octave-workspace  | Bin 0 -> 1877 bytes
+ src/rx.cpp        |  18 ++++++++++++++----
+ test/exp_fopt.txt |   2 +-
+ 4 files changed, 15 insertions(+), 8 deletions(-)
+507160631b141d9cc016ee88cf5c8a8732d428c2 remove spaces
+ build/Makefile | 1 -
+ 1 file changed, 1 deletion(-)
+e4d676d1adab7191bcf204b2afb8da4122e1798f remove "test" from Makefile
+ build/Makefile | 3 ---
+ 1 file changed, 3 deletions(-)
+096d266c6a02ae607a7a2b2e5c2166929e588e0d add error msg for f opt
+ build/Makefile | 2 --
+ src/rx.cpp     | 3 +++
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+f77bdcdaee76c6a1239bdf5b0f64062872b19406 add line to fopt.txt
+ test/fopt.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+f6722a1c31618b100ecb1a78c94c1953f51e2c21 case f argc break
+ .vscode/launch.json | 2 +-
+ src/rx.cpp          | 3 +++
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+f23cb0a002fef8c3d296f5f09d2611c5eb7394bd add from_file expresssion, files
+ test/exp_fopt.txt     | 1 +
+ test/search_fopt .txt | 8 ++++++++
+ 2 files changed, 9 insertions(+)
+6da9055da023f5e507fbfc93f6daaa190ab0175d add from_file expresssion, files
+ .vscode/launch.json | 23 ++++++++++++++++++++++-
+ 1 file changed, 22 insertions(+), 1 deletion(-)
+6a5bea49163cba5ff906c734705d60dc941bd483 add "-fPIC to build options
+ build/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+c585762cac8cfc72a6a31a83f0c9a12be6a2efcb fix options
+ .vscode/launch.json | 6 +++---
+ src/rx.cpp          | 8 ++++++--
+ 2 files changed, 9 insertions(+), 5 deletions(-)
+db457096611e48f8c301c9eaad9c77a842521a1e Merge branch 'master' of https://github.com/brian8181/rx
+76a369cf7dcb2ed0242d81c30c95f351e248392d remove git shell scripts (testing stuff) from script directory
+ ...458c6893ac2e1ea2a3f53a014fa2fcfd~2020-11-23.tmp | 129 --------------------
+ ...2ba7aa6bac339bd1801ff29b3c1ce24f~2021-03-22.tmp | 134 ---------------------
+ script/git-file-hist.sh                            |  13 --
+ script/h                                           |   1 -
+ script/notes.txt                                   |   2 -
+ 5 files changed, 279 deletions(-)
+1e05364573a1116460e3898e38a0eabf28478977 MANTIS: 0000050
+ src/rx.cpp | 5 +++++
+ 1 file changed, 5 insertions(+)
+ef599bdc06f44e4a9fa32bc1ddffcd51d64d1c15 optimize vector init code...
+ src/rx.cpp | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+78ac75fc5bbeb1c93383048dc3ddb0b3f35d2a1c optimize vector init code
+ src/rx.cpp | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+11c68b4deace5bb11e3c623d1f6d187a3319b5c7 add todo
+ doc/todo | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+62ebd1b71ce7fe99d1a64588d6bc4de2dc5805f4 merge
+1d3362618bb91f982024504c23f2d9f937da8ed0 optimize vector init
+ .vscode/launch.json | 21 +++++++++++++++++++++
+ src/rx.cpp          | 12 +++++++++---
+ test/tests          | 16 ++++++++++++++++
+ 3 files changed, 46 insertions(+), 3 deletions(-)
+e1a5d4f6971a990ef4c33a96b4aae5ddfd6f804b add debug configs
+ .vscode/launch.json | 126 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 126 insertions(+)
+0df976156dfaeaf6857ee9dfaac5632f2f916ec4 fix bugs
+ .vscode/launch.json | 21 +++++++++++++++++++++
+ src/rx.cpp          |  9 ++++-----
+ 2 files changed, 25 insertions(+), 5 deletions(-)
+70127bf58ab637c10faaa556927f5f536aea8457 clean up
+ src/rx.cpp | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+bb6520193ec62f27b7a173baff75210a7ff4ba85 clean up code ...
+ src/rx.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+140c250ff47d9c021799b0acc298ea8d2d84a08a clean up code
+ src/rx.cpp | 14 ++++++--------
+ 1 file changed, 6 insertions(+), 8 deletions(-)
+c54c97440bd3aa78ce6be91dd09dba8d49f90e76 finish manual merge
+ src/rx.cpp    | 2 +-
+ test/fopt.txt | 4 +++-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+ac560451a7dc68acc20c03375c583a435896242f manual merge rx.cpp
+ src/rx.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+171e2834ba03f3bbe8ea0841160fadb7fb19aa18 man merge
+56a57ec48906f833c28f2ecc0cc639021232e466 manual merge file_options
+ .vscode/launch.json | 35 -----------------------------------
+ src/rx.cpp          |  6 +++---
+ 2 files changed, 3 insertions(+), 38 deletions(-)
+1deb74f8f535f05ea9f07790a8a0f10325457be4 Resolved merge conflict by incorporating both suggestions.
+ .vscode/launch.json | 3 +--
+ .vscode/tasks.json  | 9 +++++++++
+ src/rx.cpp          | 5 +++++
+ 3 files changed, 15 insertions(+), 2 deletions(-)
+d805e737f1ee8b23d233e2bbb09bd53b5ef19c69 Resolved merge conflict by incorporating both suggestions.
+ab05244907aacbbb4ae4daabaf36cd2668fb0638 Resolved merge conflict by incorporating both suggestions.
+ .vscode/launch.json | 51 +++----------------------------------------
+ .vscode/tasks.json  | 63 ++---------------------------------------------------
+ src/rx.cpp          | 24 ++------------------
+ 3 files changed, 7 insertions(+), 131 deletions(-)
+a3dc4e76487c4bcf6f284ec073d38c926b370493 fix7
+ .vscode/launch.json | 10 ++++++++++
+ .vscode/tasks.json  | 12 ++++++++++++
+ src/rx.cpp          |  4 ++++
+ 3 files changed, 26 insertions(+)
+48a9c703c2e2ffee7e776294a8425b8436fa712a fix6
+ .vscode/launch.json | 15 +++++++++++++++
+ .vscode/tasks.json  |  7 -------
+ src/rx.cpp          |  4 ----
+ 3 files changed, 15 insertions(+), 11 deletions(-)
+ff8efe9bd76b230abdfb12356d27156964e0ae33 fix5
+ .vscode/tasks.json | 6 ------
+ 1 file changed, 6 deletions(-)
+a2c70fb0c32efe4a4c9c31f96ea1aa2fc862c554 fix4
+ .vscode/launch.json | 19 +++++++++++++++++++
+ .vscode/tasks.json  |  6 ++++++
+ src/rx.cpp          |  4 ++++
+ 3 files changed, 29 insertions(+)
+206b7bc980846fcc947d1cf229e9a2da916ece60 fix3
+dfe12e8f567e065cb720e0ab3a0d1d65c453d846 fix2
+ .vscode/launch.json | 10 +---------
+ .vscode/tasks.json  | 12 ++----------
+ src/rx.cpp          |  6 +-----
+ 3 files changed, 4 insertions(+), 24 deletions(-)
+93cee91011d1ff1c6a5576fbbf3bcf1873398fa3 fix conflics
+ .vscode/launch.json | 10 ++++++++++
+ .vscode/tasks.json  | 12 ++++++++++++
+ src/rx.cpp          |  4 ++++
+ 3 files changed, 26 insertions(+)
+13bcff30a39c9ecd0bbe5821caa1099f06781d57 m2
+ .vscode/launch.json | 10 ++++++++++
+ .vscode/tasks.json  | 12 ++++++++++++
+ src/rx.cpp          |  4 ++++
+ 3 files changed, 26 insertions(+)
+1d48f73b95c88a1760fa9f5dabcd1f7787cf0a08 merge reslove
+ .vscode/launch.json | 10 ++++++++++
+ .vscode/tasks.json  | 12 ++++++++++++
+ src/rx.cpp          |  4 ++++
+ 3 files changed, 26 insertions(+)
+9423700ffa3f4fd5271e863ed13f2e8134445827 Merge branch 'master' of https://github.com/brian8181/rx
+afce312d2b1c38945a35aa651fb610366800172e commit before merge
+ .vscode/launch.bak.json | 131 ++++++++++++++++++++++++++++++++++++++++++++++++
+ .vscode/launch.json     |  38 ++++++++++++++
+ .vscode/tasks.json      |  12 +++++
+ build/test.txt          |   1 +
+ src/rx.cpp              |  58 +++++++++++++++------
+ test/fopt.txt           |   6 +++
+ test/test69             |   0
+ 7 files changed, 231 insertions(+), 15 deletions(-)
+e4d210e6cd249fe5572b7647b802f32d193eebf5 add test case note to file.
+ test/tests | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+2769d6bb8a503922731a61c0f92e6a4450b65010 update tests
+ doc/todo   | 2 ++
+ test/tests | 8 ++++++++
+ 2 files changed, 10 insertions(+)
+965e11fc1463ea92a8d06e3c99d3a29ce91f88a5 changed default constants
+ src/rx.cpp          | 6 +++---
+ test/test_fail2.txt | 5 +++++
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+1610ef9d3f88135af7eafe19907fe617c7adbacc add debug configs
+ .gitignore          |  1 -
+ .vscode/launch.json | 29 +++++++++++++++++++++++++++++
+ .vscode/tasks.json  | 50 ++++++++++++++++++++------------------------------
+ 3 files changed, 49 insertions(+), 31 deletions(-)
+552c7d2c3070e291c8164c4ba58e69a387b37d7b remove extra spaces, changes aligment of code, etc ..
+ src/main.cpp | 12 ++++----
+ src/rx.cpp   | 95 ++++++++++++++++++++++++++++++------------------------------
+ 2 files changed, 54 insertions(+), 53 deletions(-)
+dcdb5d9c82d5e30175d870ab6de66402e0e46899 Merge branch 'master' of https://github.com/brian8181/rx
+d2f11e78639ef23fb059903c06a5fa1f709113f8 fix header, const, redefine issue
+ src/main.cpp |  6 +-----
+ src/rx.cpp   | 17 +++++++++++++++++
+ src/rx.hpp   | 20 --------------------
+ 3 files changed, 18 insertions(+), 25 deletions(-)
+0ac19ce10de4601101179a9a8895e7c59808d293 remove old comment from Makefile
+ build/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+bd1a9944c0fee2f13ccadfc54715d38b04c01eb1 updates
+ script/hist.sh    |  5 -----
+ script/kdiff3.sh  | 39 ---------------------------------------
+ script/kompare.sh |  9 ---------
+ src/rx_test.cpp   |  1 -
+ 4 files changed, 54 deletions(-)
+bd3b70bfe59162fce124125628551f98437be30a delete utility, small change to Makefile
+ build/Makefile  |  8 ++++++--
+ src/utility.cpp | 13 -------------
+ src/utility.hpp |  8 --------
+ 3 files changed, 6 insertions(+), 23 deletions(-)
+97de2f12e32282bb3b951b0653978088a2faabda remove HOME var
+ build/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+dfde8bef901e2d0e48b9c9b3c39d81f62656a06c clean, fix
+ src/main.cpp | 1 -
+ src/rx.cpp   | 4 ++--
+ src/rx.hpp   | 2 +-
+ 3 files changed, 3 insertions(+), 4 deletions(-)
+d6c92a0c15f7fa8ce016364c51089220ea848ac6 fix tabs in main.cpp
+ src/main.cpp | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+0d8bc0f277565abe5592d19a190e39a9c2e34c9b fix tabs in main.cppp
+ src/main.cpp | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+e146840ba58c82103f4da161f8482bb5a2b566ab clean out using statements from main.cpp, removed main.hpp
+ src/main.cpp |  7 ++-----
+ src/main.hpp | 10 ----------
+ 2 files changed, 2 insertions(+), 15 deletions(-)
+ca0060b5859f7c5a03088f7007dceda6c126411b remove std namespace from rx.hpp. remove std:: from rx.cpp
+ src/rx.cpp | 6 +++---
+ src/rx.hpp | 2 --
+ 2 files changed, 3 insertions(+), 5 deletions(-)
+2689225bebae47ceeb0989f09c4cfe7d35aedd54 commented HACK
+ src/main.cpp | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+f14b85a76cd4652ee703b8b4ce018cd763336038 fix last commit
+ src/main.hpp | 14 +++++++-------
+ src/rx.cpp   |  1 -
+ src/rx.hpp   |  2 +-
+ 3 files changed, 8 insertions(+), 9 deletions(-)
+c3c787dffbb0bf9aa121e102abe3e3f3b8a37f29 add hack fix for link error
+ src/main     | 30144 ---------------------------------------------------------
+ src/main.cpp |     6 +-
+ src/main.hpp |     2 +
+ src/rx.cpp   |     3 +-
+ src/rx.hpp   |     3 +-
+ 5 files changed, 10 insertions(+), 30148 deletions(-)
+ff8da27675de5adc8144ac5ecc7d3985cf1cef12 add newline too rx.hpp
+ src/rx.hpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+042a764d7b39f06daa805338da0f40d518c115a4 add function to header
+ src/rx.hpp | 2 ++
+ 1 file changed, 2 insertions(+)
+e6a1c2b98f1b2010286a24f73812106a80aca118 oops, a exception handler for regex
+ src/bash_color.h        | 57 -------------------------------------------------
+ src/bash_color_test.cpp |  2 +-
+ src/main.cpp            |  2 ++
+ src/main.hpp            |  7 +-----
+ src/rx.cpp              | 14 ++++++++++--
+ src/rx.hpp              | 11 ++++++----
+ src/rx_test.cpp         |  3 +++
+ 7 files changed, 26 insertions(+), 70 deletions(-)
+56b726627b11e7038424435e5c646c2f1e3c357e a exception handler for regex
+ src/bash_color.hpp | 57 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+60d3781f929e32e0787a68d968ca2194fb4dbba2 remove extra spaces
+ Makefile.am |  2 +-
+ src/rx.cpp  | 35 ++++++++++++++++-------------------
+ 2 files changed, 17 insertions(+), 20 deletions(-)
+3a4988df3ae13a0ca262c88c68df7a9558b73e43 add back auto conf lines
+ configure.ac | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+1e8849686d25a45646fb7a15c7b5e4d56bc9f0d7 add back auto conf lines
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+038228b0ee6963e4a6131c59c0848b1051c3acdd add back auto conf lines
+ configure.ac | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+c5a82b3888141417f78bbbd08d5e73d8b30d48af uncomment autoconf lines
+ configure.ac | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+d3df7acc4ee7b089b5e4e00c900fca38e4b97a59 comment out lines till it would autocinfig
+ configure.ac | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
+7b6b7140358e900fac653baf951df14cc7ce2a7d clean up
+ src/rx.cpp | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+310c46268cf430dcdd909f605ccad64d6b8d92ed clean up hpp
+ src/rx.hpp | 13 -------------
+ 1 file changed, 13 deletions(-)
+daf6d44c9d77525a2ac30952b35fdd879eac6ed8 fix comments cpp style
+ src/main.cpp | 6 +++---
+ test/tests   | 7 +++++++
+ 2 files changed, 10 insertions(+), 3 deletions(-)
+5dd83e80ce924e801d7c33f386a00cf206cf92d4 update refix after merge
+ .gitignore |  1 +
+ src/rx.cpp | 19 -------------------
+ 2 files changed, 1 insertion(+), 19 deletions(-)
+2f2df6460d180fda3d678480641e62034b3a0ad0 fix fucking file
+ src/rx.hpp | 3 ---
+ 1 file changed, 3 deletions(-)
+a3bd6f383b9908327120388fb4ebd6d353f4f3f4 add all agian
+ src/rx.cpp | 7 -------
+ 1 file changed, 7 deletions(-)
+9262219d960c2d0069a634ca3b234e482e057c48 add all
+e375e3f52aa4d4582e1a06377d68614948e6620e fix build
+3c01de1790aed6c3d67e126f7c61c29882d38a51 because I said so
+3a9413b08dcb68057da356d8cec94df5b47f4249 rename function, input to stdin_ready
+ src/main.cpp | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
+b4cde25eb4c9fb6bd9ef7bd8823e08d0af117c53 clean up pipe code
+ src/main.cpp | 12 +++---------
+ 1 file changed, 3 insertions(+), 9 deletions(-)
+43110ee3c1be657ca34382fa2a269f9e552f2d4a new pipe read code complies seem to test
+ .vscode/tasks.json |  2 +-
+ src/main.cpp       | 46 +++++++++++++++++++++++++++++++++-------------
+ src/rx.cpp         | 18 ++++++++++++++++++
+ 3 files changed, 52 insertions(+), 14 deletions(-)
+3737389ece3a4e5b32edb84d8d0872fa34e95483 add what to catch
+ src/main.cpp | 5 ++---
+ src/rx.cpp   | 4 ++--
+ 2 files changed, 4 insertions(+), 5 deletions(-)
+5a69658055131c9a8bd4a1877f21bf1fbde78799 add try catch
+ src/main.cpp | 31 +++++++++++++++++++------------
+ src/rx.cpp   |  2 +-
+ 2 files changed, 20 insertions(+), 13 deletions(-)
+9daee263d5eb8e4b618647354a358f9410c73253 fix syntax errors of flags maps
+ src/rx.cpp |  6 +++---
+ src/rx.hpp | 13 +++++++++++++
+ 2 files changed, 16 insertions(+), 3 deletions(-)
+f32a544324d1e4d8a5d5258693d138324dc24fc4 add match option flags, ch mode on files
+ AUTHORS      |  0
+ COPYING      |  0
+ ChangeLog    |  0
+ Makefile.am  |  0
+ NEWS         |  0
+ README       |  0
+ README.md    |  0
+ configure.ac |  0
+ notes.txt    |  0
+ src/rx.cpp   | 18 ++++++++++++++++++
+ 10 files changed, 18 insertions(+)
+1de503f6ae491da18d216d93a453ad5494c2f63a renames
+ src/{_utility.cpp => utility.cpp} | 0
+ src/{_utility.hpp => utility.hpp} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+d23738d823c9932c755251b04e2be29a06ee5081 remove std quailfier where it is not needed
+ src/rx.cpp | 14 ++++++++++++++
+ src/rx.hpp | 21 ---------------------
+ 2 files changed, 14 insertions(+), 21 deletions(-)
+93d83f77ba04ff152408c53b8abeb6a4109f1c4e rename regex map
+ src/rx.cpp        | 6 +++---
+ src/rx.hpp        | 9 +++------
+ test/pass.fail.sh | 4 +---
+ 3 files changed, 7 insertions(+), 12 deletions(-)
+cf707aba3029e3197350d5d2a34ebf1883e4a489 add test cases for regex option flags
+ src/rx.cpp        |  4 +---
+ src/rx.hpp        | 45 +--------------------------------------------
+ test/pass.fail.sh | 17 ++++++++++++++---
+ 3 files changed, 16 insertions(+), 50 deletions(-)
+85dcf42860510aa448909a87ebccc378d238a124 std::regex options seem to be working
+ src/rx.cpp |  6 +++---
+ src/rx.hpp | 40 ++++++++++++++++++++++++++++------------
+ 2 files changed, 31 insertions(+), 15 deletions(-)
+bc37cb1f249a67f0c5d260164cd9c8040568dc63 use workspace variable in vscode task
+ .vscode/tasks.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+bb4933440ac2f35c55170160bb01aa63138ed11b add endl's
+ src/rx.cpp | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+da8e8d7781dfeb9fbefa28cd372838b54b96b101 clean up code & formating
+ src/rx.cpp | 38 +++++++++++++++++++-------------------
+ 1 file changed, 19 insertions(+), 19 deletions(-)
+b10f470377e3cdeaba2fcc79f3deb2844c5373df remove utility dependendcy
+ src/rx.cpp | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+3916b5007cdebc07230576303bf1dfc3e6f21f25 clean up code
+ .vscode/tasks.json |  2 +-
+ src/main.cpp       |  2 +-
+ src/rx.cpp         |  1 -
+ src/rx.hpp         | 14 ++++++--------
+ 4 files changed, 8 insertions(+), 11 deletions(-)
+b9de2f736f87b03c51392f4edd11628be5a09a9b working on options & debugging with code
+ .vscode/tasks.json |    21 +-
+ build/Makefile.bak |   110 -
+ src/main           | 30144 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ src/main.cpp       |     2 +-
+ src/rx.cpp         |     2 +-
+ src/rx.hpp         |     2 +-
+ 6 files changed, 30164 insertions(+), 117 deletions(-)
+d02f88df01a633232898f2cec546eddb86d43824 change mode on many files
+ man/Makefile.am         |   0
+ man/rx.1                |   0
+ src/Makefile.am         |   0
+ src/bash_color.h        |   0
+ src/bash_color_test     | Bin
+ src/bash_color_test.cpp |   0
+ src/main.cpp            |   0
+ src/main.hpp            |   0
+ src/rx.cpp              |   0
+ src/rx.hpp              |   0
+ src/rx_test.cpp         |   0
+ src/rx_test.hpp         |   0
+ test/rx.core            | Bin 11296768 -> 0 bytes
+ test/tests              |   0
+ 14 files changed, 0 insertions(+), 0 deletions(-)
+19af08eb32b87e8721ebab3879a59aba91ab22b6 change permissions on files
+ .gitignore          |   0
+ .vscode/launch.json | 134 ----------------------------------------------------
+ AUTHORS             |   0
+ COPYING             |   0
+ ChangeLog           |   0
+ Makefile.am         |   0
+ NEWS                |   0
+ README              |   0
+ README.md           |   0
+ build/Makefile      |   2 -
+ configure.ac        |   0
+ notes.txt           |   0
+ src/rx.cpp          |   3 +-
+ src/rx.hpp          |  43 +++++++----------
+ 14 files changed, 17 insertions(+), 165 deletions(-)
+f99f9d8b0a69be39b34ea6d8eb44a7a3f1402211 add files to git ignore list
+ .gitignore | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
+ced04b77c71a35b52140a8867efe82d5980159ac update build/Makefile, error handling code for regx options
+ build/Makefile | 6 +++---
+ src/rx.cpp     | 4 +++-
+ 2 files changed, 6 insertions(+), 4 deletions(-)
+ea7f1a9ea2d3e7e5ff8f4eb2c7454f88c5df30a1 add more try catch code
+ src/rx.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+d2009d679d52ea6befaef39dd21a9a9ac89bd753 add try catch code
+ build/Makefile |  11 +++++++++++
+ build/rx.core  | Bin 11296768 -> 0 bytes
+ src/rx.cpp     |  13 +++++++++++--
+ 3 files changed, 22 insertions(+), 2 deletions(-)
+39df6ec4f75103120be3db2e4f0a7b3c0c4b3cd4 random small fixes/chnages
+ .vscode/tasks.json |   6 ++---
+ build/Makefile     |   9 ++++---
+ build/rx.core      | Bin 0 -> 11296768 bytes
+ src/_utility.cpp   |  13 ++++++++++
+ src/_utility.hpp   |   8 ++++++
+ src/main.cpp       |   5 +---
+ src/rx.hpp         |  73 ++++++++++++++++++++++++-----------------------------
+ test/pass.fail.sh  |   3 +++
+ test/rx.core       | Bin 0 -> 11296768 bytes
+ 9 files changed, 65 insertions(+), 52 deletions(-)
+c937e30e36193275c4f61e2d4e6d8e1125106c32 update Makefile, continue update rx.cpp for regex options option "-o"
+ build/Makefile |  41 +++++------
+ missing        | 215 ---------------------------------------------------------
+ src/rx.hpp     |  42 +++++++++--
+ 3 files changed, 58 insertions(+), 240 deletions(-)
+724f9c1fdabb0cabeb645402b4644d1368c867fd changed comment
+ build/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+114838c12b6de99352afaec12e809bbe850c0169 added icase to enum map
+ src/rx.cpp | 1 +
+ src/rx.hpp | 5 +++--
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+6a0caec38c8c44b28a9362d9054399436bb4536a regx options build, not tested
+ src/rx.cpp | 48 ++++--------------------------------------------
+ src/rx.hpp |  2 +-
+ 2 files changed, 5 insertions(+), 45 deletions(-)
+05eec6a8a175c9467fbd545ddba069d6823d912a is splitting option correctly
+ src/rx.cpp | 97 ++++++++++++++++++++++++++++++++++----------------------------
+ 1 file changed, 53 insertions(+), 44 deletions(-)
+070addef28599cbc0255af75ba5b4c70baa843d0 fix typos in command line option
+ src/rx.cpp | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
+33143651766262361b735b61c840f472f1604876 small changes to Makefile
+ build/Makefile | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+62a4f4835d74648056a716b16eda6c2580e2f7ba remove OBJDIR\'s from path
+ build/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+2fb509e4dcfcab4061b87bdadda4acf2e1965e46 add OBJDIR\'s to path
+ build/Makefile                        | 22 +++++------
+ build/{Makefile.copy => Makefile.bak} | 24 ++++++------
+ build/Makefile.copy2                  | 71 -----------------------------------
+ 3 files changed, 24 insertions(+), 93 deletions(-)
+c453b13406b645726433a870dbdfdab48fe9af74 clean up extra code
+ build/Makefile    |  1 +
+ src/main.cpp      |  6 +++++-
+ src/rx.cpp        |  6 +++---
+ test/pass.fail.sh | 26 ++++++++++++++++++--------
+ 4 files changed, 27 insertions(+), 12 deletions(-)
+5c451c74cb8e2d7c4036f3a7863e805247c1f145 clean up options code agian ... (not implemented)
+ src/rx.cpp | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+4e8e8098709e12edae7b4b83edd07ba8716bf9e1 clean up options code (not implemented)
+ src/rx.cpp | 30 +++++++++++++++---------------
+ 1 file changed, 15 insertions(+), 15 deletions(-)
+cc692a0e23ea64bb79d0ccbcb36160193a26eb31 add comment line
+ src/rx.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+394896d4a2682e6f4044c21c1b826216ad9c2781 added input numbering to output first line
+ src/rx.cpp | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+c6671a0a0fa75fb89516ad48faf6c25550bc1a2f add test, move mutli-input numbering code
+ src/rx.cpp |  2 +-
+ test/tests | 13 +++++++++++++
+ 2 files changed, 14 insertions(+), 1 deletion(-)
+71b22a60e04bb4c81b45f095324664afbb0e06ea continued -> change output (match numbering)
+ src/rx.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+3f04fad3f5f4e5e9aa6ec4dc77bfd28f7271b6ce change output (match numbering)
+ src/rx.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+12f07ac1be515ee0b3980f987173344711da26e1 added "endl" to output, deleted rx.2.cpp
+ rx.2.cpp   | 170 -------------------------------------------------------------
+ src/rx.cpp |   2 +-
+ 2 files changed, 1 insertion(+), 171 deletions(-)
+6e75c1d0d1424f2cbb22bc54a944465b9a207df0 added "endl" to output, deleted rx.2.cpp
+ build/Mafefile2 | 4 ----
+ build/Makefile  | 4 ++--
+ 2 files changed, 2 insertions(+), 6 deletions(-)
+d3008b3274152f86af3907557023501a0392a81f check in partial options code
+ build/Makefile  |   3 +-
+ rx.2.cpp        | 170 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ src/rx.cpp      |  46 ++++++++++-----
+ src/rx.hpp      |  21 +++----
+ src/rx_test.cpp |   2 -
+ 5 files changed, 214 insertions(+), 28 deletions(-)
+6fbf39fa137dbe6978f54b11d8b1c4db064195d7 get to build
+ src/rx.cpp | 33 +++++++++++++++----------------
+ src/rx.hpp | 66 ++++++++++++++++++++++++++++----------------------------------
+ 2 files changed, 46 insertions(+), 53 deletions(-)
+3bc6cc0e6cb1823897a6a3b7c97b50098a9bc7b2 text paste corruption
+ src/rx.cpp | 25 ++++++++++++-------------
+ 1 file changed, 12 insertions(+), 13 deletions(-)
+1f8bc0dc2d96eaeddecfdb0236b561122c2ce35b some changes that may be merged
+ build/Makefile |  4 ++--
+ src/rx.cpp     | 53 ++++++++++++++++++++++++++++++++++++++++++-----------
+ src/rx.hpp     | 43 ++++++++++++++++++++++++++++++++++++++++++-
+ 3 files changed, 86 insertions(+), 14 deletions(-)
+11da9f5cfbb8ae4a436e2f0e56b045dfd13ca1d5 add config.h.in~ auto gen file to ignore
+ .gitignore | 1 +
+ 1 file changed, 1 insertion(+)
+603819367b3be84d4b12a608cff2bc2053251e03 remove blank lines from output
+ build/Makefile | 2 +-
+ src/rx.cpp     | 7 +++----
+ 2 files changed, 4 insertions(+), 5 deletions(-)
+f2d4d4ef87f80174c33da9996fe508cf96840ebe fix recurring bug, all inputs are not scaned, the index was off
+ src/rx.cpp | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+7139aca780c2f9ba3d9e1f6e413ef789165e69c7 change perms NEWS
+ NEWS | 1 +
+ 1 file changed, 1 insertion(+)
+9c4c4b9a5a64e4f8503b5dbf7b4cef6e4ac07cef fix
+ src/rx.cpp | 9 ---------
+ 1 file changed, 9 deletions(-)
+2cf5011dadae0ed9ed37936245ff17c9a1c249d6 fix comficts
+c82ff41b9155674736266ede06cd7329d9313453 fix build
+ .github/ISSUE_TEMPLATE/bug_report.md      |   38 -
+ .github/ISSUE_TEMPLATE/custom.md          |   10 -
+ .github/ISSUE_TEMPLATE/feature_request.md |   20 -
+ .github/workflows/c-cpp.yml               |   23 -
+ .gitignore                                |    1 +
+ .vscode/configurationCache.log            |    1 -
+ .vscode/dryrun.log                        | 2193 -------------------------
+ .vscode/settings.json                     |    6 -
+ .vscode/targets.log                       | 2478 -----------------------------
+ NEWS                                      |    3 -
+ configure.ac                              |    2 +-
+ src/.vscode/dryrun.log                    |    7 -
+ src/.vscode/settings.json                 |    3 -
+ src/bash_color_test                       |  Bin 0 -> 68748 bytes
+ src/rx.cpp                                |    5 +-
+ src/rx_BUILD                              |    1 -
+ 16 files changed, 5 insertions(+), 4786 deletions(-)
+9417adb7693eaecd9fe3df59817035fd2afb1a2c Update rx_test.cpp
+ src/rx_test.cpp | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+41266b1de4e91810ea98254c81bdd8ced20edc41 fix typo
+ build/Makefile | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+571b0d8070c86d33b078b217e77b97edcb977222 ignore m4
+ m4/libtool.m4     | 8388 -----------------------------------------------------
+ m4/ltoptions.m4   |  437 ---
+ m4/ltsugar.m4     |  124 -
+ m4/ltversion.m4   |   23 -
+ m4/lt~obsolete.m4 |   99 -
+ 5 files changed, 9071 deletions(-)
+e43068a78d00a76b2122212636560b075acd411e Merge branch 'master' of https://github.com/brian8181/rx
+5089477a31b35115a5e0c4776821e560ce75df1c add changes
+ configure.ac      |    4 +-
+ m4/libtool.m4     | 8388 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ m4/ltoptions.m4   |  437 +++
+ m4/ltsugar.m4     |  124 +
+ m4/ltversion.m4   |   23 +
+ m4/lt~obsolete.m4 |   99 +
+ 6 files changed, 9073 insertions(+), 2 deletions(-)
+6843bc362b0c5cfba9a97f317b8745679591520f rename makefile
+ build/{Makefile.1 => Makefile.copy2} | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+6f7b82051e7b66eff5255b7a05c0c79c00061762 make path in make file relative
+ build/Makefile      |  12 +++---
+ build/Makefile.copy | 108 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 114 insertions(+), 6 deletions(-)
+6c9b1f65056640b9c1fc3a286f9e7f9c4cf9087a stash
+ src/rx.cpp | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+17f9daad637403a28242542c0abb47271d7a53d8 testing & stash
+ build/Mafefile2 | 4 ++++
+ 1 file changed, 4 insertions(+)
+4331afbc23e77fa615f2346c7d0214714aacaab3 add test fail2
+ test/test_fail2.txt | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+f4f0bda54d306b84ac011f60e1ea355b88c5468a add regx options flag
+ src/rx.cpp | 1 +
+ src/rx.hpp | 1 +
+ 2 files changed, 2 insertions(+)
+525920d5d987f48b17c1b37ca06617c31f734979 add .vscode to ignore
+ .gitignore | 1 +
+ 1 file changed, 1 insertion(+)
+438b0a12b61b60941a11d206e57f375ee2bcfb10 add o option
+ src/rx.cpp | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+7ed9a83af12205a094022199e62e28a134c299be fix input index
+ src/rx.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+0a88947f3b830d2f8e09ebd8328699a3016741c1 libtoolize: Consider adding AC_CONFIG_MACRO_DIRS([m4]) to configure.ac
+ configure.ac | 1 +
+ 1 file changed, 1 insertion(+)
+317ef37dcd457f1daeef97f38c5859fa5510aa76 Update README.md
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+82c29ea098d5dbe24f6da07ebf841eee0c4449a9 Update README.md
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+f5f9513b7e22bf03d79ac30f97da4fcc898c67d4 remove spaces!
+ .gitignore | 1 +
+ src/rx.cpp | 9 ++++-----
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+3e346e3f740674eb1f77e325172b8a1a4efc9cea add m4 dir to clean script
+ cleandist.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+d203a55463a366619b347f0e98b4b8f09cd3b955 autotools stuff
+ Makefile.am | 1 -
+ 1 file changed, 1 deletion(-)
+b0fe1b34cf0db7191091d1691fdebd909b19d0d8 autotools stuff
+ .gitignore  | 1 +
+ Makefile.am | 2 ++
+ 2 files changed, 3 insertions(+)
+8b93bf3cabb2ae964b06e2d98250d2d5860347a3 reomve option class from Makefile
+ build/Makefile | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+f3708b6a485ec9ba9f86dd64fa22f03ee9bf22cc .vscode dir
+ .vscode/configurationCache.log |    1 +
+ .vscode/dryrun.log             | 2193 +++++++++++++++++++++++++++++++++++
+ .vscode/targets.log            | 2478 ++++++++++++++++++++++++++++++++++++++++
+ src/.vscode/dryrun.log         |    7 +
+ src/.vscode/settings.json      |    3 +
+ 5 files changed, 4682 insertions(+)
+4261d2104704b2b2548fc85cc7bef07767e819b0 remove remove class files
+ cleandist.sh         |  1 +
+ src/OptionParser.cpp | 21 ---------------------
+ src/OptionParser.hpp | 25 -------------------------
+ 3 files changed, 1 insertion(+), 46 deletions(-)
+2d37b4f5847fdd97d2889bd8b68cbd095d15e314 fix mess
+ src/OptionParser.cpp    | 0
+ src/OptionParser.hpp    | 0
+ src/bash_color_test.cpp | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+9fcd0d65adf36b65423332a739222bf1d8cfc0b7 Merge branch 'master' of https://github.com/brian8181/rx whet ever
+b72e3407ae099269e3ba76be691a6213078ea856 remove auto gererated files
+ aclocal.m4              | 10189 -------------------------
+ autom4te.cache/output.0 | 18585 ----------------------------------------------
+ autom4te.cache/requests |   226 -
+ autom4te.cache/traces.0 |  2718 -------
+ rx.geany                |    38 -
+ 5 files changed, 31756 deletions(-)
+e05a179bccaf17bcdf79f2fbbdd718a09c7ee219 add file to cleandist.sh
+ cleandist.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+2298caaa15f9dc53240642709eca859b5244bd7f mod .git ignore
+ .gitignore | 40 ++++++++++++++++++++--------------------
+ 1 file changed, 20 insertions(+), 20 deletions(-)
+af6a7056cdb382e52ddc47c210aa05050106d682 remove auto gen files
+ aclocal.m4              | 10189 -------------------------
+ autom4te.cache/output.0 | 18585 ----------------------------------------------
+ autom4te.cache/requests |   226 -
+ autom4te.cache/traces.0 |  2718 -------
+ 4 files changed, 31718 deletions(-)
+a9ab67ce8a3e33aedea0d67e90835dace86c8986 delete flags.hpp Makefile.in ../cleandist.sh
+ cleandist.sh    |   1 +
+ src/Makefile.in | 641 --------------------------------------------------------
+ src/flags.hpp   |   0
+ 3 files changed, 1 insertion(+), 641 deletions(-)
+a1cb64f1459905eb03c8024c9f2e3eafc0082ff0 fix new ignore temlapte
+ .gitignore              |    45 +-
+ aclocal.m4              | 10189 +++++++++++++++++++++++++
+ autom4te.cache/output.0 | 18585 ++++++++++++++++++++++++++++++++++++++++++++++
+ autom4te.cache/requests |   226 +
+ autom4te.cache/traces.0 |  2718 +++++++
+ missing                 |   215 +
+ src/Makefile.in         |   641 ++
+ 7 files changed, 32594 insertions(+), 25 deletions(-)
+ed1b59680d5a1212bb41c791db9e384b670b413d added Makefile.1
+ .gitignore       |  5 +++-
+ build/Makefile   |  2 --
+ build/Makefile.1 | 71 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 75 insertions(+), 3 deletions(-)
+dc5793efb52e8c964dbd2fbb1aaf2ed9ca743971 fixup .gitignore
+ .gitignore        | 12 ++++++------
+ test/pass.fail.sh |  4 ++++
+ 2 files changed, 10 insertions(+), 6 deletions(-)
+dcf5e357446d2d93a3508ddf6aab3009062a164b clean up
+ .gitignore     |  1 +
+ build/Makefile | 21 +++++++++++++--------
+ cleandist.sh   |  1 +
+ src/flags.hpp  |  0
+ 4 files changed, 15 insertions(+), 8 deletions(-)
+02f5bac12e658ccf9e7a3ac3ada218688a28a220 cleandist.sh
+ cleandist.sh | 1 +
+ 1 file changed, 1 insertion(+)
+9220b41ab76c14324269c4bd44db638eec0222a1 Merge branch 'extended_rgx' merge in extended changes
+0f7d00d8276dddd4dd959998e21fd146d039b653 quick changes
+ src/OptionParser.cpp | 10 ++++++++++
+ src/OptionParser.hpp |  2 +-
+ src/rx.hpp           |  2 +-
+ 3 files changed, 12 insertions(+), 2 deletions(-)
+398c9841e9d6a8c11b7ff6102cb9ee84e980e788 fix build errors
+ src/OptionParser.cpp | 5 +++++
+ src/OptionParser.hpp | 8 +-------
+ 2 files changed, 6 insertions(+), 7 deletions(-)
+3962b4571cf123ccdccf42284938af84495d87e5 add class files
+ build/Makefile | 20 +++++++++++---------
+ 1 file changed, 11 insertions(+), 9 deletions(-)
+df8bb5869f7f0f89864187782643f5eb8d81a990 began creating classes
+ src/OptionParser.cpp |  6 ++++++
+ src/OptionParser.hpp | 31 +++++++++++++++++++++++++++++++
+ 2 files changed, 37 insertions(+)
+e38941bea610fe5ac9f3d2050924fd4107dc0a73 fix error with extend flag init
+ src/rx.cpp | 14 +++++++-------
+ src/rx.hpp |  3 ++-
+ 2 files changed, 9 insertions(+), 8 deletions(-)
+8bbd448343e79d5d8108aad74db6d4f0ec0b34a2 add all autogererated files by \"autoreconf -i\" to .gitignore
+ .gitignore | 26 +++++++++++++-------------
+ 1 file changed, 13 insertions(+), 13 deletions(-)
+a0e4e4621b8722550c7b0ad6b66b4aabe2bce47b started implementing options ,e & E (extended)
+ .gitignore              |  3 +--
+ src/bash_color_test.cpp |  2 ++
+ src/rx.cpp              | 16 ++++++++++++----
+ src/rx.hpp              | 15 ++++++++-------
+ 4 files changed, 23 insertions(+), 13 deletions(-)
+52d3c63e255e8902f2c72d442ae4a285f5c4b5a3 Merge branch 'master' of https://github.com/brian8181/rx
+556e6bf3aae6dee7b31affddf58f0e4b602f6ea1 change ref sematics of constant
+ src/rx.hpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+a59ab9ba1a5c0d532e4e6154a3727f5a61c5db2a Update README.md
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+eaba92713b56948af80aa837ca627b0fe4971b57 Update README.md
+ README.md | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+53574dc0e0fcd64a28c53e3e966c7ec91f051f70 minor chnages to format
+ src/main.cpp | 3 ---
+ src/main.hpp | 4 ++--
+ src/rx.cpp   | 2 +-
+ src/rx.hpp   | 6 ++++--
+ 4 files changed, 7 insertions(+), 8 deletions(-)
+d712c9a527b7a289fdc4b33cd9022266fc1f05c9 update version string
+ build/Makefile         |  19 ++++++++++---------
+ build/bash_color_test_ | Bin 78240 -> 0 bytes
+ src/rx.cpp             |  18 +-----------------
+ src/rx.hpp             |   3 +++
+ 4 files changed, 14 insertions(+), 26 deletions(-)
+f1e4b69ad57ecea49d5b23bce7debb02b1464880 fix build errors (build/make)
+ build/Makefile         |   8 ++++----
+ build/bash_color_test_ | Bin 0 -> 78240 bytes
+ src/rx.cpp             |  12 ++++++------
+ src/rx_test.cpp        |   6 ++----
+ 4 files changed, 12 insertions(+), 14 deletions(-)
+d369e34933374c7cbec5f4152fc21e46389158bd add BUILD/VERSION file
+ src/rx.cpp   | 17 ++++++++++++++++-
+ src/rx_BUILD |  1 +
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+28ef3eb939f19036fe12e7f21dda3e52a4c965b2 added "--version" option
+ src/rx.cpp | 15 ++++++++++++---
+ 1 file changed, 12 insertions(+), 3 deletions(-)
+dd034f8f8a91a24cc75afa3cc99ae90818742538 create bash_color_test to test bash_colors.h
+ .gitignore              |  1 +
+ build/Makefile          | 13 +++++++++++--
+ src/bash_color_test.cpp | 14 ++++++++++++++
+ 3 files changed, 26 insertions(+), 2 deletions(-)
+613a8fe0a5ead72277a9a4ec25054cb29eb70d7b add .* (object files, gererated during build) to git ignore
+ .gitignore | 1 +
+ 1 file changed, 1 insertion(+)
+4cba18e7ca3d4703627248ba61c2bf3f3ad4c622 added consts for bash formating
+ src/bash_color.h | 18 ++++++++++++++----
+ 1 file changed, 14 insertions(+), 4 deletions(-)
+1e4e26d9d173929b55c30749c7aeadf53cd34c07 added colors to bash_colors.hpp file
+ src/bash_color.h | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+44fd52ac9a2bb1c81f4f2523467c4ac82ecc53ec add files to ignore & delete misc auto gen files
+ .gitignore     |  81 ++++++++++++++++-----------------------------------------
+ build/Makefile |   6 ++++-
+ missing        |   0
+ src/main.o     | Bin 153608 -> 0 bytes
+ src/rx.o       | Bin 7058248 -> 0 bytes
+ 5 files changed, 28 insertions(+), 59 deletions(-)
+78afa585b19032699e0a730a69a2ca1d178c555e testing, some stuff
+ .gitignore            |  46 ++++++++++++++++++++++++++++++++++++----------
+ .vscode/settings.json |   3 ++-
+ build/Makefile        |   4 ++--
+ man/install.sh        |   2 +-
+ src/main.cpp          |   3 +++
+ src/main.o            | Bin 0 -> 153608 bytes
+ src/rx.o              | Bin 0 -> 7058248 bytes
+ src/rx_test.cpp       |  19 +++++++++++++++----
+ 8 files changed, 59 insertions(+), 18 deletions(-)
+c318e364c2728be89baab2589f9e963301ff6b33 no-pretty option implemented
+ src/rx.cpp | 16 +++++-----------
+ 1 file changed, 5 insertions(+), 11 deletions(-)
+9aca314745fc254aaf78e1a49f6cf88219d98dde check in latest
+ rx.geany        |  6 +++++-
+ src/rx_test.cpp | 16 +++++-----------
+ 2 files changed, 10 insertions(+), 12 deletions(-)
+0b6a65a8e6f6d48384f91295a8cec426e09b1afc working on test cases, got all passing at last
+ src/rx_test.cpp | 72 ++++++++++++++++++++++++++++++++++-----------------------
+ src/rx_test.hpp |  4 ++++
+ 2 files changed, 47 insertions(+), 29 deletions(-)
+177a598bbf85a218f0cb33234667e0c880988128 cleanup, minor refactor, etc
+ src/rx.cpp      | 43 ++++++++++++++++++-------------------------
+ src/rx_test.cpp | 12 ------------
+ 2 files changed, 18 insertions(+), 37 deletions(-)
+67a33b71ad57992462ad73bb9e458b924bc685ee removed file options from test cases
+ src/rx_test.cpp | 59 +++++++++++++++++++++++++++------------------------------
+ src/rx_test.hpp | 20 +++++++++----------
+ 2 files changed, 37 insertions(+), 42 deletions(-)
+d7a76f6568e59156b841fed9d71064bd70ea4829 pretty & no-prettyr fix
+ src/rx.cpp | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
+bbd4cfad459c5fb402c2c450b3e41d191698f4ae hack, fix on idxing bug
+ src/rx.cpp | 24 ++++++++++++++++--------
+ 1 file changed, 16 insertions(+), 8 deletions(-)
+0f8145e7429459ad95f0517fc0bf4409e674c10a add bit flags for options, split off regx code form parsing options, default to pretty printing
+ build/Makefile.test |   5 --
+ rx.geany            |  34 ++++++++++++++
+ src/rx.cpp          | 130 +++++++++++++++++++++++++++-------------------------
+ src/rx.hpp          |  13 +++++-
+ src/rx_test.cpp     |   2 +-
+ 5 files changed, 114 insertions(+), 70 deletions(-)
+f808945d9c7b76e691957978d3ea15cc33c002b6 added file, I do not know where this came from
+ .vscode/settings.json | 5 +++++
+ 1 file changed, 5 insertions(+)
+a5dee172ac6e84e83afff93c936e895fa8dae8f5 debugging match color coded formatting, misc
+ src/rx.cpp | 18 ++++++++++--------
+ 1 file changed, 10 insertions(+), 8 deletions(-)
+eac5ce43d559ae1e40b4c7716f5b98cf969af6dc changed --help format, made i (index offset) more obvious
+ src/rx.cpp | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+d9b7b39dd4105883f17f38966b566c3c982a089d work on test cases
+ src/rx.cpp      | 21 ++++++--------------
+ src/rx.hpp      |  0
+ src/rx_test.cpp | 59 ++++++++++++++++++++++++++++++++++++++-------------------
+ src/rx_test.hpp |  6 +++++-
+ 4 files changed, 51 insertions(+), 35 deletions(-)
+7c10b0badda7c37c995fbe785a415d07c2ab1872 fix option s & p together
+ src/rx.cpp | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
+8ec968b3b07ffe365ba91c3bbdab102870b7fd6e add constant EVENS_ONLY
+ src/main.hpp    | 3 ---
+ src/rx.cpp      | 6 ++++--
+ src/rx.hpp      | 9 +--------
+ src/rx_test.cpp | 1 +
+ 4 files changed, 6 insertions(+), 13 deletions(-)
+e242c68b0fafab5d00a2ef19427cca1503a61d2e adjust index value so they are 1 based
+ src/rx.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+a8f1bda3a28c029116484fdd7e3c07de5c69a206 remove duplicate idx value, hope it is a duplicate
+ src/rx.cpp | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+fc77b8e676e6d5515440521932b118d60b84bf46 update file for varibale option list
+ src/rx.cpp | 11 ++++-------
+ 1 file changed, 4 insertions(+), 7 deletions(-)
+f5da18156215a1f216720f117b960afccd1801f2 make template file main.hpp
+ src/main.cpp              | 2 +-
+ src/{std.hpp => main.hpp} | 3 ++-
+ src/rx.cpp                | 2 +-
+ 3 files changed, 4 insertions(+), 3 deletions(-)
+dc1ede018b3891f854ec48051e154a5acb813a83 add params to functions, add debug configs
+ .vscode/launch.json | 44 +++++++++++++++++++++++++++++++++++++++++++-
+ src/rx.hpp          |  3 ++-
+ 2 files changed, 45 insertions(+), 2 deletions(-)
+9ebb3aa83dcc8a078ce0ef54225648a85b194960 add some pretty printing, broke single match
+ src/rx.cpp | 38 +++++++++++++++++++++++---------------
+ 1 file changed, 23 insertions(+), 15 deletions(-)
+32771b3c42cd6cd0f21d5a9660c3b4125e26582a update print_help(), -h / --help option
+ src/rx.cpp | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ced1a9eac07d7ae1e6740eac485c50c063c5b648 continue adding pretty option
+ src/rx.cpp | 46 ++++++++++++++++++++++++++++++----------------
+ 1 file changed, 30 insertions(+), 16 deletions(-)
+efd51bcdbb4ddd1396f35820a3b08199a6b921ae add "pretty option" skeleton, no implementation
+ src/rx.cpp | 14 +++++++++-----
+ 1 file changed, 9 insertions(+), 5 deletions(-)
+6a32dd734554a29b6aafda5d5544becd158822d7 add "build/cppRxTestResults.xml" to .gitingonre
+ .gitignore | 1 +
+ 1 file changed, 1 insertion(+)
+83bffe59e28a3867ae1f1f962629816b81e03ff7 remove unnecessary volatile keyword, worked on print_match_header()
+c1a6cda580996b182f4ade26e65459a7280ffd82 remove unnecessary volatile keyword, worked on print_match_header()
+ src/rx.cpp | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+2acec2561996c324eb56b9171b70dee3ca0a5893 revove unnecessary volatile keyword, worked on print_match_header()
+ src/rx.cpp | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+f3885ea1dfd9bda66ce9929a3419a7b384b10a2b changed single match output
+ src/rx.cpp | 13 +++++--------
+ 1 file changed, 5 insertions(+), 8 deletions(-)
+0541ef4a84490143fd6399443f7f8f2118e9ae5f add debug configurations for vscode
+ .vscode/launch.json | 65 ++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 64 insertions(+), 1 deletion(-)
+17fdf02aa2c9d3e1d0fc91008cf95acf2dddad25 added std.hpp, changed spaces to tabs only
+ src/main.cpp |  2 +-
+ src/rx.cpp   | 14 +++++++-------
+ src/rx.hpp   |  2 +-
+ src/std.hpp  | 15 +++++++++++++++
+ 4 files changed, 24 insertions(+), 9 deletions(-)
+303affc61748f5c857a5f327f410cf6d59f705d5 delete autotools, bak directory
+ bak/INSTALL          |   368 -
+ bak/Makefile         |   815 ---
+ bak/Makefile.in      |   641 --
+ bak/aclocal.m4       | 10189 ---------------------------
+ bak/autoscan.log     |     0
+ bak/compile          |   348 -
+ bak/config.guess     |  1480 ----
+ bak/config.h         |    77 -
+ bak/config.h.in      |    76 -
+ bak/config.log       |  1000 ---
+ bak/config.status    |  2197 ------
+ bak/config.sub       |  1801 -----
+ bak/configure        | 18675 -------------------------------------------------
+ bak/configure.ac.2   |    79 -
+ bak/configure.ac.bak |    38 -
+ bak/configure.scan   |    36 -
+ bak/depcomp          |   791 ---
+ bak/install-sh       |   518 --
+ bak/libtool          | 11911 -------------------------------
+ bak/ltmain.sh        | 11251 -----------------------------
+ bak/stamp-h1         |     1 -
+ src/Makefile         |   641 --
+ 22 files changed, 62933 deletions(-)
+5bcd6fe9813b4cb767b072011c6f5cbffebb751d delete autotolls generated files agian
+ bak/Makefile                                       | 815 +++++++++++++++++++++
+ bak/config.h.in                                    |  76 ++
+ ...458c6893ac2e1ea2a3f53a014fa2fcfd~2020-11-23.tmp | 129 ++++
+ ...2ba7aa6bac339bd1801ff29b3c1ce24f~2021-03-22.tmp | 134 ++++
+ script/h                                           |   1 +
+ src/Makefile                                       | 641 ++++++++++++++++
+ 6 files changed, 1796 insertions(+)
+06bc82d2d0910761e7fae8a3e87c5968c4dc0f3b delete autotools generated files
+ .gitignore        | 27 +++++++++------------------
+ m4/libtool.m4     |  1 -
+ m4/ltoptions.m4   |  1 -
+ m4/ltsugar.m4     |  1 -
+ m4/ltversion.m4   |  1 -
+ m4/lt~obsolete.m4 |  1 -
+ 6 files changed, 9 insertions(+), 23 deletions(-)
+bc6e358994f332b8bef93bde68716b13d72a1ee2 move configure.ac from bak
+ bak/configure.ac => configure.ac | 7 -------
+ 1 file changed, 7 deletions(-)
+e87555e574d46fd5f5b2ba7af14bb1dca6331543 move / rename autofiles
+ INSTALL => bak/INSTALL           |     0
+ bak/Makefile.in                  |   641 ++
+ autoscan.log => bak/autoscan.log |     0
+ compile => bak/compile           |     0
+ bak/configure                    | 18675 +++++++++++++++++++++++++++++++++++++
+ configure.ac => bak/configure.ac |     0
+ depcomp => bak/depcomp           |     0
+ install-sh => bak/install-sh     |     0
+ libtool => bak/libtool           |     0
+ ltmain.sh => bak/ltmain.sh       |     0
+ bak/notes.txt                    |    64 -
+ stamp-h1 => bak/stamp-h1         |     0
+ rx.geany                         |    40 -
+ test/testFileOption.txt          |     1 -
+ 14 files changed, 19316 insertions(+), 105 deletions(-)
+cc5f7e13b02017cc5d03b28b5c62588e1c17d203 fix \ cleanup Makefile, move notes.txt
+ build/Makefile | 37 ++++++++++++++++-----------------
+ notes.txt      | 64 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 81 insertions(+), 20 deletions(-)
+e39431b17596194c6fe8c6b1af3163f38f970020 fix permissions
+ .github/ISSUE_TEMPLATE/bug_report.md      | 0
+ .github/ISSUE_TEMPLATE/custom.md          | 0
+ .github/ISSUE_TEMPLATE/feature_request.md | 0
+ .github/workflows/c-cpp.yml               | 0
+ .gitignore                                | 0
+ .vscode/launch.json                       | 0
+ .vscode/tasks.json                        | 0
+ AUTHORS                                   | 0
+ COPYING                                   | 0
+ ChangeLog                                 | 0
+ INSTALL                                   | 0
+ Makefile.am                               | 0
+ NEWS                                      | 0
+ README                                    | 0
+ README.md                                 | 0
+ autoscan.log                              | 0
+ bak/aclocal.m4                            | 0
+ bak/config.h                              | 0
+ bak/config.log                            | 0
+ bak/configure.ac.2                        | 0
+ bak/configure.ac.bak                      | 0
+ bak/configure.scan                        | 0
+ bak/notes.txt                             | 0
+ build/Makefile                            | 0
+ build/Makefile.test                       | 0
+ configure.ac                              | 0
+ ltmain.sh                                 | 0
+ man/Makefile.am                           | 0
+ man/install.sh                            | 0
+ man/rx.1                                  | 0
+ missing                                   | 0
+ rx.geany                                  | 0
+ script/git-file-hist.sh                   | 0
+ script/notes.txt                          | 0
+ src/Makefile.am                           | 0
+ src/bash_color.h                          | 0
+ src/main.cpp                              | 0
+ src/rx.cpp                                | 0
+ src/rx.hpp                                | 0
+ src/rx_test.cpp                           | 0
+ src/rx_test.hpp                           | 0
+ stamp-h1                                  | 0
+ test/testFileOption.txt                   | 0
+ test/tests                                | 0
+ 44 files changed, 0 insertions(+), 0 deletions(-)
+3560df41e70a106b16c6bd85b7c83fe406ee9914 remove variable number inputs, penidng fixes
+ .gitignore.save        |   52 ---
+ build-aux/compile      |  348 -----------------
+ build-aux/config.guess |    1 -
+ build-aux/config.sub   |    1 -
+ build-aux/depcomp      |  791 --------------------------------------
+ build-aux/install-sh   |  518 -------------------------
+ build-aux/ltmain.sh    |    1 -
+ build-aux/missing      |  215 -----------
+ build/.gitignore.bak   |    2 -
+ build/Makefile         |    2 +-
+ config.log             | 1000 ------------------------------------------------
+ missing                |  215 -----------
+ src/main.cpp           |   26 +-
+ src/rx.cpp             |   49 ++-
+ src/rx.hpp             |   11 -
+ src/stamp-h2           |    1 -
+ 16 files changed, 36 insertions(+), 3197 deletions(-)
+f0990a916201cb1d68f7269cd69be0dc95661bbc changed output format
+ .gitignore   | 2 ++
+ src/main.cpp | 3 +--
+ src/rx.cpp   | 8 +++++---
+ 3 files changed, 8 insertions(+), 5 deletions(-)
+166b7cabf87682850fefcdae67af5b9b27a90abb clean up main pipe buffer code
+ .vscode/c_cpp_properties.json |  16 -----
+ .vscode/launch.json           |   4 +-
+ .vscode/launch.json.bak       | 157 ------------------------------------------
+ .vscode/settings.json         |  55 ---------------
+ .vscode/tasks.json            |  30 ++++----
+ after.autoreconf.txt          |  39 -----------
+ before.autoreconf.txt         |  37 ----------
+ build/Makefile                |   8 +--
+ build/Makefile.test           |   5 ++
+ src/.vscode/launch.json       |  29 --------
+ src/.vscode/tasks.json        |  27 --------
+ src/main.cpp                  |  11 ++-
+ src/rx_test.hpp               |   2 +-
+ 13 files changed, 32 insertions(+), 388 deletions(-)
+8d28fef1ced863918cf58cac4186e5a85b620e5d Merge branch 'master' of https://github.com/brian8181/rx
+4fb2807f55dfacd71033b8a5c97ac18b8ded8026 testing
+ .gitignore   |  3 ---
+ rx.geany     | 18 +++++++-----------
+ src/main.cpp |  2 ++
+ src/rx.cpp   |  6 ++++++
+ src/rx.hpp   |  2 +-
+ 5 files changed, 16 insertions(+), 15 deletions(-)
+d08433de87761ec84833032e463587dc0d55cb40 testing
+ NEWS | 1 +
+ 1 file changed, 1 insertion(+)
+348ddf47a0c579b76c291f355c0519a3dda4ff1a testing
+ NEWS | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ce61af6d0a222c2b0dc8fb3a3c837558ea8a3342 testing
+ NEWS | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+44d86fc82e89e0901c51263c0e19453ebeb72d6c clean up
+ rx.geany   |  2 +-
+ src/rx.cpp | 11 ++++-------
+ 2 files changed, 5 insertions(+), 8 deletions(-)
+01d928b98d51532afc9fef822580c568f7ef881b tune, single match maode
+ rx.geany         |  6 +++---
+ src/bash_color.h | 10 +++++-----
+ src/rx.cpp       | 15 ++++++---------
+ 3 files changed, 14 insertions(+), 17 deletions(-)
+c56cc447e97b8ed2f6dd8969f1c6e58bb064d794 fix/update verbose output
+ rx.geany     |  6 +++---
+ src/main.cpp | 10 +++-------
+ src/rx.cpp   |  7 +------
+ 3 files changed, 7 insertions(+), 16 deletions(-)
+e0e7216f9038f97d3dc331e40a52d10719fab46b clean up files
+ .gitignore           |   8 ++++++--
+ build/.gitignore.bak |   2 ++
+ build/rx             | Bin 1928168 -> 0 bytes
+ build/rx_test        | Bin 9479160 -> 0 bytes
+ 4 files changed, 8 insertions(+), 2 deletions(-)
+b6f42429824d0f2e0a2fa54d92c5ff792f694224 code cleanup
+ rx.geany   | 12 +++++++++---
+ src/rx.cpp |  6 ++++--
+ 2 files changed, 13 insertions(+), 5 deletions(-)
+b7147742271579866b9e61cb548fe25a9160376c fix build/Makefile
+ build/Makefile | 95 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ rx.geany       |  8 ++---
+ 2 files changed, 99 insertions(+), 4 deletions(-)
+21f1cd922fbf4f391d327a6bb059252928910015 ignore & geany
+ .gitignore | 3 ---
+ rx.geany   | 2 +-
+ 2 files changed, 1 insertion(+), 4 deletions(-)
+e7f22c813d6b61280885a3d5e204b947d40242ef remove make dir
+ build/rx      | Bin 1928152 -> 1928168 bytes
+ build/rx_test | Bin 8162136 -> 9479160 bytes
+ make/Makefile |  95 ----------------------------------------------------------
+ 3 files changed, 95 deletions(-)
+9091b9e54e4d2597cd51ea61402b7797145dd307 single msg, geany stuff
+ .gitignore      |  5 +++++
+ .gitignore.save | 52 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ rx.geany        | 38 ++++++++++++++++++++++++++++++++++++++
+ src/rx.cpp      | 15 ++++++++-------
+ 4 files changed, 103 insertions(+), 7 deletions(-)
+68126f278c879ae8c0df145b2d4931db744b270d blah blah Blah
+ build/rx      | Bin 0 -> 1928152 bytes
+ build/rx_test | Bin 0 -> 8162136 bytes
+ src/rx.cpp    |  14 ++++++--------
+ 3 files changed, 6 insertions(+), 8 deletions(-)
+af24c10c4376397cde07c1e45d83ee483eec8fd8 added build dir
+ make/Makefile | 28 +++++++++++++++-------------
+ src/main.cpp  | 11 ++++++-----
+ 2 files changed, 21 insertions(+), 18 deletions(-)
+d90ca61fdd1cea7b8f21765e8c302f1e73d7a197 fixed append pipe code
+ src/main.cpp | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+f8de169416aad830d6f1520351c15d11dd485791 rename iterator
+ src/main.cpp | 9 ---------
+ src/rx.cpp   | 6 +++---
+ 2 files changed, 3 insertions(+), 12 deletions(-)
+f456ce32d7494298fe1c6e0b463832621e64e4ab add alternating color so the matches stand out
+ src/rx.cpp | 4 ++--
+ src/rx.hpp | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+4bd47a2e307c93ab5043674a77feb4908dd6bf50 fixed ignore case, and count in single mode
+ src/rx.cpp | 26 ++++++++++++--------------
+ 1 file changed, 12 insertions(+), 14 deletions(-)
+c60da30bca63e0873f7c4f3f196bdd8477fd084c single match mode seems to be working
+ .vscode/launch.json     | 112 +---------------------------------
+ .vscode/launch.json.bak | 157 ++++++++++++++++++++++++++++++++++++++++++++++++
+ .vscode/tasks.json      |  21 +------
+ script/git-file-hist.sh |   6 +-
+ script/notes.txt        |   2 +
+ src/.vscode/launch.json |   2 +-
+ src/rx.cpp              |  20 +++---
+ 7 files changed, 178 insertions(+), 142 deletions(-)
+5f45d77f26093ad68f6d5812b3746f8a811125fd delete diff test scripts
+ script/diff.sh                              | 12 --------
+ script/generic_diff.sh                      | 32 ---------------------
+ git-file-hist.sh => script/git-file-hist.sh |  0
+ script/meld.sh                              | 44 -----------------------------
+ script/rdif.sh                              | 19 -------------
+ script/template.sh                          | 31 --------------------
+ 6 files changed, 138 deletions(-)
+b76027dffdb56fa0c06417c05b45ee288ed390c3 remove elf files
+ src/elf.txt         | 3463 ---------------------------------------------------
+ src/elf_symbols.txt | 2874 ------------------------------------------
+ 2 files changed, 6337 deletions(-)
+d61d08a01f6219cd4c8b2271cb12015512bfbb83 root cppRxTestResults.xml, to ignore list
+ .gitignore | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+731d848011537f2c0b8eaccdbc147cd1ec7aa005 add rx_text, cppRxTestResults.xml, to ignore list
+ .gitignore | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+386e896501018808d3fd455a31137662e950320f commit missed files
+ .gitignore     | 1 +
+ script/hist.sh | 1 +
+ 2 files changed, 2 insertions(+)
+de5f429450936d99c53135386e1833656abe54e8 autotools backup, remove all in future
+ .gitignore                               |    50 +-
+ INSTALL                                  |   368 +
+ after.autoreconf.txt                     |    39 +
+ bak/aclocal.m4                           | 10189 ++++++++++++++++++++++++
+ bak/config.guess                         |  1480 ++++
+ bak/config.h                             |    77 +
+ bak/config.log                           |  1000 +++
+ bak/config.status                        |  2197 ++++++
+ bak/config.sub                           |  1801 +++++
+ configure.ac.2 => bak/configure.ac.2     |     0
+ configure.ac.bak => bak/configure.ac.bak |     0
+ configure.scan => bak/configure.scan     |     0
+ bak/notes.txt                            |    64 +
+ before.autoreconf.txt                    |    37 +
+ build-aux/compile                        |   348 +
+ build-aux/config.guess                   |     1 +
+ build-aux/config.sub                     |     1 +
+ build-aux/depcomp                        |   791 ++
+ build-aux/install-sh                     |   518 ++
+ build-aux/ltmain.sh                      |     1 +
+ build-aux/missing                        |   215 +
+ compile                                  |   348 +
+ config.log                               |  1000 +++
+ configure.ac                             |     3 +-
+ configure.ac~                            |    39 -
+ depcomp                                  |   791 ++
+ libtool                                  | 11911 +++++++++++++++++++++++++++++
+ ltmain.sh                                | 11251 +++++++++++++++++++++++++++
+ m4/libtool.m4                            |     1 +
+ m4/ltoptions.m4                          |     1 +
+ m4/ltsugar.m4                            |     1 +
+ m4/ltversion.m4                          |     1 +
+ m4/lt~obsolete.m4                        |     1 +
+ script/meld.sh                           |     2 +-
+ src/stamp-h2                             |     1 +
+ stamp-h1                                 |     1 +
+ 36 files changed, 44465 insertions(+), 64 deletions(-)
+5b277e2da058a63937e25f3db8ca41761b6b6d73 git mel.sh to run with new git_diff.sh, add libtool to configure.ac
+ .gitignore         | 67 ++++++++++++++++++++++++++++++------------------------
+ configure.ac       |  7 +++++-
+ script/meld.sh     | 49 +++++++++++++++++++++------------------
+ script/template.sh | 11 +++++----
+ 4 files changed, 76 insertions(+), 58 deletions(-)
+a589a1e6b1480b31b40753ed7b8f2f5cea751f08 kdiff3 now working
+ script/kdiff3.sh   | 33 ++++++++++++++++++++++++++++++---
+ script/meld.sh     | 18 ++++++++----------
+ script/template.sh | 19 ++++++++++---------
+ 3 files changed, 48 insertions(+), 22 deletions(-)
+930f6ca8ddd868a048470ac69647439f5b182eff creating template file
+ script/template.sh | 29 +++++++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
+11a6fddf7fc40d0251ba0a5184816783dca45abb creating a template file
+ script/generic_diff.sh | 29 +++++++++++++++++++++--------
+ script/kdiff3.sh       | 12 ++++++++++++
+ script/meld.sh         | 33 +++++++++++++++++++++++++++++++--
+ 3 files changed, 64 insertions(+), 10 deletions(-)
+f2178df4ecb6d10fd078eabd1942f83b3768acb6 update scripts
+ script/diff.sh         | 5 ++++-
+ script/generic_diff.sh | 2 ++
+ script/meld.sh         | 5 ++++-
+ 3 files changed, 10 insertions(+), 2 deletions(-)
+fb01629e0f1f1fc663fc646bbf3caf2dbd8c892a added kompare script
+ configure.ac           |  2 +-
+ configure.ac.2         | 79 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ script/generic_diff.sh |  7 +++--
+ script/hist.sh         |  2 +-
+ script/kompare.sh      |  9 ++++++
+ 5 files changed, 94 insertions(+), 5 deletions(-)
+e5da14856daebf722dd7e621ba11a584ce6428c4 getting auto stuff to work
+ .gitignore       |  1 +
+ Makefile.am      | 35 +-------------------------------
+ autoscan.log     |  4 ----
+ configure.ac     | 61 ++++++++++++++++++++++++++++----------------------------
+ configure.ac.bak | 38 +++++++++++++++++++++++++++++++++++
+ configure.ac~    | 39 ++++++++++++++++++++++++++++++++++++
+ configure.scan   |  4 ++++
+ script/diff.sh   |  9 ---------
+ script/hist.sh   |  0
+ src/Makefile.am  | 18 +++--------------
+ 10 files changed, 116 insertions(+), 93 deletions(-)
+37e0345bcd82b3737d2504b3a4544ca1b366e0c6 got multi exec enabled
+ script/diff.sh         | 25 +++++++++++++------------
+ script/generic_diff.sh | 16 ++++++++++++++++
+ script/hist.sh         |  4 ++++
+ script/meld.sh         | 20 +++++---------------
+ 4 files changed, 38 insertions(+), 27 deletions(-)
+c4c860ae60f399aa6e769c3688ad18703cccfdd1 got diff & meld working
+ script/hist.sh |  5 -----
+ script/meld.sh | 19 +++++++++++++++++++
+ script/rdif.sh |  7 ++++---
+ 3 files changed, 23 insertions(+), 8 deletions(-)
+459dfc5a2af7be9d13563c438f1f2e5912826c00 git diff/hist scripts
+ .gitignore     |   2 +-
+ configure.ac   |  28 ++--
+ install-sh     | 518 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ script/diff.sh |  17 ++
+ script/hist.sh |   5 +
+ script/meld.sh |   0
+ script/rdif.sh |  18 ++
+ 7 files changed, 569 insertions(+), 19 deletions(-)
+cc16a543b6937db86e97f2e9ce41345bb120e1e8 new script
+ git-file-hist.sh | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+71488bc5ecb9ed66ad1c317c7378f631a33544b9 testing
+23e49b2903bf0eaf2045908912680f4c457e94c8 small format changes
+ Makefile.am   |  4 ++++
+ configure.ac  | 10 +++++++++-
+ make/Makefile |  2 +-
+ 3 files changed, 14 insertions(+), 2 deletions(-)
+d6a6237c2ba7aa6bac339bd1801ff29b3c1ce24f auto stuff
+ autoscan.log   |   4 ++++
+ configure.scan |  32 ++++++++++++++++++++++++++++++++
+ make/Makefile  |   2 +-
+ rx             | Bin 3105456 -> 0 bytes
+ src/rx.cpp     |  16 +++++++++++-----
+ 5 files changed, 48 insertions(+), 6 deletions(-)
+a764d077cddbd287d64e46f62a1e02b785b6469d add building section to README
+ README | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+6d4c837278ff02e2ce4a229817d7ad5e4bd773d2 update make file, removed all refs to rx
+ make/Makefile | 36 ++++++++++++++++++++----------------
+ 1 file changed, 20 insertions(+), 16 deletions(-)
+a9633b9ba7c4e090be2f9a461443b137f9e11549 fix ignore
+ .gitignore |   5 +++--
+ rx         | Bin 0 -> 3105456 bytes
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+8558bb1d8053bb9ec3001a2573daf2594e5c4403 delete files
+ .deps/main.Po        | 336 ---------------------
+ .deps/rx.Po          | 696 -------------------------------------------
+ .deps/rx.Tpo         | 429 ---------------------------
+ .deps/rx_test.Po     |   1 -
+ INSTALL              | 368 -----------------------
+ Makefile             | 820 ---------------------------------------------------
+ bak/.gitignore       |  57 ----
+ bak/Makefile copy    |  88 ------
+ bak/man/Makefile.am  |   1 -
+ bak/src/Makefile.am  |  11 -
+ build-aux/compile    | 348 ----------------------
+ config.h.in          |  61 ----
+ doc/Makefile.am      |   1 -
+ examples/Makefile.am |   2 -
+ 14 files changed, 3219 deletions(-)
+d9c603f442eddaa1749263e68c238ef7f944ba80 Merge branch 'master' of https://github.com/brian8181/rx
+319460e72cc41daf80c4d4fedf041991f4b47dac Update issue templates
+ .github/ISSUE_TEMPLATE/bug_report.md      | 38 +++++++++++++++++++++++++++++++
+ .github/ISSUE_TEMPLATE/custom.md          | 10 ++++++++
+ .github/ISSUE_TEMPLATE/feature_request.md | 20 ++++++++++++++++
+ 3 files changed, 68 insertions(+)
+0c4b545fe8f9e282496f5d8e885ba8fa372569b7 autotools
+ .gitignore    |  21 +-
+ ChangeLog     |   1 -
+ Makefile      |   3 +-
+ compile       | 348 --------------------------
+ depcomp       | 791 ----------------------------------------------------------
+ install-sh    | 518 --------------------------------------
+ make/Makefile |   8 +
+ rx            | Bin 3102560 -> 0 bytes
+ test/tests    |  12 +
+ tmp           |   0
+ 10 files changed, 31 insertions(+), 1671 deletions(-)
+ff01483f11d590190d2d6005aa38872f3aba1f50 changed g++ options in Makefile, add options rx.cpp
+ make/Makefile | 13 ++++---------
+ src/rx.cpp    | 37 ++++++++++++++++++++++---------------
+ 2 files changed, 26 insertions(+), 24 deletions(-)
+d772d15c41e2b09bdd385bdb254227ed873fb1aa test
+ src/rx.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+b5c4229020d2e98f27ed53bec63f8285678a883a stuff
+ Makefile          | 821 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ build-aux/compile | 349 ++++++++++++++++++++++-
+ configure.ac      |   6 +-
+ rx                | Bin 0 -> 3102560 bytes
+ 4 files changed, 1172 insertions(+), 4 deletions(-)
+9b255fede099762502f8d33788d25e5d3bb52de3 readelf output
+ src/elf.txt         | 3463 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ src/elf_symbols.txt | 2874 ++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 6337 insertions(+)
+76b6efa62d07b961f50db6cc0d7c2aefbe65e9c6 delete .vs
+ .vs/ProjectSettings.json |   3 ---
+ .vs/slnx.sqlite          | Bin 90112 -> 0 bytes
+ 2 files changed, 3 deletions(-)
+1b3349647415b08ae9d61833ec6bd5ab28a52f89 trivial changes
+ .gitignore | 1 +
+ AUTHORS    | 3 ++-
+ ChangeLog  | 1 +
+ NEWS       | 1 +
+ README     | 2 +-
+ 5 files changed, 6 insertions(+), 2 deletions(-)
+369fb7c874e841723698d51e4a937705e97f769a all good with -> (autoreconf -fvim, ./configure, make)
+ Makefile.am  | 5 +++--
+ configure.ac | 2 +-
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+cfcdc40e984e15f0217e7170ac40276c51bce593 change Makefile src dir, works in place
+ make/Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+515129cfb8ae27cf6515fb1520c7d72d4718bc2e delete  Makefile.bak
+ Makefile.bak | 846 -----------------------------------------------------------
+ 1 file changed, 846 deletions(-)
+25acd9ba07c0d1c7a2a404ed1743e42f349ad940 create make dir for Makefile
+ .gitignore     |  85 ++----
+ Makefile.in    | 847 ---------------------------------------------------------
+ bak/.gitignore |  57 ++++
+ make/Makefile  |  86 ++++++
+ 4 files changed, 170 insertions(+), 905 deletions(-)
+8c4f126f21e6ffe5ba933a03eb3db9f4050867a0 add bash_color.h
+ bak/Makefile     | 86 --------------------------------------------------------
+ src/bash_color.h | 30 ++++++++++++++++++++
+ src/rx.hpp       | 26 ++++-------------
+ 3 files changed, 36 insertions(+), 106 deletions(-)
+d4f27aea1fd1d8fcd395ec5328015ef38718746a small format changes
+ .vscode/tasks.json     | 23 +++++++++++++++++++++--
+ .vscode/tasks.json.bak | 39 ---------------------------------------
+ src/rx.cpp             | 48 +++++++++++++++++++++++-------------------------
+ 3 files changed, 44 insertions(+), 66 deletions(-)
+bc341270898c4a2af2660503107597cc5ab70643 config files changed
+ Makefile.in     | 847 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ configure.ac    |   4 +-
+ src/Makefile.am |   1 +
+ src/rx_test.cpp |  13 +
+ src/rx_test.hpp |   7 +-
+ 5 files changed, 866 insertions(+), 6 deletions(-)
+6b9fef41a751f32ac460563281b2c2a27a43401f do it
+ .gitignore              |   3 +
+ .vscode/tasks.json      |  26 +-
+ Makefile.am             |   5 +-
+ Makefile.bak            | 846 ++++++++++++++++++++++++++++++++++++++++++++++++
+ depcomp                 |   8 +-
+ src/Makefile.am         |   2 +
+ src/rx_test.hpp         |   8 +-
+ test/testFileOption.txt |   1 +
+ 8 files changed, 866 insertions(+), 33 deletions(-)
+8f73a3936f997f7193f7752296c7ac316e24c808 update Makefile.ams
+ .gitignore      |  2 +-
+ Makefile.am     | 13 ++++++++++++-
+ configure.ac    |  5 +++--
+ src/Makefile.am |  4 ++--
+ 4 files changed, 18 insertions(+), 6 deletions(-)
+200ddc456fd1d1507b18ad2424107d7bebaf3ddf update auto make stuff
+ .gitignore      |  3 +++
+ Makefile.am     |  3 +++
+ config.h        | 62 ---------------------------------------------------------
+ src/Makefile.am |  4 ++--
+ 4 files changed, 8 insertions(+), 64 deletions(-)
+40ebaca27d354e7899861e878c909f659da7ecf1 test
+ tmp | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+54014425b27115dbbb5fd1aa62b941aa1ace7981 delete auto files, configure, Makefile.in, Makefile
+ Makefile        |   86 -
+ Makefile.in     |  844 --------
+ configure       | 6153 -------------------------------------------------------
+ src/Makefile.am |    2 +-
+ vc140.pdb       |  Bin 36864 -> 0 bytes
+ 5 files changed, 1 insertion(+), 7084 deletions(-)
+13068fa936039eb6592b0a06701c2d09c3b30f24 fix typos
+ Makefile | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+129e668f9b015d6d363e728980e121586b27868a formating src
+ .vscode/tasks.json | 39 +++++++++++++++++++++++++++++++++++++++
+ src/rx.cpp         |  2 +-
+ src/rx.hpp         | 36 ++++++++++++++++++------------------
+ 3 files changed, 58 insertions(+), 19 deletions(-)
+027dcffa62a265912465156bdd561aac1da480e9 format document
+ .vs/slnx.sqlite | Bin 90112 -> 90112 bytes
+ src/rx.cpp      | 204 ++++++++++++++++++++++++++++----------------------------
+ 2 files changed, 102 insertions(+), 102 deletions(-)
+73ab650b53b7b51531873b0d3c7ed274daa157e8 add note to main.cpp
+ .vs/ProjectSettings.json               |   3 +++
+ .vs/slnx.sqlite                        | Bin 0 -> 90112 bytes
+ .vscode/{tasks.json => tasks.json.bak} |   0
+ src/main.cpp                           |   2 ++
+ vc140.pdb                              | Bin 0 -> 36864 bytes
+ 5 files changed, 5 insertions(+)
+0a0994dcaa2ba8deb4b70a52b9a71fe541842ec0 remove commented code, print_match_header()
+ src/rx.cpp | 8 +-------
+ 1 file changed, 1 insertion(+), 7 deletions(-)
+824a16e2458c6893ac2e1ea2a3f53a014fa2fcfd create function for printing match infomation
+ src/rx.cpp | 25 +++++++++++++++++++------
+ 1 file changed, 19 insertions(+), 6 deletions(-)
+1b1b4625f33a09fe4a5fa0b0471bae1706cdb54e comment single option code
+ src/rx.cpp | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+83a6f5f6bb5f5922a7f91326e36d65e24054ec7b Update c-cpp.yml
+ .github/workflows/c-cpp.yml | 38 +++++++++++++++++++-------------------
+ 1 file changed, 19 insertions(+), 19 deletions(-)
+99fe2ef35105d889fa8237ca47b0aa27640e6de2 add colors to header file
+ src/rx.hpp | 16 +++++++++++++++-
+ 1 file changed, 15 insertions(+), 1 deletion(-)
+6ebbff92b7dd5848711a94e0415df863ca4aef83 add colors to output
+ Makefile   | 6 +++---
+ src/rx.cpp | 8 ++++----
+ src/rx.hpp | 2 ++
+ 3 files changed, 9 insertions(+), 7 deletions(-)
+4774cf3632d9047af8d0c1b77cd503d677e4eb3e remove single match stuff
+ missing    | 216 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ src/rx.cpp |  12 ++--
+ 2 files changed, 221 insertions(+), 7 deletions(-)
+128b6c4f07b64256ec804b9bc45699d0e3c9a075 bunch of autotool  autogenerated stuff
+ .deps/main.Po | 808 ++++++++++++++++++++++------------------------------------
+ .deps/rx.Tpo  | 429 +++++++++++++++++++++++++++++++
+ Makefile.in   |  56 ++--
+ compile       | 348 +++++++++++++++++++++++++
+ configure     | 218 ++++++++--------
+ configure.ac  |   2 +-
+ install-sh    | 518 +++++++++++++++++++++++++++++++++++++
+ 7 files changed, 1741 insertions(+), 638 deletions(-)
+7b743a39ff941af81b1f8ec7f9cd96e6d26eb85f switch bak Makefile in for automake file
+ Makefile | 914 ++++++---------------------------------------------------------
+ 1 file changed, 83 insertions(+), 831 deletions(-)
+bcd5027fed2f00efb82a8b4c68e760dd9504b2ba quick change backup Makefile
+ bak/Makefile | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+d0c8a1a7c57559fca3f93f9458011e65ce65cbfb fix typos
+ src/rx.cpp | 27 ++++++++++++++++-----------
+ 1 file changed, 16 insertions(+), 11 deletions(-)
+4c55fe06bce2de815d4204cb4c3f29b174a3d57b fixed returns
+ config.h.in~ |   55 -
+ configure.2  | 4587 ----------------------------------------------------------
+ src/foo.txt  |    1 -
+ src/rx.cpp   |   19 +-
+ 4 files changed, 7 insertions(+), 4655 deletions(-)
+00ffd9b42815b276b517f88a37f5feb9d5a4ca12 remove single option stuff
+ src/rx.cpp | 10 +---------
+ 1 file changed, 1 insertion(+), 9 deletions(-)
+7059626bcf96ae4ee44f5a3d9c6a5d16d1bc218a Merge branch 'master' of https://github.com/brian8181/rx
+3b509cb93c8f4e79bde98a452e17696fc8be21c6 autotools stuff, make ran sucessfully
+ .deps/main.Po     |  528 +++++++++++++++++++++++++
+ .deps/rx.Po       |  696 +++++++++++++++++++++++++++++++++
+ .deps/rx_test.Po  |    1 +
+ Makefile          |  914 +++++++++++++++++++++++++++++++++++++++----
+ Makefile.in       |   96 +++--
+ build-aux/compile |    1 +
+ config.h          |   36 ++
+ config.h.in       |   36 ++
+ config.h.in~      |   55 +++
+ configure         | 1120 ++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ configure.ac      |    2 +-
+ depcomp           |  791 +++++++++++++++++++++++++++++++++++++
+ 12 files changed, 4159 insertions(+), 117 deletions(-)
+0fd541642c01ac4390bacd30b1357603dcac05ae commit
+ .vscode/tasks.json | 12 ++++++++++++
+ src/rx.cpp         |  1 -
+ 2 files changed, 12 insertions(+), 1 deletion(-)
+1c51a82d0931d3088897fc39a036c4985df2089c remove stdio.h
+ src/.vscode/launch.json | 29 +++++++++++++++++++++++++++++
+ src/.vscode/tasks.json  | 27 +++++++++++++++++++++++++++
+ src/rx.cpp              | 38 ++++++++++++++++++++++++--------------
+ 3 files changed, 80 insertions(+), 14 deletions(-)
+f27a48c3000b684df69c70ae25a369f220628f1f Merge branch 'master' of https://github.com/brian8181/rx
+7a4c39e68fba60f76e33c60134950442c0b2b1df Merge branch 'pipe'
+a0b34b9cfb88f5bd998b1a4c6a7fb1d3fcb91543 more changes
+ AUTHORS    | 1 +
+ src/rx.cpp | 9 +++++----
+ 2 files changed, 6 insertions(+), 4 deletions(-)
+7a934540fab945406c7eb6626ff7b4c40bfe09c5 Merge branch 'pipe'
+d41cd49ec4db34176835cb309fb24f48f05b88b0 comments and rx tests
+ Makefile    |  4 ++--
+ src/foo.txt |  1 +
+ src/rx.cpp  | 10 +++++-----
+ test/tests  | 46 +++++++++++++++++++++++++++++++++++++++++++++-
+ 4 files changed, 53 insertions(+), 8 deletions(-)
+9e1b0b9e102cff57158d1a9f531ad4c5a32f4d01 check in stuff
+74d21be4403cefed611de80dc31d75ec211eacde clean up shit
+ src/rx.cpp | 127 ++++++++++++++++++++++++++++++++-----------------------------
+ 1 file changed, 66 insertions(+), 61 deletions(-)
+2ae6fd1b3d51033ec84a22e3751818bfa41a94d1 clean up
+ src/main.cpp | 12 ++++--------
+ src/rx.cpp   |  3 +--
+ src/rx.hpp   |  5 +++--
+ 3 files changed, 8 insertions(+), 12 deletions(-)
+706facae2cc2fefb0b6c2e1d8e2331830cafceaa changed to memcpy
+ src/main.cpp | 13 ++++---------
+ 1 file changed, 4 insertions(+), 9 deletions(-)
+991017bef8be834d76de571e7b7e7df3c65df06f add ouput
+ src/main.cpp | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+8adf9b4c88e56ec73ba75d49232708c942c476db switch scanf to cin
+ src/main.cpp | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+39a4fd327c76bad4fb0190dc145aab1339a31317 trivial
+ src/main.cpp | 17 ++++++++---------
+ 1 file changed, 8 insertions(+), 9 deletions(-)
+fc1fe72bedbb754e00ad4bda7ddd44d9909d9cb7 small modification
+ src/main.cpp | 24 +++++++++---------------
+ 1 file changed, 9 insertions(+), 15 deletions(-)
+7d5ec54e95eb33ab7067d70bbe6a75794903447f basic pipe functionality working
+ src/main.cpp | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
+e9ead3a0ae140bab7e8d883e6c9650c6c4a30c6f add outputs
+ src/main.cpp | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+c1cd41568b7daedffc19c50653f85f98b76c3f3c no pipe found, normal operation fixed
+ src/main.cpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+a652f22c1cee8afae249fef6858f376608b2bccb begin transition to using pipe, this is pipe only
+ src/main.cpp | 41 +++++++++++++++++++++++++++++++++++------
+ src/rx.cpp   |  5 ++++-
+ 2 files changed, 39 insertions(+), 7 deletions(-)
+74ea1db7b652a28aa4d8bb9279e9fcdc9ac56c8a configure.ac changes
+ configure    | 2660 ++++++++++++++++++++++++++++++++++------------------------
+ configure.ac |   13 +-
+ 2 files changed, 1572 insertions(+), 1101 deletions(-)
+fbe1b8dd37123a87876e51742e4bde960befd763  FIX: gcc warning unused variable
+ src/main.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+2a51fda9da0e6231cf37667b71c0f0156ba42fe9 replace "\e" with "\033" to supress warning
+ Makefile    |    4 +-
+ configure.2 | 4587 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ src/rx.hpp  |    8 +-
+ 3 files changed, 4593 insertions(+), 6 deletions(-)
+4094c5b3f1762d8ceffd5d3589293f10f3f89fb9 add GCC -pedantic option to make files.
+ Makefile     | 2 +-
+ bak/Makefile | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+05b6f30cb2ccf7ca0a0316388ea8b105e2af7307 minor changes
+ Makefile        |  8 +++-----
+ src/rx.cpp      | 51 ---------------------------------------------------
+ src/rx_test.hpp |  5 +++--
+ test/tests      | 50 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 56 insertions(+), 58 deletions(-)
+39bc75567610160eb28cb48e807fb7bdb9928a51 remove add function declaration
+ src/rx.cpp | 5 -----
+ src/rx.hpp | 3 ++-
+ 2 files changed, 2 insertions(+), 6 deletions(-)
+93362f030d074fa50ef41a707594e02795a1912c commit fix
+ src/rx.cpp | 27 ++++++++++++++-------------
+ 1 file changed, 14 insertions(+), 13 deletions(-)
+b33b687aa83766cd224b02b21e65054617ddd6c5 commit changes
+ .vscode/tasks.json | 2 --
+ src/rx.cpp         | 6 +++---
+ src/rx_test.cpp    | 3 ---
+ 3 files changed, 3 insertions(+), 8 deletions(-)
+a9e667399da6caa5d92ff7ac16e711f08735f8c7 minor changes to Makefile for Fedora
+ .vscode/tasks.json |   2 ++
+ Makefile           |  19 +++++++-----
+ bak/Makefile copy  |  88 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ src/rx_test.hpp    |   5 ++-
+ src/rxx            | Bin 616552 -> 0 bytes
+ 5 files changed, 103 insertions(+), 11 deletions(-)
+aec4746b924e06422669dd402bd1c8748bfdc439 checkin all
+ .vscode/c_cpp_properties.json |  16 +
+ .vscode/launch.json           |   8 +-
+ .vscode/tasks.json            |   6 +-
+ Makefile                      | 875 ++++--------------------------------------
+ src/main.cpp                  |   3 +-
+ src/rxx                       | Bin 0 -> 616552 bytes
+ 6 files changed, 105 insertions(+), 803 deletions(-)
+f6b33691cc3e228fe8cbde1bf5548bb5a80c3ec0 a few changes
+ .vscode/tasks.json |  5 +++--
+ src/main.cpp       | 10 +++++++++-
+ src/rx.cpp         | 14 ++++----------
+ src/rx.hpp         |  2 +-
+ 4 files changed, 17 insertions(+), 14 deletions(-)
+39f75130c417c9aa578afe6aa5f3f507c468dc5d update files
+ src/main.cpp | 3 ++-
+ src/rx.cpp   | 2 +-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+fc1b9d847509b09144e448c152ddbb405d50aa9b autotool experiments
+ .gitignore   |  10 +
+ Makefile     | 796 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ Makefile.am  |   2 +
+ Makefile.in  |   4 +-
+ config.h     |  26 ++
+ configure    |  53 ++--
+ configure.ac |   9 +-
+ 7 files changed, 875 insertions(+), 25 deletions(-)
+29d7f3cca302374df73cea94e7358d99ddd826ba autotools stuff
+ .vscode/launch.json |   2 +-
+ .vscode/tasks.json  |  11 +-
+ Makefile            | 781 ----------------------------------------------------
+ Makefile.am         |   9 +-
+ Makefile.in         |  23 +-
+ config.h            |  26 --
+ src/rx.cpp          |   7 +
+ 7 files changed, 35 insertions(+), 824 deletions(-)
+45fc5dc2d83d99a474294b6b9a6869606c1b97c1 autotools stuff
+ COPYING      |  674 +++++++++
+ INSTALL      |  368 +++++
+ Makefile     |  862 +++++++++--
+ Makefile.am  |    9 +-
+ Makefile.in  |  781 ++++++++++
+ config.h     |   26 +
+ config.h.in  |   25 +
+ configure    | 4580 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ configure.ac |   38 +-
+ 9 files changed, 7250 insertions(+), 113 deletions(-)
+1b9601572e295bae0e15000bbab165ccb8e2c4e6 changes configure.ac
+ .gitignore   |  9 +++++++--
+ Makefile     |  8 +++++---
+ configure.ac | 20 +++++++++++++++-----
+ 3 files changed, 27 insertions(+), 10 deletions(-)
+bb672c38ec9c8f965b48e386369ee8d288711750 various changes
+ .gitignore                     |  1 +
+ AUTHORS                        |  0
+ ChangeLog                      |  0
+ Makefile                       | 27 +++++++-------
+ Makefile.am                    |  4 ++
+ NEWS                           |  0
+ bak/Makefile                   | 85 ++++++++++++++++++++++++++++++++++++++++++
+ bak/man/Makefile.am            |  1 +
+ bak/src/Makefile.am            | 11 ++++++
+ configure.ac                   | 27 ++++++++++++++
+ doc/Makefile.am                |  1 +
+ examples/Makefile.am           |  2 +
+ man/Makefile.am                |  1 +
+ missing                        |  1 +
+ src/Makefile.am                | 13 +++++++
+ main.cpp => src/main.cpp       |  0
+ rx.cpp => src/rx.cpp           |  5 +++
+ rx.hpp => src/rx.hpp           |  0
+ rx_test.cpp => src/rx_test.cpp |  0
+ rx_test.hpp => src/rx_test.hpp |  0
+ 20 files changed, 166 insertions(+), 13 deletions(-)
+fd31a9ec082496bb23f728f3ee11e07306822561 Merge branch 'unit_test_exp'
+3e2c4bbbb3069724674fff6b4f6d91bbcb86eb0b squash unit tests
+ Makefile    | 18 ++++++++------
+ main.cpp    |  6 +++++
+ rx.cpp      | 19 +++------------
+ rx.hpp      | 22 +++++++++++++++++
+ rx_test.cpp | 81 ++++++++++++++++++++++++++++++++++++++++++++++++++++---------
+ rx_test.hpp | 25 ++++++++++---------
+ 6 files changed, 125 insertions(+), 46 deletions(-)
+2b8541659a7f961221eef807310ba653210cd3b3 finish up unit test
+ rx_test.cpp | 54 +++++++++++++++++++++++++++---------------------------
+ rx_test.hpp | 20 +++++++++++---------
+ 2 files changed, 38 insertions(+), 36 deletions(-)
+015e2dd43b9b43399b62d7ad8f4ca235dcdc71ae unit testing continued ...
+ rx_test.cpp | 2 +-
+ rx_test.hpp | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+7fe654f78af207e56334fcc7d3f7ebd640da10aa unit testing continued ...
+ rx_test.cpp | 35 +++++++++++++++++++++++++++++++++++
+ rx_test.hpp |  4 +++-
+ 2 files changed, 38 insertions(+), 1 deletion(-)
+2f72b7daaec920a4e5cd8271b42201c9f2b1a73d unit testing continued ...
+ Makefile    |  2 +-
+ rx_test.cpp | 40 +++++++++++++++++++++-------------------
+ 2 files changed, 22 insertions(+), 20 deletions(-)
+58d3f77f30c683618782fc8dae4d8b5e416c2eca fix typo main.cpp
+ main.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+e733ae34ca53d68e753bdb107929cb13a0c98ce9 continue adding unit test
+ Makefile    | 16 ++++++++++------
+ main.cpp    |  6 ++++++
+ rx.cpp      | 19 +++----------------
+ rx.hpp      | 22 ++++++++++++++++++++++
+ rx_test.cpp | 26 +++++++++++++++++++++++---
+ rx_test.hpp |  5 ++---
+ 6 files changed, 66 insertions(+), 28 deletions(-)
+f2d1d19d112e1dfd67fdcef52c81a5f016fc2c94 Create c-cpp.yml
+ .github/workflows/c-cpp.yml | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+823fdd6997c6477bf27ce8d6da3fc14b305963bd v0.1.0
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+6c2267ea8fdfcab040bfbda5cd428ee96db8d66d add README
+ README | 1 +
+ 1 file changed, 1 insertion(+)
+bd537fabcb97b20c5a025e80a3e4ee089e428e42 Mantis: 0000061: Add Unit Test Framework
+ Makefile | 44 ++++++++++++++++++++------------------------
+ 1 file changed, 20 insertions(+), 24 deletions(-)
+b7eb921e9e07c2eeb2eb7ab02dd7a82ddd834157 remove unused code files
+ functions.cpp | 115 ----------------------------------------------------------
+ functions.h   |   8 ----
+ 2 files changed, 123 deletions(-)
+4205370affe3679f1bf35872ca4ef724d220dd3f remove unit test example code
+ .vscode/launch.json      |   2 +-
+ .vscode/tasks.json       |  13 +++++-
+ CBasicMath.cpp           |  11 ------
+ CBasicMath.h             |  11 ------
+ Makefile                 |  16 +++-----
+ TestBasicMath.cpp        | 101 -----------------------------------------------
+ rx_test.cpp              |  28 ++++++++-----
+ rx_test.h => rx_test.hpp |   3 ++
+ 8 files changed, 39 insertions(+), 146 deletions(-)
+7106f39cea93817e21da4f5396a493162cd72a63 rename main & create parse_options function
+ functions.cpp | 115 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ functions.h   |   8 ++++
+ rx.cpp        |   8 ++++
+ 3 files changed, 131 insertions(+)
+21a88a26501ac7db750d75179a510b4929148032 begin adding cppunit framework
+ .gitignore          |   4 +++
+ .vscode/launch.json |   2 +-
+ .vscode/tasks.json  |   2 +-
+ CBasicMath.cpp      |  11 ++++++
+ CBasicMath.h        |  11 ++++++
+ Makefile            |  29 ++++++++++-----
+ TestBasicMath.cpp   | 101 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ rx_test.cpp         |  75 ++++++++++++++++++++++++++++++++++++++
+ rx_test.h           |  29 +++++++++++++++
+ 9 files changed, 254 insertions(+), 10 deletions(-)
+d3a24cb366deda0c0f16143599fb33f97e2b7519 add target
+ Makefile | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+32fdbd3e21b57820edbefa25b603dbc8ba801e78 make dist target
+ Makefile | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+4b78faf2747c575a8a6e082f680866fa1aa63e74 add make std argument
+ Makefile | 21 +++++++++++----------
+ rx.cpp   |  2 +-
+ 2 files changed, 12 insertions(+), 11 deletions(-)
+062b6a384cac358d404e8f051688cea7e7d3bffc Mantis:  0000062: No man pages
+ Makefile       | 17 +++++++++++++++--
+ man/install.sh |  3 +++
+ man/rx.1       | 15 +++++++++++++++
+ 3 files changed, 33 insertions(+), 2 deletions(-)
+ca4299aa4999ed6760e93055304d6f741a86f73a trival chnages
+ rx.cpp            | 2 +-
+ test/pass.fail.sh | 8 ++++++--
+ 2 files changed, 7 insertions(+), 3 deletions(-)
+a832f7c7bd0383e4173ff077b57e301e1fa55374 const for number argumnets
+ rx.cpp | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+6ad70a8ffa679a447067e0b7c70dbea6e09e1688 clean up code ...
+ rx.cpp | 14 ++++----------
+ 1 file changed, 4 insertions(+), 10 deletions(-)
+549029c8a011e911d16b041d04597548567c817f add autoscan generated files to .gitignore
+ .gitignore | 2 ++
+ 1 file changed, 2 insertions(+)
+a6a465468a760d023486cf491dde9c1b57e3187f change code comments
+ rx.cpp | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+ab935b3b25cea257de5fab7be5b28a0cb30925d6 Partial fix: 0000057: Create Single Match Option
+ .vscode/launch.json |  2 +-
+ rx.cpp              | 23 ++++++++++++++---------
+ 2 files changed, 15 insertions(+), 10 deletions(-)
+d3380e734f876942e8de02da0a4589bfaeea44fd format document
+ rx.cpp | 56 ++++++++++++++++++++++++++++++--------------------------
+ 1 file changed, 30 insertions(+), 26 deletions(-)
+47b7b5bddee0fbd2b0a30248f7c05a9346dea3cd merge long_opt with squash
+ .vscode/launch.json   | 21 ++++++++++++++++++++
+ .vscode/settings.json | 55 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ rx.cpp                | 43 ++++++++++++++++++++++++++--------------
+ 3 files changed, 104 insertions(+), 15 deletions(-)
+f173612a19f3b081f24c472aaf03a3ef10722318 fix flags ...
+ rx.cpp | 18 +++---------------
+ 1 file changed, 3 insertions(+), 15 deletions(-)
+c5899df7c81c6402a8f356174cbfe09774f014b6 merge master & single_option
+ .vscode/launch.json | 88 +++++++++++++++++++++++++++++++++++++++++++++++++++--
+ Makefile            | 21 ++++++++-----
+ rx.cpp              | 30 +++++++++++++-----
+ test/pass.fail.sh   |  5 +++
+ 4 files changed, 126 insertions(+), 18 deletions(-)
+62e9618f28684d01303beb06e75d589932f1255b 0000056: Make Install, Uninstall, & Archive
+ .gitignore        |  1 +
+ Makefile          | 14 ++++++--------
+ rx.cpp            |  2 +-
+ test/pass.fail.sh |  7 +++++++
+ 4 files changed, 15 insertions(+), 9 deletions(-)
+09515b941f89b7bb0ca5c3cee492ef1e8e4f1a44 add install and uninstall to Makefile
+ Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+d46dc2a830a6f445e19314202fa0d5fac8dc6a20 check number args correction
+ .vscode/launch.json | 30 ++++++++++++++++++++++++++++++
+ .vscode/tasks.json  | 48 ++++++++++++++++++++++++------------------------
+ rx.cpp              |  4 ++--
+ 3 files changed, 56 insertions(+), 26 deletions(-)
+e17294d88633b462dcaa1a6343f178910d050f66 add rx.cpp & Makefile
+ .gitignore         |   1 +
+ .vscode/tasks.json |  26 ++++++++++
+ Makefile           |  56 +++++++++++++++++++++
+ rx.cpp             | 139 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 222 insertions(+)
+cf003f7233b3b49fd4fa1c68750cee9faed9675b Initial commit
+ .gitignore | 32 ++++++++++++++++++++++++++++++++
+ README.md  |  2 ++
+ 2 files changed, 34 insertions(+)

@@ -13,7 +13,11 @@ OBJ?=build
 LDFLAGS = -static -lcppunit -L/usr/local/lib/
 INCLUDES = -I/usr/local/include/cppunit/
 
-ifdef DEBUG
+# ifdef NO_DEBUG
+# 	RELEASE=TRUE
+# endif
+
+ifndef RELEASE NO_DEBUG
 	CXXFLAGS +=-g -DDEBUG
 endif
 
@@ -21,33 +25,33 @@ ifdef CYGWIN
 	CXXFLAGS += -DCYGWIN
 endif
 
-all: ./$(BLD)/rx ./$(BLD)/rx_test
+all: $(BLD)/rx $(BLD)/rx_test
 
 rebuild: clean all
 
-./$(BLD)/rx: ./$(OBJ)/rx.o ./$(OBJ)/main.o
-	$(CXX) $(CXXFLAGS) ./$(OBJ)/rx.o ./$(OBJ)/main.o -o ./$(BLD)/rx
+$(BLD)/rx: $(OBJ)/rx.o $(OBJ)/main.o
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
-./$(BLD)/rx_test: ./$(OBJ)/rx.o ./$(OBJ)/rx_test.o
-	$(CXX) $(CXXFLAGS) ./$(OBJ)/rx.o ./$(OBJ)/rx_test.o -lcppunit -o ./$(BLD)/rx_test
+$(BLD)/rx_test: $(OBJ)/rx.o $(OBJ)/rx_test.o
+	$(CXX) $(CXXFLAGS) $(OBJ)/rx.o $(OBJ)/rx_test.o -lcppunit -o $@
 
-#./$(BLD)/rx: ./$(OBJ)/rx.o ./$(OBJ)/main.o
-#	$(CXX) $(CXXFLAGS) $< -o ./$(BLD)/rx
+#$(BLD)/rx: $(OBJ)/rx.o $(OBJ)/main.o
+#	$(CXX) $(CXXFLAGS) $< -o $(BLD)/rx
 
-#./$(BLD)/rx_test: ./$(OBJ)/rx.o ./$(OBJ)/rx_test.o
-#	$(CXX) $(CXXFLAGS) $< -lcppunit -o ./$(BLD)/rx_test
+#$(BLD)/rx_test: $(OBJ)/rx.o $(OBJ)/rx_test.o
+#	$(CXX) $(CXXFLAGS) $< -lcppunit -o $(BLD)/rx_test
 
-./$(OBJ)/%.o: ./$(SRC)/%.cpp
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
+$(OBJ)/%.o: $(SRC)/%.cpp
+	$(CXX) $(CXXFLAGS) -c -o $@ $^
 
-# ./$(OBJ)/main.o: ./$(SRC)/main.cpp
-# 	$(CXX) $(CXXFLAGS) -c ./$(SRC)/main.cpp -o ./$(OBJ)/main.o
+# $(OBJ)/main.o: $(SRC)/main.cpp
+# 	$(CXX) $(CXXFLAGS) -c $(SRC)/main.cpp -o $(OBJ)/main.o
 
-# ./$(OBJ)/rx.o: ./$(SRC)/rx.cpp
-# 	$(CXX) $(CXXFLAGS) -c ./$(SRC)/rx.cpp -o ./$(OBJ)/rx.o
+# $(OBJ)/rx.o: $(SRC)/rx.cpp
+# 	$(CXX) $(CXXFLAGS) -c $(SRC)/rx.cpp -o $(OBJ)/rx.o
 
-# ./$(OBJ)/rx_test.o: ./$(SRC)/rx_test.cpp
-# 	$(CXX) $(CXXFLAGS) -c ./$(SRC)/rx_test.cpp -o ./$(OBJ)/rx_test.o
+# $(OBJ)/rx_test.o: $(SRC)/rx_test.cpp
+# 	$(CXX) $(CXXFLAGS) -c $(SRC)/rx_test.cpp -o $(OBJ)/rx_test.o
 
 .PHONY: install
 install:

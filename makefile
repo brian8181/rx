@@ -67,7 +67,6 @@ clean:
 	-rm -f ./$(BLD)/*.o
 	-rm -f ./$(BLD)/$(APP)*
 
-
 .PHONY: help
 help:
 	@echo  '  all         - build all'

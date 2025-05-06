@@ -51,10 +51,10 @@ clean:
 .PHONY: help
 help:
 	@echo  '  all             - build all'
-	@echo  '  '$(APP)'        - build $(APP) executable'
-	@echo  '  '$(APP).o'      - build not link'
-	@echo  '  '$(APP)_test'   - build cppunit test'
-	@echo  '  '$(APP)_test.o' - build cppunit test'
 	@echo  '  clean           - remove all files from build dir'
 	@echo  '  install         - copy files to usr/local'
 	@echo  '  dist            - create distribution, tar.gz'
+	@echo  '  $(APP)          - build $(APP) executable'
+	@echo  '  $(APP).o        - build not link'
+	@echo  '  $(APP)_test     - build cppunit test'
+	@echo  '  $(APP)_test.o   - build cppunit test'

@@ -4,7 +4,8 @@
 
 APP=rx
 CXX=g++
-CXXFLAGS=-Wall -pedantic -std=c++20 -Wno-vla
+CXXFLAGS=-Wall -std=c++20 -Wno-vla
+
 SRC=src
 BLD?=build
 OBJ?=build
@@ -17,7 +18,7 @@ INCLUDES = -I/usr/local/include/cppunit/
 # 	RELEASE=TRUE
 # endif
 
-ifndef RELEASE NO_DEBUG
+ifndef RELEASE
 	CXXFLAGS +=-g -DDEBUG
 endif
 
@@ -25,41 +26,41 @@ ifdef CYGWIN
 	CXXFLAGS += -DCYGWIN
 endif
 
-all: $(BLD)/rx $(BLD)/rx_test
+all: $(BLD)/$(APP) $(BLD)/$(APP)_test
 
 rebuild: clean all
 
-$(BLD)/rx: $(OBJ)/rx.o $(OBJ)/main.o
+$(BLD)/$(APP): $(OBJ)/$(APP).o $(OBJ)/main.o
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-$(BLD)/rx_test: $(OBJ)/rx.o $(OBJ)/rx_test.o
-	$(CXX) $(CXXFLAGS) $(OBJ)/rx.o $(OBJ)/rx_test.o -lcppunit -o $@
+$(BLD)/$(APP)_test: $(OBJ)/$(APP).o $(OBJ)/$(APP)_test.o
+	$(CXX) $(CXXFLAGS) $^ -lcppunit -o $@
 
-#$(BLD)/rx: $(OBJ)/rx.o $(OBJ)/main.o
-#	$(CXX) $(CXXFLAGS) $< -o $(BLD)/rx
+#$(BLD)/$(APP): $(OBJ)/$(APP).o $(OBJ)/main.o
+#	$(CXX) $(CXXFLAGS) $< -o $(BLD)/$(APP)
 
-#$(BLD)/rx_test: $(OBJ)/rx.o $(OBJ)/rx_test.o
-#	$(CXX) $(CXXFLAGS) $< -lcppunit -o $(BLD)/rx_test
+#$(BLD)/$(APP)_test: $(OBJ)/$(APP).o $(OBJ)/$(APP)_test.o
+#	$(CXX) $(CXXFLAGS) $< -lcppunit -o $(BLD)/$(APP)_test
 
 $(OBJ)/%.o: $(SRC)/%.cpp
-	$(CXX) $(CXXFLAGS) -c -o $@ $^
+	$(CXX) $(CXXFLAGS) -c $^ -o $@
 
 # $(OBJ)/main.o: $(SRC)/main.cpp
 # 	$(CXX) $(CXXFLAGS) -c $(SRC)/main.cpp -o $(OBJ)/main.o
 
-# $(OBJ)/rx.o: $(SRC)/rx.cpp
-# 	$(CXX) $(CXXFLAGS) -c $(SRC)/rx.cpp -o $(OBJ)/rx.o
+# $(OBJ)/$(APP).o: $(SRC)/$(APP).cpp
+# 	$(CXX) $(CXXFLAGS) -c $(SRC)/$(APP).cpp -o $(OBJ)/$(APP).o
 
-# $(OBJ)/rx_test.o: $(SRC)/rx_test.cpp
-# 	$(CXX) $(CXXFLAGS) -c $(SRC)/rx_test.cpp -o $(OBJ)/rx_test.o
+# $(OBJ)/$(APP)_test.o: $(SRC)/$(APP)_test.cpp
+# 	$(CXX) $(CXXFLAGS) -c $(SRC)/$(APP)_test.cpp -o $(OBJ)/$(APP)_test.o
 
 .PHONY: install
 install:
-	cp ./$(BLD)/rx ./$(prefix)/bin/rx
+	cp ./$(BLD)/$(APP) ./$(prefix)/bin/$(APP)
 
 .PHONY: uninstall
 uninstall:
-	-rm ./$(prefix)/bin/rx
+	-rm ./$(prefix)/bin/$(APP)
 
 .PHONY: clean
 clean:
@@ -70,10 +71,10 @@ clean:
 .PHONY: help
 help:
 	@echo  '  all         - build all'
-	@echo  '  rx          - build rx executable'
-	@echo  '  rx.o        - build not link'
-	@echo  '  rx_test     - build cppunit test'
-	@echo  '  rx_test.o   - build cppunit test'
+	@echo  '  $(APP)          - build $(APP) executable'
+	@echo  '  $(APP).o        - build not link'
+	@echo  '  $(APP)_test     - build cppunit test'
+	@echo  '  $(APP)_test.o   - build cppunit test'
 	@echo  '  clean       - remove all files from build dir'
 	@echo  '  install     - copy files to usr/local'
 	@echo  '  dist        - create distribution, tar.gz'

@@ -6,7 +6,8 @@
 #include <unistd.h>         /* for STDIN_FILENO */
 #include <sys/select.h>     /* for pselect   */
 #include <getopt.h>
-#include "rx.hpp"
+
+int parse_options( int argc, char* argv[] );
 
 int stdin_ready (int filedes)
 {
@@ -15,11 +16,11 @@ int stdin_ready (int filedes)
 	FD_ZERO(&set);
 	FD_SET(filedes, &set);
 #ifndef CYGWIN
-	// declare/initialize timespec 
+	// declare/initialize timespec
 	struct timespec timeout = { .tv_sec = 0 };
 	return pselect(filedes + 1, &set, NULL, NULL, &timeout, NULL);
 #else
-	// declare/initialize timeout 
+	// declare/initialize timeout
 	struct timeval timeout = { .tv_sec = 0 };
 	return select(filedes + 1, &set, NULL, NULL, &timeout);
 #endif

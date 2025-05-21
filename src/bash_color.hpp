@@ -1,3 +1,7 @@
+// File Name:  src/bash_color.hpp
+// Build Date: Tue May 20 22:29:39 CDT 2025
+// Version:    0.1
+
 #ifndef _BASH_COLOR_HPP
 #define _BASH_COLOR_HPP
 

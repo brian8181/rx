@@ -21,7 +21,7 @@ ifdef CYGWIN
 	CXXFLAGS += -DCYGWIN
 endif
 
-all: $(BLD)/$(APP) $(BLD)/$(APP)_test
+all: $(BLD)/$(APP) $(BLD)/$(APP)_test $(BLD)/lib$(APP).so $(BLD)/lib$(APP).a
 
 rebuild: clean all
 
@@ -33,6 +33,14 @@ $(BLD)/$(APP)_test: $(OBJ)/$(APP).o $(OBJ)/$(APP)_test.o
 
 $(OBJ)/%.o: $(SRC)/%.cpp
 	$(CXX) $(CXXFLAGS) -c $^ -o $@
+
+$(BLD)/lib$(APP).so: $(BLD)/$(APP).o
+	$(CXX) $(CXXFLAGS) -fPIC --shared $(OBJ)/$(APP).o -o $(BLD)/lib$(APP).so
+	chmod 755 $(BLD)/lib$(APP).so
+
+$(BLD)/lib$(APP).a: $(BLD)/$(APP).o
+	ar rvs $(BLD)/lib$(APP).a $(OBJ)/$(APP).o
+	chmod 755 $(BLD)/lib$(APP).a
 
 .PHONY: install
 install:

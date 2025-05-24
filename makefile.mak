@@ -22,13 +22,16 @@ ifdef CYGWIN
 	CXXFLAGS += -DCYGWIN
 endif
 
-all: $(BLD)/$(APP) $(BLD)/$(APP)_test $(BLD)/lib$(APP).so $(BLD)/lib$(APP).a
+all: $(BLD)/$(APP) $(BLD)/$(APP)2 $(BLD)/$(APP)_test $(BLD)/lib$(APP).so $(BLD)/lib$(APP).a
 
 .PHONY: rebuild
 rebuild: clean all
 
 $(BLD)/$(APP): $(OBJ)/$(APP).o $(OBJ)/main.o
 	$(CXX) $(CXXFLAGS) $(OBJ)/$(APP).o $(OBJ)/main.o -o $(BLD)/$(APP)
+
+$(BLD)/$(APP)2: $(BLD)/lib$(APP).so main.cpp
+	$(CXX) $(CXXFLAGS) $(BLD)/lib$(APP).so $(OBJ)/main.o -o $(BLD)/$(APP)2
 
 $(BLD)/$(APP)_test: $(OBJ)/$(APP).o $(OBJ)/$(APP)_test.o
 	$(CXX) $(CXXFLAGS) $(OBJ)/$(APP).o $(OBJ)/$(APP)_test.o -lcppunit -o $(BLD)/$(APP)_test

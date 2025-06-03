@@ -10,6 +10,7 @@
 #include <unistd.h>         /* for STDIN_FILENO */
 #include <sys/select.h>     /* for pselect   */
 #include <getopt.h>
+#include "rx.hpp"
 
 int parse_options( int argc, char* argv[] );
 

@@ -4,7 +4,7 @@
 
 APP=rx
 CXX=g++
-CXXFLAGS=-Wall -std=c++20
+CXXFLAGS=-Wall -std=c++20 #-fno-rtti
 CXXCPP?=
 LDFLAGS?=
 LIBS?=
@@ -26,33 +26,39 @@ ifdef CYGWIN
 	CXXFLAGS += -DCYGWIN
 endif
 
-all: $(BLD)/$(APP) $(BLD)/$(APP)2 $(BLD)/$(APP)3 $(BLD)/$(APP)_test $(BLD)/lib$(APP).so $(BLD)/lib$(APP).a
+all: $(BLD)/$(APP) $(BLD)/$(APP)2 $(BLD)/$(APP)_test $(BLD)/lib$(APP).so $(BLD)/lib$(APP).a
 
 .PHONY: rebuild
 rebuild: clean all
 
+# build app static link all files
 $(BLD)/$(APP): $(OBJ)/$(APP).o $(OBJ)/main.o
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
+# build app from shared library
 $(BLD)/$(APP)2: $(BLD)/lib$(APP).so $(OBJ)/main.o
-	$(CXX) $(CXXFLAGS) $(BLD)/lib$(APP).so $(OBJ)/main.o -o $(BLD)/$(APP)2
+	$(CXX) $(CXXFLAGS) -fPIC $(BLD)/lib$(APP).so $(OBJ)/main.o -o $(BLD)/$(APP)2
 
+# build app from static library
 $(BLD)/$(APP)3: $(BLD)/lib$(APP).a $(OBJ)/main.o
-	$(CXX) $(CXXFLAGS) $(BLD)/lib$(APP).a $(OBJ)/main.o -o $(BLD)/$(APP)3
+	$(CXX) $(CXXFLAGS) -fPIC $(BLD)/lib$(APP).a $(OBJ)/main.o -o $(BLD)/$(APP)3
 
 $(BLD)/$(APP)_test: $(OBJ)/$(APP).o $(OBJ)/$(APP)_test.o
 	$(CXX) $(CXXFLAGS) $^ -lcppunit -o $@
 
-$(OBJ)/%.o: $(SRC)/%.cpp
-	$(CXX) $(CXXFLAGS) -c $^ -o $@
-
+# build shared library
 $(BLD)/lib$(APP).so: $(BLD)/$(APP).o
 	$(CXX) $(CXXFLAGS) -fPIC --shared $(OBJ)/$(APP).o -o $(BLD)/lib$(APP).so
 	chmod 755 $(BLD)/lib$(APP).so
 
+# build static library
 $(BLD)/lib$(APP).a: $(BLD)/$(APP).o
 	ar rvs $(BLD)/lib$(APP).a $(OBJ)/$(APP).o
 	chmod 755 $(BLD)/lib$(APP).a
+
+# compile all cpp files to object files
+$(OBJ)/%.o: $(SRC)/%.cpp
+	$(CXX) $(CXXFLAGS) -fPIC -c $^ -o $@
 
 .PHONY: install
 install:

@@ -4,7 +4,7 @@
 
 APP=rx
 CXX=g++
-CXXFLAGS=-Wall -std=c++20
+CXXFLAGS=-Wall -std=c++20 -fPIC 
 CXXCPP?=
 LDFLAGS?=
 LIBS?=
@@ -14,19 +14,19 @@ BLD?=build
 OBJ?=build
 
 # lib settings
-# LIBS = -L/usr/local/lib/
-# INCLUDES = -I/usr/local/include/cppunit/
-# LDFLAGS = $(LIBS) $(INCLUDES) -static -lcppunit
+LIBS = -L/usr/local/lib/
+INCLUDES = -I/usr/local/include/cppunit/
+LDFLAGS = $(LIBS) $(INCLUDES)
 
 ifndef RELEASE
 	CXXFLAGS +=-g -DDEBUG
 endif
 
 ifdef CYGWIN
-	CXXFLAGS += -DCYGWIN
+	CXXFLAGS +=-DCYGWIN
 endif
 
-all: $(BLD)/$(APP) $(BLD)/$(APP)2 $(BLD)/$(APP)3 $(BLD)/$(APP)_test $(BLD)/lib$(APP).so $(BLD)/lib$(APP).a
+all: $(BLD)/$(APP) $(BLD)/$(APP)2 $(BLD)/$(APP)_test $(BLD)/lib$(APP).so $(BLD)/lib$(APP).a
 
 .PHONY: rebuild
 rebuild: clean all
@@ -41,13 +41,13 @@ $(BLD)/$(APP)3: $(BLD)/lib$(APP).a $(OBJ)/main.o
 	$(CXX) $(CXXFLAGS) $(BLD)/lib$(APP).a $(OBJ)/main.o -o $(BLD)/$(APP)3
 
 $(BLD)/$(APP)_test: $(OBJ)/$(APP).o $(OBJ)/$(APP)_test.o
-	$(CXX) $(CXXFLAGS) $^ -lcppunit -o $@
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) $^ -lcppunit -o $@
 
 $(OBJ)/%.o: $(SRC)/%.cpp
 	$(CXX) $(CXXFLAGS) -c $^ -o $@
 
 $(BLD)/lib$(APP).so: $(BLD)/$(APP).o
-	$(CXX) $(CXXFLAGS) -fPIC --shared $(OBJ)/$(APP).o -o $(BLD)/lib$(APP).so
+	$(CXX) $(CXXFLAGS) --shared $(OBJ)/$(APP).o -o $(BLD)/lib$(APP).so
 	chmod 755 $(BLD)/lib$(APP).so
 
 $(BLD)/lib$(APP).a: $(BLD)/$(APP).o

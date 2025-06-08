@@ -4,7 +4,11 @@
 
 APP=rx
 CXX=g++
+<<<<<<< HEAD
 CXXFLAGS=-Wall -std=c++20 -fPIC 
+=======
+CXXFLAGS=-Wall -std=c++20 -fno-rtti
+>>>>>>> bb5581685a78f1977cb3bf7d1dc45e891de86760
 CXXCPP?=
 LDFLAGS?=
 LIBS?=

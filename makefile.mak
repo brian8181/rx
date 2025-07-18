@@ -3,7 +3,7 @@
 # Version:    0.1.0
 APP=rx
 CXX=g++
-CXXFLAGS=-Wall -std=c++20 -Wno-vla -fPIC
+CXXFLAGS=-Wall -std=c++20 -fPIC
 SRC?=src
 BLD?=build
 OBJ?=build

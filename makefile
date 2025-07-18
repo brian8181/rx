@@ -4,7 +4,7 @@
 
 APP=rx
 CXX=g++
-CXXFLAGS=-Wall -std=c++20
+CXXFLAGS=-Wall -std=c++20 -fPIC 
 CXXCPP?=
 LDFLAGS?=
 LIBS?=
@@ -14,29 +14,25 @@ BLD?=build
 OBJ?=build
 
 # lib settings
-# LIBS = -L/usr/local/lib/
-# INCLUDES = -I/usr/local/include/cppunit/
-# LDFLAGS = $(LIBS) $(INCLUDES) -static -lcppunit
+LIBS = -L/usr/local/lib/
+INCLUDES = -I/usr/local/include/cppunit/
+LDFLAGS = $(LIBS) $(INCLUDES)
 
 # lib settings
 LIBS=-L/usr/local/lib/
 INCLUDES=-I/usr/local/include/cppunit/
 
-ifdef CYGWIN
-	LDFLAGS=$(INCLUDES) $(LIBS) /usr/lib/libcppunit.dll.a
-else
+ifndef RELEASE
+	CXXFLAGS +=-g -DDEBUG
 	LDFLAGS=$(INCLUDES) $(LIBS) /usr/local/libcppunit.a
 endif
 
-ifndef RELEASE
-	CXXFLAGS +=-g -DDEBUG
-endif
-
 ifdef CYGWIN
-	CXXFLAGS += -DCYGWIN
+	CXXFLAGS +=-DCYGWIN
+	LDFLAGS=$(INCLUDES) $(LIBS) /usr/lib/libcppunit.dll.a
 endif
 
-all: $(BLD)/$(APP) $(BLD)/$(APP)_test # $(BLD)/lib$(APP).so $(BLD)/lib$(APP).a
+all: $(BLD)/$(APP) $(BLD)/$(APP)_test
 
 .PHONY: rebuild
 rebuild: clean all
@@ -44,11 +40,11 @@ rebuild: clean all
 $(BLD)/$(APP): $(OBJ)/$(APP).o $(OBJ)/main.o
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-$(BLD)/$(APP)2: $(BLD)/lib$(APP).so $(OBJ)/main.o
-	$(CXX) $(CXXFLAGS) $(BLD)/lib$(APP).so $(OBJ)/main.o -o $(BLD)/$(APP)2
+# $(BLD)/$(APP)2: $(BLD)/lib$(APP).so $(OBJ)/main.o
+# 	$(CXX) $(CXXFLAGS) $(BLD)/lib$(APP).so $(OBJ)/main.o -o $(BLD)/$(APP)2
 
-$(BLD)/$(APP)3: $(BLD)/lib$(APP).a $(OBJ)/main.o
-	$(CXX) $(CXXFLAGS) $(BLD)/lib$(APP).a $(OBJ)/main.o -o $(BLD)/$(APP)3
+# $(BLD)/$(APP)3: $(BLD)/lib$(APP).a $(OBJ)/main.o
+# 	$(CXX) $(CXXFLAGS) $(BLD)/lib$(APP).a $(OBJ)/main.o -o $(BLD)/$(APP)3
 
 $(BLD)/$(APP)_test: $(OBJ)/$(APP).o $(OBJ)/$(APP)_test.o
 	$(CXX) $(CXXFLAGS) $^ $(LDFLAGS) -o $@
@@ -57,7 +53,7 @@ $(OBJ)/%.o: $(SRC)/%.cpp
 	$(CXX) $(CXXFLAGS) -c $^ -o $@
 
 $(BLD)/lib$(APP).so: $(BLD)/$(APP).o
-	$(CXX) $(CXXFLAGS) -fPIC --shared $(OBJ)/$(APP).o -o $(BLD)/lib$(APP).so
+	$(CXX) $(CXXFLAGS) --shared $(OBJ)/$(APP).o -o $(BLD)/lib$(APP).so
 	chmod 755 $(BLD)/lib$(APP).so
 
 $(BLD)/lib$(APP).a: $(BLD)/$(APP).o

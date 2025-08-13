@@ -5,7 +5,7 @@
       <Name>RxTest::testNoOptions</Name>
       <FailureType>Assertion</FailureType>
       <Location>
-        <File>./src/rx_test.cpp</File>
+        <File>src/rx_test.cpp</File>
         <Line>48</Line>
       </Location>
       <Message>assertion failed
@@ -16,7 +16,7 @@
       <Name>RxTest::testOptionVerbose</Name>
       <FailureType>Assertion</FailureType>
       <Location>
-        <File>./src/rx_test.cpp</File>
+        <File>src/rx_test.cpp</File>
         <Line>89</Line>
       </Location>
       <Message>assertion failed
@@ -27,7 +27,7 @@
       <Name>RxTest::testOptionOption_IgnoreCase</Name>
       <FailureType>Assertion</FailureType>
       <Location>
-        <File>./src/rx_test.cpp</File>
+        <File>src/rx_test.cpp</File>
         <Line>145</Line>
       </Location>
       <Message>assertion failed

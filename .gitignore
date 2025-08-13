@@ -1,6 +1,6 @@
 # build output
-build
-!build/Makefile
+build/*
+cppRxTestResults.xml
 
 src/rx_test
 src/rx
@@ -35,4 +35,3 @@ src/Search.code-search
 build/rx.core
 test/rx.core
 .vscode/*.log
-

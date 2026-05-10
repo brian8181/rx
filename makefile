@@ -5,26 +5,22 @@
 APP=rx
 CXX=g++
 CXXFLAGS=-Wall -std=c++20 -fPIC 
-CXXCPP?=
-LDFLAGS?=
-LIBS?=
+CXXCPP=
+LDFLAGS=
+LIBS=
 
 SRC=src
-BLD?=build
-OBJ?=build
+BLD=build
+OBJ=build
 
 # lib settings
 LIBS = -L/usr/local/lib/
 INCLUDES = -I/usr/local/include/cppunit/
 LDFLAGS = $(LIBS) $(INCLUDES)
 
-# lib settings
-LIBS=-L/usr/local/lib/
-INCLUDES=-I/usr/local/include/cppunit/
-
 ifndef RELEASE
 	CXXFLAGS +=-g -DDEBUG
-	LDFLAGS=$(INCLUDES) $(LIBS) /usr/local/libcppunit.a
+	LDFLAGS=$(INCLUDES) $(LIBS) /usr/local/lib/libcppunit.a
 endif
 
 ifdef CYGWIN
@@ -50,7 +46,7 @@ $(BLD)/$(APP)_test: $(OBJ)/$(APP).o $(OBJ)/$(APP)_test.o
 	$(CXX) $(CXXFLAGS) $^ $(LDFLAGS) -o $@
 
 $(OBJ)/%.o: $(SRC)/%.cpp
-	$(CXX) $(CXXFLAGS) -c $^ -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(BLD)/lib$(APP).so: $(BLD)/$(APP).o
 	$(CXX) $(CXXFLAGS) --shared $(OBJ)/$(APP).o -o $(BLD)/lib$(APP).so
@@ -70,10 +66,9 @@ uninstall:
 
 .PHONY: clean
 clean:
-	-rm -f ./$(OBJ)/*.o
-	-rm -f ./$(BLD)/*.o
-	-rm -f ./$(BLD)/$(APP)*
-
+	-rm -f ./$(OBJ)/*
+	-rm -f ./$(BLD)/*
+	
 .PHONY: help
 help:
 	@echo  '  all             - build all'

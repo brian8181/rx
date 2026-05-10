@@ -5,7 +5,6 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string>
-#include <regex>
 #include <vector>
 #include <map>
 #include <stdexcept>
@@ -13,6 +12,14 @@
 #include <getopt.h>
 #include "bash_color.hpp"
 #include "rx.hpp"
+
+#ifndef BOOST_REGEX
+	#include <regex>
+	using std::regex;
+#else
+	#include <boost/regex.hpp>
+	using boost::regex;
+#endif
 
 using std::string;
 using std::vector;
@@ -22,7 +29,6 @@ using std::cin;
 using std::endl;
 using std::ifstream;
 using std::ofstream;
-using std::regex;
 
 using namespace std;
 
@@ -40,6 +46,7 @@ const unsigned short EXTENDED_REGX = 0x20;
 const unsigned short REGEX_OPTIONS = 0x40;
 const unsigned short SEARCH_FROM_FILE = 0x80;
 const unsigned short REGEX_FROM_FILE = 0x100;
+const unsigned short BOOST_REGEX = 0x200;
 const unsigned short DEFAULTS = PRETTY_PRINT | EXTENDED_REGX;
 
 // Set Defaults
@@ -56,6 +63,7 @@ static struct option long_options[] =
 	{"pretty", no_argument, 0, 'P'},        //default
 	{"no-pretty", no_argument, 0, 'p'},
 	{"version", no_argument, 0, 'r'},
+	{"boost", no_argument, 0, 'b'},
 	{"not_extended", no_argument, 0, 'e'},
 	{"extended", no_argument, 0, 'E'},      //default
 	{"options", required_argument, 0, 'o'}, //default
@@ -196,37 +204,40 @@ int parse_options( int argc, char* argv[] )
 	int opt = 0;
 	int option_index = 0;
 	optind = 0;
-	while( ( opt = getopt_long( argc, argv, "hvispgPreEo:x:f:", long_options, &option_index ) ) != -1 )
+	while( ( opt = getopt_long( argc, argv, "hvispgPrbeEo:x:f:", long_options, &option_index ) ) != -1 )
 	{
 		switch( opt )
 		{
 		case 'h':
-		print_help();
-		return 0;
+			print_help();
+			return 0;
 		case 'v':
-		OPTION_FLAGS |= VERBOSE;
-		break;
+			OPTION_FLAGS |= VERBOSE;
+			break;
 		case 'i':
-		OPTION_FLAGS |= IGNORE_CASE;
-		break;
+			OPTION_FLAGS |= IGNORE_CASE;
+			break;
 		case 's':
-		OPTION_FLAGS |= SINGLE_MATCH;
-		break;
+			OPTION_FLAGS |= SINGLE_MATCH;
+			break;
 		case 'P':
-		OPTION_FLAGS |= PRETTY_PRINT;
-		break;
+			OPTION_FLAGS |= PRETTY_PRINT;
+			break;
 		case 'p':
-		OPTION_FLAGS &= ~PRETTY_PRINT;
-		break;
+			OPTION_FLAGS &= ~PRETTY_PRINT;
+			break;
 		case 'g':
-		OPTION_FLAGS |= GROUPS;
-		break;
+			OPTION_FLAGS |= GROUPS;
+			break;
 		case 'E':
-		OPTION_FLAGS |= EXTENDED_REGX;
-		break;
+			OPTION_FLAGS |= EXTENDED_REGX;
+			break;
 		case 'e':
-		OPTION_FLAGS &= ~EXTENDED_REGX;
-		break;
+			OPTION_FLAGS &= ~EXTENDED_REGX;
+			break;
+		case 'b':
+			OPTION_FLAGS |= BOOST_REGEX;
+			break;
 		case 'r':
 		print_version();
 		return 0;

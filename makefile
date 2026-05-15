@@ -4,7 +4,8 @@
 
 APP=rx
 CXX=g++
-CXXFLAGS=-Wall -std=c++20 -fPIC 
+CXXFLAGS=-Wall -std=gnu++20 -fPIC 
+#CXXFLAGS = -std=gnu++17 -fPIC
 CXXCPP=
 LDFLAGS=
 LIBS=
@@ -12,29 +13,38 @@ LIBS=
 SRC=src
 BLD=build
 OBJ=build
+TST = unit_test
 
 # lib settings
-LIBS = -L/usr/local/lib/
-INCLUDES = -I/usr/local/include/cppunit/
+# LIBS = -L/usr/local/lib/
+# INCLUDES = -I/usr/local/include/cppunit/
+
+
+# lib settings
+INCLUDES=-I/usr/local/include/cppunit/ -I"/home/brian/src/boost_1_91_0" -I./$(SRC) -I./$(BLD) -I./$(TST)
+LIBS=-L/usr/lib -L/usr/lib64 -L/usr/local/lib -L/usr/local/lib64 -lfmt
 LDFLAGS = $(LIBS) $(INCLUDES)
 
-ifndef RELEASE
-	CXXFLAGS +=-g -DDEBUG
-	LDFLAGS=$(INCLUDES) $(LIBS) /usr/local/lib/libcppunit.a
-endif
+# ifndef RELEASE
+# 	CXXFLAGS +=-g -DDEBUG
+# 	LDFLAGS=$(INCLUDES) $(LIBS) /usr/local/lib/libcppunit.a
+# endif
 
-ifdef CYGWIN
-	CXXFLAGS +=-DCYGWIN
-	LDFLAGS=$(INCLUDES) $(LIBS) /usr/lib/libcppunit.dll.a
-endif
+# ifdef CYGWIN
+# 	CXXFLAGS +=-DCYGWIN
+# 	LDFLAGS=$(INCLUDES) $(LIBS) /usr/lib/libcppunit.dll.a
+# endif
 
-all: $(BLD)/$(APP) $(BLD)/$(APP)_test
+OBJS=$(OBJ)/main.o \
+$(OBJ)/$(APP).o
+
+all: $(BLD)/$(APP) #$(BLD)/$(APP)_test
 
 .PHONY: rebuild
 rebuild: clean all
 
 $(BLD)/$(APP): $(OBJ)/$(APP).o $(OBJ)/main.o
-	$(CXX) $(CXXFLAGS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $^ $(LDFLAGS) -o $@
 
 # $(BLD)/$(APP)2: $(BLD)/lib$(APP).so $(OBJ)/main.o
 # 	$(CXX) $(CXXFLAGS) $(BLD)/lib$(APP).so $(OBJ)/main.o -o $(BLD)/$(APP)2
@@ -46,10 +56,10 @@ $(BLD)/$(APP)_test: $(OBJ)/$(APP).o $(OBJ)/$(APP)_test.o
 	$(CXX) $(CXXFLAGS) $^ $(LDFLAGS) -o $@
 
 $(OBJ)/%.o: $(SRC)/%.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< $(LDFLAGS) -o $@
 
 $(BLD)/lib$(APP).so: $(BLD)/$(APP).o
-	$(CXX) $(CXXFLAGS) --shared $(OBJ)/$(APP).o -o $(BLD)/lib$(APP).so
+	$(CXX) $(CXXFLAGS) --shared $(OBJ)/$(APP).o $(LDFLAGS) -o $(BLD)/lib$(APP).so
 	chmod 755 $(BLD)/lib$(APP).so
 
 $(BLD)/lib$(APP).a: $(BLD)/$(APP).o

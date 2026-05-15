@@ -15,7 +15,9 @@
 
 #ifndef BOOST_REGEX
 	#include <regex>
+	#include <boost/regex.hpp>
 	using std::regex;
+
 #else
 	#include <boost/regex.hpp>
 	using boost::regex;
@@ -113,83 +115,209 @@ void print_match_header( const string& pattern, const string& src, int count, in
 	}
 }
 
+template<typename T>
+void print_match(int index, T match, const vector<string>& exp_text, const vector<string>& search_text)
+{
+	string CURRENT_FG_COLOR( index % 2 ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
+
+	int pos = match.position() + index * ( CURRENT_FG_COLOR.length() + FMT_RESET.length() );
+	int search_text_len = match.length();
+	// if( ( OPTION_FLAGS & SINGLE_MATCH ) && ( iter != begin || pos != 0 || search_text[j].length() != (size_t)search_text_len ) )
+	// {
+	// 	begin = end;
+	// 	break;
+	// // }
+	// if( OPTION_FLAGS & PRETTY_PRINT )
+	// {
+	// 	// set bash green start postion
+	// 	bash_stdio.insert( pos, CURRENT_FG_COLOR );
+	// 	// reset bash color position
+	// 	pos += CURRENT_FG_COLOR.length() + search_text_len;
+	// 	bash_stdio.insert( pos, FMT_RESET );
+	// 	pos += FMT_RESET.length();
+
+	// 	if( OPTION_FLAGS & GROUPS )
+	// 	{
+	// 		int len = match.size();
+	// 		for( int i = 1; i < len; ++i )
+	// 		{
+	// 			if( match[i].matched )
+	// 			{
+	// 				ostringstream ss;
+	// 				ss << "\n\t" << i << ": " << FMT_FG_RED << "Submatch: " << FMT_RESET << FMT_FG_GREEN << match[i].str() << FMT_RESET;
+	// 				bash_stdio.insert( pos, ss.str() );
+	// 				pos += ss.str().size();
+	// 			}
+	// 		}
+	// 	}
+	// }
+	// else
+	// {
+	// 	cout << ( index + 1 ) << "\t" << search_text[j].substr( match.position(), match.length() )
+	// 		<< '\t' << match.position() << '\t' << match.length() << endl;
+	// }
+}
+
 int regx_match( const vector<string>& exp_text, const vector<string>& search_text )
 {
 	int exp_text_len = exp_text.size();
+	
 	// for each exp
 	for( int i = 0; i < exp_text_len; ++i )
 	{
 		int search_text_len = search_text.size();
-		// for each input
-		for( int j = 0; j < search_text_len; ++j )
+
+		if(OPTION_FLAGS & BOOST_REGEX)
 		{
-			print_match_header( exp_text[i], search_text[j], j + 1, search_text_len );
-			string bash_stdio = search_text[j];
-			REGX_FLAGS = ( OPTION_FLAGS & IGNORE_CASE ) != 0 ? REGX_FLAGS | regex::icase : REGX_FLAGS;
-
-			regex src_epx;
-			try
+			// for each input
+			for( int j = 0; j < search_text_len; ++j )
 			{
-				src_epx = regex( exp_text[i], REGX_FLAGS );
-			}
-			catch( regex_error& e )
-			{
-				cerr << "exception caught: " << e.what() << '\n';
-				cerr << "error of type " << e.code() << " was unhandled\n";
-			}
+				print_match_header( exp_text[i], search_text[j], j + 1, search_text_len );
+				string bash_stdio = search_text[j];
+				REGX_FLAGS = ( OPTION_FLAGS & IGNORE_CASE ) != 0 ? REGX_FLAGS | regex::icase : REGX_FLAGS;
 
-			auto begin = sregex_iterator( search_text[j].begin(), search_text[j].end(), src_epx, std::regex_constants::match_default );
-			auto end = sregex_iterator();
-			int match_i = 0;
-			// for each match
-			for( sregex_iterator iter = begin; iter != end; ++iter, ++match_i )
-			{
-				string CURRENT_FG_COLOR( match_i % 2 ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
-				smatch match = *iter;
-
-				int pos = match.position() + match_i * ( CURRENT_FG_COLOR.length() + FMT_RESET.length() );
-				int search_text_len = match.length();
-				if( ( OPTION_FLAGS & SINGLE_MATCH ) && ( iter != begin || pos != 0 || search_text[j].length() != (size_t)search_text_len ) )
+				boost::regex src_epx;
+				try
 				{
-					begin = end;
-					break;
+					src_epx = boost::regex( exp_text[i], REGX_FLAGS );
+				}
+				catch( regex_error& e )
+				{
+					cerr << "exception caught: " << e.what() << '\n';
+					cerr << "error of type " << e.code() << " was unhandled\n";
+				}
+
+				auto begin = boost::sregex_iterator( search_text[j].begin(), search_text[j].end(), src_epx, boost::regex_constants::match_default );
+				auto end = boost::sregex_iterator();
+				int match_i = 0;
+				// for each match
+				for( boost::sregex_iterator iter = begin; iter != end; ++iter, ++match_i )
+				{
+				 	string CURRENT_FG_COLOR( match_i % 2 ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
+				 	boost::smatch match = *iter;
+
+				 	int pos = match.position() + match_i * ( CURRENT_FG_COLOR.length() + FMT_RESET.length() );
+				 	int search_text_len = match.length();
+					if( ( OPTION_FLAGS & SINGLE_MATCH ) && ( iter != begin || pos != 0 || search_text[j].length() != (size_t)search_text_len ) )
+					{
+				 		begin = end;
+				 		break;
+				 	}
+					if( OPTION_FLAGS & PRETTY_PRINT )
+					{
+						// set bash green start postion
+						bash_stdio.insert( pos, CURRENT_FG_COLOR );
+						// reset bash color position
+						pos += CURRENT_FG_COLOR.length() + search_text_len;
+						bash_stdio.insert( pos, FMT_RESET );
+						pos += FMT_RESET.length();
+
+						if( OPTION_FLAGS & GROUPS )
+						{
+							int len = match.size();
+							for( int i = 1; i < len; ++i )
+							{
+								if( match[i].matched )
+								{
+									ostringstream ss;
+									ss << "\n\t" << i << ": " << FMT_FG_RED << "Submatch: " << FMT_RESET << FMT_FG_GREEN << match[i].str() << FMT_RESET;
+									bash_stdio.insert( pos, ss.str() );
+									pos += ss.str().size();
+								}
+							}
+						}
+					}
+					else
+					{
+						cout << ( match_i + 1 ) << "\t" << search_text[j].substr( match.position(), match.length() )
+							<< '\t' << match.position() << '\t' << match.length() << endl;
+					}
 				}
 
 				if( OPTION_FLAGS & PRETTY_PRINT )
 				{
-					// set bash green start postion
-					bash_stdio.insert( pos, CURRENT_FG_COLOR );
-					// reset bash color position
-					pos += CURRENT_FG_COLOR.length() + search_text_len;
-					bash_stdio.insert( pos, FMT_RESET );
-					pos += FMT_RESET.length();
+					cout << endl << "Found " << "distance( begin, end )" << " matches:" << endl;
+					cout << bash_stdio << endl;
+				}
+			}
+		}
+		else
+		{
+			// for each input
+			for( int j = 0; j < search_text_len; ++j )
+			{
+				print_match_header( exp_text[i], search_text[j], j + 1, search_text_len );
+				string bash_stdio = search_text[j];
+				REGX_FLAGS = ( OPTION_FLAGS & IGNORE_CASE ) != 0 ? REGX_FLAGS | regex::icase : REGX_FLAGS;
 
-					if( OPTION_FLAGS & GROUPS )
+				regex src_epx;
+				try
+				{
+					src_epx = regex( exp_text[i], REGX_FLAGS );
+				}
+				catch( regex_error& e )
+				{
+					cerr << "exception caught: " << e.what() << '\n';
+					cerr << "error of type " << e.code() << " was unhandled\n";
+				}
+
+				auto begin = sregex_iterator( search_text[j].begin(), search_text[j].end(), src_epx, std::regex_constants::match_default );
+				auto end = sregex_iterator();
+				int match_i = 0;
+				// for each match
+				for( sregex_iterator iter = begin; iter != end; ++iter, ++match_i )
+				{
+					string CURRENT_FG_COLOR( match_i % 2 ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
+					smatch match = *iter;
+
+					int pos = match.position() + match_i * ( CURRENT_FG_COLOR.length() + FMT_RESET.length() );
+					int search_text_len = match.length();
+					if( ( OPTION_FLAGS & SINGLE_MATCH ) && ( iter != begin || pos != 0 || search_text[j].length() != (size_t)search_text_len ) )
 					{
-						int len = match.size();
-						for( int i = 1; i < len; ++i )
+						begin = end;
+						break;
+					}
+
+					if( OPTION_FLAGS & PRETTY_PRINT )
+					{
+						// set bash green start postion
+						bash_stdio.insert( pos, CURRENT_FG_COLOR );
+						// reset bash color position
+						pos += CURRENT_FG_COLOR.length() + search_text_len;
+						bash_stdio.insert( pos, FMT_RESET );
+						pos += FMT_RESET.length();
+
+						if( OPTION_FLAGS & GROUPS )
 						{
-							if( match[i].matched )
+							int len = match.size();
+							for( int i = 1; i < len; ++i )
 							{
-								ostringstream ss;
-								ss << "\n\t" << i << ": " << FMT_FG_RED << "Submatch: " << FMT_RESET << FMT_FG_GREEN << match[i].str() << FMT_RESET;
-								bash_stdio.insert( pos, ss.str() );
-								pos += ss.str().size();
+								if( match[i].matched )
+								{
+									ostringstream ss;
+									ss << "\n\t" << i << ": " << FMT_FG_RED << "Submatch: " << FMT_RESET << FMT_FG_GREEN << match[i].str() << FMT_RESET;
+									bash_stdio.insert( pos, ss.str() );
+									pos += ss.str().size();
+								}
 							}
 						}
 					}
+					else
+					{
+						cout << ( match_i + 1 ) << "\t" << search_text[j].substr( match.position(), match.length() )
+							<< '\t' << match.position() << '\t' << match.length() << endl;
+					}
 				}
-				else
-				{
-					cout << ( match_i + 1 ) << "\t" << search_text[j].substr( match.position(), match.length() )
-						<< '\t' << match.position() << '\t' << match.length() << endl;
-				}
-			}
 
-			if( OPTION_FLAGS & PRETTY_PRINT )
-			{
-				cout << endl << "Found " << distance( begin, end ) << " matches:" << endl;
-				cout << bash_stdio << endl;
+				if( OPTION_FLAGS & PRETTY_PRINT )
+				{
+					if(OPTION_FLAGS & BOOST_REGEX)
+						cout << endl << "Found " << "TODO: distance( begin, end )" << " matches:" << endl;
+					else
+						cout << endl << "Found " << distance( begin, end ) << " matches:" << endl;
+
+					cout << bash_stdio << endl;
+				}
 			}
 		}
 	}

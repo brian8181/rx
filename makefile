@@ -16,13 +16,8 @@ OBJ=build
 TST = unit_test
 
 # lib settings
-# LIBS = -L/usr/local/lib/
-# INCLUDES = -I/usr/local/include/cppunit/
-
-
-# lib settings
 INCLUDES=-I/usr/local/include/cppunit/ -I"/home/brian/src/boost_1_91_0" -I./$(SRC) -I./$(BLD) -I./$(TST)
-LIBS=-L/usr/lib -L/usr/lib64 -L/usr/local/lib -L/usr/local/lib64 -lfmt
+LIBS=-L/usr/lib -L/usr/lib64 -L/usr/local/lib -L/usr/local/lib64 -lfmt -lcppunit
 LDFLAGS = $(LIBS) $(INCLUDES)
 
 # ifndef RELEASE
@@ -38,7 +33,7 @@ LDFLAGS = $(LIBS) $(INCLUDES)
 OBJS=$(OBJ)/main.o \
 $(OBJ)/$(APP).o
 
-all: $(BLD)/$(APP) #$(BLD)/$(APP)_test
+all: $(BLD)/$(APP) $(BLD)/$(APP)2 $(BLD)/$(APP)_test
 
 .PHONY: rebuild
 rebuild: clean all
@@ -46,11 +41,11 @@ rebuild: clean all
 $(BLD)/$(APP): $(OBJ)/$(APP).o $(OBJ)/main.o
 	$(CXX) $(CXXFLAGS) $^ $(LDFLAGS) -o $@
 
-# $(BLD)/$(APP)2: $(BLD)/lib$(APP).so $(OBJ)/main.o
-# 	$(CXX) $(CXXFLAGS) $(BLD)/lib$(APP).so $(OBJ)/main.o -o $(BLD)/$(APP)2
+$(BLD)/$(APP)2: $(BLD)/lib$(APP).so $(OBJ)/main.o
+	$(CXX) $(CXXFLAGS) $(BLD)/lib$(APP).so $(OBJ)/main.o -o $(BLD)/$(APP)2
 
-# $(BLD)/$(APP)3: $(BLD)/lib$(APP).a $(OBJ)/main.o
-# 	$(CXX) $(CXXFLAGS) $(BLD)/lib$(APP).a $(OBJ)/main.o -o $(BLD)/$(APP)3
+$(BLD)/$(APP)3: $(BLD)/lib$(APP).a $(OBJ)/main.o
+	$(CXX) $(CXXFLAGS) $(BLD)/lib$(APP).a $(OBJ)/main.o -o $(BLD)/$(APP)3
 
 $(BLD)/$(APP)_test: $(OBJ)/$(APP).o $(OBJ)/$(APP)_test.o
 	$(CXX) $(CXXFLAGS) $^ $(LDFLAGS) -o $@

@@ -4,7 +4,7 @@
 
 APP=rx
 CXX=g++
-CXXFLAGS=-Wall -std=c++20 -fPIC 
+CXXFLAGS=-Wall -std=c++11 -fPIC
 CXXCPP=
 LDFLAGS=
 LIBS=

@@ -5,6 +5,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string>
+#include <sstream>
 #include <vector>
 #include <map>
 #include <stdexcept>
@@ -26,11 +27,15 @@ using std::vector;
 using std::map;
 using std::cout;
 using std::cin;
+using std::cerr;
 using std::endl;
 using std::ifstream;
 using std::ofstream;
-
-using namespace std;
+using std::stringstream;
+using std::regex_error;
+using std::sregex_iterator;
+using std::ios;
+using std::out_of_range;
 
 // constants
 const int DEFAULT_ARGC = 2;
@@ -145,7 +150,7 @@ int regx_match( const vector<string>& exp_text, const vector<string>& search_tex
 			for( sregex_iterator iter = begin; iter != end; ++iter, ++match_i )
 			{
 				string CURRENT_FG_COLOR( match_i % 2 ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
-				smatch match = *iter;
+				std::smatch match = *iter;
 
 				int pos = match.position() + match_i * ( CURRENT_FG_COLOR.length() + FMT_RESET.length() );
 				int search_text_len = match.length();
@@ -171,7 +176,7 @@ int regx_match( const vector<string>& exp_text, const vector<string>& search_tex
 						{
 							if( match[i].matched )
 							{
-								ostringstream ss;
+								stringstream ss;
 								ss << "\n\t" << i << ": " << FMT_FG_RED << "Submatch: " << FMT_RESET << FMT_FG_GREEN << match[i].str() << FMT_RESET;
 								bash_stdio.insert( pos, ss.str() );
 								pos += ss.str().size();
@@ -287,7 +292,7 @@ int parse_options( int argc, char* argv[] )
 		}
 		case 'o':
 		{
-			REGX_FLAGS = regex_constants::basic;
+			REGX_FLAGS = std::regex_constants::basic;
 			OPTION_FLAGS |= REGEX_OPTIONS;
 			string str_optarg = optarg;
 			string::size_type sz_beg = 0;

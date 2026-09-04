@@ -3,7 +3,6 @@
 // Version:    0.1
 
 #include <iostream>
-#include <stdlib.h>
 #include <string>
 #include <sstream>
 #include <vector>
@@ -60,20 +59,20 @@ regex::flag_type REGX_FLAGS = regex::ECMAScript;
 
 static struct option long_options[] =
 {
-	{"verbose", no_argument, 0, 'v'},
-	{"help", no_argument, 0, 'h'},
-	{"icase", no_argument, 0, 'i'},
-	{"single", no_argument, 0, 's'},
-	{"groups", no_argument, 0, 'g'},
-	{"pretty", no_argument, 0, 'P'},        //default
-	{"no-pretty", no_argument, 0, 'p'},
-	{"version", no_argument, 0, 'r'},
-	{"boost", no_argument, 0, 'b'},
-	{"not_extended", no_argument, 0, 'e'},
-	{"extended", no_argument, 0, 'E'},      //default
-	{"options", required_argument, 0, 'o'}, //default
-	{"file", required_argument, 0, 'f'},
-	{"regex_file", required_argument, 0, 'x'}
+	{"verbose", no_argument, nullptr, 'v'},
+	{"help", no_argument, nullptr, 'h'},
+	{"icase", no_argument, nullptr, 'i'},
+	{"single", no_argument, nullptr, 's'},
+	{"groups", no_argument, nullptr, 'g'},
+	{"pretty", no_argument, nullptr, 'P'},        //default
+	{"no-pretty", no_argument, nullptr, 'p'},
+	{"version", no_argument, nullptr, 'r'},
+	{"boost", no_argument, nullptr, 'b'},
+	{"not_extended", no_argument, nullptr, 'e'},
+	{"extended", no_argument, nullptr, 'E'},      //default
+	{"options", required_argument, nullptr, 'o'}, //default
+	{"file", required_argument, nullptr, 'f'},
+	{"regex_file", required_argument, nullptr, 'x'}
 };
 
 map<std::string, regex::flag_type> regex_flags =
@@ -120,18 +119,17 @@ void print_match_header( const string& pattern, const string& src, int count, in
 
 int regx_match( const vector<string>& exp_text, const vector<string>& search_text )
 {
-	int exp_text_len = exp_text.size();
+	int exp_text_len = static_cast<int>(exp_text.size());
 	// for each exp
 	for( int i = 0; i < exp_text_len; ++i )
 	{
-		int search_text_len = search_text.size();
+		int search_text_len = static_cast<int>(search_text.size());
 		// for each input
 		for( int j = 0; j < search_text_len; ++j )
 		{
 			print_match_header( exp_text[i], search_text[j], j + 1, search_text_len );
 			string bash_stdio = search_text[j];
 			REGX_FLAGS = ( OPTION_FLAGS & IGNORE_CASE ) != 0 ? REGX_FLAGS | regex::icase : REGX_FLAGS;
-
 			regex src_epx;
 			try
 			{
@@ -139,8 +137,8 @@ int regx_match( const vector<string>& exp_text, const vector<string>& search_tex
 			}
 			catch( regex_error& e )
 			{
-				cerr << "exception caught: " << e.what() << '\n';
-				cerr << "error of type " << e.code() << " was unhandled\n";
+				cerr << "exception caught: " << e.what() << endl;
+				cerr << "error of type " << e.code() << " was unhandled"  << endl;
 			}
 
 			auto begin = sregex_iterator( search_text[j].begin(), search_text[j].end(), src_epx, std::regex_constants::match_default );
@@ -150,10 +148,10 @@ int regx_match( const vector<string>& exp_text, const vector<string>& search_tex
 			for( sregex_iterator iter = begin; iter != end; ++iter, ++match_i )
 			{
 				string CURRENT_FG_COLOR( match_i % 2 ? FMT_FG_CYAN + FMT_UNDERLINE : FMT_FG_GREEN + FMT_UNDERLINE );
-				std::smatch match = *iter;
+				const std::smatch& match = *iter;
 
-				int pos = match.position() + match_i * ( CURRENT_FG_COLOR.length() + FMT_RESET.length() );
-				int match_text_len = match.length();
+				unsigned long pos = match.position() + match_i * ( CURRENT_FG_COLOR.length() + FMT_RESET.length() );
+				int match_text_len = static_cast<int>(match.length());
 				if( ( OPTION_FLAGS & SINGLE_MATCH ) && ( iter != begin || pos != 0 || search_text[j].length() != (size_t)match_text_len ) )
 				{
 					begin = end;
@@ -162,16 +160,16 @@ int regx_match( const vector<string>& exp_text, const vector<string>& search_tex
 
 				if( OPTION_FLAGS & PRETTY_PRINT )
 				{
-					// set bash green start postion
+					// set bash green start position
 					bash_stdio.insert( pos, CURRENT_FG_COLOR );
 					// reset bash color position
-					pos += (int)CURRENT_FG_COLOR.length() + match_text_len;
+					pos += static_cast<int>(CURRENT_FG_COLOR.length()) + match_text_len;
 					bash_stdio.insert( pos, FMT_RESET );
-					pos += (int)FMT_RESET.length();
+					pos += static_cast<int>(FMT_RESET.length());
 
 					if( OPTION_FLAGS & GROUPS )
 					{
-						int len = (int)match.size();
+						int len = static_cast<int>(match.size());
 						for( int k = 1; k < len; ++k )
 						{
 							if( match[k].matched )
@@ -179,7 +177,7 @@ int regx_match( const vector<string>& exp_text, const vector<string>& search_tex
 								stringstream ss;
 								ss << "\n\t" << k << ": " << FMT_FG_RED << "Submatch: " << FMT_RESET << FMT_FG_GREEN << match[k].str() << FMT_RESET;
 								bash_stdio.insert( pos, ss.str() );
-								pos += (int)ss.str().size();
+								pos += static_cast<int>(ss.str().size());
 							}
 						}
 					}
@@ -190,7 +188,6 @@ int regx_match( const vector<string>& exp_text, const vector<string>& search_tex
 						<< '\t' << match.position() << '\t' << match.length() << endl;
 				}
 			}
-
 			if( OPTION_FLAGS & PRETTY_PRINT )
 			{
 				cout << endl << "Found " << distance( begin, end ) << " matches:" << endl;
@@ -209,7 +206,7 @@ int parse_options( int argc, char* argv[] )
 	int opt = 0;
 	int option_index = 0;
 	optind = 0;
-	while( ( opt = getopt_long( argc, argv, "hvispgPrbeEo:x:f:", long_options, &option_index ) ) != -1 )
+	while( ( opt = getopt_long( argc, argv, R"(hvispgPrbeEo:x:f:)", long_options, &option_index ) ) != -1 )
 	{
 		switch( opt )
 		{
@@ -244,8 +241,8 @@ int parse_options( int argc, char* argv[] )
 			OPTION_FLAGS |= BOOST_REGEX;
 			break;
 		case 'r':
-		print_version();
-		return 0;
+			print_version();
+			return 0;
 		case 'f':
 		{
 			OPTION_FLAGS |= SEARCH_FROM_FILE;
@@ -303,7 +300,6 @@ int parse_options( int argc, char* argv[] )
 				sz_end = str_optarg.find( '|', sz_beg );
 				string split = str_optarg.substr( sz_beg, sz_end - sz_beg );
 				sz_beg = sz_end + 1;
-
 				try
 				{
 					REGX_FLAGS |= regex_flags.at( split );
@@ -318,10 +314,9 @@ int parse_options( int argc, char* argv[] )
 			break;
 		}
 		default: // unknown option before args
-		cerr << "Unexpected option, -h for help" << endl;
-		return -1;
+			cerr << "Unexpected option, -h for help" << endl;
+			return -1;
 		}
-		//return 0;
 	}
 
 	if( argc <= DEFAULT_ARGC ) // not correct number of args
@@ -346,6 +341,5 @@ int parse_options( int argc, char* argv[] )
 			search_text.assign( argv + ( optind + 1 ), argv + argc );
 		}
 	}
-
 	return regx_match( exp_text, search_text );
 }

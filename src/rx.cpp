@@ -172,12 +172,12 @@ int regx_match( const vector<string>& exp_text, const vector<string>& search_tex
 					if( OPTION_FLAGS & GROUPS )
 					{
 						int len = (int)match.size();
-						for( int ii = 1; ii < len; ++ii )
+						for( int k = 1; k < len; ++k )
 						{
-							if( match[ii].matched )
+							if( match[k].matched )
 							{
 								stringstream ss;
-								ss << "\n\t" << ii << ": " << FMT_FG_RED << "Submatch: " << FMT_RESET << FMT_FG_GREEN << match[ii].str() << FMT_RESET;
+								ss << "\n\t" << k << ": " << FMT_FG_RED << "Submatch: " << FMT_RESET << FMT_FG_GREEN << match[k].str() << FMT_RESET;
 								bash_stdio.insert( pos, ss.str() );
 								pos += (int)ss.str().size();
 							}

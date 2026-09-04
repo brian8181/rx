@@ -22,7 +22,7 @@ int stdin_ready (int filedes)
 #ifndef CYGWIN
 	// declare/initialize timespec
 	struct timespec timeout = { .tv_sec = 0 };
-	return pselect(filedes + 1, &set, NULL, NULL, &timeout, NULL);
+	return pselect(filedes + 1, &set, nullptr, nullptr, &timeout, nullptr);
 #else
 	// declare/initialize timeout
 	struct timeval timeout = { .tv_sec = 0 };

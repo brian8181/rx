@@ -153,8 +153,8 @@ int regx_match( const vector<string>& exp_text, const vector<string>& search_tex
 				std::smatch match = *iter;
 
 				int pos = match.position() + match_i * ( CURRENT_FG_COLOR.length() + FMT_RESET.length() );
-				int search_text_len = match.length();
-				if( ( OPTION_FLAGS & SINGLE_MATCH ) && ( iter != begin || pos != 0 || search_text[j].length() != (size_t)search_text_len ) )
+				int match_text_len = match.length();
+				if( ( OPTION_FLAGS & SINGLE_MATCH ) && ( iter != begin || pos != 0 || search_text[j].length() != (size_t)match_text_len ) )
 				{
 					begin = end;
 					break;
@@ -165,21 +165,21 @@ int regx_match( const vector<string>& exp_text, const vector<string>& search_tex
 					// set bash green start postion
 					bash_stdio.insert( pos, CURRENT_FG_COLOR );
 					// reset bash color position
-					pos += CURRENT_FG_COLOR.length() + search_text_len;
+					pos += (int)CURRENT_FG_COLOR.length() + match_text_len;
 					bash_stdio.insert( pos, FMT_RESET );
-					pos += FMT_RESET.length();
+					pos += (int)FMT_RESET.length();
 
 					if( OPTION_FLAGS & GROUPS )
 					{
-						int len = match.size();
-						for( int i = 1; i < len; ++i )
+						int len = (int)match.size();
+						for( int ii = 1; ii < len; ++ii )
 						{
-							if( match[i].matched )
+							if( match[ii].matched )
 							{
 								stringstream ss;
-								ss << "\n\t" << i << ": " << FMT_FG_RED << "Submatch: " << FMT_RESET << FMT_FG_GREEN << match[i].str() << FMT_RESET;
+								ss << "\n\t" << ii << ": " << FMT_FG_RED << "Submatch: " << FMT_RESET << FMT_FG_GREEN << match[ii].str() << FMT_RESET;
 								bash_stdio.insert( pos, ss.str() );
-								pos += ss.str().size();
+								pos += (int)ss.str().size();
 							}
 						}
 					}
